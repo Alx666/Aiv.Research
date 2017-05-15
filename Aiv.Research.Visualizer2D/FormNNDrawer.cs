@@ -17,8 +17,6 @@ namespace Aiv.Research.Visualizer2D
         private Pen      m_hPen;
 
         private const int NeuronGfxSize = 160;
-        private const int HorizDist     = 50;
-        private const int VertDist      = NeuronGfxSize;
         private const int VertPadding   = 30;
         private const int HorizPadding  = 30;
 
@@ -35,8 +33,6 @@ namespace Aiv.Research.Visualizer2D
             Size vPanelSize             = new Size();
             vPanelSize.Width            = (hLongest.NeuronCount * (NeuronGfxSize * 2)) + HorizPadding * 2;
             vPanelSize.Height           = (hNetwork.Structure.Layers.Count * NeuronGfxSize) + VertPadding * (hNetwork.Structure.Layers.Count + 1);
-            //m_hPanel.Width          = HorizontalPadding * 2 + hLongest.NeuronCount * (HorizontalPadding + NeuronGfxSize);
-            //m_hPanel.Height         = VerticalPadding * 2   + hNetwork.Structure.Layers.Count * (VerticalPadding + NeuronGfxSize);
             m_hPanel.Paint             += OnPanelPaint;
             m_hPanel.Size               = vPanelSize;
             m_hPanel.Parent.Width       = m_hPanel.Width + 40;
@@ -53,7 +49,9 @@ namespace Aiv.Research.Visualizer2D
 
                 for (int k = 0; k < hCurrentLayer.NeuronCount; k++)
                 {
-                    m_hNeurons.Add(new NeuronGfx(new Point(0, iPosY), new Size(NeuronGfxSize, NeuronGfxSize)));
+                    int iPosX = HorizPadding + (NeuronGfxSize * k + k * HorizPadding);
+
+                    m_hNeurons.Add(new NeuronGfx(new Point(iPosX, iPosY), new Size(NeuronGfxSize, NeuronGfxSize)));
                 }
             }
 
