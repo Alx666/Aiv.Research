@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Encog;
+using Encog.Neural.Networks;
+using Encog.Neural.Networks.Layers;
 
 namespace Aiv.Research.Visualizer2D
 {
@@ -16,7 +19,13 @@ namespace Aiv.Research.Visualizer2D
         private IDrawer m_hDrawer;
 
         private PenDrawer   m_hPenDrawer;
-        private NullDrawer  m_hNullDrawer;        
+        private NullDrawer  m_hNullDrawer;
+
+
+        private BasicNetwork m_hNetwork;
+        private FormNNDrawer m_hNeuralDisplay;
+
+        
 
         public Main()
         {
@@ -25,6 +34,18 @@ namespace Aiv.Research.Visualizer2D
             m_hPenDrawer = new PenDrawer(Color.Green, 1f, m_hPanel);
             m_hNullDrawer = new NullDrawer();
             m_hDrawer = m_hNullDrawer;
+
+            m_hNetwork = new BasicNetwork();
+            m_hNetwork.AddLayer(new BasicLayer(3));
+            m_hNetwork.AddLayer(new BasicLayer(5));
+            m_hNetwork.AddLayer(new BasicLayer(2));
+            m_hNetwork.AddLayer(new BasicLayer(1));
+
+
+
+            m_hNeuralDisplay = new FormNNDrawer(m_hNetwork);
+
+            m_hNeuralDisplay.Show();
         }
 
         #region Panel Event Handlers
@@ -35,7 +56,6 @@ namespace Aiv.Research.Visualizer2D
             m_hDrawer.End();
             m_hDrawer = m_hNullDrawer;
         }
-
 
         private void OnPanelMouseDown(object sender, MouseEventArgs e)
         {
