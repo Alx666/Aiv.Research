@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,17 +15,14 @@ namespace Aiv.Research.Visualizer2D
     {
         private IDrawer m_hDrawer;
 
-        private PenDrawer m_hPenDrawer;
-        private NullDrawer m_hNullDrawer;
-        private Graphics m_hGfx;
+        private PenDrawer   m_hPenDrawer;
+        private NullDrawer  m_hNullDrawer;        
 
         public Main()
         {
             InitializeComponent();
 
-            m_hGfx = m_hPanel.CreateGraphics();
-
-            m_hPenDrawer = new PenDrawer(Color.Green, 1f, m_hGfx);
+            m_hPenDrawer = new PenDrawer(Color.Green, 1f, m_hPanel);
             m_hNullDrawer = new NullDrawer();
             m_hDrawer = m_hNullDrawer;
         }
@@ -57,11 +55,17 @@ namespace Aiv.Research.Visualizer2D
         private void OnFormKeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Return && e.Modifiers == Keys.Control)
-            {
-                Sample hSample = new Sample();
-                hSample.Number = m_hSamples.Items.Count;
-                m_hSamples.Items.Add(hSample);
-                m_hGfx.Clear(Color.Black);
+            {                
+                using (Bitmap hBmp = m_hDrawer.Clear())
+                {
+                    using (Bitmap hDownscaled = hBmp.ResizeImage(320, 240))
+                    {
+                        string sFilename = $"Sample{m_hSamples.Items.Count}.bmp";
+                        hDownscaled.Save(sFilename, ImageFormat.Bmp);
+
+                        m_hSamples.Items.Add(new Sample(sFilename));
+                    }
+                }
             }
         }
 

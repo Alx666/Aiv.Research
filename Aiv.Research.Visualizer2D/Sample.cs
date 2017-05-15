@@ -8,13 +8,13 @@ namespace Aiv.Research.Visualizer2D
 {
     class Sample
     {
-        public int Number { get; set; }
-
-        public Sample()
+        public string Name { get; private set; }
+        
+        public Sample(string sName)
         {
-
+            Name = sName;
         }
 
-        public override string ToString() => $"Sample: {Number}";
+        public override string ToString() => Name;
     }
 }
