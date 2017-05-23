@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,8 +73,28 @@ namespace Aiv.Research.Visualizer2D
             }
 
 
+            StringBuilder hSb = new StringBuilder();
+            double[] hInput0 = new double[] { 0.0, 0.0 };
+            double[] hInput1 = new double[] { 1.0, 0.0 };
+            double[] hInput2 = new double[] { 0.0, 1.0 };
+            double[] hInput3 = new double[] { 1.0, 1.0 };
+            double[] hOutput0 = new double[1];
+            double[] hOutput1 = new double[1];
+            double[] hOutput2 = new double[1];
+            double[] hOutput3 = new double[1];
 
-            //m_hNetwork.Compute(hInput, hOutput);
+            m_hNetwork.Compute(hInput0, hOutput0);
+            m_hNetwork.Compute(hInput1, hOutput1);
+            m_hNetwork.Compute(hInput2, hOutput2);
+            m_hNetwork.Compute(hInput3, hOutput3);
+
+            hSb.AppendLine($"{hInput0[0]} xor {hInput0[1]} = {hOutput0[0]}");
+            hSb.AppendLine($"{hInput1[0]} xor {hInput1[1]} = {hOutput1[0]}");
+            hSb.AppendLine($"{hInput2[0]} xor {hInput2[1]} = {hOutput2[0]}");
+            hSb.AppendLine($"{hInput3[0]} xor {hInput3[1]} = {hOutput3[0]}");
+
+            File.WriteAllText("output.txt", hSb.ToString());
+            
 
 
         }

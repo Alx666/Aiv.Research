@@ -43,7 +43,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 299);
+            this.ClientSize = new System.Drawing.Size(467, 299);
             this.Controls.Add(this.m_hPanel);
             this.Name = "FormNNDrawer";
             this.Text = "Neural Network";

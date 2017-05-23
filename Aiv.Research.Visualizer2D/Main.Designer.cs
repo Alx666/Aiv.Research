@@ -33,8 +33,9 @@
             this.m_hSamples = new System.Windows.Forms.ListBox();
             this.m_hMenuStrip = new System.Windows.Forms.MenuStrip();
             this.crateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_hContextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.feedForwardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_hToolStripTextQuantize = new System.Windows.Forms.ToolStripTextBox();
+            this.m_hContextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_hMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             this.m_hPanel.Name = "m_hPanel";
             this.m_hPanel.Size = new System.Drawing.Size(800, 600);
             this.m_hPanel.TabIndex = 0;
+            this.m_hPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPanelPaint);
             this.m_hPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnPanelMouseDown);
             this.m_hPanel.MouseEnter += new System.EventHandler(this.OnPanelMouseEnter);
             this.m_hPanel.MouseLeave += new System.EventHandler(this.OnPanelMouseLeave);
@@ -74,19 +76,28 @@
             this.crateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.feedForwardToolStripMenuItem});
             this.crateToolStripMenuItem.Name = "crateToolStripMenuItem";
-            this.crateToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.crateToolStripMenuItem.Text = "Create";
+            this.crateToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.crateToolStripMenuItem.Text = "Options";
+            // 
+            // feedForwardToolStripMenuItem
+            // 
+            this.feedForwardToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_hToolStripTextQuantize});
+            this.feedForwardToolStripMenuItem.Name = "feedForwardToolStripMenuItem";
+            this.feedForwardToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.feedForwardToolStripMenuItem.Text = "Quantize";
+            // 
+            // m_hToolStripTextQuantize
+            // 
+            this.m_hToolStripTextQuantize.Name = "m_hToolStripTextQuantize";
+            this.m_hToolStripTextQuantize.Size = new System.Drawing.Size(100, 23);
+            this.m_hToolStripTextQuantize.Text = "10";
+            this.m_hToolStripTextQuantize.TextChanged += new System.EventHandler(this.OnQuantizeTextChanged);
             // 
             // m_hContextMenuStrip1
             // 
             this.m_hContextMenuStrip1.Name = "m_hContextMenuStrip1";
             this.m_hContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // feedForwardToolStripMenuItem
-            // 
-            this.feedForwardToolStripMenuItem.Name = "feedForwardToolStripMenuItem";
-            this.feedForwardToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.feedForwardToolStripMenuItem.Text = "Feed Forward";
             // 
             // Main
             // 
@@ -116,6 +127,7 @@
         private System.Windows.Forms.ToolStripMenuItem crateToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip m_hContextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem feedForwardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox m_hToolStripTextQuantize;
     }
 }
 

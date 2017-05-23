@@ -24,51 +24,61 @@ namespace Aiv.Research.Visualizer2D
         private IDrawer m_hDrawer;
 
         private PenDrawer   m_hPenDrawer;
+        private Pen         m_hPenGrid;
+
         private NullDrawer  m_hNullDrawer;
 
 
         private BasicNetwork m_hNetwork;
         private FormNNDrawer m_hNeuralDisplay;
-
+        private Rectangle[,] m_hGrid;
+        private int m_iGrid;
         
 
         public Main()
         {
-            InitializeComponent();
+            InitializeComponent();            
+
+            m_iGrid = 10;
+            m_hGrid = this.BuildGrid(m_iGrid);
 
             m_hPenDrawer = new PenDrawer(Color.Green, 1f, m_hPanel);
-            m_hNullDrawer = new NullDrawer();
-            m_hDrawer = m_hNullDrawer;
+            m_hPenDrawer.QuantizedSpace = m_hGrid;
+            m_hPenGrid = new Pen(Color.DarkRed, 1f);            
+            m_hDrawer = m_hPenDrawer;
 
             m_hNetwork = new BasicNetwork();
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 6));
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 1));
-            m_hNetwork.Structure.FinalizeStructure();
-            m_hNetwork.Reset();
 
-            double[][] XorInput = new double[4][];
-            XorInput[0] = new double[2] { 0.0, 0.0 };
-            XorInput[1] = new double[2] { 1.0, 0.0 };
-            XorInput[2] = new double[2] { 0.0, 1.0 };
-            XorInput[3] = new double[2] { 1.0, 1.0 };
+            #region XOR Network
 
-            double[][] XorIdeal = new double[4][];
-            XorIdeal[0] = new double[1] { 0.0 };
-            XorIdeal[1] = new double[1] { 1.0 };
-            XorIdeal[2] = new double[1] { 1.0 };
-            XorIdeal[3] = new double[1] { 0.0 };
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 1));
+            //m_hNetwork.Structure.FinalizeStructure();
+            //m_hNetwork.Reset();
+
+            //double[][] XorInput = new double[4][];
+            //XorInput[0] = new double[2] { 0.0, 0.0 };
+            //XorInput[1] = new double[2] { 1.0, 0.0 };
+            //XorInput[2] = new double[2] { 0.0, 1.0 };
+            //XorInput[3] = new double[2] { 1.0, 1.0 };
+
+            //double[][] XorIdeal = new double[4][];
+            //XorIdeal[0] = new double[1] { 0.0 };
+            //XorIdeal[1] = new double[1] { 1.0 };
+            //XorIdeal[2] = new double[1] { 1.0 };
+            //XorIdeal[3] = new double[1] { 0.0 };
+            //INeuralDataSet hTrainingSet = new BasicNeuralDataSet(XorInput, XorIdeal);
+            //ITrain hTraining = new ResilientPropagation(m_hNetwork, hTrainingSet);
+
+            //hTraining.Iteration(5000);
+
+            #endregion
+
+            //m_hNeuralDisplay = new FormNNDrawer(m_hNetwork);
 
 
-            INeuralDataSet hTrainingSet = new BasicNeuralDataSet(XorInput, XorIdeal);
-
-
-            ITrain hTraining = new ResilientPropagation(m_hNetwork, hTrainingSet);
-
-            hTraining.Iteration(5000);
-
-            m_hNeuralDisplay = new FormNNDrawer(m_hNetwork);
-            m_hNeuralDisplay.Show();
+            //m_hNeuralDisplay.Show();
         }
 
         #region Panel Event Handlers
@@ -77,7 +87,6 @@ namespace Aiv.Research.Visualizer2D
         private void OnPanelMouseLeave(object sender, EventArgs e)
         {
             m_hDrawer.End();
-            m_hDrawer = m_hNullDrawer;
         }
 
         private void OnPanelMouseDown(object sender, MouseEventArgs e)
@@ -98,8 +107,9 @@ namespace Aiv.Research.Visualizer2D
         private void OnFormKeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Return && e.Modifiers == Keys.Control)
-            {                
-                using (Bitmap hBmp = m_hDrawer.Clear())
+            {
+                double[,] hSamples;
+                using (Bitmap hBmp = m_hDrawer.Clear(out hSamples))
                 {
                     using (Bitmap hDownscaled = hBmp.ResizeImage(320, 240))
                     {
@@ -112,9 +122,52 @@ namespace Aiv.Research.Visualizer2D
             }
         }
 
-
         #endregion
 
 
+        private Rectangle[,] BuildGrid(int iSize)
+        {
+            Rectangle[,] hGrid = new Rectangle[iSize, iSize];
+
+            int iXSize = m_hPanel.Width / m_iGrid;
+            int iYSize = m_hPanel.Height / m_iGrid;
+
+            for (int i = 0; i < iSize; i++)
+            {
+                for (int k = 0; k < iSize; k++)
+                {
+                    hGrid[i,k] = new Rectangle(i * iXSize, k * iYSize, iXSize, iYSize);
+                }
+            }
+
+            return hGrid;
+        }
+
+        private void OnPanelPaint(object sender, PaintEventArgs e)
+        {
+            for (int i = 0; i < m_hGrid.GetLength(0); i++)
+            {
+                for (int k = 0; k < m_hGrid.GetLength(1); k++)
+                {
+                    e.Graphics.DrawRectangle(m_hPenGrid, m_hGrid[i, k]);
+                }
+            }
+        }
+
+        private void OnQuantizeTextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                m_iGrid = int.Parse(m_hToolStripTextQuantize.Text);
+                m_hGrid = this.BuildGrid(m_iGrid);
+                m_hPenDrawer.QuantizedSpace = m_hGrid;
+
+                m_hPanel.Invalidate();
+            }
+            catch (Exception)
+            {
+                //Do nothing
+            }
+        }
     }
 }

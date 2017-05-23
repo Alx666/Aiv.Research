@@ -15,6 +15,6 @@ namespace Aiv.Research.Visualizer2D
 
         void End();
 
-        Bitmap Clear();
+        Bitmap Clear(out double[,] hSamples);
     }
 }
