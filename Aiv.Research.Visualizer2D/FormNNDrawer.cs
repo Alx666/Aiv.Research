@@ -13,69 +13,156 @@ using System.Windows.Forms;
 namespace Aiv.Research.Visualizer2D
 {
     public partial class FormNNDrawer : Form
-    {
-        private Pen      m_hPen;
+    {        
+        private const int NeuronGfxSize = 60;
 
-        private const int NeuronGfxSize = 160;
-        private const int VertPadding   = 30;
-        private const int HorizPadding  = 30;
-
-        private List<NeuronGfx> m_hNeurons;
+        private NeuronGfx[][]   m_hNeurons;
+        private BasicNetwork    m_hNetwork;
 
         public FormNNDrawer(BasicNetwork hNetwork)
         {
             InitializeComponent();
 
-            m_hPen = new Pen(Color.Green, 3);            
-            
-            ILayer hLongest = (from hL in hNetwork.Structure.Layers.ToList() orderby hL.NeuronCount descending select hL).First();
+            m_hNetwork = hNetwork;
+
 
             Size vPanelSize             = new Size();
-            vPanelSize.Width            = (hLongest.NeuronCount * (NeuronGfxSize * 2)) + HorizPadding * 2;
-            vPanelSize.Height           = (hNetwork.Structure.Layers.Count * NeuronGfxSize) + VertPadding * (hNetwork.Structure.Layers.Count + 1);
+            vPanelSize.Width            = 800;//(hLongest.NeuronCount * (NeuronGfxSize * 2)) + HorizPadding * 2;
+            vPanelSize.Height           = 600;// (hNetwork.Structure.Layers.Count * NeuronGfxSize) + VertPadding * (hNetwork.Structure.Layers.Count + 1);
             m_hPanel.Paint             += OnPanelPaint;
             m_hPanel.Size               = vPanelSize;
             m_hPanel.Parent.Width       = m_hPanel.Width + 40;
             m_hPanel.Parent.Height      = m_hPanel.Height + 60;
-
-            m_hNeurons = new List<NeuronGfx>();
             
+            m_hNeurons                  = new NeuronGfx[hNetwork.LayerCount][];
 
-            for (int i = 0; i < hNetwork.Structure.Layers.Count; i++)
-            {
-                ILayer hCurrentLayer = hNetwork.Structure.Layers[i];
+            int iColumnDivision = vPanelSize.Height / hNetwork.LayerCount;
+            int iVertSpacing    = iColumnDivision / 2;
 
-                int iPosY = VertPadding + (NeuronGfxSize * i + i * VertPadding ) ;
+            for (int i = 0; i < hNetwork.LayerCount; i++)
+            {                
+                int iPosY           = (iVertSpacing + iColumnDivision * i) - NeuronGfxSize / 2;
 
-                for (int k = 0; k < hCurrentLayer.NeuronCount; k++)
+                int iRowDivision    = vPanelSize.Width  / hNetwork.GetLayerNeuronCount(i);
+                int iHorizSpacing   = iRowDivision      / 2;
+
+                m_hNeurons[i] = new NeuronGfx[hNetwork.GetLayerNeuronCount(i)];
+
+
+                for (int k = 0; k < hNetwork.GetLayerNeuronCount(i); k++)
                 {
-                    int iPosX = HorizPadding + (NeuronGfxSize * k + k * HorizPadding);
+                    int iPosX = (iHorizSpacing + iRowDivision * k) - NeuronGfxSize / 2;
 
-                    m_hNeurons.Add(new NeuronGfx(new Point(iPosX, iPosY), new Size(NeuronGfxSize, NeuronGfxSize)));
+                    m_hNeurons[i][k] = new NeuronGfx(new Point(iPosX, iPosY), new Size(NeuronGfxSize, NeuronGfxSize), i);
                 }
             }
 
-            hNetwork.Structure.FinalizeStructure();
-            hNetwork.Reset();
+
+            for (int i = 0; i < m_hNeurons.Length - 1; i++)
+            {
+                for (int k = 0; k < m_hNeurons[i].Length; k++)
+                {
+                    NeuronGfx hCurrent = m_hNeurons[i][k];
+
+                    for (int j = 0; j < m_hNeurons[i + 1].Length; j++)
+                    {
+                        hCurrent.Add(m_hNeurons[i + 1][j], (float)m_hNetwork.GetWeight(i, k, j));
+                    }
+                }
+            }
+
+
+
+            //m_hNetwork.Compute(hInput, hOutput);
+
+
         }
 
         private void OnPanelPaint(object sender, PaintEventArgs e)
         {
-            m_hNeurons.ForEach(x => x.Draw(m_hPen, e.Graphics));
+            for (int i = 0; i < m_hNeurons.Length; i++)
+            {
+                for (int k = 0; k < m_hNeurons[i].Length; k++)
+                {
+                    m_hNeurons[i][k].Draw(e.Graphics);
+                }
+            }
         }
 
         class NeuronGfx
         {
-            private Rectangle m_vPosition;
+            private static Pen  m_hPenCircle;
+            private static Pen  m_hPenRect;
+            private static Pen  m_hPenCenter;
+            private static Font m_hFont;
 
-            public NeuronGfx(Point vFrom, Size vSize)
+            private Rectangle   m_vPosition;
+            private Point       m_vCenter;
+            private List<NeuronConnection> m_hNeightbours;
+            public int Layer { get; private set; }
+
+            static NeuronGfx()
             {
-                m_vPosition = new Rectangle(vFrom, vSize);
+                m_hPenCircle    = new Pen(Color.Green, 2);
+                m_hPenRect      = new Pen(Color.Red, 1);
+                m_hPenCenter    = new Pen(Color.Yellow, 1);
+                m_hFont         = new Font("Arial", 8);
             }
 
-            public void Draw(Pen hPen, Graphics hGfx)
+            public NeuronGfx(Point vFrom, Size vSize, int iLayer)
             {
-                hGfx.DrawEllipse(hPen, m_vPosition);
+                m_vPosition     = new Rectangle(vFrom, vSize);
+                m_vCenter       = new Point(m_vPosition.X + m_vPosition.Width / 2, m_vPosition.Y + m_vPosition.Height / 2);
+                Layer           = iLayer;
+                m_hNeightbours  = new List<NeuronConnection>();
+            }
+
+            public void Draw(Graphics hGfx)
+            {
+                //First draw lines
+                for (int i = 0; i < m_hNeightbours.Count; i++)
+                {
+                    //Draw Synapse
+                    hGfx.DrawLine(m_hPenRect, m_vCenter, m_hNeightbours[i].Next.m_vCenter);
+
+                    //Draw Synapse Weight
+                    Vector2 vPos = (Vector2)m_vCenter + (Vector2)m_hNeightbours[i].Next.m_vCenter;
+                    vPos /= 2;
+                    
+                    SizeF vSize = hGfx.MeasureString(m_hNeightbours[i].Weight.ToString(), m_hFont);
+                    Rectangle vDeleteArea = new Rectangle((int)vPos.X, (int)vPos.Y, (int)vSize.Width, (int)vSize.Height);
+                    hGfx.FillRectangle(Brushes.Black, vDeleteArea);
+
+                    hGfx.DrawString(m_hNeightbours[i].Weight.ToString(), m_hFont, Brushes.Red, (PointF)vPos);
+                    hGfx.DrawRectangle(m_hPenCenter, vDeleteArea);
+
+                    //Draw Bias
+
+                }
+
+
+                hGfx.FillEllipse(Brushes.Black, m_vPosition);
+                hGfx.DrawEllipse(m_hPenCircle, m_vPosition);
+
+
+                //hGfx.DrawRectangle(m_hPenRect, m_vPosition);
+                //hGfx.DrawRectangle(m_hPenCenter, m_vCenter.X - 1, m_vCenter.Y - 1, 2, 2);
+
+            }
+
+            public void Add(NeuronGfx hNext, float fWeight)
+            {
+                NeuronConnection hConn = new NeuronConnection();
+                hConn.Next = hNext;
+                hConn.Weight = fWeight;
+                m_hNeightbours.Add(hConn);
+            }
+
+
+            internal struct NeuronConnection
+            {
+                public NeuronGfx Next;
+                public float Weight;
             }
         }
     }

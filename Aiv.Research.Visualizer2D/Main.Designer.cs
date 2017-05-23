@@ -28,14 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.m_hPanel = new System.Windows.Forms.Panel();
             this.m_hSamples = new System.Windows.Forms.ListBox();
+            this.m_hMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.crateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_hContextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.feedForwardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_hMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_hPanel
             // 
             this.m_hPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.m_hPanel.Location = new System.Drawing.Point(12, 12);
+            this.m_hPanel.Location = new System.Drawing.Point(17, 27);
             this.m_hPanel.Name = "m_hPanel";
             this.m_hPanel.Size = new System.Drawing.Size(800, 600);
             this.m_hPanel.TabIndex = 0;
@@ -48,23 +54,57 @@
             // m_hSamples
             // 
             this.m_hSamples.FormattingEnabled = true;
-            this.m_hSamples.Location = new System.Drawing.Point(823, 12);
+            this.m_hSamples.Location = new System.Drawing.Point(823, 25);
             this.m_hSamples.Name = "m_hSamples";
             this.m_hSamples.Size = new System.Drawing.Size(235, 602);
             this.m_hSamples.TabIndex = 1;
+            // 
+            // m_hMenuStrip
+            // 
+            this.m_hMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.crateToolStripMenuItem});
+            this.m_hMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.m_hMenuStrip.Name = "m_hMenuStrip";
+            this.m_hMenuStrip.Size = new System.Drawing.Size(1070, 24);
+            this.m_hMenuStrip.TabIndex = 2;
+            this.m_hMenuStrip.Text = "menuStrip1";
+            // 
+            // crateToolStripMenuItem
+            // 
+            this.crateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.feedForwardToolStripMenuItem});
+            this.crateToolStripMenuItem.Name = "crateToolStripMenuItem";
+            this.crateToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.crateToolStripMenuItem.Text = "Create";
+            // 
+            // m_hContextMenuStrip1
+            // 
+            this.m_hContextMenuStrip1.Name = "m_hContextMenuStrip1";
+            this.m_hContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // feedForwardToolStripMenuItem
+            // 
+            this.feedForwardToolStripMenuItem.Name = "feedForwardToolStripMenuItem";
+            this.feedForwardToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.feedForwardToolStripMenuItem.Text = "Feed Forward";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 626);
+            this.ClientSize = new System.Drawing.Size(1070, 634);
             this.Controls.Add(this.m_hSamples);
             this.Controls.Add(this.m_hPanel);
+            this.Controls.Add(this.m_hMenuStrip);
             this.KeyPreview = true;
+            this.MainMenuStrip = this.m_hMenuStrip;
             this.Name = "Main";
             this.Text = "Sample Manager";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnFormKeyDown);
+            this.m_hMenuStrip.ResumeLayout(false);
+            this.m_hMenuStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -72,6 +112,10 @@
 
         private System.Windows.Forms.Panel m_hPanel;
         private System.Windows.Forms.ListBox m_hSamples;
+        private System.Windows.Forms.MenuStrip m_hMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem crateToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip m_hContextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem feedForwardToolStripMenuItem;
     }
 }
 

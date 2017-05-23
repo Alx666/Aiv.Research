@@ -11,6 +11,11 @@ using System.Windows.Forms;
 using Encog;
 using Encog.Neural.Networks;
 using Encog.Neural.Networks.Layers;
+using Encog.Neural.NeuralData;
+using Encog.Neural.Data.Basic;
+using Encog.Engine.Network.Activation;
+using Encog.Neural.Networks.Training;
+using Encog.Neural.Networks.Training.Propagation.Resilient;
 
 namespace Aiv.Research.Visualizer2D
 {
@@ -36,15 +41,33 @@ namespace Aiv.Research.Visualizer2D
             m_hDrawer = m_hNullDrawer;
 
             m_hNetwork = new BasicNetwork();
-            m_hNetwork.AddLayer(new BasicLayer(3));
-            m_hNetwork.AddLayer(new BasicLayer(5));
-            m_hNetwork.AddLayer(new BasicLayer(2));
-            m_hNetwork.AddLayer(new BasicLayer(1));
+            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
+            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 6));
+            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 1));
+            m_hNetwork.Structure.FinalizeStructure();
+            m_hNetwork.Reset();
+
+            double[][] XorInput = new double[4][];
+            XorInput[0] = new double[2] { 0.0, 0.0 };
+            XorInput[1] = new double[2] { 1.0, 0.0 };
+            XorInput[2] = new double[2] { 0.0, 1.0 };
+            XorInput[3] = new double[2] { 1.0, 1.0 };
+
+            double[][] XorIdeal = new double[4][];
+            XorIdeal[0] = new double[1] { 0.0 };
+            XorIdeal[1] = new double[1] { 1.0 };
+            XorIdeal[2] = new double[1] { 1.0 };
+            XorIdeal[3] = new double[1] { 0.0 };
 
 
+            INeuralDataSet hTrainingSet = new BasicNeuralDataSet(XorInput, XorIdeal);
+
+
+            ITrain hTraining = new ResilientPropagation(m_hNetwork, hTrainingSet);
+
+            hTraining.Iteration(5000);
 
             m_hNeuralDisplay = new FormNNDrawer(m_hNetwork);
-
             m_hNeuralDisplay.Show();
         }
 
@@ -88,6 +111,7 @@ namespace Aiv.Research.Visualizer2D
                 }
             }
         }
+
 
         #endregion
 

@@ -78,6 +78,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sample.cs" />
+    <Compile Include="Vector2.cs" />
     <EmbeddedResource Include="FormNNDrawer.resx">
       <DependentUpon>FormNNDrawer.cs</DependentUpon>
     </EmbeddedResource>
