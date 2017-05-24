@@ -166,12 +166,10 @@ namespace Aiv.Research.Visualizer2D
 
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-
+        {            
             if (m_hSaveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                XmlSerializer hSerializer = new XmlSerializer(typeof(List<Sample>));
+                XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
 
                 using (Stream hStream = File.OpenWrite(m_hSaveFileDialog.FileName))
                 {
@@ -188,7 +186,7 @@ namespace Aiv.Research.Visualizer2D
 
                 using (Stream hFs = File.OpenRead(sFileName))
                 {
-                    XmlSerializer hSerializer = new XmlSerializer(typeof(List<Sample>));
+                    XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
                     m_hConfig = hSerializer.Deserialize(hFs) as NetworkCreationConfig;
 
                     m_hNetwork = this.BuildNetwork(m_hConfig);
