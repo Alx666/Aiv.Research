@@ -45,35 +45,46 @@ namespace Aiv.Research.Visualizer2D
             m_hPenGrid      = new Pen(Color.DarkRed, 1f);            
             m_hDrawer       = m_hPenDrawer;
 
-            
+
 
             #region XOR Network
 
-            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
-            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
-            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 1));
-            //m_hNetwork.Structure.FinalizeStructure();
-            //m_hNetwork.Reset();
+            m_hNetwork = new BasicNetwork();
+            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
+            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
+            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
+            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
+            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 1));
+            m_hNetwork.Structure.FinalizeStructure();
+            m_hNetwork.Reset();
 
-            //double[][] XorInput = new double[4][];
-            //XorInput[0] = new double[2] { 0.0, 0.0 };
-            //XorInput[1] = new double[2] { 1.0, 0.0 };
-            //XorInput[2] = new double[2] { 0.0, 1.0 };
-            //XorInput[3] = new double[2] { 1.0, 1.0 };
+            double[][] XorInput = new double[4][];
+            XorInput[0] = new double[2] { 0.0, 0.0 };
+            XorInput[1] = new double[2] { 0.1, 0.0 };
+            XorInput[2] = new double[2] { 0.0, 0.1 };
+            XorInput[3] = new double[2] { 0.1, 0.1 };
 
-            //double[][] XorIdeal = new double[4][];
-            //XorIdeal[0] = new double[1] { 0.0 };
-            //XorIdeal[1] = new double[1] { 1.0 };
-            //XorIdeal[2] = new double[1] { 1.0 };
-            //XorIdeal[3] = new double[1] { 0.0 };
-            //INeuralDataSet hTrainingSet = new BasicNeuralDataSet(XorInput, XorIdeal);
-            //ITrain hTraining = new ResilientPropagation(m_hNetwork, hTrainingSet);
 
-            //hTraining.Iteration(5000);
+            double[][] XorIdeal = new double[4][];
+            XorIdeal[0] = new double[1] { 0.0 };
+            XorIdeal[1] = new double[1] { 1.0 };
+            XorIdeal[2] = new double[1] { 1.0 };
+            XorIdeal[3] = new double[1] { 0.0 };
+            INeuralDataSet hTrainingSet = new BasicNeuralDataSet(XorInput, XorIdeal);
+            ITrain hTraining = new ResilientPropagation(m_hNetwork, hTrainingSet);
+
+            hTraining.Iteration(5000);
+
+            double[] hInput = new double[] { 456.0, 12.0 };
+            double[] hOutput = new double[1];
+            m_hNetwork.Compute(hInput, hOutput);
+
+            m_hNeuralDisplay = new FormNNDrawer(m_hNetwork, 16, 800, 600);
+            m_hNeuralDisplay.Show();
 
             #endregion
 
-     
+
 
 
         }

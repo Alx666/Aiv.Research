@@ -129,7 +129,7 @@ namespace Aiv.Research.Visualizer2D
                 m_hPenCircle    = new Pen(Color.Green, 2);
                 m_hPenRect      = new Pen(Color.Red, 1);
                 m_hPenCenter    = new Pen(Color.Yellow, 1);
-                m_hFont         = new Font("Arial", 8);
+                m_hFont         = new Font("Arial", 16);
             }
 
             public NeuronGfx(Point vFrom, Size vSize, int iLayer)
@@ -149,15 +149,15 @@ namespace Aiv.Research.Visualizer2D
                     hGfx.DrawLine(m_hPenRect, m_vCenter, m_hNeightbours[i].Next.m_vCenter);
 
                     //Draw Synapse Weight
-                    //Vector2 vPos = (Vector2)m_vCenter + (Vector2)m_hNeightbours[i].Next.m_vCenter;
-                    //vPos /= 2;
-                    
-                    //SizeF vSize = hGfx.MeasureString(m_hNeightbours[i].Weight.ToString(), m_hFont);
-                    //Rectangle vDeleteArea = new Rectangle((int)vPos.X, (int)vPos.Y, (int)vSize.Width, (int)vSize.Height);
-                    //hGfx.FillRectangle(Brushes.Black, vDeleteArea);
+                    Vector2 vPos = (Vector2)m_vCenter + (Vector2)m_hNeightbours[i].Next.m_vCenter;
+                    vPos /= 2;
 
-                    //hGfx.DrawString(m_hNeightbours[i].Weight.ToString(), m_hFont, Brushes.Red, (PointF)vPos);
-                    //hGfx.DrawRectangle(m_hPenCenter, vDeleteArea);
+                    SizeF vSize = hGfx.MeasureString(m_hNeightbours[i].Weight.ToString(), m_hFont);
+                    Rectangle vDeleteArea = new Rectangle((int)vPos.X, (int)vPos.Y, (int)vSize.Width, (int)vSize.Height);
+                    hGfx.FillRectangle(Brushes.Black, vDeleteArea);
+
+                    hGfx.DrawString(m_hNeightbours[i].Weight.ToString(), m_hFont, Brushes.Red, (PointF)vPos);
+                    hGfx.DrawRectangle(m_hPenCenter, vDeleteArea);
 
                     //Draw Bias
 
