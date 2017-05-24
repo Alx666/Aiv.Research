@@ -38,12 +38,13 @@ namespace Aiv.Research.Shared
         {
             get
             {
-                //giochetto de reflection e ritona un'istanza nuova del tipo
+                
                 return null;
             }
 
             set
             {
+                value.GetType().
                 //ActivationFunctionTypeId = value.GetType().Id
             }
         }
