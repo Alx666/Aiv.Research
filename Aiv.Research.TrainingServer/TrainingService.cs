@@ -8,7 +8,9 @@ using System.ServiceModel;
 
 namespace Aiv.Research.TrainingServer
 {
-    [ServiceBehavior]
+    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, 
+                     InstanceContextMode = InstanceContextMode.Single, 
+                     AddressFilterMode = AddressFilterMode.Any)]
     class TrainingService : ITrainingService
     {
         public TrainingService()
