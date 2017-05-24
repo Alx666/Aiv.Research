@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Aiv.Research.Shared;
 using System.ServiceModel;
+using System.Collections.Concurrent;
 
 namespace Aiv.Research.TrainingServer
 {
@@ -13,9 +14,10 @@ namespace Aiv.Research.TrainingServer
                      AddressFilterMode = AddressFilterMode.Any)]
     class TrainingService : ITrainingService
     {
+        private Task m_hTask;
         public TrainingService()
         {
-
+            m_hTask = Task.Factory.StartNew(metodo, cancellationToken, TaskCreationOptions.LongRunning);
         }
 
         [ConsoleUIMethod]
@@ -42,16 +44,26 @@ namespace Aiv.Research.TrainingServer
             throw new NotImplementedException();
         }
 
+        BlockingCollection<NetworkCreationConfig> m_hCollection;
         [ConsoleUIMethod]
         public void StartTraining(NetworkCreationConfig hNetwork, int iIterations, string sConfig)
         {
-            throw new NotImplementedException();
+            m_hCollection.Add(hNetwork);
         }
 
         [ConsoleUIMethod]
         public void TerminateTraining(int iConfigId)
         {
             throw new NotImplementedException();
+        }
+
+        private void InputDataManager()
+        {
+            while(cancellation token)
+            {
+                m_hCollection.Take(); //sta sempre fermo qui
+
+            }
         }
     }
 }
