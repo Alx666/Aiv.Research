@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aiv.Research.Visualizer2D
+namespace Aiv.Research.Shared
 {
     [Serializable]
     public class Sample

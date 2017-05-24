@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Encog.Engine.Network.Activation;
 using System.Reflection;
+using Aiv.Research.Shared;
 
 namespace Aiv.Research.Visualizer2D
 {

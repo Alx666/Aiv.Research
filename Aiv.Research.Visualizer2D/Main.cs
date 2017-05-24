@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Encog;
+﻿using Aiv.Research.Shared;
+using Encog.Engine.Network.Activation;
+using Encog.Neural.Data.Basic;
 using Encog.Neural.Networks;
 using Encog.Neural.Networks.Layers;
-using Encog.Neural.NeuralData;
-using Encog.Neural.Data.Basic;
-using Encog.Engine.Network.Activation;
 using Encog.Neural.Networks.Training;
 using Encog.Neural.Networks.Training.Propagation.Resilient;
-using System.Xml.Serialization;
+using Encog.Neural.NeuralData;
+using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
+using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Aiv.Research.Visualizer2D
 {
@@ -49,38 +43,38 @@ namespace Aiv.Research.Visualizer2D
 
             #region XOR Network
 
-            m_hNetwork = new BasicNetwork();
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 1));
-            m_hNetwork.Structure.FinalizeStructure();
-            m_hNetwork.Reset();
+            //m_hNetwork = new BasicNetwork();
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 1));
+            //m_hNetwork.Structure.FinalizeStructure();
+            //m_hNetwork.Reset();
 
-            double[][] XorInput = new double[4][];
-            XorInput[0] = new double[2] { 0.0, 0.0 };
-            XorInput[1] = new double[2] { 0.1, 0.0 };
-            XorInput[2] = new double[2] { 0.0, 0.1 };
-            XorInput[3] = new double[2] { 0.1, 0.1 };
+            //double[][] XorInput = new double[4][];
+            //XorInput[0] = new double[2] { 0.0, 0.0 };
+            //XorInput[1] = new double[2] { 0.1, 0.0 };
+            //XorInput[2] = new double[2] { 0.0, 0.1 };
+            //XorInput[3] = new double[2] { 0.1, 0.1 };
 
 
-            double[][] XorIdeal = new double[4][];
-            XorIdeal[0] = new double[1] { 0.0 };
-            XorIdeal[1] = new double[1] { 1.0 };
-            XorIdeal[2] = new double[1] { 1.0 };
-            XorIdeal[3] = new double[1] { 0.0 };
-            INeuralDataSet hTrainingSet = new BasicNeuralDataSet(XorInput, XorIdeal);
-            ITrain hTraining = new ResilientPropagation(m_hNetwork, hTrainingSet);
+            //double[][] XorIdeal = new double[4][];
+            //XorIdeal[0] = new double[1] { 0.0 };
+            //XorIdeal[1] = new double[1] { 1.0 };
+            //XorIdeal[2] = new double[1] { 1.0 };
+            //XorIdeal[3] = new double[1] { 0.0 };
+            //INeuralDataSet hTrainingSet = new BasicNeuralDataSet(XorInput, XorIdeal);
+            //ITrain hTraining = new ResilientPropagation(m_hNetwork, hTrainingSet);
 
-            hTraining.Iteration(5000);
+            //hTraining.Iteration(5000);
 
-            double[] hInput = new double[] { 456.0, 12.0 };
-            double[] hOutput = new double[1];
-            m_hNetwork.Compute(hInput, hOutput);
+            //double[] hInput = new double[] { 456.0, 12.0 };
+            //double[] hOutput = new double[1];
+            //m_hNetwork.Compute(hInput, hOutput);
 
-            m_hNeuralDisplay = new FormNNDrawer(m_hNetwork, 16, 800, 600);
-            m_hNeuralDisplay.Show();
+            //m_hNeuralDisplay = new FormNNDrawer(m_hNetwork, 16, 800, 600);
+            //m_hNeuralDisplay.Show();
 
             #endregion
 

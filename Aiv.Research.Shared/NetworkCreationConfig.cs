@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Encog.Engine.Network.Activation;
+using System;
 
-namespace Aiv.Research.Visualizer2D
+namespace Aiv.Research.Shared
 {
     [Serializable]
     public class NetworkCreationConfig
