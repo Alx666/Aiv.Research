@@ -34,8 +34,12 @@
             this.m_hMenuStrip = new System.Windows.Forms.MenuStrip();
             this.crateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.feedForwardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_hToolStripTextQuantize = new System.Windows.Forms.ToolStripTextBox();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_hContextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.m_hSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.m_hOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.m_hMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,30 +78,50 @@
             // crateToolStripMenuItem
             // 
             this.crateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.feedForwardToolStripMenuItem});
+            this.feedForwardToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.loadToolStripMenuItem,
+            this.closeToolStripMenuItem});
             this.crateToolStripMenuItem.Name = "crateToolStripMenuItem";
-            this.crateToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.crateToolStripMenuItem.Text = "Options";
+            this.crateToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.crateToolStripMenuItem.Text = "Network";
             // 
             // feedForwardToolStripMenuItem
             // 
-            this.feedForwardToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_hToolStripTextQuantize});
             this.feedForwardToolStripMenuItem.Name = "feedForwardToolStripMenuItem";
-            this.feedForwardToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.feedForwardToolStripMenuItem.Text = "Quantize";
+            this.feedForwardToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.feedForwardToolStripMenuItem.Text = "Create";
+            this.feedForwardToolStripMenuItem.Click += new System.EventHandler(this.feedForwardToolStripMenuItem_Click);
             // 
-            // m_hToolStripTextQuantize
+            // saveToolStripMenuItem
             // 
-            this.m_hToolStripTextQuantize.Name = "m_hToolStripTextQuantize";
-            this.m_hToolStripTextQuantize.Size = new System.Drawing.Size(100, 23);
-            this.m_hToolStripTextQuantize.Text = "10";
-            this.m_hToolStripTextQuantize.TextChanged += new System.EventHandler(this.OnQuantizeTextChanged);
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // m_hContextMenuStrip1
             // 
             this.m_hContextMenuStrip1.Name = "m_hContextMenuStrip1";
             this.m_hContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // m_hSaveFileDialog
+            // 
+            this.m_hSaveFileDialog.Filter = "*.xml|Allfiles";
             // 
             // Main
             // 
@@ -127,7 +151,11 @@
         private System.Windows.Forms.ToolStripMenuItem crateToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip m_hContextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem feedForwardToolStripMenuItem;
-        private System.Windows.Forms.ToolStripTextBox m_hToolStripTextQuantize;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog m_hSaveFileDialog;
+        private System.Windows.Forms.OpenFileDialog m_hOpenFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
     }
 }
 

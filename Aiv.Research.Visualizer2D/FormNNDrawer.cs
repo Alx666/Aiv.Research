@@ -15,21 +15,23 @@ namespace Aiv.Research.Visualizer2D
 {
     public partial class FormNNDrawer : Form
     {        
-        private const int NeuronGfxSize = 60;
+        private int NeuronGfxSize;
 
         private NeuronGfx[][]   m_hNeurons;
         private BasicNetwork    m_hNetwork;
 
-        public FormNNDrawer(BasicNetwork hNetwork)
+        public FormNNDrawer(BasicNetwork hNetwork, int iNeuronSize, int iWidth, int iHeight)
         {
             InitializeComponent();
+            NeuronGfxSize = iNeuronSize;
+
 
             m_hNetwork = hNetwork;
 
 
             Size vPanelSize             = new Size();
-            vPanelSize.Width            = 800;//(hLongest.NeuronCount * (NeuronGfxSize * 2)) + HorizPadding * 2;
-            vPanelSize.Height           = 600;// (hNetwork.Structure.Layers.Count * NeuronGfxSize) + VertPadding * (hNetwork.Structure.Layers.Count + 1);
+            vPanelSize.Width            = iWidth;//(hLongest.NeuronCount * (NeuronGfxSize * 2)) + HorizPadding * 2;
+            vPanelSize.Height           = iHeight;// (hNetwork.Structure.Layers.Count * NeuronGfxSize) + VertPadding * (hNetwork.Structure.Layers.Count + 1);
             m_hPanel.Paint             += OnPanelPaint;
             m_hPanel.Size               = vPanelSize;
             m_hPanel.Parent.Width       = m_hPanel.Width + 40;
@@ -73,27 +75,27 @@ namespace Aiv.Research.Visualizer2D
             }
 
 
-            StringBuilder hSb = new StringBuilder();
-            double[] hInput0 = new double[] { 0.0, 0.0 };
-            double[] hInput1 = new double[] { 1.0, 0.0 };
-            double[] hInput2 = new double[] { 0.0, 1.0 };
-            double[] hInput3 = new double[] { 1.0, 1.0 };
-            double[] hOutput0 = new double[1];
-            double[] hOutput1 = new double[1];
-            double[] hOutput2 = new double[1];
-            double[] hOutput3 = new double[1];
+            //StringBuilder hSb = new StringBuilder();
+            //double[] hInput0 = new double[] { 0.0, 0.0 };
+            //double[] hInput1 = new double[] { 1.0, 0.0 };
+            //double[] hInput2 = new double[] { 0.0, 1.0 };
+            //double[] hInput3 = new double[] { 1.0, 1.0 };
+            //double[] hOutput0 = new double[1];
+            //double[] hOutput1 = new double[1];
+            //double[] hOutput2 = new double[1];
+            //double[] hOutput3 = new double[1];
 
-            m_hNetwork.Compute(hInput0, hOutput0);
-            m_hNetwork.Compute(hInput1, hOutput1);
-            m_hNetwork.Compute(hInput2, hOutput2);
-            m_hNetwork.Compute(hInput3, hOutput3);
+            //m_hNetwork.Compute(hInput0, hOutput0);
+            //m_hNetwork.Compute(hInput1, hOutput1);
+            //m_hNetwork.Compute(hInput2, hOutput2);
+            //m_hNetwork.Compute(hInput3, hOutput3);
 
-            hSb.AppendLine($"{hInput0[0]} xor {hInput0[1]} = {hOutput0[0]}");
-            hSb.AppendLine($"{hInput1[0]} xor {hInput1[1]} = {hOutput1[0]}");
-            hSb.AppendLine($"{hInput2[0]} xor {hInput2[1]} = {hOutput2[0]}");
-            hSb.AppendLine($"{hInput3[0]} xor {hInput3[1]} = {hOutput3[0]}");
+            //hSb.AppendLine($"{hInput0[0]} xor {hInput0[1]} = {hOutput0[0]}");
+            //hSb.AppendLine($"{hInput1[0]} xor {hInput1[1]} = {hOutput1[0]}");
+            //hSb.AppendLine($"{hInput2[0]} xor {hInput2[1]} = {hOutput2[0]}");
+            //hSb.AppendLine($"{hInput3[0]} xor {hInput3[1]} = {hOutput3[0]}");
 
-            File.WriteAllText("output.txt", hSb.ToString());
+            //File.WriteAllText("output.txt", hSb.ToString());
             
 
 
@@ -147,15 +149,15 @@ namespace Aiv.Research.Visualizer2D
                     hGfx.DrawLine(m_hPenRect, m_vCenter, m_hNeightbours[i].Next.m_vCenter);
 
                     //Draw Synapse Weight
-                    Vector2 vPos = (Vector2)m_vCenter + (Vector2)m_hNeightbours[i].Next.m_vCenter;
-                    vPos /= 2;
+                    //Vector2 vPos = (Vector2)m_vCenter + (Vector2)m_hNeightbours[i].Next.m_vCenter;
+                    //vPos /= 2;
                     
-                    SizeF vSize = hGfx.MeasureString(m_hNeightbours[i].Weight.ToString(), m_hFont);
-                    Rectangle vDeleteArea = new Rectangle((int)vPos.X, (int)vPos.Y, (int)vSize.Width, (int)vSize.Height);
-                    hGfx.FillRectangle(Brushes.Black, vDeleteArea);
+                    //SizeF vSize = hGfx.MeasureString(m_hNeightbours[i].Weight.ToString(), m_hFont);
+                    //Rectangle vDeleteArea = new Rectangle((int)vPos.X, (int)vPos.Y, (int)vSize.Width, (int)vSize.Height);
+                    //hGfx.FillRectangle(Brushes.Black, vDeleteArea);
 
-                    hGfx.DrawString(m_hNeightbours[i].Weight.ToString(), m_hFont, Brushes.Red, (PointF)vPos);
-                    hGfx.DrawRectangle(m_hPenCenter, vDeleteArea);
+                    //hGfx.DrawString(m_hNeightbours[i].Weight.ToString(), m_hFont, Brushes.Red, (PointF)vPos);
+                    //hGfx.DrawRectangle(m_hPenCenter, vDeleteArea);
 
                     //Draw Bias
 

@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Create Network.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create Network.Designer.cs">
+      <DependentUpon>Create Network.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNNDrawer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,12 @@
       <DependentUpon>FormNNDrawer.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicsExtensions.cs" />
+    <Compile Include="IdealInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdealInputForm.Designer.cs">
+      <DependentUpon>IdealInputForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="IDrawer.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -74,13 +86,20 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="NetworkCreationConfig.cs" />
     <Compile Include="PenDrawer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sample.cs" />
     <Compile Include="Vector2.cs" />
+    <EmbeddedResource Include="Create Network.resx">
+      <DependentUpon>Create Network.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNNDrawer.resx">
       <DependentUpon>FormNNDrawer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdealInputForm.resx">
+      <DependentUpon>IdealInputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
