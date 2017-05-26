@@ -33,21 +33,8 @@ namespace Aiv.Research.Shared
         [DataMember]
         public int HL2Size { get; set; }
 
-        public int ActivationFunctionTypeId { get; private set; }
-        public IActivationFunction Activation
-        {
-            get
-            {
-                
-                return null;
-            }
-
-            set
-            {
-                value.GetType().
-                //ActivationFunctionTypeId = value.GetType().Id
-            }
-        }
+       
+        public IActivationFunction Activation { get; set; }
 
         [DataMember]
         public bool Visualize { get; set; }

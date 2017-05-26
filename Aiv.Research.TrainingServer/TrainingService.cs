@@ -26,6 +26,8 @@ namespace Aiv.Research.TrainingServer
             m_hTrainingInProgress   = new ConcurrentDictionary<NetworkCreationConfig, int>();
             m_hDispatcherTakeToken  = new CancellationTokenSource();
             m_hDispatcherTask       = Task.Factory.StartNew(DispatcherRoutine, null, TaskCreationOptions.LongRunning);
+
+            AppDomain.CurrentDomain.ProcessExit += (o, i) => m_hDispatcherTakeToken.Cancel();
         }
 
         [ConsoleUIMethod]
