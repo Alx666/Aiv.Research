@@ -14,16 +14,16 @@ namespace Aiv.Research.TrainingServer
     class TrainingService : ITrainingService
     {
         private Task                                                m_hDispatcherTask;
-        private BlockingCollection<NetworkCreationConfig>           m_hNetworksToTrain;
-        private ConcurrentDictionary<NetworkCreationConfig, int>    m_hTrainingInProgress;
+        private BlockingCollection<TrainingSet>           m_hNetworksToTrain;
+        private ConcurrentDictionary<TrainingSet, int>    m_hTrainingInProgress;
         private CancellationTokenSource                             m_hDispatcherTakeToken;
         private int                                                 m_iMaxParallelTrainings;
 
         public TrainingService(int iMaxParallelTrainings)
         {
             m_iMaxParallelTrainings = iMaxParallelTrainings;
-            m_hNetworksToTrain      = new BlockingCollection<NetworkCreationConfig>(iMaxParallelTrainings);
-            m_hTrainingInProgress   = new ConcurrentDictionary<NetworkCreationConfig, int>();
+            m_hNetworksToTrain      = new BlockingCollection<TrainingSet>(iMaxParallelTrainings);
+            m_hTrainingInProgress   = new ConcurrentDictionary<TrainingSet, int>();
             m_hDispatcherTakeToken  = new CancellationTokenSource();
             m_hDispatcherTask       = Task.Factory.StartNew(DispatcherRoutine, null, TaskCreationOptions.LongRunning);
 
@@ -58,13 +58,8 @@ namespace Aiv.Research.TrainingServer
         [ConsoleUIMethod]
         public void StartTraining(NetworkCreationConfig hNetwork, int iIterations, string sConfig)
         {
-            if (m_hNetworksToTrain.Count >= m_iMaxParallelTrainings)
-            {
-                //non possiamo mettere altre cose a lavoro (eccezione, fault channel, o cosa???)
-
-            }
-
-            m_hNetworksToTrain.Add(hNetwork); //salvare anche iterations ed eventuali altri dati
+            TrainingSet hNewTraining = new TrainingSet(hNetwork, iIterations, sConfig);
+            m_hNetworksToTrain.Add(hNewTraining);
         }
 
         [ConsoleUIMethod]
@@ -78,7 +73,7 @@ namespace Aiv.Research.TrainingServer
         {
             while(true)
             {
-                NetworkCreationConfig hJob = m_hNetworksToTrain.Take(m_hDispatcherTakeToken.Token); //dispatcher thread wait here for a job to do
+                TrainingSet hJob = m_hNetworksToTrain.Take(m_hDispatcherTakeToken.Token); //dispatcher thread wait here for a job to do
 
                 Task hTraining = Task.Factory.StartNew(NetworkTrainingRoutine, hJob, TaskCreationOptions.LongRunning);     
             }
@@ -87,15 +82,39 @@ namespace Aiv.Research.TrainingServer
 
         private void NetworkTrainingRoutine(object hParam)
         {
-            NetworkCreationConfig hWorkItem = hParam as NetworkCreationConfig;
+            TrainingSet hWorkItem = hParam as TrainingSet;
 
             m_hTrainingInProgress.TryAdd(hWorkItem, 0);
 
-            //Looooong Training here
+            while (hWorkItem.IsTraining)
+            {
+                
+            }
 
             m_hTrainingInProgress.TryRemove(hWorkItem, out int iValue);
 
             //Send to Classifier
+        }
+    }
+
+    public class TrainingSet
+    {
+        public NetworkCreationConfig NetworkConfing { get; private set; }
+        public int Iterations { get; private set; }
+        public string Config { get; private set; }
+        public bool IsTraining { get; private set; }
+
+        public TrainingSet(NetworkCreationConfig hConfig, int iIterations, string sConfig)
+        {
+            NetworkConfing = hConfig;
+            Iterations = iIterations;
+            Config = sConfig;
+        }
+        public void StartTraing()
+        {
+            IsTraining = true;
+            // Trainign qui
+            IsTraining = false;
         }
     }
 }
