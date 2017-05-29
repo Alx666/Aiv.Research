@@ -4,8 +4,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Encog.Engine.Network.Activation;
 using System;
+using System.Reflection;
 using System.ServiceModel;
 using System.Runtime.Serialization;
+using Encog.Engine.Network.Activation;
 
 namespace Aiv.Research.Shared
 {
@@ -33,8 +35,21 @@ namespace Aiv.Research.Shared
         [DataMember]
         public int HL2Size { get; set; }
 
-       
-        public IActivationFunction Activation { get; set; }
+        [DataMember]
+        public Guid ActivationTypeGuid {
+            get { return Activation.GetType().GUID; }
+        }
+
+        public IActivationFunction Activation
+        {
+            get
+            {
+                return Activator.CreateInstance((from t in Assembly.Load("encog-core-cs").GetTypes()
+                                                 from i in t.GetInterfaces()
+                                                 where i.Name == "IActivationFunction"
+                                                 select i).FirstOrDefault(x => x.GUID == ActivationTypeGuid)) as IActivationFunction;
+            }
+        }
 
         [DataMember]
         public bool Visualize { get; set; }
