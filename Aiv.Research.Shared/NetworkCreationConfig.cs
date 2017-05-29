@@ -36,20 +36,21 @@ namespace Aiv.Research.Shared
         public int HL2Size { get; set; }
 
         [DataMember]
+        private Guid m_hActivationTypeGuid;
+        [DataMember]
         public Guid ActivationTypeGuid {
-            get { return Activation.GetType().GUID; }
-        }
-
-        public IActivationFunction Activation
-        {
-            get
+            get { return m_hActivationTypeGuid; }
+            set
             {
-                return Activator.CreateInstance((from t in Assembly.Load("encog-core-cs").GetTypes()
-                                                 from i in t.GetInterfaces()
-                                                 where i.Name == "IActivationFunction"
-                                                 select i).FirstOrDefault(x => x.GUID == ActivationTypeGuid)) as IActivationFunction;
+                m_hActivationTypeGuid = value;
+                Activation = Activator.CreateInstance((from t in Assembly.Load("encog-core-cs").GetTypes()
+                                                       from i in t.GetInterfaces()
+                                                       where i.Name == "IActivationFunction"
+                                                       select i).FirstOrDefault(x => x.GUID == ActivationTypeGuid)) as IActivationFunction;
             }
         }
+
+        public IActivationFunction Activation { get; private set; }
 
         [DataMember]
         public bool Visualize { get; set; }
