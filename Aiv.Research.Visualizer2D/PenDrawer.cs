@@ -52,7 +52,8 @@ namespace Aiv.Research.Visualizer2D
                 {
                     m_hInputData = new InputInformation[value.InputSize];
 
-                    int iSize = (int)Math.Floor(Math.Sqrt(m_hInputData.Length));
+                    int iSize       = (int)Math.Ceiling(Math.Sqrt(m_hInputData.Length));
+
                     int iSizeX = m_hPanel.Width / iSize;
                     int iSizeY = m_hPanel.Height / iSize;
 
