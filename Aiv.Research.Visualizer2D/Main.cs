@@ -233,17 +233,8 @@ namespace Aiv.Research.Visualizer2D
 
         private void MenuItemBackpropagationTrain(object sender, EventArgs e)
         {
-            m_hNetwork.Reset();
+            //WCF stuff
 
-            var hInput = m_hConfig.Samples.Select(s => s.Values).ToArray();
-            var hIdeal = m_hConfig.Samples.Select(s => s.Ideal).ToArray();
-
-            INeuralDataSet hTrainingSet = new BasicNeuralDataSet(hInput, hIdeal);
-            ITrain hTraining            = new ResilientPropagation(m_hNetwork, hTrainingSet);
-            hTraining.Iteration(5000);
-
-            m_hNeuralDisplay            = new FormNNDrawer(m_hNetwork, m_hConfig.NeuronSize, m_hConfig.Width, m_hConfig.Height);
-            m_hNeuralDisplay.Show();
         }
     }
 }
