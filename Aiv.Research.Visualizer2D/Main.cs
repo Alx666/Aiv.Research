@@ -34,7 +34,7 @@ namespace Aiv.Research.Visualizer2D
 
             m_hPanel.Visible = false;
 
-            m_hPenDrawer    = new PenDrawer(Color.Green, 1f, m_hPanel);            
+            m_hPenDrawer    = new PenDrawer(m_hPanel);            
             m_hPenGrid      = new Pen(Color.DarkRed, 1f);            
 
 
@@ -149,27 +149,7 @@ namespace Aiv.Research.Visualizer2D
 
             return hGrid;
         }
-        private BasicNetwork BuildNetwork(NetworkCreationConfig hConfig)
-        {
-            BasicNetwork hNetwork = new BasicNetwork();
-            hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.InputSize));
 
-            if (m_hConfig.HL0Size > 0)
-                hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.HL0Size));
-
-            if (m_hConfig.HL1Size > 0)
-                hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.HL1Size));
-
-            if (m_hConfig.HL2Size > 0)
-                hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.HL2Size));
-
-            hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.OutputSize));
-
-            hNetwork.Structure.FinalizeStructure();
-            hNetwork.Reset();
-
-            return hNetwork;
-        }
 
 
         private void OnPanelPaint(object sender, PaintEventArgs e)
@@ -200,8 +180,7 @@ namespace Aiv.Research.Visualizer2D
                 {
                     XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
                     m_hConfig = hSerializer.Deserialize(hFs) as NetworkCreationConfig;
-
-                    m_hNetwork = this.BuildNetwork(m_hConfig);
+                    
 
                     m_hPanel.Visible = true;
                     m_hGrid = this.BuildGrid(m_hNetwork.GetLayerNeuronCount(0));
@@ -226,21 +205,19 @@ namespace Aiv.Research.Visualizer2D
 
             if (hCreateDialog.ShowDialog() == DialogResult.OK)
             {
-                m_hConfig = hCreateDialog.Config;
-
-                m_hNetwork = this.BuildNetwork(m_hConfig);
+                m_hPenDrawer.Network = hCreateDialog.Config;
 
                 m_hPanel.Visible            = true;
-                m_hGrid                     = this.BuildGrid(m_hNetwork.GetLayerNeuronCount(0));
+                //m_hGrid                     = this.BuildGrid(m_hNetwork.GetLayerNeuronCount(0));
                 //m_hPenDrawer.QuantizedSpace = m_hGrid;
 
-                if (m_hConfig.Visualize)
-                {
-                    m_hNeuralDisplay        = new FormNNDrawer(m_hNetwork, m_hConfig.NeuronSize, m_hConfig.Width, m_hConfig.Height);
-                    m_hNeuralDisplay.Show();
-                }
+                //if (m_hConfig.Visualize)
+                //{
+                //    m_hNeuralDisplay        = new FormNNDrawer(m_hNetwork, m_hConfig.NeuronSize, m_hConfig.Width, m_hConfig.Height);
+                //    m_hNeuralDisplay.Show();
+                //}
 
-                m_hPanel.Invalidate();
+                //m_hPanel.Invalidate();
             }
         }
 

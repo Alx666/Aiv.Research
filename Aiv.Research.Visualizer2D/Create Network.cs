@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Encog.Engine.Network.Activation;
 using System.Reflection;
@@ -73,7 +68,7 @@ namespace Aiv.Research.Visualizer2D
                     Config.HL2Size = iHl0Size;
 
 
-                Config.Activation = ((ActivationFuncSelect)m_hComboActivation.SelectedItem).Func;
+                //Config.Activation = ((ActivationFuncSelect)m_hComboActivation.SelectedItem).Func;
 
 
                 if (m_hCheckVisualize.Checked)

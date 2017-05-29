@@ -37,11 +37,11 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trainingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.localBackPropagationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_hContextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_hSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.m_hOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.trainingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.localBackPropagationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_hMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.m_hPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.m_hPanel.Location = new System.Drawing.Point(17, 27);
             this.m_hPanel.Name = "m_hPanel";
-            this.m_hPanel.Size = new System.Drawing.Size(800, 600);
+            this.m_hPanel.Size = new System.Drawing.Size(800, 800);
             this.m_hPanel.TabIndex = 0;
             this.m_hPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPanelPaint);
             this.m_hPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnPanelMouseDown);
@@ -63,7 +63,7 @@
             this.m_hSamples.FormattingEnabled = true;
             this.m_hSamples.Location = new System.Drawing.Point(823, 25);
             this.m_hSamples.Name = "m_hSamples";
-            this.m_hSamples.Size = new System.Drawing.Size(235, 602);
+            this.m_hSamples.Size = new System.Drawing.Size(235, 797);
             this.m_hSamples.TabIndex = 1;
             // 
             // m_hMenuStrip
@@ -116,15 +116,6 @@
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.MenuItemClose);
             // 
-            // m_hContextMenuStrip1
-            // 
-            this.m_hContextMenuStrip1.Name = "m_hContextMenuStrip1";
-            this.m_hContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // m_hSaveFileDialog
-            // 
-            this.m_hSaveFileDialog.Filter = "*.xml|Allfiles";
-            // 
             // trainingToolStripMenuItem
             // 
             this.trainingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -140,11 +131,20 @@
             this.localBackPropagationToolStripMenuItem.Text = "Local BackPropagation";
             this.localBackPropagationToolStripMenuItem.Click += new System.EventHandler(this.MenuItemBackpropagationTrain);
             // 
+            // m_hContextMenuStrip1
+            // 
+            this.m_hContextMenuStrip1.Name = "m_hContextMenuStrip1";
+            this.m_hContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // m_hSaveFileDialog
+            // 
+            this.m_hSaveFileDialog.Filter = "*.xml|Allfiles";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 634);
+            this.ClientSize = new System.Drawing.Size(1070, 830);
             this.Controls.Add(this.m_hSamples);
             this.Controls.Add(this.m_hPanel);
             this.Controls.Add(this.m_hMenuStrip);

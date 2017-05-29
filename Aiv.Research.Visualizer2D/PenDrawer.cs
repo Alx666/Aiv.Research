@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 using Encog.Neural.Networks;
+using Aiv.Research.Shared;
 
 namespace Aiv.Research.Visualizer2D
 {
     class PenDrawer : IDisposable
     {
-        private Pen m_hPen;
-        private Graphics m_hGfx;
-        private Panel m_hPanel;
-
+        private Pen                 m_hGreenPen;
+        private Pen                 m_hRedPen;
+        private Graphics            m_hGfx;
+        private Panel               m_hPanel;
         private Point?              m_vStart;
         private InputInformation[]  m_hInputData;
-
-
-
+        private Rectangle[]         m_hRectangles;
 
 
         private Rectangle[,] m_hQuantizedSpace;
@@ -27,16 +26,18 @@ namespace Aiv.Research.Visualizer2D
         private float m_fSpaceX;
         private float m_fSpaceY;
 
-        public PenDrawer(Color eColor, float fWidth, Panel hPanel)
+        public PenDrawer(Panel hPanel)
         {
-            m_hPen = new Pen(eColor, fWidth);
-            m_hGfx = hPanel.CreateGraphics();
-            m_hPanel = hPanel;
+            m_hGreenPen = new Pen(Color.Green,      1f);
+            m_hRedPen   = new Pen(Color.DarkRed,    1f);
+
+            m_hGfx      = hPanel.CreateGraphics();
+            m_hPanel    = hPanel;
         }
 
 
-        private BasicNetwork m_hNetwork;
-        public BasicNetwork Network
+        private NetworkCreationConfig m_hNetwork;
+        public NetworkCreationConfig Network
         {
             get
             {
@@ -49,30 +50,37 @@ namespace Aiv.Research.Visualizer2D
 
                 if (m_hNetwork != null)
                 {
-                    m_hInputData = new InputInformation[value.GetLayerNeuronCount(0)];
+                    m_hInputData = new InputInformation[value.InputSize];
+
+                    int iSize = (int)Math.Floor(Math.Sqrt(m_hInputData.Length));
+                    int iSizeX = m_hPanel.Width / iSize;
+                    int iSizeY = m_hPanel.Height / iSize;
+
+
+                    List<InputInformation> hTmp = new List<InputInformation>();
+
+                    for (int i = 0; i < iSize; i++)
+                    {
+                        for (int k = 0; k < iSize; k++)
+                        {
+                            InputInformation vRectData = new InputInformation();
+                            vRectData.Area = new Rectangle(i * iSizeX, k * iSizeY, iSizeX, iSizeY);
+                            hTmp.Add(vRectData);
+                        }
+                    }
+
+                    m_hInputData    = hTmp.ToArray();
+                    m_hRectangles   = m_hInputData.Select(d => d.Area).ToArray();
+
                     this.m_hPanel.Invalidate();
                 }
             }
         }
 
-
         public void OnPaint(object sender, PaintEventArgs e)
         {
-
+            e.Graphics.DrawRectangles(m_hRedPen, m_hRectangles);
         }
-
-
-        //public Rectangle[,] QuantizedSpace
-        //{
-        //    get { return m_hQuantizedSpace; }
-        //    set
-        //    {
-        //        m_hQuantizedSpace   = value;
-        //        m_hDataSpace        = new double[value.GetLength(0), value.GetLength(1)];
-        //        m_fSpaceX           = m_hPanel.Width / m_hDataSpace.GetLength(1);
-        //        m_fSpaceY           = m_hPanel.Height / m_hDataSpace.GetLength(0);
-        //    }
-        //}
 
 
 
@@ -81,7 +89,6 @@ namespace Aiv.Research.Visualizer2D
             Point vPoint = new Point(iY / (int)m_fSpaceY, iX / (int)m_fSpaceX);
             return vPoint;
         }
-
 
         public void Begin(int iX, int iY)
         {
@@ -129,7 +136,7 @@ namespace Aiv.Research.Visualizer2D
         }
 
 
-        private struct InputInformation
+        private class InputInformation
         {
             public double       Value;
             public Rectangle    Area;
@@ -147,7 +154,7 @@ namespace Aiv.Research.Visualizer2D
             {
                 if (disposing)
                 {
-                    m_hPen.Dispose();
+                    m_hGreenPen.Dispose();
                     m_hGfx.Dispose();
                 }
 
