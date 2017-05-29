@@ -53,8 +53,8 @@ namespace Aiv.Research.Visualizer2D
                 Config.InputSize = int.Parse(m_hTextInputSize.Text);
                 double dSqrt = Math.Sqrt(Config.InputSize);
 
-                if (Math.Ceiling(dSqrt) != dSqrt)
-                    throw new ApplicationException("Input Size must have an integer Sqrt");
+                //if (Math.Ceiling(dSqrt) != dSqrt)
+                //    throw new ApplicationException("Input Size must have an integer Sqrt");
 
                 Config.OutputSize = int.Parse(m_hTextOutputSize.Text);
 
