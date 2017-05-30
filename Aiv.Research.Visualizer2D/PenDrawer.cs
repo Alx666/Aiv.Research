@@ -17,15 +17,12 @@ namespace Aiv.Research.Visualizer2D
         private Graphics            m_hGfx;
         private Panel               m_hPanel;
         private Point?              m_vStart;
+
         private InputInformation[]  m_hInputData;
         private RectangleF[]        m_hRectangles;
         private RectangleF[]        m_hNonFillables;
-
-
-        private Rectangle[,] m_hQuantizedSpace;
-        private double[,] m_hDataSpace;
-        private float m_fSpaceX;
-        private float m_fSpaceY;
+        private float               m_fSizeX;
+        private float               m_fSizeY;
 
         public PenDrawer(Panel hPanel)
         {
@@ -56,18 +53,18 @@ namespace Aiv.Research.Visualizer2D
                     int iColumns = (int)Math.Ceiling(Math.Sqrt(m_hInputData.Length));
                     int iRows    = (int)Math.Ceiling((double)m_hInputData.Length / iColumns);
 
-                    float fSizeX   = (float)m_hPanel.Width  / iColumns;
-                    float fSizeY   = (float)m_hPanel.Height / iRows;
+                    m_fSizeX   = (float)m_hPanel.Width  / iColumns;
+                    m_fSizeY   = (float)m_hPanel.Height / iRows;
 
 
                     List<InputInformation> hTmp = new List<InputInformation>();
 
-                    for (int i = 0; i < iColumns; i++)
+                    for (int i = 0; i < iRows; i++)
                     {
-                        for (int k = 0; k < iRows; k++)
+                        for (int k = 0; k < iColumns; k++)
                         {
                             InputInformation vRectData = new InputInformation();
-                            vRectData.Area = new RectangleF(i * fSizeX, k * fSizeY, fSizeX, fSizeY);
+                            vRectData.Area = new RectangleF(k * m_fSizeX, i * m_fSizeY, m_fSizeX, m_fSizeY);
                             hTmp.Add(vRectData);
                         }
                     }
@@ -82,10 +79,13 @@ namespace Aiv.Research.Visualizer2D
         }
 
         public void OnPaint(object sender, PaintEventArgs e)
-        {
+        {            
             e.Graphics.DrawRectangles(m_hRedPen, m_hRectangles);
 
-            if(m_hNonFillables.Length > 0)
+
+            e.Graphics.FillRectangles(Brushes.Green, m_hInputData.Select(x => x.Area).Skip(5).Take(5).ToArray());
+
+            if (m_hNonFillables.Length > 0)
                 e.Graphics.FillRectangles(Brushes.Red, m_hNonFillables);
         }
 
@@ -93,18 +93,18 @@ namespace Aiv.Research.Visualizer2D
 
         private Point Map(int iX, int iY)
         {
-            Point vPoint = new Point(iY / (int)m_fSpaceY, iX / (int)m_fSpaceX);
+            Point vPoint = new Point(iX / (int)m_fSizeX, iY / (int)m_fSizeY);
             return vPoint;
         }
 
         public void Begin(int iX, int iY)
         {
-            //m_vStart    = new Point(iX, iY);
-            //Point vIndices = this.Map(iX, iY);
+            m_vStart        = new Point(iX, iY);
+            Point vIndices  = this.Map(iX, iY);
 
 
-            //m_hDataSpace[vIndices.X, vIndices.Y] = 1.0f;
-            //m_hGfx.FillRectangle(Brushes.Green, QuantizedSpace[vIndices.X, vIndices.Y]);
+            m_hInputData[vIndices.X * vIndices.Y].Value = 1.0f;            
+            m_hGfx.FillRectangle(Brushes.Green, m_hInputData[vIndices.X * vIndices.Y].Area);
         }
 
         public void Update(int iX, int iY)
