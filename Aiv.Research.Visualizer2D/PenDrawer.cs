@@ -18,7 +18,8 @@ namespace Aiv.Research.Visualizer2D
         private Panel               m_hPanel;
         private Point?              m_vStart;
         private InputInformation[]  m_hInputData;
-        private Rectangle[]         m_hRectangles;
+        private RectangleF[]        m_hRectangles;
+        private RectangleF[]        m_hNonFillables;
 
 
         private Rectangle[,] m_hQuantizedSpace;
@@ -52,26 +53,28 @@ namespace Aiv.Research.Visualizer2D
                 {
                     m_hInputData = new InputInformation[value.InputSize];
 
-                    int iSize       = (int)Math.Ceiling(Math.Sqrt(m_hInputData.Length));
+                    int iColumns = (int)Math.Ceiling(Math.Sqrt(m_hInputData.Length));
+                    int iRows    = (int)Math.Ceiling((double)m_hInputData.Length / iColumns);
 
-                    int iSizeX = m_hPanel.Width / iSize;
-                    int iSizeY = m_hPanel.Height / iSize;
+                    float fSizeX   = (float)m_hPanel.Width  / iColumns;
+                    float fSizeY   = (float)m_hPanel.Height / iRows;
 
 
                     List<InputInformation> hTmp = new List<InputInformation>();
 
-                    for (int i = 0; i < iSize; i++)
+                    for (int i = 0; i < iColumns; i++)
                     {
-                        for (int k = 0; k < iSize; k++)
+                        for (int k = 0; k < iRows; k++)
                         {
                             InputInformation vRectData = new InputInformation();
-                            vRectData.Area = new Rectangle(i * iSizeX, k * iSizeY, iSizeX, iSizeY);
+                            vRectData.Area = new RectangleF(i * fSizeX, k * fSizeY, fSizeX, fSizeY);
                             hTmp.Add(vRectData);
                         }
                     }
 
+                    m_hRectangles   = hTmp.Select(d => d.Area).ToArray();
+                    m_hNonFillables = m_hRectangles.Skip(m_hInputData.Length).ToArray();
                     m_hInputData    = hTmp.ToArray();
-                    m_hRectangles   = m_hInputData.Select(d => d.Area).ToArray();
 
                     this.m_hPanel.Invalidate();
                 }
@@ -81,6 +84,9 @@ namespace Aiv.Research.Visualizer2D
         public void OnPaint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawRectangles(m_hRedPen, m_hRectangles);
+
+            if(m_hNonFillables.Length > 0)
+                e.Graphics.FillRectangles(Brushes.Red, m_hNonFillables);
         }
 
 
@@ -139,8 +145,8 @@ namespace Aiv.Research.Visualizer2D
 
         private class InputInformation
         {
-            public double       Value;
-            public Rectangle    Area;
+            public double        Value;
+            public RectangleF    Area;
         }
 
 
