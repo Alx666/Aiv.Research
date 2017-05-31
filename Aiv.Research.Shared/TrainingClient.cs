@@ -8,6 +8,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using Encog.Engine.Network.Activation;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace Aiv.Research.Shared
 {
@@ -41,23 +42,19 @@ namespace Aiv.Research.Shared
             if (!networkConfigPath.EndsWith(".xml"))
                 throw new Exception($"Input error: { networkConfigPath } is not an xml.");
 
-            FileStream configFileStream = File.OpenRead(networkConfigPath);
-            if (configFileStream == null)
-                throw new Exception($"Path: { networkConfigPath } means nothing to me.");
+            using(FileStream configFileStream = File.OpenRead(networkConfigPath))
+            {
+                if (configFileStream == null)
+                    throw new Exception($"Path: { networkConfigPath } means nothing to me.");
 
-            XmlDictionaryReader xmlReader = XmlDictionaryReader.CreateTextReader(configFileStream, new XmlDictionaryReaderQuotas());
-            if(xmlReader == null)
-                throw new Exception($"File { configFileStream.Name } exists but I could not open an xml reader object.");
+                XmlSerializer serializer = new XmlSerializer(typeof(NetworkCreationConfig));
+                NetworkCreationConfig config = (NetworkCreationConfig)serializer.Deserialize(configFileStream);
+                if (config == null)
+                    throw new Exception($"The deserialization output is not a valid XML.");
 
-            DataContractSerializer serializer = new DataContractSerializer(typeof(NetworkCreationConfig));
-            if (serializer == null)
-                throw new Exception($"I could not create a [DataContractSerializer] for [NetworkCreationConfig] class.");
-
-            NetworkCreationConfig config = (NetworkCreationConfig) serializer.ReadObject(xmlReader);
-            if(config == null)
-                throw new Exception($"The deserialization output is not a valid XML.");
-
-            serviceInstance.StartTraining(config);
+                serviceInstance.StartTraining(config);
+            }
+            
 
         }
     }
