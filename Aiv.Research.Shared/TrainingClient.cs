@@ -42,7 +42,7 @@ namespace Aiv.Research.Shared
             if (!networkConfigPath.EndsWith(".xml"))
                 throw new Exception($"Input error: { networkConfigPath } is not an xml.");
 
-            using(FileStream configFileStream = File.OpenRead(networkConfigPath))
+            using (FileStream configFileStream = File.OpenRead(networkConfigPath))
             {
                 if (configFileStream == null)
                     throw new Exception($"Path: { networkConfigPath } means nothing to me.");
@@ -54,8 +54,6 @@ namespace Aiv.Research.Shared
 
                 serviceInstance.StartTraining(config);
             }
-            
-
         }
     }
 }

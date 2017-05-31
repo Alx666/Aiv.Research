@@ -11,7 +11,6 @@ namespace Aiv.Research.Shared
         static void Main(string[] args)
         {
             TrainingService service = new TrainingService(4);
-
             TrainingClient client = new TrainingClient();
         }
     }
