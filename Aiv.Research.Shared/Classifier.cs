@@ -9,7 +9,7 @@ using System.IO.Compression;
 using System.Xml.Serialization;
 using System.Text.RegularExpressions;
 
-namespace Aiv.Research.TrainingServer
+namespace Aiv.Research.Shared
 {
     public static class Classifier
     {
@@ -117,7 +117,7 @@ namespace Aiv.Research.TrainingServer
             {
                 dest.Create();
             }
-
+            
             ZipFile.CreateFromDirectory(dirInfo.FullName, dest.FullName + counter + "_" + nameFile + ".zip", CompressionLevel.Optimal, false);
 
             TrainingFiles.Add(dest.GetFiles().First());

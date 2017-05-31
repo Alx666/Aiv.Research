@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aiv.Research.TrainingServer
+namespace Aiv.Research.Shared
 {
     [ServiceContract]
     public interface ITrainingService
