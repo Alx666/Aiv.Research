@@ -60,30 +60,30 @@ namespace Aiv.Research.TrainingServer
                            orderby i.Id descending
                            select i).Select(x => x.Id).First() + 1;
             }
-            
 
-            using (StreamWriter writer = new StreamWriter(dirInfo.FullName + counter + "_" + hTrainedNetwork.Name))
+
+            //using (StreamWriter writer = new StreamWriter(dirInfo.FullName + counter + "_" + hTrainedNetwork.Name))
+            //{
+            //    writer.WriteLine(hTrainedNetwork);
+            //    writer.Flush();
+            //    writer.Close();
+            //}
+
+            using (FileStream hFs = File.OpenWrite("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/FolderFS"))
             {
-                writer.WriteLine(hTrainedNetwork);
-                writer.Flush();
-                writer.Close();
+                XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
+                hSerializer.Serialize(hFs, hTrainedNetwork);
+
             }
 
-            //using (FileStream hFs = File.OpenWrite("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/FolderFS"))
-            //{
-            //    XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
-            //    hSerializer.Serialize(hFs, hTrainedNetwork);
+            //Su disco ora c'e' l'xml con la config
 
-            //}
+            using (FileStream hFs = File.OpenWrite("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/FolderFS"))
+            {
+                hFs.Write(hFile, 0, hFile.Length);
+                hFs.Flush();
 
-            ////Su disco ora c'e' l'xml con la config
-
-            //using (FileStream hFs = File.OpenWrite("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/FolderFS"))
-            //{
-            //    hFs.Write(hFile, 0, hFile.Length);
-            //    hFs.Flush();
-
-            //}
+            }
 
 
             //abbiamo i 2 file su disco
@@ -103,7 +103,7 @@ namespace Aiv.Research.TrainingServer
             //TrainingFiles.Add(...)
         }
 
-        public static void Zip(string destinationPath)
+        private static void Zip(string destinationPath)
         {
             string path = dirInfo.FullName;
             if (destinationPath.Contains(path))
@@ -112,10 +112,10 @@ namespace Aiv.Research.TrainingServer
             }
 
             DirectoryInfo dest = new DirectoryInfo(destinationPath);
+
             if (!dest.Exists)
             {
                 dest.Create();
-
             }
 
             ZipFile.CreateFromDirectory(dirInfo.FullName, dest.FullName + counter + "_" + nameFile + ".zip", CompressionLevel.Optimal, false);
