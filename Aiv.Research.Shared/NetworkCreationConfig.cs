@@ -38,13 +38,13 @@ namespace Aiv.Research.Shared
         {
             get
             {
-                
+
                 return null;
             }
 
             set
             {
-                value.GetType().
+                //value.GetType().
                 //ActivationFunctionTypeId = value.GetType().Id
             }
         }
@@ -64,4 +64,6 @@ namespace Aiv.Research.Shared
 
         public override string ToString() => $"[{Id}] {Name}";
     }
+
+   
 }

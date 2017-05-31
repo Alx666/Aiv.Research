@@ -17,7 +17,7 @@ namespace Aiv.Research.TrainingServer
         private Task m_hTask;
         public TrainingService()
         {
-            m_hTask = Task.Factory.StartNew(metodo, cancellationToken, TaskCreationOptions.LongRunning);
+            //m_hTask = Task.Factory.StartNew(metodo, cancellationToken, TaskCreationOptions.LongRunning);
         }
 
         [ConsoleUIMethod]
@@ -59,11 +59,11 @@ namespace Aiv.Research.TrainingServer
 
         private void InputDataManager()
         {
-            while(cancellation token)
-            {
-                m_hCollection.Take(); //sta sempre fermo qui
+            //while(cancellation token)
+            //{
+            //    m_hCollection.Take(); //sta sempre fermo qui
 
-            }
+            //}
         }
     }
 }
