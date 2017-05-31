@@ -18,21 +18,11 @@ namespace Aiv.Research.Shared
 
         }
 
-        public Sample(string sName, double[,] hValues, double[] hIdeal)
+        public Sample(string sName, double[] hValues, double[] hIdeal)
         {
             Name = sName;
-            List<double> hTmp = new List<double>();
-
-            for (int i = 0; i < hValues.GetLength(0); i++)
-            {
-                for (int k = 0; k < hValues.GetLength(1); k++)
-                {
-                    hTmp.Add(hValues[i, k]);
-                }
-            }
-
             Ideal = hIdeal;
-            Values = hTmp.ToArray();
+            Values = hValues;
         }
 
         public override string ToString() => Name;

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Encog.Engine.Network.Activation;
 using System.Reflection;
@@ -51,10 +46,7 @@ namespace Aiv.Research.Visualizer2D
             {
                 Config = new NetworkCreationConfig();
                 Config.InputSize = int.Parse(m_hTextInputSize.Text);
-                double dSqrt = Math.Sqrt(Config.InputSize);
 
-                if (Math.Ceiling(dSqrt) != dSqrt)
-                    throw new ApplicationException("Input Size must have an integer Sqrt");
 
                 Config.OutputSize = int.Parse(m_hTextOutputSize.Text);
 
@@ -67,22 +59,13 @@ namespace Aiv.Research.Visualizer2D
                     Config.HL0Size = iHl0Size;
 
                 if (int.TryParse(m_hTextHL1Size.Text, out iHl1Size))
-                    Config.HL1Size = iHl0Size;
+                    Config.HL1Size = iHl1Size;
 
                 if (int.TryParse(m_hTextHL2Size.Text, out iHl2Size))
-                    Config.HL2Size = iHl0Size;
+                    Config.HL2Size = iHl2Size;
 
-
-                Config.Activation = ((ActivationFuncSelect)m_hComboActivation.SelectedItem).Func;
-
-
-                if (m_hCheckVisualize.Checked)
-                {
-                    Config.Visualize    = m_hCheckVisualize.Checked;
-                    Config.Width        = int.Parse(m_hTextWidth.Text);
-                    Config.Height       = int.Parse(m_hTextHeight.Text);
-                    Config.NeuronSize   = int.Parse(m_hTextNSize.Text);
-                }
+                Config.Activation   = ((ActivationFuncSelect)m_hComboActivation.SelectedItem).Func;
+                Config.Name         = m_hTextName.Text;
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

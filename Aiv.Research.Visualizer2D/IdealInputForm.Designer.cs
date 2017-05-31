@@ -30,6 +30,7 @@
         {
             this.m_hTable = new System.Windows.Forms.TableLayoutPanel();
             this.m_hButtonOk = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // m_hTable
@@ -52,15 +53,27 @@
             this.m_hButtonOk.Name = "m_hButtonOk";
             this.m_hButtonOk.Size = new System.Drawing.Size(75, 37);
             this.m_hButtonOk.TabIndex = 1;
-            this.m_hButtonOk.Text = "Ok";
+            this.m_hButtonOk.Text = "Cancel";
             this.m_hButtonOk.UseVisualStyleBackColor = true;
-            this.m_hButtonOk.Click += new System.EventHandler(this.m_hButtonOk_Click);
+            this.m_hButtonOk.Click += new System.EventHandler(this.m_hButtonDiscard_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.Location = new System.Drawing.Point(513, 47);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 37);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Ok";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.m_hButtonOk_Click);
             // 
             // IdealInputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 84);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.m_hButtonOk);
             this.Controls.Add(this.m_hTable);
             this.MaximizeBox = false;
@@ -75,5 +88,6 @@
 
         private System.Windows.Forms.TableLayoutPanel m_hTable;
         private System.Windows.Forms.Button m_hButtonOk;
+        private System.Windows.Forms.Button button1;
     }
 }

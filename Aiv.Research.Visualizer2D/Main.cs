@@ -12,34 +12,22 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using System.Linq;
+using Aiv.Research.TrainingServer;
 
 namespace Aiv.Research.Visualizer2D
 {
     public partial class Main : Form
-    {
-        private IDrawer m_hDrawer;
-
-        private PenDrawer   m_hPenDrawer;
-        private Pen         m_hPenGrid;
-        
-        private BasicNetwork m_hNetwork;
-        private FormNNDrawer m_hNeuralDisplay;
-        private Rectangle[,] m_hGrid;
-        private NetworkCreationConfig m_hConfig;
-
-
+    {        
+        private PenDrawer       m_hPenDrawer;   
+        private FormNNDrawer    m_hNeuralDisplay;
 
         public Main()
         {
             InitializeComponent();
 
             m_hPanel.Visible = false;
-
-            m_hPenDrawer    = new PenDrawer(Color.Green, 1f, m_hPanel);            
-            m_hPenGrid      = new Pen(Color.DarkRed, 1f);            
-            m_hDrawer       = m_hPenDrawer;
-
-
+            m_hPenDrawer    = new PenDrawer(m_hPanel);        
 
             #region XOR Network
 
@@ -78,54 +66,58 @@ namespace Aiv.Research.Visualizer2D
 
             #endregion
 
-
-
-
         }
 
         #region Panel Event Handlers
-
-        private void OnPanelMouseEnter(object sender, EventArgs e) => m_hDrawer = m_hPenDrawer;
+        
         private void OnPanelMouseLeave(object sender, EventArgs e)
         {
-            m_hDrawer.End();
+            m_hPenDrawer.End();
         }
 
         private void OnPanelMouseDown(object sender, MouseEventArgs e)
         {
-            m_hDrawer.Begin(e.X, e.Y);
+            m_hPenDrawer.Begin(e.X, e.Y);
         }
 
         private void OnPanelMouseMove(object sender, MouseEventArgs e)
         {
-            m_hDrawer.Update(e.X, e.Y);
+            m_hPenDrawer.Update(e.X, e.Y);
         }
 
         private void OnPanelMouseUp(object sender, MouseEventArgs e)
         {
-            m_hDrawer.End();
+            m_hPenDrawer.End();
         }
 
         private void OnFormKeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.C && m_hNeuralDisplay != null)
+            {
+                double[] hInput;
+                m_hPenDrawer.Clear(out hInput);
+                m_hNeuralDisplay.Compute(hInput);
+            }
+
             if (e.KeyCode == Keys.Return && e.Modifiers == Keys.Control && m_hPanel.Visible)
             {
-                double[,] hSamples;
-                using (Bitmap hBmp = m_hDrawer.Clear(out hSamples))
+                double[] hSamples;
+
+                using (Bitmap hBmp = m_hPenDrawer.Clear(out hSamples))
                 {
                     using (Bitmap hDownscaled = hBmp.ResizeImage(320, 240))
                     {
                         string sFilename = $"Sample{m_hSamples.Items.Count}.bmp";
+                        IdealInputForm hIdealInput = new IdealInputForm(m_hPenDrawer.Network.OutputSize);
 
-                        IdealInputForm hIdealInput = new IdealInputForm(m_hNetwork.GetLayerNeuronCount(m_hNetwork.LayerCount - 1));
-                        hIdealInput.ShowDialog();
-                        double[] hIdeal = hIdealInput.Ideal;
-
-                        hDownscaled.Save(sFilename, ImageFormat.Bmp);
-
-                        Sample hSample = new Sample(sFilename, hSamples, hIdeal);
-                        m_hConfig.Samples.Add(hSample);
-                        m_hSamples.Items.Add(hSample);
+                        if (hIdealInput.ShowDialog() == DialogResult.OK)
+                        {                            
+                            double[] hIdeal = hIdealInput.Ideal;
+                            hDownscaled.Save(sFilename, ImageFormat.Bmp);
+                            Sample hSample = new Sample(sFilename, hSamples, hIdeal);
+                            m_hPenDrawer.Network.Samples.Add(hSample);
+                            m_hSamples.Items.Add(hSample);
+                        }
                     }
                 }
 
@@ -136,54 +128,25 @@ namespace Aiv.Research.Visualizer2D
         #endregion
 
 
-        private Rectangle[,] BuildGrid(int iSize)
-        {
-            iSize = (int)Math.Sqrt(iSize);
-
-            Rectangle[,] hGrid = new Rectangle[iSize, iSize];
-
-            int iXSize = m_hPanel.Width / iSize;
-            int iYSize = m_hPanel.Height / iSize;
-
-            for (int i = 0; i < iSize; i++)
-            {
-                for (int k = 0; k < iSize; k++)
-                {
-                    hGrid[i,k] = new Rectangle(i * iXSize, k * iYSize, iXSize, iYSize);
-                }
-            }
-
-            return hGrid;
-        }
-
         private void OnPanelPaint(object sender, PaintEventArgs e)
         {
-            for (int i = 0; i < m_hGrid.GetLength(0); i++)
-            {
-                for (int k = 0; k < m_hGrid.GetLength(1); k++)
-                {
-                    e.Graphics.DrawRectangle(m_hPenGrid, m_hGrid[i, k]);
-                }
-            }
+            m_hPenDrawer.OnPaint(sender, e);
         }
 
-
-
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {            
+        private void MenuItemSave(object sender, EventArgs e)
+        {
             if (m_hSaveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
 
                 using (Stream hStream = File.OpenWrite(m_hSaveFileDialog.FileName))
                 {
-                    hSerializer.Serialize(hStream, m_hConfig);
+                    hSerializer.Serialize(hStream, m_hPenDrawer.Network);
                 }
             }
         }
 
-        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MenuItemLoad(object sender, EventArgs e)
         {
             if (m_hOpenFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -191,39 +154,56 @@ namespace Aiv.Research.Visualizer2D
 
                 using (Stream hFs = File.OpenRead(sFileName))
                 {
-                    XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
-                    m_hConfig = hSerializer.Deserialize(hFs) as NetworkCreationConfig;
+                    XmlSerializer hSerializer   = new XmlSerializer(typeof(NetworkCreationConfig));
+                    m_hPenDrawer.Network        = hSerializer.Deserialize(hFs) as NetworkCreationConfig;
+                    m_hPanel.Visible            = true;
 
-                    m_hNetwork = this.BuildNetwork(m_hConfig);
+                    m_hSamples.Items.Clear();
 
-                    m_hPanel.Visible = true;
-                    m_hGrid = this.BuildGrid(m_hNetwork.GetLayerNeuronCount(0));
-                    m_hPenDrawer.QuantizedSpace = m_hGrid;
-
-                    if (m_hConfig.Visualize)
+                    for (int i = 0; i < m_hPenDrawer.Network.Samples.Count; i++)
                     {
-                        m_hNeuralDisplay = new FormNNDrawer(m_hNetwork, m_hConfig.NeuronSize, m_hConfig.Width, m_hConfig.Height);
-                        m_hNeuralDisplay.Show();
+                        m_hSamples.Items.Add(m_hPenDrawer.Network.Samples[i]);
                     }
-
-                    m_hPanel.Invalidate();
-
                 }
             }
         }
 
-        private BasicNetwork BuildNetwork(NetworkCreationConfig hConfig)
+        private void MenuItemCreate(object sender, EventArgs e)
         {
-            BasicNetwork hNetwork = new BasicNetwork();
+            CreateNetworkForm hCreateDialog = new CreateNetworkForm();
+            m_hSamples.Items.Clear();
+
+            if (hCreateDialog.ShowDialog() == DialogResult.OK)
+            {
+                m_hPenDrawer.Network = hCreateDialog.Config;
+                m_hPanel.Visible     = true;
+            }
+        }
+
+        private void MenuItemClose(object sender, EventArgs e)
+        {
+            m_hSamples.Items.Clear();
+            m_hPanel.Visible = false;
+
+            if(m_hNeuralDisplay != null)
+                m_hNeuralDisplay.Close();
+        }
+
+        private void MenuItemBackpropagationTrain(object sender, EventArgs e)
+        {
+            //WCF stuff
+            NetworkCreationConfig hConfig = m_hPenDrawer.Network;
+            BasicNetwork hNetwork         = new BasicNetwork();
+            
             hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.InputSize));
 
-            if (m_hConfig.HL0Size > 0)
+            if(hConfig.HL0Size > 0)
                 hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.HL0Size));
 
-            if (m_hConfig.HL1Size > 0)
+            if (hConfig.HL1Size > 0)
                 hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.HL1Size));
 
-            if (m_hConfig.HL2Size > 0)
+            if (hConfig.HL2Size > 0)
                 hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.HL2Size));
 
             hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.OutputSize));
@@ -231,42 +211,26 @@ namespace Aiv.Research.Visualizer2D
             hNetwork.Structure.FinalizeStructure();
             hNetwork.Reset();
 
-            return hNetwork;
+            double[][] hInput = hConfig.Samples.Select(s => s.Values).ToArray();
+            double[][] hIdeal = hConfig.Samples.Select(s => s.Ideal).ToArray();
+
+            INeuralDataSet hTrainingSet = new BasicNeuralDataSet(hInput, hIdeal);
+            ITrain hTraining = new ResilientPropagation(hNetwork, hTrainingSet);
+
+            hTraining.Iteration(50000);            
+
+            m_hNeuralDisplay = new FormNNDrawer(hNetwork, 20, 800, 600);
+            m_hNeuralDisplay.Show();
         }
 
-        private void feedForwardToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OnSamplesSelectedIndexChanged(object sender, EventArgs e)
         {
-            CreateNetworkForm hCreateDialog = new CreateNetworkForm();
-            m_hSamples.Items.Clear();
+            Sample hSelected = m_hSamples.SelectedItem as Sample;
 
-            if (hCreateDialog.ShowDialog() == DialogResult.OK)
-            {
-                m_hConfig = hCreateDialog.Config;
-
-                m_hNetwork = this.BuildNetwork(m_hConfig);
-
-                m_hPanel.Visible            = true;
-                m_hGrid                     = this.BuildGrid(m_hNetwork.GetLayerNeuronCount(0));
-                m_hPenDrawer.QuantizedSpace = m_hGrid;
-
-                if (m_hConfig.Visualize)
-                {
-                    m_hNeuralDisplay = new FormNNDrawer(m_hNetwork, m_hConfig.NeuronSize, m_hConfig.Width, m_hConfig.Height);
-                    m_hNeuralDisplay.Show();
-                }
-
-                m_hPanel.Invalidate();
-            }
+            if (hSelected != null)
+                m_hPenDrawer.OnSampleSelected(hSelected);
         }
 
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            m_hSamples.Items.Clear();
-            m_hGrid = null;
-            m_hPanel.Visible = false;
 
-            if(m_hNeuralDisplay != null)
-                m_hNeuralDisplay.Close();
-        }
     }
 }

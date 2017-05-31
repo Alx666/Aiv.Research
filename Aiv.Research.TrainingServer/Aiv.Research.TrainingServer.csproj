@@ -36,6 +36,9 @@
     <StartupObject>Aiv.Research.TrainingServer.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="encog-core-cs">
+      <HintPath>..\packages\encog-dotnet-core.3.3.0\lib\net35\encog-core-cs.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression.FileSystem" />
@@ -48,11 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classifier.cs" />
-    <Compile Include="ITrainingService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrainingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

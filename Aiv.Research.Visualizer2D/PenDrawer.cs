@@ -5,53 +5,111 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
+using Encog.Neural.Networks;
+using Aiv.Research.Shared;
 
 namespace Aiv.Research.Visualizer2D
 {
-    class PenDrawer : IDrawer, IDisposable
+    class PenDrawer : IDisposable
     {
-        private Pen m_hPen;
-        private Graphics m_hGfx;
-        private Panel m_hPanel;
+        private Pen                 m_hGreenPen;
+        private Pen                 m_hRedPen;
+        private Graphics            m_hGfx;
+        private Panel               m_hPanel;
+        private Point?              m_vStart;
 
-        private Point? m_vStart;
-
-        private Rectangle[,] m_hQuantizedSpace;
-        private double[,] m_hDataSpace;
-        private float m_fSpaceX;
-        private float m_fSpaceY;
-
-        public Rectangle[,] QuantizedSpace
+        private InputInformation[]  m_hInputData;
+        private RectangleF[]        m_hRectangles;
+        private RectangleF[]        m_hNonFillables;
+        private float               m_fSizeX;
+        private float               m_fSizeY;
+        private int                 m_iColumns ;
+        private int                 m_iRows;
+        public PenDrawer(Panel hPanel)
         {
-            get { return m_hQuantizedSpace; }
-            set
+            m_hGreenPen = new Pen(Color.Green,      1f);
+            m_hRedPen   = new Pen(Color.DarkRed,    1f);
+
+            m_hGfx      = hPanel.CreateGraphics();
+            m_hPanel    = hPanel;
+        }
+
+
+        private NetworkCreationConfig m_hNetwork;
+        public NetworkCreationConfig Network
+        {
+            get
             {
-                m_hQuantizedSpace = value;
-                m_hDataSpace = new double[value.GetLength(0), value.GetLength(1)];
-                m_fSpaceX = m_hPanel.Width / m_hDataSpace.GetLength(0);
-                m_fSpaceY = m_hPanel.Height / m_hDataSpace.GetLength(1);
+                return m_hNetwork;
+            }
+
+            set
+            {                
+                m_hNetwork = value;
+
+                if (m_hNetwork != null)
+                {
+                    m_hInputData    = new InputInformation[value.InputSize];
+
+                    m_iColumns      = (int)Math.Ceiling(Math.Sqrt(m_hInputData.Length));
+                    m_iRows         = (int)Math.Ceiling((double)m_hInputData.Length / m_iColumns);
+
+                    m_fSizeX        = (float)m_hPanel.Width  / m_iColumns;
+                    m_fSizeY        = (float)m_hPanel.Height / m_iRows;
+
+
+                    List<InputInformation> hTmp = new List<InputInformation>();
+
+                    for (int i = 0; i < m_iRows; i++)
+                    {
+                        for (int k = 0; k < m_iColumns; k++)
+                        {
+                            InputInformation vRectData = new InputInformation();
+                            vRectData.Area = new RectangleF(k * m_fSizeX, i * m_fSizeY, m_fSizeX, m_fSizeY);
+                            hTmp.Add(vRectData);
+                        }
+                    }
+
+                    m_hRectangles   = hTmp.Select(d => d.Area).ToArray();
+                    m_hNonFillables = m_hRectangles.Skip(m_hInputData.Length).ToArray();
+                    m_hInputData    = hTmp.ToArray();
+
+                    this.m_hPanel.Invalidate();
+                }
             }
         }
 
-        public PenDrawer(Color eColor, float fWidth, Panel hPanel)
-        {
-            m_hPen = new Pen(eColor, fWidth);
-            m_hGfx = hPanel.CreateGraphics();
-            m_hPanel = hPanel;
-        }
+        public void OnPaint(object sender, PaintEventArgs e)
+        {            
+            //Draw Grid
+            e.Graphics.DrawRectangles(m_hRedPen, m_hRectangles);
 
-        private Point Map(int iX, int iY)
-        {
-            return new Point(iX / (int)m_fSpaceX, iY / (int)m_fSpaceY);
+
+            //Redraw Selected Cells
+            for (int i = 0; i < m_hInputData.Length; i++)
+            {
+                if (m_hInputData[i].Value > 0.0f)
+                {
+                    e.Graphics.FillRectangle(Brushes.Green, m_hInputData[i].Area);
+                }
+            }
+            
+            //Redraw Non fillable cells
+            if (m_hNonFillables.Length > 0)
+                e.Graphics.FillRectangles(Brushes.Red, m_hNonFillables);
         }
-        
 
         public void Begin(int iX, int iY)
         {
-            m_vStart    = new Point(iX, iY);
-            Point vIndices = this.Map(iX, iY);
-            m_hDataSpace[vIndices.X, vIndices.Y] = 1.0f;
-            m_hGfx.FillRectangle(Brushes.Green, QuantizedSpace[vIndices.X, vIndices.Y]);
+            m_vStart = new Point(iX, iY);
+
+            int iIndex = ((int)(iY / m_fSizeY) * m_iColumns) + (int)(iX / m_fSizeX);
+
+            if (iIndex + 1 < m_hNetwork.InputSize)
+            {
+                m_hInputData[iIndex].Value = 1.0f;            
+                m_hGfx.FillRectangle(Brushes.Green, m_hInputData[iIndex].Area);
+            }            
         }
 
         public void Update(int iX, int iY)
@@ -59,10 +117,15 @@ namespace Aiv.Research.Visualizer2D
             if (m_vStart.HasValue)
             {
                 Point vNext = new Point(iX, iY);
-                //m_hGfx.DrawLine(m_hPen, m_vStart.Value, vNext);
-                Point vIndices = this.Map(iX, iY);
-                m_hDataSpace[vIndices.X, vIndices.Y] = 1.0f;
-                m_hGfx.FillRectangle(Brushes.Green, QuantizedSpace[vIndices.X, vIndices.Y]);
+
+                int iIndex = ((int)(iY / m_fSizeY) * m_iColumns) + (int)(iX / m_fSizeX);
+
+                if (iIndex < m_hNetwork.InputSize)
+                {
+                    m_hInputData[iIndex].Value = 1.0f;
+                    m_hGfx.FillRectangle(Brushes.Green, m_hInputData[iIndex].Area);
+                }
+
                 m_vStart = vNext;
             }
         }
@@ -72,8 +135,8 @@ namespace Aiv.Research.Visualizer2D
             m_vStart = null;            
         }
 
-        public Bitmap Clear(out double[,] hSamples)
-        {            
+        public Bitmap Clear(out double[] hSamples)
+        {
             Bitmap hBmp = new Bitmap(m_hPanel.Width, m_hPanel.Height);
 
             using (Graphics hBmpGfx = Graphics.FromImage(hBmp))
@@ -81,11 +144,34 @@ namespace Aiv.Research.Visualizer2D
                 hBmpGfx.CopyFromScreen(m_hPanel.PointToScreen(Point.Empty), Point.Empty, m_hPanel.Size);
                 m_hGfx.Clear(Color.Black);
 
-                hSamples = this.m_hDataSpace.Clone() as double[,];
+                hSamples = m_hInputData.Take(m_hNetwork.InputSize).Select(d => d.Value).ToArray();
+
+                for (int i = 0; i < m_hInputData.Length; i++)
+                {
+                    m_hInputData[i].Value = 0.0;
+                }
+
+                m_hPanel.Invalidate();
                 return hBmp;
-            }                
+            }            
         }
-        
+
+        public void OnSampleSelected(Sample hSelected)
+        {
+            for (int i = 0; i < m_hNetwork.InputSize; i++)
+            {
+                m_hInputData[i].Value = hSelected.Values[i];
+            }
+
+            m_hPanel.Invalidate();
+        }
+
+
+        private class InputInformation
+        {
+            public double        Value;
+            public RectangleF    Area;
+        }
 
 
 
@@ -99,7 +185,7 @@ namespace Aiv.Research.Visualizer2D
             {
                 if (disposing)
                 {
-                    m_hPen.Dispose();
+                    m_hGreenPen.Dispose();
                     m_hGfx.Dispose();
                 }
 
@@ -112,27 +198,6 @@ namespace Aiv.Research.Visualizer2D
             Dispose(true);
         }
 
-        #endregion        
-    }
-
-    class NullDrawer : IDrawer
-    {
-        public void Begin(int iX, int iY)
-        {            
-        }
-
-        public void End()
-        {            
-        }
-
-        public void Update(int iX, int iY)
-        {            
-        }
-
-        public Bitmap Clear(out double[,] hSamples)
-        {
-            hSamples = null;
-            return null;
-        }
+        #endregion
     }
 }

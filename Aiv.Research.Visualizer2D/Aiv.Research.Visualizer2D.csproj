@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Aiv.Research.Visualizer2D</RootNamespace>
     <AssemblyName>Aiv.Research.Visualizer2D</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -79,7 +80,6 @@
     <Compile Include="IdealInputForm.Designer.cs">
       <DependentUpon>IdealInputForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="IDrawer.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +110,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -129,6 +130,10 @@
     <ProjectReference Include="..\Aiv.Research.Shared\Aiv.Research.Shared.csproj">
       <Project>{3fd3f74c-b5a2-4816-b573-75d1945c8a1a}</Project>
       <Name>Aiv.Research.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aiv.Research.TrainingServer\Aiv.Research.TrainingServer.csproj">
+      <Project>{f4d36029-16f5-4642-8edb-f8839f337bab}</Project>
+      <Name>Aiv.Research.TrainingServer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
