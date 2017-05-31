@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Aiv.Research.Shared
 {
-    class Program
+    public class TrainingClient
     {
-        static void Main(string[] args)
-        {
-            TrainingService service = new TrainingService(4);
-            
-        }
+
     }
 }

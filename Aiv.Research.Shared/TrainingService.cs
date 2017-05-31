@@ -16,16 +16,16 @@ using Encog.Neural.Networks.Training.Propagation.Back;
 using Encog.Neural.Networks.Training.Propagation.Resilient;
 using Encog.Neural.NeuralData;
 
-namespace Aiv.Research.TrainingServer
+namespace Aiv.Research.Shared
 {
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single, AddressFilterMode = AddressFilterMode.Any)]
     public class TrainingService : ITrainingService
     {
-        private Task                                                m_hDispatcherTask;
-        private BlockingCollection<TrainingSet>           m_hNetworksToTrain;
-        private ConcurrentDictionary<TrainingSet, int>    m_hTrainingInProgress;
-        private CancellationTokenSource                             m_hDispatcherTakeToken;
-        private int                                                 m_iMaxParallelTrainings;
+        private Task                                        m_hDispatcherTask;
+        private BlockingCollection<TrainingSet>             m_hNetworksToTrain;
+        private ConcurrentDictionary<TrainingSet, int>      m_hTrainingInProgress;
+        private CancellationTokenSource                     m_hDispatcherTakeToken;
+        private int                                         m_iMaxParallelTrainings;
 
         public TrainingService(int iMaxParallelTrainings)
         {
