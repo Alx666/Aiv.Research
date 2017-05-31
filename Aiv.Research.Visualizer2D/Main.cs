@@ -217,7 +217,7 @@ namespace Aiv.Research.Visualizer2D
             INeuralDataSet hTrainingSet = new BasicNeuralDataSet(hInput, hIdeal);
             ITrain hTraining = new ResilientPropagation(hNetwork, hTrainingSet);
 
-            hTraining.Iteration(15000);
+            hTraining.Iteration(50000);            
 
             m_hNeuralDisplay = new FormNNDrawer(hNetwork, 20, 800, 600);
             m_hNeuralDisplay.Show();
