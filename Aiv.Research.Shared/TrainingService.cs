@@ -61,9 +61,7 @@ namespace Aiv.Research.Shared
         {
             throw new NotImplementedException();
         }
-
-      
-        [ConsoleUIMethod]
+        
         public void StartTraining(NetworkCreationConfig hNetwork)
         {
             TrainingSet hNewTraining = new TrainingSet(hNetwork);

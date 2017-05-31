@@ -18,9 +18,9 @@ namespace Aiv.Research.TrainingServer
             //Classifier.Store(config, b);
             //Classifier.Zip("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/zippofolder/");
             // Classifier.Delete("zippofolder");
-            //TrainingService service = new TrainingService(4);
-
-
+            TrainingService service = new TrainingService(4);
+            ConsoleUI console = new ConsoleUI(service, "TrainingServer");
+            console.RunAndWait();
         }
 
     }
