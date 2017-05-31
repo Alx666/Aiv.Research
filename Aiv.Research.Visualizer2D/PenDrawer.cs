@@ -49,13 +49,13 @@ namespace Aiv.Research.Visualizer2D
 
                 if (m_hNetwork != null)
                 {
-                    m_hInputData = new InputInformation[value.InputSize];
+                    m_hInputData    = new InputInformation[value.InputSize];
 
-                    m_iColumns = (int)Math.Ceiling(Math.Sqrt(m_hInputData.Length));
-                    m_iRows    = (int)Math.Ceiling((double)m_hInputData.Length / m_iColumns);
+                    m_iColumns      = (int)Math.Ceiling(Math.Sqrt(m_hInputData.Length));
+                    m_iRows         = (int)Math.Ceiling((double)m_hInputData.Length / m_iColumns);
 
-                    m_fSizeX   = (float)m_hPanel.Width  / m_iColumns;
-                    m_fSizeY   = (float)m_hPanel.Height / m_iRows;
+                    m_fSizeX        = (float)m_hPanel.Width  / m_iColumns;
+                    m_fSizeY        = (float)m_hPanel.Height / m_iRows;
 
 
                     List<InputInformation> hTmp = new List<InputInformation>();
@@ -99,8 +99,6 @@ namespace Aiv.Research.Visualizer2D
                 e.Graphics.FillRectangles(Brushes.Red, m_hNonFillables);
         }
 
-
-
         public void Begin(int iX, int iY)
         {
             m_vStart = new Point(iX, iY);
@@ -139,18 +137,17 @@ namespace Aiv.Research.Visualizer2D
 
         public Bitmap Clear(out double[] hSamples)
         {
-            //Bitmap hBmp = new Bitmap(m_hPanel.Width, m_hPanel.Height);
+            Bitmap hBmp = new Bitmap(m_hPanel.Width, m_hPanel.Height);
 
-            //using (Graphics hBmpGfx = Graphics.FromImage(hBmp))
-            //{
-            //    hBmpGfx.CopyFromScreen(m_hPanel.PointToScreen(Point.Empty), Point.Empty, m_hPanel.Size);
-            //    m_hGfx.Clear(Color.Black);
+            using (Graphics hBmpGfx = Graphics.FromImage(hBmp))
+            {
+                hBmpGfx.CopyFromScreen(m_hPanel.PointToScreen(Point.Empty), Point.Empty, m_hPanel.Size);
+                m_hGfx.Clear(Color.Black);
 
-            //    //hSamples = this.m_hDataSpace.Clone() as double[,];
-            //    return hBmp;
-            //}
-            hSamples = null;
-            return null;
+                hSamples = m_hInputData.Take(m_hNetwork.InputSize).Select(d => d.Value).ToArray();
+
+                return hBmp;
+            }            
         }
 
 

@@ -72,8 +72,7 @@ namespace Aiv.Research.Visualizer2D
 
 
                 if (m_hCheckVisualize.Checked)
-                {
-                    Config.Visualize    = m_hCheckVisualize.Checked;
+                {                    
                     Config.Width        = int.Parse(m_hTextWidth.Text);
                     Config.Height       = int.Parse(m_hTextHeight.Text);
                     Config.NeuronSize   = int.Parse(m_hTextNSize.Text);

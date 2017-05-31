@@ -53,8 +53,6 @@ namespace Aiv.Research.Shared
         public IActivationFunction Activation { get; private set; }
 
         [DataMember]
-        public bool Visualize { get; set; }
-        [DataMember]
         public int Width { get; set; }
         [DataMember]
         public int Height { get; set; }
