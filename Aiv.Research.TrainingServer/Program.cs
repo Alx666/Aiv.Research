@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO.Compression;
+using Aiv.Research.Shared;
 
 namespace Aiv.Research.TrainingServer
 {

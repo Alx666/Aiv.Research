@@ -7,7 +7,6 @@ using System;
 using System.Reflection;
 using System.ServiceModel;
 using System.Runtime.Serialization;
-using Encog.Engine.Network.Activation;
 using System.Xml.Serialization;
 
 namespace Aiv.Research.Shared
