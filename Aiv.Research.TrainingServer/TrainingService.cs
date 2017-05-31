@@ -19,7 +19,7 @@ using Encog.Neural.NeuralData;
 namespace Aiv.Research.TrainingServer
 {
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single, AddressFilterMode = AddressFilterMode.Any)]
-    class TrainingService : ITrainingService
+    public class TrainingService : ITrainingService
     {
         private Task                                                m_hDispatcherTask;
         private BlockingCollection<TrainingSet>           m_hNetworksToTrain;

@@ -146,8 +146,24 @@ namespace Aiv.Research.Visualizer2D
 
                 hSamples = m_hInputData.Take(m_hNetwork.InputSize).Select(d => d.Value).ToArray();
 
+                for (int i = 0; i < m_hInputData.Length; i++)
+                {
+                    m_hInputData[i].Value = 0.0;
+                }
+
+                m_hPanel.Invalidate();
                 return hBmp;
             }            
+        }
+
+        public void OnSampleSelected(Sample hSelected)
+        {
+            for (int i = 0; i < m_hNetwork.InputSize; i++)
+            {
+                m_hInputData[i].Value = hSelected.Values[i];
+            }
+
+            m_hPanel.Invalidate();
         }
 
 
@@ -182,6 +198,6 @@ namespace Aiv.Research.Visualizer2D
             Dispose(true);
         }
 
-        #endregion        
+        #endregion
     }
 }

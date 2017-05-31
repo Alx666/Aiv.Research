@@ -13,6 +13,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Linq;
+using Aiv.Research.TrainingServer;
 
 namespace Aiv.Research.Visualizer2D
 {
@@ -26,7 +27,7 @@ namespace Aiv.Research.Visualizer2D
             InitializeComponent();
 
             m_hPanel.Visible = false;
-            m_hPenDrawer    = new PenDrawer(m_hPanel);            
+            m_hPenDrawer    = new PenDrawer(m_hPanel);        
 
             #region XOR Network
 
@@ -91,6 +92,13 @@ namespace Aiv.Research.Visualizer2D
 
         private void OnFormKeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.C && m_hNeuralDisplay != null)
+            {
+                double[] hInput;
+                m_hPenDrawer.Clear(out hInput);
+                m_hNeuralDisplay.Compute(hInput);
+            }
+
             if (e.KeyCode == Keys.Return && e.Modifiers == Keys.Control && m_hPanel.Visible)
             {
                 double[] hSamples;
@@ -100,16 +108,16 @@ namespace Aiv.Research.Visualizer2D
                     using (Bitmap hDownscaled = hBmp.ResizeImage(320, 240))
                     {
                         string sFilename = $"Sample{m_hSamples.Items.Count}.bmp";
+                        IdealInputForm hIdealInput = new IdealInputForm(m_hPenDrawer.Network.OutputSize);
 
-                        IdealInputForm hIdealInput = new IdealInputForm(m_hPenDrawer.Network.InputSize);
-                        hIdealInput.ShowDialog();
-                        double[] hIdeal = hIdealInput.Ideal;
-
-                        hDownscaled.Save(sFilename, ImageFormat.Bmp);
-
-                        Sample hSample = new Sample(sFilename, hSamples, hIdeal);
-                        m_hPenDrawer.Network.Samples.Add(hSample);
-                        m_hSamples.Items.Add(hSample);
+                        if (hIdealInput.ShowDialog() == DialogResult.OK)
+                        {                            
+                            double[] hIdeal = hIdealInput.Ideal;
+                            hDownscaled.Save(sFilename, ImageFormat.Bmp);
+                            Sample hSample = new Sample(sFilename, hSamples, hIdeal);
+                            m_hPenDrawer.Network.Samples.Add(hSample);
+                            m_hSamples.Items.Add(hSample);
+                        }
                     }
                 }
 
@@ -120,50 +128,44 @@ namespace Aiv.Research.Visualizer2D
         #endregion
 
 
-
-
-
         private void OnPanelPaint(object sender, PaintEventArgs e)
         {
             m_hPenDrawer.OnPaint(sender, e);
         }
 
         private void MenuItemSave(object sender, EventArgs e)
-        {            
-            //if (m_hSaveFileDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
+        {
+            if (m_hSaveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
 
-            //    using (Stream hStream = File.OpenWrite(m_hSaveFileDialog.FileName))
-            //    {
-            //        hSerializer.Serialize(hStream, m_hPenDrawer.Network);
-            //    }
-            //}
+                using (Stream hStream = File.OpenWrite(m_hSaveFileDialog.FileName))
+                {
+                    hSerializer.Serialize(hStream, m_hPenDrawer.Network);
+                }
+            }
         }
 
         private void MenuItemLoad(object sender, EventArgs e)
         {
-            //if (m_hOpenFileDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    string sFileName = m_hOpenFileDialog.FileName;
+            if (m_hOpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string sFileName = m_hOpenFileDialog.FileName;
 
-            //    using (Stream hFs = File.OpenRead(sFileName))
-            //    {
-            //        XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
-            //        m_hPenDrawer.Network = hSerializer.Deserialize(hFs) as NetworkCreationConfig;
-                    
-            //        m_hPanel.Visible = true;
-                    
-            //        if (m_hPenDrawer.Network.Visualize)
-            //        {
-            //            m_hNeuralDisplay = new FormNNDrawer(m_hNetwork, m_hConfig.NeuronSize, m_hConfig.Width, m_hConfig.Height);
-            //            m_hNeuralDisplay.Show();
-            //        }
+                using (Stream hFs = File.OpenRead(sFileName))
+                {
+                    XmlSerializer hSerializer   = new XmlSerializer(typeof(NetworkCreationConfig));
+                    m_hPenDrawer.Network        = hSerializer.Deserialize(hFs) as NetworkCreationConfig;
+                    m_hPanel.Visible            = true;
 
-            //        m_hPanel.Invalidate();
+                    m_hSamples.Items.Clear();
 
-            //    }
-            //}
+                    for (int i = 0; i < m_hPenDrawer.Network.Samples.Count; i++)
+                    {
+                        m_hSamples.Items.Add(m_hPenDrawer.Network.Samples[i]);
+                    }
+                }
+            }
         }
 
         private void MenuItemCreate(object sender, EventArgs e)
@@ -174,14 +176,7 @@ namespace Aiv.Research.Visualizer2D
             if (hCreateDialog.ShowDialog() == DialogResult.OK)
             {
                 m_hPenDrawer.Network = hCreateDialog.Config;
-
-                m_hPanel.Visible            = true;
-
-                //if (m_hConfig.Visualize)
-                //{
-                //    m_hNeuralDisplay = new FormNNDrawer(m_hNetwork, m_hConfig.NeuronSize, m_hConfig.Width, m_hConfig.Height);
-                //    m_hNeuralDisplay.Show();
-                //}
+                m_hPanel.Visible     = true;
             }
         }
 
@@ -197,7 +192,45 @@ namespace Aiv.Research.Visualizer2D
         private void MenuItemBackpropagationTrain(object sender, EventArgs e)
         {
             //WCF stuff
+            NetworkCreationConfig hConfig = m_hPenDrawer.Network;
+            BasicNetwork hNetwork         = new BasicNetwork();
+            
+            hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.InputSize));
 
+            if(hConfig.HL0Size > 0)
+                hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.HL0Size));
+
+            if (hConfig.HL1Size > 0)
+                hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.HL1Size));
+
+            if (hConfig.HL2Size > 0)
+                hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.HL2Size));
+
+            hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.OutputSize));
+
+            hNetwork.Structure.FinalizeStructure();
+            hNetwork.Reset();
+
+            double[][] hInput = hConfig.Samples.Select(s => s.Values).ToArray();
+            double[][] hIdeal = hConfig.Samples.Select(s => s.Ideal).ToArray();
+
+            INeuralDataSet hTrainingSet = new BasicNeuralDataSet(hInput, hIdeal);
+            ITrain hTraining = new ResilientPropagation(hNetwork, hTrainingSet);
+
+            hTraining.Iteration(15000);
+
+            m_hNeuralDisplay = new FormNNDrawer(hNetwork, 20, 800, 600);
+            m_hNeuralDisplay.Show();
         }
+
+        private void OnSamplesSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Sample hSelected = m_hSamples.SelectedItem as Sample;
+
+            if (hSelected != null)
+                m_hPenDrawer.OnSampleSelected(hSelected);
+        }
+
+
     }
 }

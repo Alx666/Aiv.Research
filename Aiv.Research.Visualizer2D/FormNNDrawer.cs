@@ -188,5 +188,15 @@ namespace Aiv.Research.Visualizer2D
                 public float Weight;
             }
         }
+
+        public void Compute(double[] hInput)
+        {
+            double[] hOutput = new double[m_hNetwork.OutputCount];
+            m_hNetwork.Compute(hInput, hOutput);
+            StringBuilder hSb = new StringBuilder();
+
+            hOutput.ToList().ForEach(x => hSb.Append(x + " "));
+            MessageBox.Show(hSb.ToString());
+        }
     }
 }

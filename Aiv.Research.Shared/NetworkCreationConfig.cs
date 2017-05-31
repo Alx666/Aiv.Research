@@ -8,6 +8,7 @@ using System.Reflection;
 using System.ServiceModel;
 using System.Runtime.Serialization;
 using Encog.Engine.Network.Activation;
+using System.Xml.Serialization;
 
 namespace Aiv.Research.Shared
 {
@@ -21,47 +22,63 @@ namespace Aiv.Research.Shared
         }
 
         [DataMember]
-        public string Name { get; set; }
+        public string Name      { get; set; }
         [DataMember]
-        public int Id { get; set; }
+        public int Id           { get; set; }
         [DataMember]
-        public int InputSize { get; set; }
+        public int InputSize    { get; set; }
         [DataMember]
-        public int OutputSize { get; set; }
+        public int OutputSize   { get; set; }
         [DataMember]
-        public int HL0Size { get; set; }
+        public int HL0Size      { get; set; }
         [DataMember]
-        public int HL1Size { get; set; }
+        public int HL1Size      { get; set; }
         [DataMember]
-        public int HL2Size { get; set; }
+        public int HL2Size      { get; set; }
 
         [DataMember]
-        private Guid m_hActivationTypeGuid;
+        private Guid m_vActivationTypeGuid;
+
         [DataMember]
-        public Guid ActivationTypeGuid {
-            get { return m_hActivationTypeGuid; }
+        public Guid ActivationTypeGuid
+        {
+            get
+            {
+                return m_vActivationTypeGuid;
+            }
             set
             {
-                m_hActivationTypeGuid = value;
-                Activation = Activator.CreateInstance((from t in Assembly.Load("encog-core-cs").GetTypes()
-                                                       from i in t.GetInterfaces()
-                                                       where i.Name == "IActivationFunction"
-                                                       select i).FirstOrDefault(x => x.GUID == ActivationTypeGuid)) as IActivationFunction;
+                m_vActivationTypeGuid   = value;
+                Activation              = Activator.CreateInstance((from t in Assembly.Load("encog-core-cs").GetTypes() where t.GUID == m_vActivationTypeGuid select t).FirstOrDefault()) as IActivationFunction;
             }
         }
 
-        public IActivationFunction Activation { get; private set; }
+
+        [XmlIgnore]
+        private IActivationFunction m_hActivationFunc;
+
+        [XmlIgnore]
+        public IActivationFunction Activation
+        {
+            get
+            {
+                return m_hActivationFunc;
+            }
+
+            set
+            {
+                m_hActivationFunc       = value;
+                m_vActivationTypeGuid   = value.GetType().GUID;
+            }
+        }
 
         [DataMember]
         public int Width { get; set; }
         [DataMember]
         public int Height { get; set; }
-        [DataMember]
-        public int NeuronSize { get; set; }
 
         [DataMember]
         public List<Sample> Samples { get; set; }
-
 
         public override string ToString() => $"[{Id}] {Name}";
     }
