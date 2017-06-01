@@ -43,7 +43,10 @@
             this.m_hSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.m_hOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.m_hStatusBar = new System.Windows.Forms.StatusStrip();
+            this.m_hProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.m_hWorker = new System.ComponentModel.BackgroundWorker();
             this.m_hMenuStrip.SuspendLayout();
+            this.m_hStatusBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_hPanel
@@ -144,11 +147,26 @@
             // 
             // m_hStatusBar
             // 
+            this.m_hStatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_hProgressBar});
             this.m_hStatusBar.Location = new System.Drawing.Point(0, 676);
             this.m_hStatusBar.Name = "m_hStatusBar";
             this.m_hStatusBar.Size = new System.Drawing.Size(910, 22);
             this.m_hStatusBar.TabIndex = 3;
             this.m_hStatusBar.Text = "statusStrip1";
+            // 
+            // m_hProgressBar
+            // 
+            this.m_hProgressBar.Name = "m_hProgressBar";
+            this.m_hProgressBar.Size = new System.Drawing.Size(896, 16);
+            // 
+            // m_hWorker
+            // 
+            this.m_hWorker.WorkerReportsProgress = true;
+            this.m_hWorker.WorkerSupportsCancellation = true;
+            this.m_hWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.OnDoWork);
+            this.m_hWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.OnProgressChanged);
+            this.m_hWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.OnRunWorkerCompleted);
             // 
             // Main
             // 
@@ -159,6 +177,7 @@
             this.Controls.Add(this.m_hSamples);
             this.Controls.Add(this.m_hPanel);
             this.Controls.Add(this.m_hMenuStrip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.MainMenuStrip = this.m_hMenuStrip;
             this.Name = "Main";
@@ -166,6 +185,8 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnFormKeyDown);
             this.m_hMenuStrip.ResumeLayout(false);
             this.m_hMenuStrip.PerformLayout();
+            this.m_hStatusBar.ResumeLayout(false);
+            this.m_hStatusBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +208,8 @@
         private System.Windows.Forms.ToolStripMenuItem trainingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem localBackPropagationToolStripMenuItem;
         private System.Windows.Forms.StatusStrip m_hStatusBar;
+        private System.Windows.Forms.ToolStripProgressBar m_hProgressBar;
+        private System.ComponentModel.BackgroundWorker m_hWorker;
     }
 }
 
