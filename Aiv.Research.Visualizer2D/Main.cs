@@ -20,7 +20,7 @@ namespace Aiv.Research.Visualizer2D
     //I have implemented a hand written digit recognizer using MNIST dataset alone.It gives accuracy comparable to that of the latest OCR software.
     //I have used the full MNIST (60000 + 10000 examples) augmented with additional two versions of MNIST, altered using elastic deformations explained here : Distorting the MNIST Image Data Set
     //I have used a deep convolution neural network with two convolution-subsampling layers and an additional two hidden layer MLP.As this is a deep architecture, the more data you use for training, the better.
-    //The real challenge lies not in building the classifier, but preprocessing of data. You should make sure that the images you prepare for classification should be as close to that of MNIST, because MNIST the most cleanest dataset in terms of Image quality. You should crop your image well, add padding and remove noises, though CNN can deal with noise to some extent.
+    //-The real challenge lies not in building the classifier, but preprocessing of data. You should make sure that the images you prepare for classification should be as close to that of MNIST, because MNIST the most cleanest dataset in terms of Image quality. You should crop your image well, add padding and remove noises, though CNN can deal with noise to some extent.
     public partial class Main : Form
     {        
         private PenDrawer       m_hPenDrawer;   
