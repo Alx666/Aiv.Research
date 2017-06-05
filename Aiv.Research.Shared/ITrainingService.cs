@@ -17,7 +17,7 @@ namespace Aiv.Research.Shared
         //Lavora i dati (mette eventuali oggetti in una lista apposita List<T> lokkata
         //Terminato il task deve classficicare i dati su filesystem (classe statica Classifier che si occupa di salvare i dati su disco)
         [OperationContract]
-        void StartTraining(NetworkCreationConfig hNetwork, int iIterations);
+        void StartTraining(NetworkCreationConfig hNetwork);
 
         //ritorna lo stato attuale della lista contenente i task in corso
         [OperationContract]

@@ -61,12 +61,10 @@ namespace Aiv.Research.Shared
         {
             throw new NotImplementedException();
         }
-
-      
-        [ConsoleUIMethod]
-        public void StartTraining(NetworkCreationConfig hNetwork, int iIterations)
+        
+        public void StartTraining(NetworkCreationConfig hNetwork)
         {
-            TrainingSet hNewTraining = new TrainingSet(hNetwork, iIterations);
+            TrainingSet hNewTraining = new TrainingSet(hNetwork);
             m_hNetworksToTrain.Add(hNewTraining);
         }
 
@@ -112,10 +110,10 @@ namespace Aiv.Research.Shared
         public bool IsTraining { get; private set; }
         private BasicNetwork m_hNetwork;
 
-        public TrainingSet(NetworkCreationConfig hConfig, int iIterations)
+        public TrainingSet(NetworkCreationConfig hConfig)
         {
             NetworkConfing = hConfig;
-            Iterations = iIterations;
+            Iterations = hConfig.iIterations;
         }
         public void StartTraing()
         {

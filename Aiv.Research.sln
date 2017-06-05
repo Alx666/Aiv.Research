@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiv.Research.Visualizer2D", "Aiv.Research.Visualizer2D\Aiv.Research.Visualizer2D.csproj", "{26EC7F49-5949-433D-9DD5-F6C5F4C56DE7}"
 EndProject
