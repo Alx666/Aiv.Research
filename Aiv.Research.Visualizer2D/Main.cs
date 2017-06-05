@@ -273,5 +273,11 @@ namespace Aiv.Research.Visualizer2D
             m_hProgressBar.Value = 0;
             m_hNeuralDisplay.Show();            
         }
+
+        private void OnRemoteBackPropagation(object sender, EventArgs e)
+        {
+            TrainingClient hClient = new TrainingClient();
+            hClient.Connect("127.0.0.1", )
+        }
     }
 }
