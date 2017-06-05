@@ -13,20 +13,17 @@ namespace Aiv.Research.Shared
 {
     public static class Classifier
     {
-        static DirectoryInfo dirInfo; // cartella
+        static DirectoryInfo dirInfo;
         static List<DirectoryInfo> listDirInfo = new List<DirectoryInfo>();
         static FileInfo supportFile;
         static DirectoryInfo deleteDir;
+
         private static List<FileInfo> TrainingFiles = new List<FileInfo>();
         private static List<int> listCount = new List<int>();
         private static int counter=0;
         private static string nameFile = "Research";
 
 
-       
-
-        //Stabilisce dove verranno create le cartelle con i dati
-        //Se non ci sta la crea
         public static void SetDataPath(string sPath)
         {
             dirInfo = new DirectoryInfo(sPath);
@@ -36,16 +33,8 @@ namespace Aiv.Research.Shared
                 dirInfo.Create(); // funziona con un path copletamente sballato?
                 deleteDir = dirInfo;
             }
-
-           
-            //3( se scegliamo un path esistente,( non deve crearlo) caruca tutti i file info nella lista
-            //trainingfiles= directory.getfiles(a.fullname) select( f=> bew fileinfo(f)).tolist();
         }
 
-        //salvare i file in qualche formato
-        //file info= 
-        // qui usate lo gzip streeam per impacchettare tutti i dati
-        // name= nome del file
         public static void Store(NetworkCreationConfig hTrainedNetwork, byte[] hFile)
         {
             FileInfo[] files = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/", "*.zip").Select(f => new FileInfo(f)).ToArray();
@@ -61,46 +50,24 @@ namespace Aiv.Research.Shared
                            select i).Select(x => x.Id).First() + 1;
             }
 
-
-            //using (StreamWriter writer = new StreamWriter(dirInfo.FullName + counter + "_" + hTrainedNetwork.Name))
-            //{
-            //    writer.WriteLine(hTrainedNetwork);
-            //    writer.Flush();
-            //    writer.Close();
-            //}
-
-            using (FileStream hFs = File.OpenWrite("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/FolderFS"))
+            using (FileStream hFs = File.OpenWrite(dirInfo.FullName + counter + "_" + hTrainedNetwork.Name))
             {
                 XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
                 hSerializer.Serialize(hFs, hTrainedNetwork);
 
             }
 
-            //Su disco ora c'e' l'xml con la config
-
-            using (FileStream hFs = File.OpenWrite("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/FolderFS"))
+            using (FileStream hFs = File.OpenWrite(dirInfo.FullName + counter + "_" + hTrainedNetwork.Name))
             {
                 hFs.Write(hFile, 0, hFile.Length);
                 hFs.Flush();
 
             }
 
-
-            //abbiamo i 2 file su disco
-
-            //zip
             Zip("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/FolderFS/");
 
             supportFile.CopyTo("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/" + supportFile.Name);
             listDirInfo.ForEach(x => { x.Delete(true); });
-
-            //TrainingFiles.Select(x => x.CopyTo("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/"));
-
-
-
-
-
-            //TrainingFiles.Add(...)
         }
 
         private static void Zip(string destinationPath)
@@ -111,20 +78,23 @@ namespace Aiv.Research.Shared
                 throw new Exception($"Non posso leggere e scrivere nello stesso percorso contemporaneamente. source = {path}, dest = {destinationPath}");
             }
 
-            DirectoryInfo dest = new DirectoryInfo(destinationPath);
 
-            if (!dest.Exists)
+
+            DirectoryInfo destination = new DirectoryInfo(destinationPath);
+            
+
+            if (!destination.Exists)
             {
-                dest.Create();
+                destination.Create();
             }
             
-            ZipFile.CreateFromDirectory(dirInfo.FullName, dest.FullName + counter + "_" + nameFile + ".zip", CompressionLevel.Optimal, false);
+            ZipFile.CreateFromDirectory(dirInfo.FullName, destination.FullName + counter + "_" + nameFile + ".zip", CompressionLevel.Optimal, false);
 
-            TrainingFiles.Add(dest.GetFiles().First());
-            supportFile = dest.GetFiles().First();
+            TrainingFiles.Add(destination.GetFiles().First());
+            supportFile = destination.GetFiles().First();
 
 
-            listDirInfo.Add(dest);
+            listDirInfo.Add(destination );
             deleteDir.Delete(true);
 
         }
@@ -151,26 +121,49 @@ namespace Aiv.Research.Shared
             }
         }
 
-        private static void DeleteFolder(string folderName)
-        {
-
-        }
-
-
         public static byte[] Get(int iId)
         {
+            FileInfo[] files = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/", "*.zip").Select(f => new FileInfo(f)).ToArray();
 
+            Regex regex = new Regex("[0-9]*");
+            FileInfo match = (from i in files.Select(f => new { Id = int.Parse(regex.Match(f.Name).ToString()), File = f })
+                        where i.Id == iId select i.File).First();
 
-            return null;
+            ZipFile.ExtractToDirectory(match.Name, "C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/");
 
+            //FileInfo fileByte = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/").Select(f => new FileInfo(f)).ToArray().Where(n => n.Name == sName).First();
+            FileInfo fileByte = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/").Select(f => new FileInfo(f)).ToArray().Where(n => n.Name[0].ToString() == iId.ToString()).First();
+
+            byte[] dataByte = new byte[16*1024];
+
+            using(FileStream fs = File.OpenRead(fileByte.Name))
+            {
+                fs.Read(dataByte, 0, (int)fs.Length);
+
+            }
+            return dataByte;
+            // bisogna usare using(fs bla bla ), leggere tutti i byte e ritornare il byte[]
         }
 
         public static byte[] Get(string name)
         {
+            FileInfo[] files = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/", "*.zip").Select(f => new FileInfo(f)).ToArray();
 
+            FileInfo match = (from i in files where i.Name == name + "Research.zip" select i).First();
 
-            return null;
+            ZipFile.ExtractToDirectory(match.Name, "C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/");
 
+            //FileInfo fileByte = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/").Select(f => new FileInfo(f)).ToArray().Where(n => n.Name == sName).First();
+            FileInfo fileByte = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/").Select(f => new FileInfo(f)).ToArray().Where(n => n.Name == name).First();
+
+            byte[] dataByte = new byte[16 * 1024];
+
+            using (FileStream fs = File.OpenRead(fileByte.Name))
+            {
+                fs.Read(dataByte, 0, (int)fs.Length);
+
+            }
+            return dataByte;
         }
     }
 }
