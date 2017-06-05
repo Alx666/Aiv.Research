@@ -27,6 +27,8 @@ namespace Aiv.Research.Shared
         private CancellationTokenSource                     m_hDispatcherTakeToken;
         private int                                         m_iMaxParallelTrainings;
         private int                                         m_iPort;
+        private ServiceHost                                 m_hService;
+
 
         public TrainingService(int iMaxParallelTrainings, int iPort)
         {
@@ -35,6 +37,7 @@ namespace Aiv.Research.Shared
             m_hTrainingInProgress   = new ConcurrentDictionary<TrainingSet, int>();
             m_hDispatcherTakeToken  = new CancellationTokenSource();
             m_hDispatcherTask       = Task.Factory.StartNew(DispatcherRoutine, null, TaskCreationOptions.LongRunning);
+            m_iPort                 = iPort;
 
             AppDomain.CurrentDomain.ProcessExit += (o, i) => m_hDispatcherTakeToken.Cancel();
 
@@ -44,7 +47,17 @@ namespace Aiv.Research.Shared
         [ConsoleUIMethod]
         public void Start(int iPort)
         {
-            
+            m_hService = new ServiceHost(this, new Uri($"net.tcp://127.0.0.1:{iPort}/Training"));
+            NetTcpBinding hBinding = new NetTcpBinding(SecurityMode.None, true);
+            hBinding.ReceiveTimeout = TimeSpan.MaxValue;
+            hBinding.SendTimeout = TimeSpan.MaxValue;
+            m_hService.AddServiceEndpoint(typeof(ITrainingService), hBinding, string.Empty);
+        }
+
+        [ConsoleUIMethod]
+        void Stop()
+        {
+            m_hService.Close();
         }
 
         [ConsoleUIMethod]
