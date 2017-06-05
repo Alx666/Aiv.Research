@@ -10,7 +10,7 @@ namespace Aiv.Research.Shared
     {
         static void Main(string[] args)
         {
-            TrainingService service = new TrainingService(4, 28999, "");
+            TrainingService service = new TrainingService(4, 28999);
             TrainingClient client = new TrainingClient();
         }
     }
