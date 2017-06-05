@@ -114,7 +114,7 @@ namespace Aiv.Research.Shared
             if (hWorkItem == null)
                 return;
             m_hTrainingInProgress.TryAdd(hWorkItem, 0);
-            hWorkItem.StartTraing();
+            hWorkItem.StartTraining();
             while (hWorkItem.IsTraining)
             {
                 //Aspetto che finisca di fa il training       
@@ -127,52 +127,50 @@ namespace Aiv.Research.Shared
 
     public class TrainingSet
     {
-        public NetworkCreationConfig NetworkConfing { get; private set; }
-        public int Iterations { get; private set; }
+        public NetworkCreationConfig NetworkConfig { get; private set; }
         public bool IsTraining { get; private set; }
         private BasicNetwork m_hNetwork;
 
         public TrainingSet(NetworkCreationConfig hConfig)
         {
-            NetworkConfing = hConfig;
-            Iterations = hConfig.iIterations;
+            NetworkConfig = hConfig;
         }
-        public void StartTraing()
+        public void StartTraining()
         {
             IsTraining = true;
             m_hNetwork = new BasicNetwork();
-            if(NetworkConfing.InputSize > 0)
-                m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.InputSize));
-            if(NetworkConfing.HL0Size > 0)
-                m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.HL0Size));
-            if(NetworkConfing.HL1Size > 0)
-                m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.HL1Size));
-            if(NetworkConfing.HL2Size > 0)
-                m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.HL2Size));
-            if(NetworkConfing.OutputSize > 0)
-                m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.OutputSize));
+            if(NetworkConfig.InputSize > 0)
+                m_hNetwork.AddLayer(new BasicLayer(NetworkConfig.Activation, true, NetworkConfig.InputSize));
+            if(NetworkConfig.HL0Size > 0)
+                m_hNetwork.AddLayer(new BasicLayer(NetworkConfig.Activation, true, NetworkConfig.HL0Size));
+            if(NetworkConfig.HL1Size > 0)
+                m_hNetwork.AddLayer(new BasicLayer(NetworkConfig.Activation, true, NetworkConfig.HL1Size));
+            if(NetworkConfig.HL2Size > 0)
+                m_hNetwork.AddLayer(new BasicLayer(NetworkConfig.Activation, true, NetworkConfig.HL2Size));
+            if(NetworkConfig.OutputSize > 0)
+                m_hNetwork.AddLayer(new BasicLayer(NetworkConfig.Activation, true, NetworkConfig.OutputSize));
 
             m_hNetwork.Structure.FinalizeStructure();
             m_hNetwork.Reset();
 
-            double[][] input = new double[NetworkConfing.Samples.Count][];
-            double[][] ideal = new double[NetworkConfing.Samples.Count][];
-            for (int i = 0; i < NetworkConfing.Samples.Count; i++)
+            double[][] input = new double[NetworkConfig.Samples.Count][];
+            double[][] ideal = new double[NetworkConfig.Samples.Count][];
+            for (int i = 0; i < NetworkConfig.Samples.Count; i++)
             {
-                input[i] = NetworkConfing.Samples[i].Values;
-                ideal[i] = NetworkConfing.Samples[i].Ideal;
+                input[i] = NetworkConfig.Samples[i].Values;
+                ideal[i] = NetworkConfig.Samples[i].Ideal;
             }
             
             INeuralDataSet hNeuralDataSet = new BasicNeuralDataSet(input, ideal);
             ITrain hTraining = new ResilientPropagation(m_hNetwork, hNeuralDataSet);
-            hTraining.Iteration(Iterations);
+            hTraining.Iteration(NetworkConfig.iIterations);
 
             IsTraining = false;
         }
 
         public double[] TestNetwork(double[] input)
         {
-            double[] output = new double[NetworkConfing.OutputSize];
+            double[] output = new double[NetworkConfig.OutputSize];
             m_hNetwork.Compute(input, output);
             return output;
         }
