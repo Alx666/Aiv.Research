@@ -21,7 +21,7 @@ namespace Aiv.Research.Shared
 
         private static List<FileInfo> TrainingFiles = new List<FileInfo>();
         private static List<int> listCount = new List<int>();
-        private static int counter=0;
+        private static int counter = 0;
         private static string nameFile = "Research";
 
 
@@ -34,23 +34,24 @@ namespace Aiv.Research.Shared
                 dirInfo.Create(); // funziona con un path copletamente sballato?
                 deleteDir = dirInfo;
             }
-        }
 
-        public static void Store(NetworkCreationConfig hTrainedNetwork, byte[] hFile)
-        {
-            FileInfo[] files = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/", "*.zip").Select(f => new FileInfo(f)).ToArray();
-            if ( files.Count() <= 0)
-            {
-                counter = 0;
-            }
-            else
+            TrainingFiles = dirInfo.GetFiles("*.zip").ToList();
+
+            try
             {
                 Regex regex = new Regex("[0-9]*");
-                counter = (from i in files.Select(f => new { Id = int.Parse(regex.Match(f.Name).ToString()), File = f })
+                counter = (from i in TrainingFiles.Select(f => new { Id = int.Parse(regex.Match(f.Name).ToString()), File = f })
                            orderby i.Id descending
                            select i).Select(x => x.Id).First() + 1;
             }
+            catch (Exception)
+            {
+                counter = 0;
+            }
+        }
 
+        public static void Store(NetworkCreationConfig hTrainedNetwork, byte[] hFile)
+        {                        
             using (FileStream hFs = File.OpenWrite(dirInfo.FullName + counter + "_" + hTrainedNetwork.Name + ".xml"))
             {
                 XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
@@ -62,7 +63,6 @@ namespace Aiv.Research.Shared
             {
                 hFs.Write(hFile, 0, hFile.Length);
                 hFs.Flush();
-
             }
 
             Zip("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/FolderFS/");

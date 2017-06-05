@@ -14,7 +14,7 @@ namespace Aiv.Research.TrainingServer
         {
             byte[] b = new byte[byte.MaxValue];
             Shared.NetworkCreationConfig config = new Shared.NetworkCreationConfig();
-            Classifier.SetDataPath("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/cicciofolder/");
+            Classifier.SetDataPath("NeuralData");
             Classifier.Store(config, b);
             Classifier.Get(0);
             //Classifier.Get("0_");
