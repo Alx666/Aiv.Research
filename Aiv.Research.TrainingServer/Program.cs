@@ -10,6 +10,6 @@ namespace Aiv.Research.TrainingServer
 {
     class Program
     {
-        static void Main(string[] args) => new ConsoleUI(new TrainingService(4), "TrainingServer").RunAndWait();        
+        static void Main(string[] args) => new ConsoleUI(new TrainingService(4, 28900), "TrainingServer").RunAndWait();        
     }
 }
