@@ -26,8 +26,9 @@ namespace Aiv.Research.Shared
         private ConcurrentDictionary<TrainingSet, int>      m_hTrainingInProgress;
         private CancellationTokenSource                     m_hDispatcherTakeToken;
         private int                                         m_iMaxParallelTrainings;
+        private int                                         m_iPort;
 
-        public TrainingService(int iMaxParallelTrainings)
+        public TrainingService(int iMaxParallelTrainings, int iPort)
         {
             m_iMaxParallelTrainings = iMaxParallelTrainings;
             m_hNetworksToTrain      = new BlockingCollection<TrainingSet>(iMaxParallelTrainings);
@@ -36,6 +37,14 @@ namespace Aiv.Research.Shared
             m_hDispatcherTask       = Task.Factory.StartNew(DispatcherRoutine, null, TaskCreationOptions.LongRunning);
 
             AppDomain.CurrentDomain.ProcessExit += (o, i) => m_hDispatcherTakeToken.Cancel();
+
+            this.Start(m_iPort);
+        }
+
+        [ConsoleUIMethod]
+        public void Start(int iPort)
+        {
+            
         }
 
         [ConsoleUIMethod]
