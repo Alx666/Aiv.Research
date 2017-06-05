@@ -14,6 +14,8 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Linq;
 using Aiv.Research.TrainingServer;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace Aiv.Research.Visualizer2D
 {
@@ -23,9 +25,9 @@ namespace Aiv.Research.Visualizer2D
     //-The real challenge lies not in building the classifier, but preprocessing of data. You should make sure that the images you prepare for classification should be as close to that of MNIST, because MNIST the most cleanest dataset in terms of Image quality. You should crop your image well, add padding and remove noises, though CNN can deal with noise to some extent.
     public partial class Main : Form
     {        
-        private PenDrawer       m_hPenDrawer;   
-        private FormNNDrawer    m_hNeuralDisplay;
-        private NetworkVisualizer m_hNetworkVisualizer;
+        private PenDrawer           m_hPenDrawer;   
+        private FormNNDrawer        m_hNeuralDisplay;        
+        private List<Thread>        m_hThreads;         //TODO: rimuovere dalla lista quando il thread di disegno termina
 
         public Main()
         {
@@ -33,18 +35,19 @@ namespace Aiv.Research.Visualizer2D
 
             m_hPanel.Visible = false;
             m_hPenDrawer    = new PenDrawer(m_hPanel);
+            m_hThreads = new List<Thread>();
 
             #region XOR Network
 
-            BasicNetwork m_hNetwork;
-            m_hNetwork = new BasicNetwork();
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
-            m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 1));
-            m_hNetwork.Structure.FinalizeStructure();
-            m_hNetwork.Reset();
+            BasicNetwork Network;
+            Network = new BasicNetwork();
+            Network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
+            Network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
+            Network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
+            Network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
+            Network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 1));
+            Network.Structure.FinalizeStructure();
+            Network.Reset();
 
             double[][] XorInput = new double[4][];
             XorInput[0] = new double[2] { 0.0, 0.0 };
@@ -59,23 +62,22 @@ namespace Aiv.Research.Visualizer2D
             XorIdeal[2] = new double[1] { 1.0 };
             XorIdeal[3] = new double[1] { 0.0 };
             INeuralDataSet hTrainingSet = new BasicNeuralDataSet(XorInput, XorIdeal);
-            ITrain hTraining = new ResilientPropagation(m_hNetwork, hTrainingSet);
+            ITrain hTraining = new ResilientPropagation(Network, hTrainingSet);
 
             hTraining.Iteration(5000);
 
-            m_hNetworkVisualizer = new NetworkVisualizer(800, 600, "Xor", m_hNetwork, 0.0001f);
-            while (m_hNetworkVisualizer.IsOpened)
-            {
-                m_hNetworkVisualizer.Draw();
-                m_hNetworkVisualizer.Update();
-            }
 
-            double[] hInput = new double[] { 456.0, 12.0 };
-            double[] hOutput = new double[1];
-            m_hNetwork.Compute(hInput, hOutput);
+            Thread hNewThread = new Thread(VisualizerThread);
+            m_hThreads.Add(hNewThread);
+            hNewThread.Start(Network);
 
-            m_hNeuralDisplay = new FormNNDrawer(m_hNetwork, 16, 800, 600);
-            m_hNeuralDisplay.Show();
+
+            //double[] hInput = new double[] { 456.0, 12.0 };
+            //double[] hOutput = new double[1];
+            //m_hNetwork.Compute(hInput, hOutput);
+
+            //m_hNeuralDisplay = new FormNNDrawer(m_hNetwork, 16, 800, 600);
+            //m_hNeuralDisplay.Show();
 
             #endregion
 
@@ -277,7 +279,20 @@ namespace Aiv.Research.Visualizer2D
         private void OnRemoteBackPropagation(object sender, EventArgs e)
         {
             TrainingClient hClient = new TrainingClient();
-            //hClient.Connect("127.0.0.1", )
+        }
+
+        private void VisualizerThread(object hParam)
+        {
+            BasicNetwork hNetwork = hParam as BasicNetwork;
+
+            NetworkVisualizer hVisualizer = new NetworkVisualizer(800, 600, "Xor", hNetwork, 0.0001f);
+
+            //Create Main Loop
+            while (hVisualizer.IsOpened)
+            {
+                hVisualizer.Draw();                
+                hVisualizer.Update();
+            }
         }
     }
 }
