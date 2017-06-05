@@ -53,7 +53,7 @@ namespace Aiv.Research.Visualizer2D
             XorInput[3] = new double[2] { 0.1, 0.1 };
 
 
-            double[][] XorIdeal = new double[4][];
+            double[][] XorIdeal = new double[4][]; 
             XorIdeal[0] = new double[1] { 0.0 };
             XorIdeal[1] = new double[1] { 1.0 };
             XorIdeal[2] = new double[1] { 1.0 };
