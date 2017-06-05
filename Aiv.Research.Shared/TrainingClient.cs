@@ -37,6 +37,12 @@ namespace Aiv.Research.Shared
         }
 
         [ConsoleUIMethod]
+        public void StartTraining(NetworkCreationConfig config)
+        {
+            serviceInstance.StartTraining(config);
+        }
+
+        [ConsoleUIMethod]
         public void StartTrainingVerbose(string networkConfigPath)
         {
             if (!networkConfigPath.EndsWith(".xml"))

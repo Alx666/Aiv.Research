@@ -67,9 +67,9 @@ namespace Aiv.Research.Visualizer2D
             hTraining.Iteration(5000);
 
 
-            Thread hNewThread = new Thread(VisualizerThread);
-            m_hThreads.Add(hNewThread);
-            hNewThread.Start(Network);
+            //Thread hNewThread = new Thread(VisualizerThread);
+            //m_hThreads.Add(hNewThread);
+            //hNewThread.Start(Network);
 
 
             //double[] hInput = new double[] { 456.0, 12.0 };
@@ -279,6 +279,8 @@ namespace Aiv.Research.Visualizer2D
         private void OnRemoteBackPropagation(object sender, EventArgs e)
         {
             TrainingClient hClient = new TrainingClient();
+            hClient.Connect("127.0.0.1", 28999);
+            hClient.StartTraining(m_hPenDrawer.Network);
         }
 
         private void VisualizerThread(object hParam)
