@@ -27,7 +27,7 @@ namespace Aiv.Research.Shared
         [ConsoleUIMethod]
         public void Connect(string address, int port)
         {
-            serviceInstance = trainingServiceFactory.CreateChannel(new EndpointAddress($"net.tcp://{address}:{port}/{TRAINING_SERVICE_NAME}"));
+            serviceInstance = trainingServiceFactory.CreateChannel(new EndpointAddress($"net.tcp://{address}:{port}/Training/"));
         }
 
         [ConsoleUIMethod]
@@ -35,8 +35,7 @@ namespace Aiv.Research.Shared
         {
             // ... do something...
         }
-
-        [ConsoleUIMethod]
+  
         public void StartTraining(NetworkCreationConfig config)
         {
             serviceInstance.StartTraining(config);
