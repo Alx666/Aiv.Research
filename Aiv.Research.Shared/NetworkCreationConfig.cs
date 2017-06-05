@@ -7,7 +7,6 @@ using System;
 using System.Reflection;
 using System.ServiceModel;
 using System.Runtime.Serialization;
-using Encog.Engine.Network.Activation;
 using System.Xml.Serialization;
 
 namespace Aiv.Research.Shared
@@ -35,6 +34,8 @@ namespace Aiv.Research.Shared
         public int HL1Size      { get; set; }
         [DataMember]
         public int HL2Size      { get; set; }
+        [DataMember]
+        public int iIterations { get; set; }
 
         [DataMember]
         private Guid m_vActivationTypeGuid;

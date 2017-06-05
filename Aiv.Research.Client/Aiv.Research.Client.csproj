@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3FD3F74C-B5A2-4816-B573-75D1945C8A1A}</ProjectGuid>
+    <ProjectGuid>{6C53ADB8-7314-48FC-BDF5-994DAD60F532}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aiv.Research.Shared</RootNamespace>
-    <AssemblyName>Aiv.Research.Shared</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>Aiv.Research.Client</RootNamespace>
+    <AssemblyName>Aiv.Research.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,15 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="encog-core-cs, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e882172b12155d4, processorArchitecture=MSIL">
+    <Reference Include="encog-core-cs">
       <HintPath>..\packages\encog-dotnet-core.3.3.0\lib\net35\encog-core-cs.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Channels" />
     <Reference Include="System.Xml.Linq" />
@@ -49,18 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classifier.cs" />
-    <Compile Include="ConsoleUI.cs" />
-    <Compile Include="ITrainingService.cs" />
-    <Compile Include="NetworkCreationConfig.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sample.cs" />
     <Compile Include="TrainingClient.cs" />
-    <Compile Include="TrainingService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Aiv.Research.Shared\Aiv.Research.Shared.csproj">
+      <Project>{3fd3f74c-b5a2-4816-b573-75d1945c8a1a}</Project>
+      <Name>Aiv.Research.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aiv.Research.TrainingServer\Aiv.Research.TrainingServer.csproj">
+      <Project>{f4d36029-16f5-4642-8edb-f8839f337bab}</Project>
+      <Name>Aiv.Research.TrainingServer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

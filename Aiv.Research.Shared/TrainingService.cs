@@ -16,16 +16,16 @@ using Encog.Neural.Networks.Training.Propagation.Back;
 using Encog.Neural.Networks.Training.Propagation.Resilient;
 using Encog.Neural.NeuralData;
 
-namespace Aiv.Research.TrainingServer
+namespace Aiv.Research.Shared
 {
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single, AddressFilterMode = AddressFilterMode.Any)]
     public class TrainingService : ITrainingService
     {
-        private Task                                                m_hDispatcherTask;
-        private BlockingCollection<TrainingSet>           m_hNetworksToTrain;
-        private ConcurrentDictionary<TrainingSet, int>    m_hTrainingInProgress;
-        private CancellationTokenSource                             m_hDispatcherTakeToken;
-        private int                                                 m_iMaxParallelTrainings;
+        private Task                                        m_hDispatcherTask;
+        private BlockingCollection<TrainingSet>             m_hNetworksToTrain;
+        private ConcurrentDictionary<TrainingSet, int>      m_hTrainingInProgress;
+        private CancellationTokenSource                     m_hDispatcherTakeToken;
+        private int                                         m_iMaxParallelTrainings;
 
         public TrainingService(int iMaxParallelTrainings)
         {
@@ -61,12 +61,10 @@ namespace Aiv.Research.TrainingServer
         {
             throw new NotImplementedException();
         }
-
-      
-        [ConsoleUIMethod]
-        public void StartTraining(NetworkCreationConfig hNetwork, int iIterations, string sConfig)
+        
+        public void StartTraining(NetworkCreationConfig hNetwork)
         {
-            TrainingSet hNewTraining = new TrainingSet(hNetwork, iIterations, sConfig);
+            TrainingSet hNewTraining = new TrainingSet(hNetwork);
             m_hNetworksToTrain.Add(hNewTraining);
         }
 
@@ -109,15 +107,13 @@ namespace Aiv.Research.TrainingServer
     {
         public NetworkCreationConfig NetworkConfing { get; private set; }
         public int Iterations { get; private set; }
-        public string Config { get; private set; }
         public bool IsTraining { get; private set; }
         private BasicNetwork m_hNetwork;
 
-        public TrainingSet(NetworkCreationConfig hConfig, int iIterations, string sConfig)
+        public TrainingSet(NetworkCreationConfig hConfig)
         {
             NetworkConfing = hConfig;
-            Iterations = iIterations;
-            Config = sConfig;
+            Iterations = hConfig.iIterations;
         }
         public void StartTraing()
         {

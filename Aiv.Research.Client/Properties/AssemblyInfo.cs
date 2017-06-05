@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Le informazioni generali relative a un assembly sono controllate dal seguente 
 // set di attributi. Modificare i valori di questi attributi per modificare le informazioni
 // associate a un assembly.
-[assembly: AssemblyTitle("Aiv.Research.Shared")]
+[assembly: AssemblyTitle("Aiv.Research.Client")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Aiv.Research.Shared")]
+[assembly: AssemblyProduct("Aiv.Research.Client")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Se il progetto viene esposto a COM, il GUID seguente verrà utilizzato come ID della libreria dei tipi
-[assembly: Guid("3fd3f74c-b5a2-4816-b573-75d1945c8a1a")]
+[assembly: Guid("6c53adb8-7314-48fc-bdf5-994dad60f532")]
 
 // Le informazioni sulla versione di un assembly sono costituite dai seguenti quattro valori:
 //

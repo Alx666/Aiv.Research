@@ -64,15 +64,8 @@ namespace Aiv.Research.Visualizer2D
                 if (int.TryParse(m_hTextHL2Size.Text, out iHl2Size))
                     Config.HL2Size = iHl2Size;
 
-
-                Config.Activation = ((ActivationFuncSelect)m_hComboActivation.SelectedItem).Func;
-
-
-                if (m_hCheckVisualize.Checked)
-                {                    
-                    Config.Width        = int.Parse(m_hTextWidth.Text);
-                    Config.Height       = int.Parse(m_hTextHeight.Text);
-                }
+                Config.Activation   = ((ActivationFuncSelect)m_hComboActivation.SelectedItem).Func;
+                Config.Name         = m_hTextName.Text;
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
