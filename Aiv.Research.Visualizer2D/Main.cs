@@ -279,6 +279,7 @@ namespace Aiv.Research.Visualizer2D
         private void OnRemoteBackPropagation(object sender, EventArgs e)
         {
             TrainingClient hClient = new TrainingClient();
+
             hClient.Connect("127.0.0.1", 28999);
             hClient.StartTraining(m_hPenDrawer.Network);
         }

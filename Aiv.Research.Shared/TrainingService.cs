@@ -47,11 +47,12 @@ namespace Aiv.Research.Shared
         [ConsoleUIMethod]
         public void Start(int iPort)
         {
-            m_hService = new ServiceHost(this, new Uri($"net.tcp://0.0.0.0:{iPort}/Training"));
+            m_hService = new ServiceHost(this, new Uri($"net.tcp://0.0.0.0:{iPort}/Training/"));
             NetTcpBinding hBinding = new NetTcpBinding(SecurityMode.None, true);
             hBinding.ReceiveTimeout = TimeSpan.MaxValue;
             hBinding.SendTimeout = TimeSpan.MaxValue;
             m_hService.AddServiceEndpoint(typeof(ITrainingService), hBinding, string.Empty);
+            m_hService.Open();
         }
 
         [ConsoleUIMethod]
@@ -99,11 +100,11 @@ namespace Aiv.Research.Shared
 
         private void DispatcherRoutine(object hParam)
         {
-            while(true)
+            while (true)
             {
                 TrainingSet hJob = m_hNetworksToTrain.Take(m_hDispatcherTakeToken.Token); //dispatcher thread wait here for a job to do
 
-                Task hTraining = Task.Factory.StartNew(NetworkTrainingRoutine, hJob, TaskCreationOptions.LongRunning);     
+                Task hTraining = Task.Factory.StartNew(NetworkTrainingRoutine, hJob, TaskCreationOptions.LongRunning);
             }
         }
 

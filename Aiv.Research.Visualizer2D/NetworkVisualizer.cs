@@ -17,12 +17,17 @@ namespace Aiv.Research.Visualizer2D
         private Mesh3 m_hDebugMesh;
         private float threshold;
 
+        private Cube[,] m_hInputLayer;
+
         public NetworkVisualizer(int width, int height, string title, BasicNetwork basicNetwork, float threshold) : base(width, height, title)
         {
             m_hBasicNetwork = basicNetwork;
             this.threshold = threshold;
             m_hCamera = new PerspectiveCamera(new Vector3(), new Vector3(), 60f, 0.1f, 1000f);
             m_hDebugMesh = new Cube();
+
+            //Allocate input neurons                                    
+
             m_hDebugMesh.Position3 += Vector3.UnitZ * 2f;
         }
 
