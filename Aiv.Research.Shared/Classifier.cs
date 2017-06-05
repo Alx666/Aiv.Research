@@ -51,14 +51,14 @@ namespace Aiv.Research.Shared
                            select i).Select(x => x.Id).First() + 1;
             }
 
-            using (FileStream hFs = File.OpenWrite(dirInfo.FullName + counter + "_" + hTrainedNetwork.Name))
+            using (FileStream hFs = File.OpenWrite(dirInfo.FullName + counter + "_" + hTrainedNetwork.Name + ".xml"))
             {
                 XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
                 hSerializer.Serialize(hFs, hTrainedNetwork);
 
             }
 
-            using (FileStream hFs = File.OpenWrite(dirInfo.FullName + counter + "_" + hTrainedNetwork.Name))
+            using (FileStream hFs = File.OpenWrite(dirInfo.FullName + counter + "_" + hTrainedNetwork.Name + ".dat"))
             {
                 hFs.Write(hFile, 0, hFile.Length);
                 hFs.Flush();
@@ -133,7 +133,7 @@ namespace Aiv.Research.Shared
             ZipFile.ExtractToDirectory(match.Name, "C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/");
 
             //FileInfo fileByte = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/").Select(f => new FileInfo(f)).ToArray().Where(n => n.Name == sName).First();
-            FileInfo fileByte = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/").Select(f => new FileInfo(f)).ToArray().Where(n => n.Name[0].ToString() == iId.ToString()).First();
+            FileInfo fileByte = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/", "*.dat").Select(f => new FileInfo(f)).ToArray().Where(n => n.Name[0].ToString() == iId.ToString()).First();
 
             byte[] dataByte = new byte[16*1024];
 
@@ -155,7 +155,7 @@ namespace Aiv.Research.Shared
             ZipFile.ExtractToDirectory(match.Name, "C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/");
 
             //FileInfo fileByte = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/").Select(f => new FileInfo(f)).ToArray().Where(n => n.Name == sName).First();
-            FileInfo fileByte = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/").Select(f => new FileInfo(f)).ToArray().Where(n => n.Name == name).First();
+            FileInfo fileByte = Directory.GetFiles("C:/Users/marke/Desktop/Aiv.Research/Aiv.Research.TrainingServer/bin/Debug/", "*.dat").Select(f => new FileInfo(f)).ToArray().Where(n => n.Name == name).First();
 
             byte[] dataByte = new byte[16 * 1024];
 
