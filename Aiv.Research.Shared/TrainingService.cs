@@ -47,12 +47,14 @@ namespace Aiv.Research.Shared
         [ConsoleUIMethod]
         public void Start(int iPort)
         {
+            Console.WriteLine("TrainingService::Start()ing at " + DateTime.Now + " on port " + iPort);
             m_hService = new ServiceHost(this, new Uri($"net.tcp://0.0.0.0:{iPort}/Training/"));
             NetTcpBinding hBinding = new NetTcpBinding(SecurityMode.None, true);
             hBinding.ReceiveTimeout = TimeSpan.MaxValue;
             hBinding.SendTimeout = TimeSpan.MaxValue;
             m_hService.AddServiceEndpoint(typeof(ITrainingService), hBinding, string.Empty);
             m_hService.Open();
+            Console.WriteLine("TrainingService::Start()ed!");
         }
 
         [ConsoleUIMethod]
@@ -138,6 +140,8 @@ namespace Aiv.Research.Shared
         }
         public void StartTraining()
         {
+            Console.WriteLine("TrainingService::StartTraining() at " + DateTime.Now + " for " + NetworkConfig.iIterations + " iterations...");
+
             IsTraining = true;
             m_hNetwork = new BasicNetwork();
             if(NetworkConfig.InputSize > 0)
@@ -167,6 +171,8 @@ namespace Aiv.Research.Shared
             hTraining.Iteration(NetworkConfig.iIterations);
 
             IsTraining = false;
+
+            Console.WriteLine("TrainingService::StartTraining() END at " + DateTime.Now);
         }
 
         public double[] TestNetwork(double[] input)
