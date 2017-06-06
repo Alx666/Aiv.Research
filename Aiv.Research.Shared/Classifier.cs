@@ -172,7 +172,7 @@ namespace Aiv.Research.Shared
         public static byte[] Get(string name)
         {
             FileInfo[] files = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.zip").Select(f => new FileInfo(f)).ToArray();
-
+             
             FileInfo match = (from i in files where i.Name == name + "Research.zip" select i).First();
 
             ZipFile.ExtractToDirectory(match.Name, Directory.GetCurrentDirectory());
