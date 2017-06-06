@@ -209,6 +209,15 @@ namespace Aiv.Research.Visualizer2D
 
         private void MenuItemBackpropagationTrain(object sender, EventArgs e)
         {
+            IterationSelector hSelector = new IterationSelector();
+
+            if (hSelector.ShowDialog() == DialogResult.OK)
+            {
+                throw new NotImplementedException();
+            }
+
+
+
             if (m_hWorker.IsBusy)
             {
                 MessageBox.Show("No", "Stocazzo!", MessageBoxButtons.OK, MessageBoxIcon.Error);

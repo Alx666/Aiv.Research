@@ -92,6 +92,12 @@
     <Compile Include="IdealInputForm.Designer.cs">
       <DependentUpon>IdealInputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="IterationSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IterationSelector.Designer.cs">
+      <DependentUpon>IterationSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IdealInputForm.resx">
       <DependentUpon>IdealInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IterationSelector.resx">
+      <DependentUpon>IterationSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
