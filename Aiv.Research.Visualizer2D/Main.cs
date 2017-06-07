@@ -13,6 +13,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Linq;
+using Aiv.Research.TrainingServer;
 
 namespace Aiv.Research.Visualizer2D
 {
@@ -234,7 +235,8 @@ namespace Aiv.Research.Visualizer2D
         private void MenuItemBackpropagationTrain(object sender, EventArgs e)
         {
             //WCF stuff
-
+            TrainingSet hSet = new TrainingSet(m_hConfig, 5000, "");
+            hSet.StartTraing();
         }
     }
 }
