@@ -48,13 +48,13 @@ namespace Aiv.Research.Visualizer2D
 
                 if (m_hNetwork != null)
                 {
-                    m_iColumns      = (int)Math.Ceiling(Math.Sqrt(m_hNetwork.InputSize));
-                    m_iRows         = (int)Math.Ceiling((double)m_hNetwork.InputSize / m_iColumns);
+                    m_iColumns = (int)Math.Ceiling(Math.Sqrt(m_hNetwork.InputSize));
+                    m_iRows = (int)Math.Ceiling((double)m_hNetwork.InputSize / m_iColumns);
 
-                    m_hInputData    = new InputInformation[m_iRows, m_iColumns];
+                    m_hInputData = new InputInformation[m_iRows, m_iColumns];
 
-                    m_fSizeX        = (float)m_hPanel.Width  / m_iColumns;
-                    m_fSizeY        = (float)m_hPanel.Height / m_iRows;
+                    m_fSizeX = (float)m_hPanel.Width / m_iColumns;
+                    m_fSizeY = (float)m_hPanel.Height / m_iRows;
 
                     int iCounter = m_hNetwork.InputSize;
                     List<RectangleF> hTmp = new List<RectangleF>();
@@ -76,6 +76,15 @@ namespace Aiv.Research.Visualizer2D
 
                     m_hRectangles = hTmp.ToArray();
                     this.m_hPanel.Invalidate();
+                }
+                else
+                {
+                    m_iColumns = 0;
+                    m_iRows = 0;
+                    m_hInputData = null;
+                    m_fSizeX = 0f;
+                    m_fSizeY = 0f;
+                    m_hRectangles = null;
                 }
             }
         }
