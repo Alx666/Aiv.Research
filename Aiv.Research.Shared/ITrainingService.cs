@@ -37,6 +37,6 @@ namespace Aiv.Research.Shared
 
         //Cancella da disco il train con id specificato
         [OperationContract]
-        void DeleteTraining(int iConfigId);
+        bool DeleteTraining(int iConfigId);
     }
 }

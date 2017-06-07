@@ -41,9 +41,11 @@ namespace Aiv.Research.Shared
         }
 
         [ConsoleUIMethod]
-        public void DeleteTraining(int iConfigId)
+        public bool DeleteTraining(int iConfigId)
         {
-            throw new NotImplementedException();
+            TerminateTraining(iConfigId);
+            int iRes;
+            return m_hTrainingInProgress.TryRemove(m_hTrainingInProgress.Keys.FirstOrDefault(x => x.NetworkConfing.Id == iConfigId), out iRes);
         }
 
         [ConsoleUIMethod]
@@ -73,8 +75,7 @@ namespace Aiv.Research.Shared
         [ConsoleUIMethod]
         public void TerminateTraining(int iConfigId)
         {
-            throw new NotImplementedException();
-
+            m_hTrainingInProgress.Keys.FirstOrDefault(x => x.NetworkConfing.Id == iConfigId).Token.ThrowIfCancellationRequested();
         }
 
 
@@ -83,10 +84,7 @@ namespace Aiv.Research.Shared
             while(true)
             {
                 TrainingSet hJob = m_hNetworksToTrain.Take(m_hDispatcherTakeToken.Token); //dispatcher thread wait here for a job to do
-                Task hTraining = Task.Factory.StartNew(NetworkTrainingRoutine, hJob, TaskCreationOptions.LongRunning);
-               
-
-
+                Task hTraining = Task.Factory.StartNew(NetworkTrainingRoutine, hJob, hJob.Token);
             }
         }
 
@@ -96,7 +94,7 @@ namespace Aiv.Research.Shared
             TrainingSet hWorkItem = hParam as TrainingSet;
             if (hWorkItem == null)
                 return;
-            m_hTrainingInProgress.TryAdd(hWorkItem, 0);
+            m_hTrainingInProgress.TryAdd(hWorkItem, hWorkItem.NetworkConfing.Id);
             hWorkItem.StartTraing();
             while (hWorkItem.IsTraining)
             {
@@ -115,10 +113,12 @@ namespace Aiv.Research.Shared
         public NetworkCreationConfig NetworkConfing { get; private set; }
         public int Iterations { get; private set; }
         public bool IsTraining { get; private set; }
+        public CancellationToken Token { get; private set; }
         private BasicNetwork m_hNetwork;
 
         public TrainingSet(NetworkCreationConfig hConfig)
         {
+            Token = new CancellationToken();
             NetworkConfing = hConfig;
             Iterations = hConfig.iIterations;
         }
