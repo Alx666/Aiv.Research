@@ -76,10 +76,12 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.m_hButtonOk);
             this.Controls.Add(this.m_hTable);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "IdealInputForm";
             this.Text = "IdealInputForm";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
             this.ResumeLayout(false);
 
         }
