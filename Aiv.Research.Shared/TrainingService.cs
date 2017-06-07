@@ -136,7 +136,7 @@ namespace Aiv.Research.Shared
                 m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.HL2Size));
             if(NetworkConfing.OutputSize > 0)
                 m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.OutputSize));
-
+            
             m_hNetwork.Structure.FinalizeStructure();
             m_hNetwork.Reset();
 
@@ -151,7 +151,7 @@ namespace Aiv.Research.Shared
             INeuralDataSet hNeuralDataSet = new BasicNeuralDataSet(input, ideal);
             ITrain hTraining = new ResilientPropagation(m_hNetwork, hNeuralDataSet);
             hTraining.Iteration(Iterations);
-
+            
             IsTraining = false;
         }
 
