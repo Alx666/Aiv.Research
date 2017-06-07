@@ -51,7 +51,7 @@ namespace Aiv.Research.Shared
         [ConsoleUIMethod]
         public byte[] DownloadTrainingData(int iConfigId)
         {
-            throw new NotImplementedException();
+            return Classifier.Get(iConfigId);
         }
 
         [ConsoleUIMethod]
@@ -68,6 +68,7 @@ namespace Aiv.Research.Shared
         
         public void StartTraining(NetworkCreationConfig hNetwork)
         {
+            hNetwork.Id = Classifier.GetId();
             TrainingSet hNewTraining = new TrainingSet(hNetwork);
             m_hNetworksToTrain.Add(hNewTraining);
         }
