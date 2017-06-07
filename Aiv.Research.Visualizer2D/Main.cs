@@ -109,19 +109,16 @@ namespace Aiv.Research.Visualizer2D
 
                 using (Bitmap hBmp = m_hPenDrawer.Clear(out hSamples))
                 {
-                    using (Bitmap hDownscaled = hBmp.ResizeImage(320, 240))
-                    {
-                        string sFilename = $"Sample{m_hSamples.Items.Count}.bmp";
-                        IdealInputForm hIdealInput = new IdealInputForm(m_hPenDrawer.Network.OutputSize);
+                    string sFilename = $"Sample{m_hSamples.Items.Count}.bmp";
+                    IdealInputForm hIdealInput = new IdealInputForm(m_hPenDrawer.Network.OutputSize);
 
-                        if (hIdealInput.ShowDialog() == DialogResult.OK)
-                        {                            
-                            double[] hIdeal = hIdealInput.Ideal;
-                            hDownscaled.Save(sFilename, ImageFormat.Bmp);
-                            Sample hSample = new Sample(sFilename, hSamples, hIdeal);
-                            m_hPenDrawer.Network.Samples.Add(hSample);
-                            m_hSamples.Items.Add(hSample);
-                        }
+                    if (hIdealInput.ShowDialog() == DialogResult.OK)
+                    {
+                        double[] hIdeal = hIdealInput.Ideal;
+                        hBmp.Save(sFilename, ImageFormat.Bmp);
+                        Sample hSample = new Sample(sFilename, hSamples, hIdeal);
+                        m_hPenDrawer.Network.Samples.Add(hSample);
+                        m_hSamples.Items.Add(hSample);
                     }
                 }
 
