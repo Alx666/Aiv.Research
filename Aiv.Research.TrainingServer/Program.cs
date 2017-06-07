@@ -10,7 +10,7 @@ namespace Aiv.Research.TrainingServer
 {
     class Program
     {
-        static void Main(string[] args) => new ConsoleUI(new TrainingService(4, 28999), "TrainingServer").RunAndWait();
+        static void Main(string[] args) => new ConsoleUI(new TrainingService(4), "TrainingServer").RunAndWait();
          
         //byte[] b = new byte[byte.MaxValue];
         //Shared.NetworkCreationConfig config = new Shared.NetworkCreationConfig();

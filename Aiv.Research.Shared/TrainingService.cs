@@ -23,6 +23,7 @@ namespace Aiv.Research.Shared
     {
         private Task                                        m_hDispatcherTask;
         private BlockingCollection<TrainingSet>             m_hNetworksToTrain;
+        private BlockingCollection<TrainingSet>             m_hCompletedTrainings;
         private ConcurrentDictionary<TrainingSet, int>      m_hTrainingInProgress;
         private CancellationTokenSource                     m_hDispatcherTakeToken;
         private int                                         m_iMaxParallelTrainings;
@@ -31,6 +32,7 @@ namespace Aiv.Research.Shared
         {
             m_iMaxParallelTrainings = iMaxParallelTrainings;
             m_hNetworksToTrain      = new BlockingCollection<TrainingSet>(iMaxParallelTrainings);
+            m_hCompletedTrainings   = new BlockingCollection<TrainingSet>();
             m_hTrainingInProgress   = new ConcurrentDictionary<TrainingSet, int>();
             m_hDispatcherTakeToken  = new CancellationTokenSource();
             m_hDispatcherTask       = Task.Factory.StartNew(DispatcherRoutine, null, TaskCreationOptions.LongRunning);
@@ -51,15 +53,15 @@ namespace Aiv.Research.Shared
         }
 
         [ConsoleUIMethod]
-        public IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted()
+        public IEnumerable<TrainingSet> EnumerateTrainingsCompleted()
         {
-            throw new NotImplementedException();
+            return m_hCompletedTrainings;
         }
 
         [ConsoleUIMethod]
-        public IEnumerable<NetworkCreationConfig> EnumerateTrainingsInProgress()
+        public IEnumerable<TrainingSet> EnumerateTrainingsInProgress()
         {
-            throw new NotImplementedException();
+            return m_hTrainingInProgress.Keys;
         }
         
         public void StartTraining(NetworkCreationConfig hNetwork)
@@ -72,6 +74,7 @@ namespace Aiv.Research.Shared
         public void TerminateTraining(int iConfigId)
         {
             throw new NotImplementedException();
+
         }
 
 
@@ -80,8 +83,10 @@ namespace Aiv.Research.Shared
             while(true)
             {
                 TrainingSet hJob = m_hNetworksToTrain.Take(m_hDispatcherTakeToken.Token); //dispatcher thread wait here for a job to do
+                Task hTraining = Task.Factory.StartNew(NetworkTrainingRoutine, hJob, TaskCreationOptions.LongRunning);
+               
 
-                Task hTraining = Task.Factory.StartNew(NetworkTrainingRoutine, hJob, TaskCreationOptions.LongRunning);     
+
             }
         }
 
@@ -99,6 +104,8 @@ namespace Aiv.Research.Shared
             }
             int iRes;
             m_hTrainingInProgress.TryRemove(hWorkItem, out iRes);
+            m_hCompletedTrainings.Add(hWorkItem);
+            //Classifier.Store();
             //TODO Send to Classifier
         }
     }
