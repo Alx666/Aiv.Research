@@ -14,8 +14,6 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Linq;
 using Aiv.Research.TrainingServer;
-using System.Collections.Generic;
-using System.Threading;
 
 namespace Aiv.Research.Visualizer2D
 {
@@ -25,52 +23,43 @@ namespace Aiv.Research.Visualizer2D
     //-The real challenge lies not in building the classifier, but preprocessing of data. You should make sure that the images you prepare for classification should be as close to that of MNIST, because MNIST the most cleanest dataset in terms of Image quality. You should crop your image well, add padding and remove noises, though CNN can deal with noise to some extent.
     public partial class Main : Form
     {        
-        private PenDrawer           m_hPenDrawer;   
-        private FormNNDrawer        m_hNeuralDisplay;        
-        private List<Thread>        m_hThreads;         //TODO: rimuovere dalla lista quando il thread di disegno termina
+        private SampleEditor       m_hPenDrawer;   
+        private FormNNDrawer    m_hNeuralDisplay;
 
         public Main()
         {
             InitializeComponent();
 
             m_hPanel.Visible = false;
-            m_hPenDrawer    = new PenDrawer(m_hPanel);
-            m_hThreads = new List<Thread>();
+            m_hPenDrawer    = new SampleEditor(m_hPanel);        
 
             #region XOR Network
 
-            BasicNetwork Network;
-            Network = new BasicNetwork();
-            Network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
-            Network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
-            Network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
-            Network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
-            Network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 1));
-            Network.Structure.FinalizeStructure();
-            Network.Reset();
+            //m_hNetwork = new BasicNetwork();
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 2));
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
+            //m_hNetwork.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 1));
+            //m_hNetwork.Structure.FinalizeStructure();
+            //m_hNetwork.Reset();
 
-            double[][] XorInput = new double[4][];
-            XorInput[0] = new double[2] { 0.0, 0.0 };
-            XorInput[1] = new double[2] { 0.1, 0.0 };
-            XorInput[2] = new double[2] { 0.0, 0.1 };
-            XorInput[3] = new double[2] { 0.1, 0.1 };
-
-
-            double[][] XorIdeal = new double[4][]; 
-            XorIdeal[0] = new double[1] { 0.0 };
-            XorIdeal[1] = new double[1] { 1.0 };
-            XorIdeal[2] = new double[1] { 1.0 };
-            XorIdeal[3] = new double[1] { 0.0 };
-            INeuralDataSet hTrainingSet = new BasicNeuralDataSet(XorInput, XorIdeal);
-            ITrain hTraining = new ResilientPropagation(Network, hTrainingSet);
-
-            hTraining.Iteration(5000);
+            //double[][] XorInput = new double[4][];
+            //XorInput[0] = new double[2] { 0.0, 0.0 };
+            //XorInput[1] = new double[2] { 0.1, 0.0 };
+            //XorInput[2] = new double[2] { 0.0, 0.1 };
+            //XorInput[3] = new double[2] { 0.1, 0.1 };
 
 
-            Thread hNewThread = new Thread(VisualizerThread);
-            m_hThreads.Add(hNewThread);
-            hNewThread.Start(Network);
+            //double[][] XorIdeal = new double[4][];
+            //XorIdeal[0] = new double[1] { 0.0 };
+            //XorIdeal[1] = new double[1] { 1.0 };
+            //XorIdeal[2] = new double[1] { 1.0 };
+            //XorIdeal[3] = new double[1] { 0.0 };
+            //INeuralDataSet hTrainingSet = new BasicNeuralDataSet(XorInput, XorIdeal);
+            //ITrain hTraining = new ResilientPropagation(m_hNetwork, hTrainingSet);
 
+            //hTraining.Iteration(5000);
 
             //double[] hInput = new double[] { 456.0, 12.0 };
             //double[] hOutput = new double[1];
@@ -120,19 +109,16 @@ namespace Aiv.Research.Visualizer2D
 
                 using (Bitmap hBmp = m_hPenDrawer.Clear(out hSamples))
                 {
-                    using (Bitmap hDownscaled = hBmp.ResizeImage(320, 240))
-                    {
-                        string sFilename = $"Sample{m_hSamples.Items.Count}.bmp";
-                        IdealInputForm hIdealInput = new IdealInputForm(m_hPenDrawer.Network.OutputSize);
+                    string sFilename = $"Sample{m_hSamples.Items.Count}.bmp";
+                    IdealInputForm hIdealInput = new IdealInputForm(m_hPenDrawer.Network.OutputSize);
 
-                        if (hIdealInput.ShowDialog() == DialogResult.OK)
-                        {                            
-                            double[] hIdeal = hIdealInput.Ideal;
-                            hDownscaled.Save(sFilename, ImageFormat.Bmp);
-                            Sample hSample = new Sample(sFilename, hSamples, hIdeal);
-                            m_hPenDrawer.Network.Samples.Add(hSample);
-                            m_hSamples.Items.Add(hSample);
-                        }
+                    if (hIdealInput.ShowDialog() == DialogResult.OK)
+                    {
+                        double[] hIdeal = hIdealInput.Ideal;
+                        hBmp.Save(sFilename, ImageFormat.Bmp);
+                        Sample hSample = new Sample(sFilename, hSamples, hIdeal);
+                        m_hPenDrawer.Network.Samples.Add(hSample);
+                        m_hSamples.Items.Add(hSample);
                     }
                 }
 
@@ -274,25 +260,6 @@ namespace Aiv.Research.Visualizer2D
         {
             m_hProgressBar.Value = 0;
             m_hNeuralDisplay.Show();            
-        }
-
-        private void OnRemoteBackPropagation(object sender, EventArgs e)
-        {
-            TrainingClient hClient = new TrainingClient();
-        }
-
-        private void VisualizerThread(object hParam)
-        {
-            BasicNetwork hNetwork = hParam as BasicNetwork;
-
-            NetworkVisualizer hVisualizer = new NetworkVisualizer(800, 600, "Xor", hNetwork, 0.0001f);
-
-            //Create Main Loop
-            while (hVisualizer.IsOpened)
-            {
-                hVisualizer.Draw();                
-                hVisualizer.Update();
-            }
         }
     }
 }

@@ -63,5 +63,14 @@ namespace Aiv.Research.Visualizer2D
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
     }
 }
