@@ -23,7 +23,7 @@ namespace Aiv.Research.Visualizer2D
     //-The real challenge lies not in building the classifier, but preprocessing of data. You should make sure that the images you prepare for classification should be as close to that of MNIST, because MNIST the most cleanest dataset in terms of Image quality. You should crop your image well, add padding and remove noises, though CNN can deal with noise to some extent.
     public partial class Main : Form
     {        
-        private PenDrawer       m_hPenDrawer;   
+        private SampleEditor       m_hPenDrawer;   
         private FormNNDrawer    m_hNeuralDisplay;
 
         public Main()
@@ -31,7 +31,7 @@ namespace Aiv.Research.Visualizer2D
             InitializeComponent();
 
             m_hPanel.Visible = false;
-            m_hPenDrawer    = new PenDrawer(m_hPanel);        
+            m_hPenDrawer    = new SampleEditor(m_hPanel);        
 
             #region XOR Network
 
@@ -109,19 +109,16 @@ namespace Aiv.Research.Visualizer2D
 
                 using (Bitmap hBmp = m_hPenDrawer.Clear(out hSamples))
                 {
-                    using (Bitmap hDownscaled = hBmp.ResizeImage(320, 240))
-                    {
-                        string sFilename = $"Sample{m_hSamples.Items.Count}.bmp";
-                        IdealInputForm hIdealInput = new IdealInputForm(m_hPenDrawer.Network.OutputSize);
+                    string sFilename = $"Sample{m_hSamples.Items.Count}.bmp";
+                    IdealInputForm hIdealInput = new IdealInputForm(m_hPenDrawer.Network.OutputSize);
 
-                        if (hIdealInput.ShowDialog() == DialogResult.OK)
-                        {                            
-                            double[] hIdeal = hIdealInput.Ideal;
-                            hDownscaled.Save(sFilename, ImageFormat.Bmp);
-                            Sample hSample = new Sample(sFilename, hSamples, hIdeal);
-                            m_hPenDrawer.Network.Samples.Add(hSample);
-                            m_hSamples.Items.Add(hSample);
-                        }
+                    if (hIdealInput.ShowDialog() == DialogResult.OK)
+                    {
+                        double[] hIdeal = hIdealInput.Ideal;
+                        hBmp.Save(sFilename, ImageFormat.Bmp);
+                        Sample hSample = new Sample(sFilename, hSamples, hIdeal);
+                        m_hPenDrawer.Network.Samples.Add(hSample);
+                        m_hSamples.Items.Add(hSample);
                     }
                 }
 
