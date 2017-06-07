@@ -43,13 +43,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.m_hButtonCreate = new System.Windows.Forms.Button();
             this.m_hButtonCancel = new System.Windows.Forms.Button();
-            this.m_hCheckVisualize = new System.Windows.Forms.CheckBox();
-            this.m_hTextNSize = new System.Windows.Forms.TextBox();
-            this.m_hTextHeight = new System.Windows.Forms.TextBox();
-            this.m_hTextWidth = new System.Windows.Forms.TextBox();
+            this.m_hTextName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // m_hTextInputSize
@@ -179,83 +174,29 @@
             this.m_hButtonCancel.UseVisualStyleBackColor = true;
             this.m_hButtonCancel.Click += new System.EventHandler(this.m_hButtonCancel_Click);
             // 
-            // m_hCheckVisualize
+            // m_hTextName
             // 
-            this.m_hCheckVisualize.AutoSize = true;
-            this.m_hCheckVisualize.Location = new System.Drawing.Point(345, 39);
-            this.m_hCheckVisualize.Name = "m_hCheckVisualize";
-            this.m_hCheckVisualize.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.m_hCheckVisualize.Size = new System.Drawing.Size(111, 17);
-            this.m_hCheckVisualize.TabIndex = 15;
-            this.m_hCheckVisualize.Text = "Open In Visualizer";
-            this.m_hCheckVisualize.UseVisualStyleBackColor = true;
-            // 
-            // m_hTextNSize
-            // 
-            this.m_hTextNSize.Location = new System.Drawing.Point(356, 115);
-            this.m_hTextNSize.Name = "m_hTextNSize";
-            this.m_hTextNSize.Size = new System.Drawing.Size(100, 20);
-            this.m_hTextNSize.TabIndex = 21;
-            this.m_hTextNSize.Text = "10";
-            this.m_hTextNSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // m_hTextHeight
-            // 
-            this.m_hTextHeight.Location = new System.Drawing.Point(356, 89);
-            this.m_hTextHeight.Name = "m_hTextHeight";
-            this.m_hTextHeight.Size = new System.Drawing.Size(100, 20);
-            this.m_hTextHeight.TabIndex = 20;
-            this.m_hTextHeight.Text = "600";
-            this.m_hTextHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // m_hTextWidth
-            // 
-            this.m_hTextWidth.Location = new System.Drawing.Point(356, 63);
-            this.m_hTextWidth.Name = "m_hTextWidth";
-            this.m_hTextWidth.Size = new System.Drawing.Size(100, 20);
-            this.m_hTextWidth.TabIndex = 19;
-            this.m_hTextWidth.Text = "800";
-            this.m_hTextWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_hTextName.Location = new System.Drawing.Point(269, 37);
+            this.m_hTextName.Name = "m_hTextName";
+            this.m_hTextName.Size = new System.Drawing.Size(187, 20);
+            this.m_hTextName.TabIndex = 15;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(285, 118);
+            this.label7.Location = new System.Drawing.Point(228, 40);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 13);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Neuron Size";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(270, 92);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Window Height";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(273, 66);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 13);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Window Width";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Name";
             // 
             // CreateNetworkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 189);
-            this.Controls.Add(this.m_hTextNSize);
-            this.Controls.Add(this.m_hTextHeight);
-            this.Controls.Add(this.m_hTextWidth);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.m_hCheckVisualize);
+            this.Controls.Add(this.m_hTextName);
             this.Controls.Add(this.m_hButtonCancel);
             this.Controls.Add(this.m_hButtonCreate);
             this.Controls.Add(this.label6);
@@ -294,12 +235,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button m_hButtonCreate;
         private System.Windows.Forms.Button m_hButtonCancel;
-        private System.Windows.Forms.CheckBox m_hCheckVisualize;
-        private System.Windows.Forms.TextBox m_hTextNSize;
-        private System.Windows.Forms.TextBox m_hTextHeight;
-        private System.Windows.Forms.TextBox m_hTextWidth;
+        private System.Windows.Forms.TextBox m_hTextName;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
     }
 }

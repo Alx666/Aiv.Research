@@ -31,8 +31,10 @@ namespace Aiv.Research.Visualizer2D
                 m_hTable.ColumnStyles.Add(cs);
 
                 TextBox hTextBox = new TextBox();
+                hTextBox.Text = "0.0";
                 hTextBox.Dock = DockStyle.Fill;
                 m_hTable.Controls.Add(hTextBox, i, 0);
+                m_hTextboxes.Add(hTextBox);
             }            
         }
 
@@ -42,11 +44,33 @@ namespace Aiv.Research.Visualizer2D
 
             for (int i = 0; i < m_hTextboxes.Count; i++)
             {
-                Ideal[i] = double.Parse(m_hTextboxes[i].Text);
+                try
+                {
+                    Ideal[i] = double.Parse(m_hTextboxes[i].Text);
+                }
+                catch (Exception)
+                {
+                    Ideal[i] = 0;
+                }
             }
 
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void m_hButtonDiscard_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
     }
 }

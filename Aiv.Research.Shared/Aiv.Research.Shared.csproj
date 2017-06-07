@@ -36,6 +36,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Channels" />
@@ -47,10 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classifier.cs" />
     <Compile Include="ConsoleUI.cs" />
+    <Compile Include="ITrainingService.cs" />
     <Compile Include="NetworkCreationConfig.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sample.cs" />
+    <Compile Include="TrainingClient.cs" />
+    <Compile Include="TrainingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
