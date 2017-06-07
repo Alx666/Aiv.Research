@@ -20,7 +20,6 @@ namespace Aiv.Research.Visualizer2D
 
         private InputInformation[,] m_hInputData;
         private RectangleF[]        m_hRectangles;
-        private RectangleF[]        m_hNonFillables;
         private float               m_fSizeX;
         private float               m_fSizeY;
         private int                 m_iColumns ;
