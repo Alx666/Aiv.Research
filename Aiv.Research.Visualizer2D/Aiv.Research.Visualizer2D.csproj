@@ -61,11 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Create Network.cs">
+    <Compile Include="CreateNetwork.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Create Network.Designer.cs">
-      <DependentUpon>Create Network.cs</DependentUpon>
+    <Compile Include="CreateNetwork.Designer.cs">
+      <DependentUpon>CreateNetwork.cs</DependentUpon>
     </Compile>
     <Compile Include="FormNNDrawer.cs">
       <SubType>Form</SubType>
@@ -91,8 +91,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Vector2.cs" />
-    <EmbeddedResource Include="Create Network.resx">
-      <DependentUpon>Create Network.cs</DependentUpon>
+    <EmbeddedResource Include="CreateNetwork.resx">
+      <DependentUpon>CreateNetwork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNNDrawer.resx">
       <DependentUpon>FormNNDrawer.cs</DependentUpon>
