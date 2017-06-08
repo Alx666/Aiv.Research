@@ -25,7 +25,7 @@ namespace Aiv.Research.Visualizer2D
     {        
         private SampleEditor    m_hPenDrawer;   
         private FormNNDrawer    m_hNeuralDisplay;
-        private Settings m_hSettings;
+        private Settings        m_hSettings;
 
         public Main()
         {

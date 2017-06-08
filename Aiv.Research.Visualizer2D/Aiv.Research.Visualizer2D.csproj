@@ -89,6 +89,7 @@
     <Compile Include="SampleEditor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Vector2.cs" />
     <EmbeddedResource Include="Create Network.resx">
       <DependentUpon>Create Network.cs</DependentUpon>
