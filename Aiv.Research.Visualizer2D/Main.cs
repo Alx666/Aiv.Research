@@ -13,7 +13,6 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Linq;
-using Aiv.Research.TrainingServer;
 
 namespace Aiv.Research.Visualizer2D
 {

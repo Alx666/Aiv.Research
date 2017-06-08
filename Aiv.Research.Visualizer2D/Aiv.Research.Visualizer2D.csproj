@@ -132,10 +132,6 @@
       <Project>{3fd3f74c-b5a2-4816-b573-75d1945c8a1a}</Project>
       <Name>Aiv.Research.Shared</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Aiv.Research.TrainingServer\Aiv.Research.TrainingServer.csproj">
-      <Project>{f4d36029-16f5-4642-8edb-f8839f337bab}</Project>
-      <Name>Aiv.Research.TrainingServer</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
