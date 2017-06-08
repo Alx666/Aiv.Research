@@ -219,7 +219,7 @@ namespace Aiv.Research.Visualizer2D
             NetworkCreationConfig hConfig = m_hPenDrawer.Network;
             BasicNetwork hNetwork = new BasicNetwork();
 
-            hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.InputSize));
+            hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone()     as IActivationFunction, true, hConfig.InputSize));
 
             if (hConfig.HL0Size > 0)
                 hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.HL0Size));
@@ -230,7 +230,7 @@ namespace Aiv.Research.Visualizer2D
             if (hConfig.HL2Size > 0)
                 hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.HL2Size));
 
-            hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone() as IActivationFunction, true, hConfig.OutputSize));
+            hNetwork.AddLayer(new BasicLayer(hConfig.Activation.Clone()     as IActivationFunction, true, hConfig.OutputSize));
 
             hNetwork.Structure.FinalizeStructure();
             hNetwork.Reset();
