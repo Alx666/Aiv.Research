@@ -74,17 +74,17 @@
       <DependentUpon>FormNNDrawer.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicsExtensions.cs" />
-    <Compile Include="IdealInputForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IdealInputForm.Designer.cs">
-      <DependentUpon>IdealInputForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertyGridForm.Designer.cs">
+      <DependentUpon>PropertyGridForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SampleEditor.cs" />
     <Compile Include="Program.cs" />
@@ -96,9 +96,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNNDrawer.resx">
       <DependentUpon>FormNNDrawer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IdealInputForm.resx">
-      <DependentUpon>IdealInputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -113,6 +110,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PropertyGridForm.resx">
+      <DependentUpon>PropertyGridForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

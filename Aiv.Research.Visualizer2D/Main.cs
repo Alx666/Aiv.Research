@@ -26,6 +26,7 @@ namespace Aiv.Research.Visualizer2D
         private SampleEditor    m_hPenDrawer;   
         private FormNNDrawer    m_hNeuralDisplay;
         private Settings        m_hSettings;
+        private double[]        m_hLastIdeal;
 
         public Main()
         {
@@ -107,16 +108,17 @@ namespace Aiv.Research.Visualizer2D
 
             if (e.KeyCode == Keys.Return && e.Modifiers == Keys.Control && m_hPanel.Visible)
             {
-                double[] hSamples;
+                double[] hSamples;                
 
                 using (Bitmap hBmp = m_hPenDrawer.Clear(out hSamples))
                 {
                     string sFilename = $"Sample{m_hSamples.Items.Count}.bmp";
-                    IdealInputForm hIdealInput = new IdealInputForm(m_hPenDrawer.Network.OutputSize);
 
+                    PropertyGridForm hIdealInput = new PropertyGridForm(m_hLastIdeal);
+                                        
                     if (hIdealInput.ShowDialog() == DialogResult.OK)
                     {
-                        double[] hIdeal = hIdealInput.Ideal;
+                        double[] hIdeal = m_hLastIdeal.Clone() as double[];
                         hBmp.Save(sFilename, ImageFormat.Bmp);
                         Sample hSample = new Sample(sFilename, hSamples, hIdeal);
                         m_hPenDrawer.Network.Samples.Add(hSample);
@@ -183,6 +185,7 @@ namespace Aiv.Research.Visualizer2D
             {
                 m_hPenDrawer.Network = hCreateDialog.Config;
                 m_hPanel.Visible     = true;
+                m_hLastIdeal         = new double[m_hPenDrawer.Network.OutputSize];
             }
         }
 
@@ -268,5 +271,7 @@ namespace Aiv.Research.Visualizer2D
         {
             Settings.Save(m_hSettings);
         }
+
+        private void OnOptionsClick(object sender, EventArgs e) => new PropertyGridForm(m_hSettings).ShowDialog();
     }
 }
