@@ -9,44 +9,44 @@ using System.Xml.Serialization;
 namespace Aiv.Research.Visualizer2D
 {
     [Serializable]
-    public class Stocazzo 
+    public class Settings 
     {
         private const string FileName = "Settings.xml"; //asdasd
         public string TrainingServiceAddress { get; set; }
         public int TrainingServicePort { get; set; }
 
-        public static Stocazzo Load()
+        public static Settings Load()
         {
            
             //as asd as ss
             try
             {
-                Stocazzo hRes;
+                Settings hRes;
 
                 if (!File.Exists(FileName))
                 {                    
                     using (Stream hFs = File.OpenWrite(FileName))
                     {
-                        XmlSerializer hSerializer = new XmlSerializer(typeof(Stocazzo));
-                        hSerializer.Serialize(hFs, new Stocazzo());
+                        XmlSerializer hSerializer = new XmlSerializer(typeof(Settings));
+                        hSerializer.Serialize(hFs, new Settings());
                     }
                 }
 
                 using (Stream hFs = File.OpenRead(FileName))
                 {
-                    XmlSerializer hSerializer = new XmlSerializer(typeof(Stocazzo));
-                    hRes = hSerializer.Deserialize(hFs) as Stocazzo;
+                    XmlSerializer hSerializer = new XmlSerializer(typeof(Settings));
+                    hRes = hSerializer.Deserialize(hFs) as Settings;
                 }
 
                 return hRes;
             }
             catch (Exception)
             {
-                return new Stocazzo();
+                return new Settings();
             }
         }
 
-        public static void Save(Stocazzo hSettings)
+        public static void Save(Settings hSettings)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Aiv.Research.Visualizer2D
 
                 using (Stream hFs = File.OpenWrite(FileName))
                 {
-                    XmlSerializer hSerializer = new XmlSerializer(typeof(Stocazzo));
+                    XmlSerializer hSerializer = new XmlSerializer(typeof(Settings));
                     hSerializer.Serialize(hFs, hSettings);
                 }
             }
