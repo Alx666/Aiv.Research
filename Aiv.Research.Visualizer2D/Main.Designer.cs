@@ -182,6 +182,7 @@
             this.MainMenuStrip = this.m_hMenuStrip;
             this.Name = "Main";
             this.Text = "Sample Manager";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnFormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnFormKeyDown);
             this.m_hMenuStrip.ResumeLayout(false);
             this.m_hMenuStrip.PerformLayout();

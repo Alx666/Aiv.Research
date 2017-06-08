@@ -23,13 +23,15 @@ namespace Aiv.Research.Visualizer2D
     //-The real challenge lies not in building the classifier, but preprocessing of data. You should make sure that the images you prepare for classification should be as close to that of MNIST, because MNIST the most cleanest dataset in terms of Image quality. You should crop your image well, add padding and remove noises, though CNN can deal with noise to some extent.
     public partial class Main : Form
     {        
-        private SampleEditor       m_hPenDrawer;   
+        private SampleEditor    m_hPenDrawer;   
         private FormNNDrawer    m_hNeuralDisplay;
+        private Settings        m_hSettings;
 
         public Main()
         {
             InitializeComponent();
 
+            m_hSettings = Settings.Load();
             m_hPanel.Visible = false;
             m_hPenDrawer    = new SampleEditor(m_hPanel);        
 
@@ -260,6 +262,11 @@ namespace Aiv.Research.Visualizer2D
         {
             m_hProgressBar.Value = 0;
             m_hNeuralDisplay.Show();            
+        }
+
+        private void OnFormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.Save(m_hSettings);
         }
     }
 }
