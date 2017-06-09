@@ -20,7 +20,7 @@ namespace Aiv.Research.TrainingServer
             {
                 b = Enumerable.Range(0, 500).Select(x => (byte)hRand.Next()).ToArray();
                 config.Name = i.ToString();
-                Classifier.SetDataPath(".\\NeuralData\\Gianni", Classifier.GetId()); 
+                Classifier.SetDataPath(".\\NeuralData\\Gianni"); 
                 Classifier.Store(config, b);
                 //Classifier.Get(i);
                 //Classifier.Get(i);
