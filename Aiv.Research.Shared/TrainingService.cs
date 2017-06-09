@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Aiv.Research.Shared;
 using System.ServiceModel;
 using System.Collections.Concurrent;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
 using Encog.Engine.Network.Activation;
 using Encog.Neural.Data.Basic;
@@ -104,8 +107,25 @@ namespace Aiv.Research.Shared
             int iRes;
             m_hTrainingInProgress.TryRemove(hWorkItem, out iRes);
             m_hCompletedTrainings.Add(hWorkItem);
+            Classifier.SetDataPath(Environment.CurrentDirectory);
+            //Classifier.Store(hWorkItem.NetworkConfing, SerializeToStream(hWorkItem.NetworkConfing).ToArray());
             //Classifier.Store();
             //TODO Send to Classifier
+        }
+
+        private MemoryStream SerializeToStream(object hObj)
+        {
+            MemoryStream hStream = new MemoryStream();
+            IFormatter hFormatter = new BinaryFormatter();
+            hFormatter.Serialize(hStream, hObj);
+            return hStream;
+        }
+
+        private object DeserializeFromStream(MemoryStream hStream)
+        {
+            IFormatter hFormatter = new BinaryFormatter();
+            hStream.Seek(0, SeekOrigin.Begin);
+            return hFormatter.Deserialize(hStream);
         }
     }
 
@@ -137,6 +157,7 @@ namespace Aiv.Research.Shared
                 m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.HL2Size));
             if(NetworkConfing.OutputSize > 0)
                 m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.OutputSize));
+            
             
             m_hNetwork.Structure.FinalizeStructure();
             m_hNetwork.Reset();
