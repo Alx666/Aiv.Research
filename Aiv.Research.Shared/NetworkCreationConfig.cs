@@ -8,6 +8,8 @@ using System.Reflection;
 using System.ServiceModel;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
+using Encog.Neural.Networks;
+using Encog.Neural.Networks.Layers;
 
 namespace Aiv.Research.Shared
 {
@@ -80,6 +82,26 @@ namespace Aiv.Research.Shared
 
         [DataMember]
         public List<Sample> Samples { get; set; }
+
+        public BasicNetwork GetNewNetwork()
+        {
+            BasicNetwork m_hNetwork = new BasicNetwork();
+            if (this.InputSize > 0)
+                m_hNetwork.AddLayer(new BasicLayer(this.Activation, true, this.InputSize));
+            if (this.HL0Size > 0)
+                m_hNetwork.AddLayer(new BasicLayer(this.Activation, true, this.HL0Size));
+            if (this.HL1Size > 0)
+                m_hNetwork.AddLayer(new BasicLayer(this.Activation, true, this.HL1Size));
+            if (this.HL2Size > 0)
+                m_hNetwork.AddLayer(new BasicLayer(this.Activation, true, this.HL2Size));
+            if (this.OutputSize > 0)
+                m_hNetwork.AddLayer(new BasicLayer(this.Activation, true, this.OutputSize));
+
+            m_hNetwork.Structure.FinalizeStructure();
+            m_hNetwork.Reset();
+
+            return m_hNetwork;
+        }
 
         public override string ToString() => $"[{Id}] {Name}";
     }

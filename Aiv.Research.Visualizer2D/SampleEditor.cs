@@ -281,16 +281,16 @@ namespace Aiv.Research.Visualizer2D
 
         private void Center()
         {
-            int iMinX = -1;
-            int iMaxX = -1;
-            int iMinY = -1;
-            int iMaxY = -1;
+            float iMinX = -1;
+            float iMaxX = -1;
+            float iMinY = -1;
+            float iMaxY = -1;
 
-            int centerX;
-            int centerY;
+            float centerX;
+            float centerY;
 
-            int distanceCenterX;
-            int distanceCenterY;
+            float distanceCenterX;
+            float distanceCenterY;
 
             // BINDING BOX
             int j = 0;
@@ -350,7 +350,7 @@ namespace Aiv.Research.Visualizer2D
                 for (j = 0; j < m_hInputData.GetLength(1); j++)
                 {
                     if (m_hInputData[i, j].InUse == true)
-                        boolArray[i + distanceCenterX, j + distanceCenterY] = true;
+                        boolArray[i + (int)distanceCenterX, j + (int)distanceCenterY] = true;
                 }
             }
             for (int i = 0; i < m_hInputData.GetLength(0); i++)

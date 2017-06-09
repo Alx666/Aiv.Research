@@ -146,21 +146,7 @@ namespace Aiv.Research.Shared
         public void StartTraing()
         {
             IsTraining = true;
-            m_hNetwork = new BasicNetwork();
-            if(NetworkConfing.InputSize > 0)
-                m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.InputSize));
-            if(NetworkConfing.HL0Size > 0)
-                m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.HL0Size));
-            if(NetworkConfing.HL1Size > 0)
-                m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.HL1Size));
-            if(NetworkConfing.HL2Size > 0)
-                m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.HL2Size));
-            if(NetworkConfing.OutputSize > 0)
-                m_hNetwork.AddLayer(new BasicLayer(NetworkConfing.Activation, true, NetworkConfing.OutputSize));
-            
-            
-            m_hNetwork.Structure.FinalizeStructure();
-            m_hNetwork.Reset();
+            m_hNetwork = NetworkConfing.GetNewNetwork();
 
             double[][] input = new double[NetworkConfing.Samples.Count][];
             double[][] ideal = new double[NetworkConfing.Samples.Count][];
