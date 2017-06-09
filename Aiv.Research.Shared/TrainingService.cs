@@ -106,7 +106,7 @@ namespace Aiv.Research.Shared
             }
             int iRes;
             m_hTrainingInProgress.TryRemove(hWorkItem, out iRes);
-            m_hCompletedTrainings.Add(hWorkItem);
+            m_hCompletedTrainings.Add(hWorkItem.NetworkConfing);
             Classifier.SetDataPath(Environment.CurrentDirectory);
             //Classifier.Store(hWorkItem.NetworkConfing, SerializeToStream(hWorkItem.NetworkConfing).ToArray());
             //Classifier.Store();
