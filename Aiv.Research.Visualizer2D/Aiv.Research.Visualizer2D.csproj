@@ -61,11 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Create Network.cs">
+    <Compile Include="CreateNetwork.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Create Network.Designer.cs">
-      <DependentUpon>Create Network.cs</DependentUpon>
+    <Compile Include="CreateNetwork.Designer.cs">
+      <DependentUpon>CreateNetwork.cs</DependentUpon>
     </Compile>
     <Compile Include="FormNNDrawer.cs">
       <SubType>Form</SubType>
@@ -74,30 +74,28 @@
       <DependentUpon>FormNNDrawer.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicsExtensions.cs" />
-    <Compile Include="IdealInputForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IdealInputForm.Designer.cs">
-      <DependentUpon>IdealInputForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="PropertyGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertyGridForm.Designer.cs">
+      <DependentUpon>PropertyGridForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SampleEditor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Vector2.cs" />
-    <EmbeddedResource Include="Create Network.resx">
-      <DependentUpon>Create Network.cs</DependentUpon>
+    <EmbeddedResource Include="CreateNetwork.resx">
+      <DependentUpon>CreateNetwork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNNDrawer.resx">
       <DependentUpon>FormNNDrawer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IdealInputForm.resx">
-      <DependentUpon>IdealInputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -112,6 +110,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PropertyGridForm.resx">
+      <DependentUpon>PropertyGridForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,10 +131,6 @@
     <ProjectReference Include="..\Aiv.Research.Shared\Aiv.Research.Shared.csproj">
       <Project>{3fd3f74c-b5a2-4816-b573-75d1945c8a1a}</Project>
       <Name>Aiv.Research.Shared</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Aiv.Research.TrainingServer\Aiv.Research.TrainingServer.csproj">
-      <Project>{f4d36029-16f5-4642-8edb-f8839f337bab}</Project>
-      <Name>Aiv.Research.TrainingServer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

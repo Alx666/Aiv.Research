@@ -21,11 +21,11 @@ namespace Aiv.Research.Shared
 
         //ritorna lo stato attuale della lista contenente i task in corso
         [OperationContract]
-        IEnumerable<NetworkCreationConfig> EnumerateTrainingsInProgress();
+        IEnumerable<TrainingSet> EnumerateTrainingsInProgress();
 
         //Chiede al claffier di fornire tutti i dati che ha scritto (li legge sempre da disco)
         [OperationContract]
-        IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted();
+        IEnumerable<TrainingSet> EnumerateTrainingsCompleted();
 
         //Ritorna solamente i dati della rete richiesta
         [OperationContract]
@@ -37,6 +37,6 @@ namespace Aiv.Research.Shared
 
         //Cancella da disco il train con id specificato
         [OperationContract]
-        void DeleteTraining(int iConfigId);
+        bool DeleteTraining(int iConfigId);
     }
 }

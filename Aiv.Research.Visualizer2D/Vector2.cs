@@ -12,7 +12,7 @@ namespace Aiv.Research.Visualizer2D
         public float X;
         public float Y;
 
-        public Vector2(float x, float y)
+        public Vector2(float x, float y) 
         {
             this.X = x;
             this.Y = y;
