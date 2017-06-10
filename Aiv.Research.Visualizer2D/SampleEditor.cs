@@ -171,6 +171,9 @@ namespace Aiv.Research.Visualizer2D
 
         public Bitmap Clear(out double[] hSamples)
         {
+            this.Center();
+            this.GaussianBlurFilter(true);
+
             Bitmap hBmp = new Bitmap(m_hInputData.GetLength(0), m_hInputData.GetLength(1));
             hSamples    = new double[m_hNetwork.InputSize];
 
@@ -200,6 +203,8 @@ namespace Aiv.Research.Visualizer2D
             m_hPanel.Invalidate();
             return hBmp;
         }
+
+
 
         public void OnSampleSelected(Sample hSelected)
         {
@@ -279,7 +284,7 @@ namespace Aiv.Research.Visualizer2D
         #endregion
 
 
-        private void Center()
+        public void Center()
         {
             float iMinX = -1;
             float iMaxX = -1;
@@ -298,7 +303,7 @@ namespace Aiv.Research.Visualizer2D
             {
                 for (j = 0; j < m_hInputData.GetLength(1); j++)
                 {
-                    if (m_hInputData[i, j].InUse == true)
+                    if (m_hInputData[i, j].Value > 0)
                     {
                         #region MinMaxXY
                         if (iMinX != -1)
@@ -343,26 +348,105 @@ namespace Aiv.Research.Visualizer2D
             distanceCenterX = m_hInputData.GetLength(0) / 2 - centerX;
             distanceCenterY = m_hInputData.GetLength(1) / 2 - centerY;
 
-            bool[,] boolArray = new bool[m_hInputData.GetLength(0), m_hInputData.GetLength(1)];
+            double[,] doubleArray = new double[m_hInputData.GetLength(0), m_hInputData.GetLength(1)];
 
             for (int i = 0; i < m_hInputData.GetLength(0); i++)
             {
                 for (j = 0; j < m_hInputData.GetLength(1); j++)
                 {
-                    if (m_hInputData[i, j].InUse == true)
-                        boolArray[i + (int)distanceCenterX, j + (int)distanceCenterY] = true;
+                    if (m_hInputData[i, j].Value > 0)
+                        doubleArray[i + (int)distanceCenterX, j + (int)distanceCenterY] = m_hInputData[i, j].Value;
                 }
             }
             for (int i = 0; i < m_hInputData.GetLength(0); i++)
             {
                 for (j = 0; j < m_hInputData.GetLength(1); j++)
                 {
-                    m_hInputData[i, j].InUse = false;
-                    if (boolArray[i, j] == true)
-                        m_hInputData[i, j].InUse = true;
+                    m_hInputData[i, j].Value = doubleArray[i, j];
                 }
             }
-
         }
+
+
+
+
+        public void SimpleBlur(bool zeroEffects)
+        {
+            ApplyFilter(new Filter("SimpleBlur", new double[3, 3] {
+                { 0, 0.2, 0 },
+                { 0.2, 0.2, 0.2 },
+                { 0, 0.2, 0 } }), zeroEffects);
+        }
+
+        public void GaussianBlurFilter(bool zeroEffects)
+        {
+            ApplyFilter(new Filter("GaussianBlur", new double[7, 7] {
+                { 0.00000067,    0.00002292,  0.00019117,  0.00038771,  0.00019117,  0.00002292,  0.00000067 },
+                { 0.00002292,    0.00078634,  0.00655965,  0.01330373,  0.00655965,  0.00078633,  0.00002292 },
+                { 0.00019117,    0.00655965,  0.05472157,  0.11098164,  0.05472157,  0.00655965,  0.00019117 },
+                { 0.00038771,    0.01330373,  0.11098164,  0.22508352,  0.11098164,  0.01330373,  0.00038771 },
+                { 0.00019117,    0.00655965,  0.05472157,  0.11098164,  0.05472157,  0.00655965,  0.00019117 },
+                { 0.00002292,    0.00078633,  0.00655965,  0.01330373,  0.00655965,  0.00078633,  0.00002292 },
+                { 0.00000067,    0.00002292,  0.00019117,  0.00038771,  0.00019117,  0.00002292,  0.00000067 }
+            }), zeroEffects);
+        }
+
+        public void ApplyFilter(Filter filter, bool zeroEffects)
+        {
+            // setting the Filter Matrix
+
+            int centerPixelX = filter.width / 2;
+            int centerPixelY = filter.width / 2;
+
+            double[,] doubleArray = new double[m_hInputData.GetLength(0), m_hInputData.GetLength(1)];
+            for (int i = 0; i < m_hInputData.GetLength(0); i++)
+            {
+                for (int j = 0; j < m_hInputData.GetLength(1); j++)
+                {
+                    doubleArray[i, j] = m_hInputData[i, j].Value;
+                }
+            }
+
+            // FILTERING
+            for (int x = 0; x < m_hInputData.GetLength(0); x++)
+            {
+                for (int y = 0; y < m_hInputData.GetLength(1); y++)
+                {
+                    //PIXEL
+                    for (int iFilterX = 0 - centerPixelX; iFilterX < filter.width - centerPixelX; iFilterX++)
+                    {
+                        for (int iFilterY = 0 - centerPixelY; iFilterY < filter.height - centerPixelY; iFilterY++)
+                        {
+
+                            if (x + iFilterX >= 0 && x + iFilterX < m_hInputData.GetLength(0) && y + iFilterY >= 0 && y + iFilterY < m_hInputData.GetLength(1))
+                            {
+                                doubleArray[x + iFilterX, y + iFilterY] += m_hInputData[x, y].Value * filter.M_hMatrix[iFilterX + centerPixelX, iFilterY + centerPixelY];
+                                if (zeroEffects == true && m_hInputData[x, y].Value == 0)
+                                    doubleArray[x + iFilterX, y + iFilterY] -= filter.M_hMatrix[iFilterX + centerPixelX, iFilterY + centerPixelY];
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int i = 0; i < m_hInputData.GetLength(0); i++)
+            {
+                for (int j = 0; j < m_hInputData.GetLength(1); j++)
+                {
+                    if (true)
+                    {
+                        if (doubleArray[i, j] > 1)
+                            doubleArray[i, j] = 1;
+                        if (doubleArray[i, j] < 0)
+                            doubleArray[i, j] = 0;
+                    }
+                    m_hInputData[i, j].Value = doubleArray[i, j];
+                }
+            }
+        }
+
+
+
+
     }
 }
