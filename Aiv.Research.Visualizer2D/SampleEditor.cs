@@ -420,7 +420,7 @@ namespace Aiv.Research.Visualizer2D
 
                             if (x + iFilterX >= 0 && x + iFilterX < m_hInputData.GetLength(0) && y + iFilterY >= 0 && y + iFilterY < m_hInputData.GetLength(1))
                             {
-                                doubleArray[x + iFilterX, y + iFilterY] += (m_hInputData[x, y].Value - doubleArray[x + iFilterX, y + iFilterY]) * filter.M_hMatrix[iFilterX + centerPixelX, iFilterY + centerPixelY];
+                                doubleArray[x + iFilterX, y + iFilterY] += (m_hInputData[x, y].Value - m_hInputData[x + iFilterX, y + iFilterY].Value) * filter.M_hMatrix[iFilterX + centerPixelX, iFilterY + centerPixelY];
                             }
                         }
                     }
