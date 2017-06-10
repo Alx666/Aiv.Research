@@ -172,7 +172,7 @@ namespace Aiv.Research.Visualizer2D
         public Bitmap Clear(out double[] hSamples)
         {
             this.Center();
-            // this.GaussianBlurFilter(true);
+            // this.GaussianBlurFilter();
 
             Bitmap hBmp = new Bitmap(m_hInputData.GetLength(0), m_hInputData.GetLength(1));
             hSamples    = new double[m_hNetwork.InputSize];
@@ -370,15 +370,15 @@ namespace Aiv.Research.Visualizer2D
 
 
 
-        public void SimpleBlur(bool zeroEffects)
+        public void SimpleBlur()
         {
             ApplyFilter(new Filter("SimpleBlur", new double[3, 3] {
                 { 0, 0.2, 0 },
                 { 0.2, 0.2, 0.2 },
-                { 0, 0.2, 0 } }), zeroEffects);
+                { 0, 0.2, 0 } }));
         }
 
-        public void GaussianBlurFilter(bool zeroEffects)
+        public void GaussianBlurFilter()
         {
             ApplyFilter(new Filter("GaussianBlur", new double[7, 7] {
                 { 0.00000067,    0.00002292,  0.00019117,  0.00038771,  0.00019117,  0.00002292,  0.00000067 },
@@ -388,10 +388,10 @@ namespace Aiv.Research.Visualizer2D
                 { 0.00019117,    0.00655965,  0.05472157,  0.11098164,  0.05472157,  0.00655965,  0.00019117 },
                 { 0.00002292,    0.00078633,  0.00655965,  0.01330373,  0.00655965,  0.00078633,  0.00002292 },
                 { 0.00000067,    0.00002292,  0.00019117,  0.00038771,  0.00019117,  0.00002292,  0.00000067 }
-            }), zeroEffects);
+            }));
         }
 
-        public void ApplyFilter(Filter filter, bool zeroEffects)
+        public void ApplyFilter(Filter filter)
         {
             // setting the Filter Matrix
 
@@ -420,9 +420,7 @@ namespace Aiv.Research.Visualizer2D
 
                             if (x + iFilterX >= 0 && x + iFilterX < m_hInputData.GetLength(0) && y + iFilterY >= 0 && y + iFilterY < m_hInputData.GetLength(1))
                             {
-                                doubleArray[x + iFilterX, y + iFilterY] += m_hInputData[x, y].Value * filter.M_hMatrix[iFilterX + centerPixelX, iFilterY + centerPixelY];
-                                if (zeroEffects == true && m_hInputData[x, y].Value == 0)
-                                    doubleArray[x + iFilterX, y + iFilterY] -= filter.M_hMatrix[iFilterX + centerPixelX, iFilterY + centerPixelY];
+                                doubleArray[x + iFilterX, y + iFilterY] += (m_hInputData[x, y].Value - doubleArray[x + iFilterX, y + iFilterY]) * filter.M_hMatrix[iFilterX + centerPixelX, iFilterY + centerPixelY];
                             }
                         }
                     }
@@ -433,7 +431,7 @@ namespace Aiv.Research.Visualizer2D
             {
                 for (int j = 0; j < m_hInputData.GetLength(1); j++)
                 {
-                    if (true)
+                    if (false)
                     {
                         if (doubleArray[i, j] > 1)
                             doubleArray[i, j] = 1;
@@ -443,6 +441,7 @@ namespace Aiv.Research.Visualizer2D
                     m_hInputData[i, j].Value = doubleArray[i, j];
                 }
             }
+
         }
 
 
