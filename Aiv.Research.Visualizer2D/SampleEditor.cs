@@ -172,7 +172,7 @@ namespace Aiv.Research.Visualizer2D
         public Bitmap Clear(out double[] hSamples)
         {
             this.Center();
-            this.GaussianBlurFilter(true);
+            // this.GaussianBlurFilter(true);
 
             Bitmap hBmp = new Bitmap(m_hInputData.GetLength(0), m_hInputData.GetLength(1));
             hSamples    = new double[m_hNetwork.InputSize];
