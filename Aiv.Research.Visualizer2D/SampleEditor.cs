@@ -172,7 +172,7 @@ namespace Aiv.Research.Visualizer2D
         public Bitmap Clear(out double[] hSamples)
         {
             this.Center();
-            // this.GaussianBlurFilter();
+            // this.GaussianBlurFilter(1);
 
             Bitmap hBmp = new Bitmap(m_hInputData.GetLength(0), m_hInputData.GetLength(1));
             hSamples    = new double[m_hNetwork.InputSize];
@@ -370,15 +370,15 @@ namespace Aiv.Research.Visualizer2D
 
 
 
-        public void SimpleBlur()
+        public void SimpleBlur(float strenght)
         {
             ApplyFilter(new Filter("SimpleBlur", new double[3, 3] {
                 { 0, 0.2, 0 },
                 { 0.2, 0.2, 0.2 },
-                { 0, 0.2, 0 } }));
+                { 0, 0.2, 0 } }), strenght);
         }
 
-        public void GaussianBlurFilter()
+        public void GaussianBlurFilter(float strenght)
         {
             ApplyFilter(new Filter("GaussianBlur", new double[7, 7] {
                 { 0.00000067,    0.00002292,  0.00019117,  0.00038771,  0.00019117,  0.00002292,  0.00000067 },
@@ -388,10 +388,10 @@ namespace Aiv.Research.Visualizer2D
                 { 0.00019117,    0.00655965,  0.05472157,  0.11098164,  0.05472157,  0.00655965,  0.00019117 },
                 { 0.00002292,    0.00078633,  0.00655965,  0.01330373,  0.00655965,  0.00078633,  0.00002292 },
                 { 0.00000067,    0.00002292,  0.00019117,  0.00038771,  0.00019117,  0.00002292,  0.00000067 }
-            }));
+            }), strenght);
         }
 
-        public void ApplyFilter(Filter filter)
+        public void ApplyFilter(Filter filter, float strenght)
         {
             // setting the Filter Matrix
 
@@ -420,7 +420,7 @@ namespace Aiv.Research.Visualizer2D
 
                             if (x + iFilterX >= 0 && x + iFilterX < m_hInputData.GetLength(0) && y + iFilterY >= 0 && y + iFilterY < m_hInputData.GetLength(1))
                             {
-                                doubleArray[x + iFilterX, y + iFilterY] += (m_hInputData[x, y].Value - m_hInputData[x + iFilterX, y + iFilterY].Value) * filter.M_hMatrix[iFilterX + centerPixelX, iFilterY + centerPixelY];
+                                doubleArray[x + iFilterX, y + iFilterY] += (m_hInputData[x, y].Value - m_hInputData[x + iFilterX, y + iFilterY].Value) * filter.M_hMatrix[iFilterX + centerPixelX, iFilterY + centerPixelY] * strenght;
                             }
                         }
                     }
