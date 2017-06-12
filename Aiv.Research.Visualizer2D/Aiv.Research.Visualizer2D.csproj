@@ -67,6 +67,11 @@
     <Compile Include="CreateNetwork.Designer.cs">
       <DependentUpon>CreateNetwork.cs</DependentUpon>
     </Compile>
+    <Compile Include="Filters\Filter.cs" />
+    <Compile Include="Filters\FilterCenter.cs" />
+    <Compile Include="Filters\FilterGaussianBlur3x3.cs" />
+    <Compile Include="Filters\FilterGaussianBlur5x5.cs" />
+    <Compile Include="Filters\FilterGaussianBlur7x7.cs" />
     <Compile Include="FormNNDrawer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +79,7 @@
       <DependentUpon>FormNNDrawer.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicsExtensions.cs" />
+    <Compile Include="InputInformation.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
