@@ -98,7 +98,10 @@ namespace Aiv.Research.Shared
             set
             {
                 m_hActivationFunc       = value;
-                m_vActivationTypeGuid   = value.GetType().GUID;
+                if (Activation == null)
+                    m_vActivationTypeGuid = new Guid();
+                else
+                    m_vActivationTypeGuid = value.GetType().GUID;
             }
         }
 

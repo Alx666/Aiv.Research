@@ -19,11 +19,7 @@ namespace Aiv.Research.Shared
         private static List<NetworkCreationConfig> m_hTrainingFiles = new List<NetworkCreationConfig>();
         private static Regex m_hIdRegex = new Regex("[0-9]*");
         private static object m_hSyncRoot = new object();
-
-
-
-        private static string trainingName;
-        private static DirectoryInfo dInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
+        private static XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
 
 
         public static void SetDataPath(string sPath)
@@ -36,8 +32,6 @@ namespace Aiv.Research.Shared
                     m_hDataPath.Create();
 
                 //prendo tutti gli xml dalla cartella di lavoro
-                XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
-
                 m_hTrainingFiles = m_hDataPath.GetFiles("*.xml").Select(x =>
                 {
                     using (Stream hStream = x.OpenRead())
@@ -83,7 +77,7 @@ namespace Aiv.Research.Shared
                 NetworkCreationConfig hConfig = m_hTrainingFiles.Where(x => x.Id == iId).Single();
 
                 //Ricavi il nome del file associato
-                string sFilename = $"{hConfig.Id}{hConfig.Name}.zip"; //323RetePilotaTest.zip
+                string sFilename = $"{m_hDataPath}/{hConfig.Name}.zip"; //323RetePilotaTest.zip
 
                 //Carico Il byte[]
                 return File.ReadAllBytes(sFilename);
@@ -105,73 +99,42 @@ namespace Aiv.Research.Shared
             }
         }
 
+        public static void Store(NetworkCreationConfig hTrainedNetwork, byte[] hFile)
+        {
+            lock (m_hSyncRoot)
+            {
+                //Salvo il file xml
+                using (FileStream hFs = File.OpenWrite(m_hDataPath.FullName + $"/{hTrainedNetwork.Name}.xml"))
+                {
+                    XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
+                    hSerializer.Serialize(hFs, hTrainedNetwork);
+                }
 
+                // Zippo il file .dat
+                using (ZipArchive zip = ZipFile.Open(m_hDataPath.FullName + $"/{hTrainedNetwork.Name}.zip", ZipArchiveMode.Create))
+                {
+                    using (FileStream hFs = File.OpenWrite(m_hDataPath.FullName + $"/{hTrainedNetwork.Name}.dat"))
+                    {
+                        hFs.Write(hFile, 0, hFile.Length);
+                        hFs.Flush();
+                    }
 
+                    zip.CreateEntryFromFile(m_hDataPath.FullName + $"/{hTrainedNetwork.Name}.dat", $"{hTrainedNetwork.Name}.dat");
+                }
 
-        //public static void Store(NetworkCreationConfig hTrainedNetwork, byte[] hFile)
-        //{
-        //    lock (SyncRoot)
-        //    {
+                m_hDataPath.GetFiles($"{hTrainedNetwork.Name}.dat").Select(x => x).First().Delete();
 
-        //        DirectoryInfo Fs = new DirectoryInfo(".\\FolderFs\\");
+                // Aggiungo il file .xml alla lista di file che si trovano dentro alla cartella settata
+                m_hTrainingFiles.Add(m_hDataPath.GetFiles($"{hTrainedNetwork.Name}.xml").Select(x =>
+                {
+                    using (Stream hStream = x.OpenRead())
+                    {
+                        return hSerializer.Deserialize(hStream) as NetworkCreationConfig;
+                    }
 
-        //        if (!Fs.Exists)
-        //        {
-        //            Fs.Create();
-        //        }
-
-        //        trainingName = hTrainedNetwork.Name;
-        //        using (FileStream hFs = File.OpenWrite(Fs.FullName + "/" + m_iCounter + "_" + m_hDataPath.Name + "_" + hTrainedNetwork.Name + ".xml"))
-        //        {
-        //            XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
-        //            hSerializer.Serialize(hFs, hTrainedNetwork);
-        //        }
-
-        //        using (FileStream hFs = File.OpenWrite(Fs.FullName + "/" + m_iCounter + "_" + m_hDataPath.Name + "_" + hTrainedNetwork.Name + ".dat"))
-        //        {
-        //            hFs.Write(hFile, 0, hFile.Length);
-        //            hFs.Flush();
-        //        }
-
-        //        m_hTrainingFiles = Fs.GetFiles().ToList();
-
-        //        Zip(Fs);
-
-
-
-        //    }
-        //}
-
-        //private static void Zip(DirectoryInfo dFs)
-        //{
-        //    lock (SyncRoot)
-        //    {
-        //        string path = m_hDataPath.FullName;
-
-        //        ZipFile.CreateFromDirectory(dFs.FullName, m_iCounter + "_" + m_hDataPath.Name + "_" + nameFile + ".zip", CompressionLevel.Optimal, false);
-
-        //        dFs.Delete(true);
-        //    }
-        //}
-
-
-
-        //private static void Delete(string filename)
-        //{
-        //    //lock (SyncRoot)
-        //    //{
-        //    //    try
-        //    //    {
-        //    //        FileInfo hFile = m_hDataPath.GetFiles().Where(f => f.Name == filename).First();
-        //    //        hFile.Delete();
-        //    //    }
-        //    //    catch (Exception)
-        //    //    {
-        //    //        throw new FileNotFoundException();
-        //    //    }
-        //    //}
-        //}
-
+                }).First());
+            }
+        }
     }
 }
 
