@@ -30,6 +30,7 @@ namespace Aiv.Research.Shared
         private ConcurrentDictionary<TrainingSet, int>      m_hTrainingInProgress;
         private CancellationTokenSource                     m_hDispatcherTakeToken;
         private int                                         m_iMaxParallelTrainings;
+        private ServiceHost                                 m_hService;
 
         public TrainingService(int iMaxParallelTrainings)
         {
@@ -41,6 +42,23 @@ namespace Aiv.Research.Shared
             m_hDispatcherTask       = Task.Factory.StartNew(DispatcherRoutine, null, TaskCreationOptions.LongRunning);
 
             AppDomain.CurrentDomain.ProcessExit += (o, i) => m_hDispatcherTakeToken.Cancel();
+        }
+
+        [ConsoleUIMethod]
+        public void StartService(int iPort)
+        {
+            m_hService = new ServiceHost(this, new Uri($"net.tcp://localhost:{iPort}/ScoreService/"));
+            NetTcpBinding hBinding = new NetTcpBinding(SecurityMode.None, true);
+            hBinding.ReceiveTimeout = TimeSpan.MaxValue;
+            hBinding.SendTimeout = TimeSpan.MaxValue;
+            m_hService.AddServiceEndpoint(typeof(ITrainingService), hBinding, string.Empty);
+            m_hService.Open();
+        }
+
+        [ConsoleUIMethod]
+        public void StopService()
+        {
+            m_hService.Close();
         }
 
         [ConsoleUIMethod]
@@ -107,7 +125,7 @@ namespace Aiv.Research.Shared
             int iRes;
             m_hTrainingInProgress.TryRemove(hWorkItem, out iRes);
             m_hCompletedTrainings.Add(hWorkItem);
-            Classifier.SetDataPath(Environment.CurrentDirectory);
+            //Classifier.SetDataPath(Environment.CurrentDirectory);
             //Classifier.Store(hWorkItem.NetworkConfing, SerializeToStream(hWorkItem.NetworkConfing).ToArray());
             //Classifier.Store();
             //TODO Send to Classifier
