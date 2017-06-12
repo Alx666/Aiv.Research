@@ -77,7 +77,9 @@ namespace Aiv.Research.Shared
             set
             {
                 m_vActivationTypeGuid   = value;
-                Activation              = Activator.CreateInstance((from t in Assembly.Load("encog-core-cs").GetTypes() where t.GUID == m_vActivationTypeGuid select t).FirstOrDefault()) as IActivationFunction;
+                //TODO Fixare la generazione dell'Activator
+                //Activation              = Activator.CreateInstance((from t in Assembly.Load("encog-core-cs").GetTypes() where t.GUID == m_vActivationTypeGuid select t).FirstOrDefault()) as IActivationFunction;
+                Activation = new ActivationElliott();
             }
         }
 

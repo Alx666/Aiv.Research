@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
 using System.IO;
+using System.Reflection;
 using System.Runtime.Serialization;
 using Encog.Engine.Network.Activation;
 using System.Xml;
@@ -28,6 +29,12 @@ namespace Aiv.Research.Shared
         public void Connect(string address, int port)
         {
             serviceInstance = trainingServiceFactory.CreateChannel(new EndpointAddress($"net.tcp://{address}:{port}/{TRAINING_SERVICE_NAME}"));
+        }
+
+        [ConsoleUIMethod]
+        public string PrintCurrentPath()
+        {
+            return System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location).ToString();
         }
 
         [ConsoleUIMethod]

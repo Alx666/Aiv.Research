@@ -24,6 +24,7 @@ namespace Aiv.Research.Shared
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single, AddressFilterMode = AddressFilterMode.Any)]
     public class TrainingService : ITrainingService
     {
+        public const string TRAINING_SERVICE_NAME = "Training";
         private Task                                        m_hDispatcherTask;
         private BlockingCollection<TrainingSet>             m_hNetworksToTrain;
         private BlockingCollection<TrainingSet>             m_hCompletedTrainings;
@@ -47,7 +48,7 @@ namespace Aiv.Research.Shared
         [ConsoleUIMethod]
         public void StartService(int iPort)
         {
-            m_hService = new ServiceHost(this, new Uri($"net.tcp://localhost:{iPort}/ScoreService/"));
+            m_hService = new ServiceHost(this, new Uri($"net.tcp://localhost:{iPort}/{TRAINING_SERVICE_NAME}/"));
             NetTcpBinding hBinding = new NetTcpBinding(SecurityMode.None, true);
             hBinding.ReceiveTimeout = TimeSpan.MaxValue;
             hBinding.SendTimeout = TimeSpan.MaxValue;
