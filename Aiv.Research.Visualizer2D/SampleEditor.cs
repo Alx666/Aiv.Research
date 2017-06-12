@@ -193,7 +193,7 @@ namespace Aiv.Research.Visualizer2D
                     if (hInfo.InUse)
                     {
                         if(hInfo.Value != 0)
-                            hBmp.SetPixel(i, k, cColor);
+                            hBmp.SetPixel(k, i, cColor);
 
                         //hSamples[i * m_hInputData.GetLength(1) + k] = m_hInputData[i, k].Value;
                     }
