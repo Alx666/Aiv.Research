@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<NetworkCreationConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>SupermarioConfig</Name>
+  <Id>0</Id>
+  <InputSize>2</InputSize>
+  <OutputSize>4</OutputSize>
+  <HL0Size>3</HL0Size>
+  <HL1Size>3</HL1Size>
+  <HL2Size>3</HL2Size>
+  <iIterations>0</iIterations>
+  <ActivationTypeGuid>00000000-0000-0000-0000-000000000000</ActivationTypeGuid>
+  <Width>10</Width>
+  <Height>10</Height>
+  <Samples />
+</NetworkCreationConfig>

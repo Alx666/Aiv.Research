@@ -1,0 +1,9 @@
+C:\Users\ricca\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\TrainingClientConsole.exe.config
+C:\Users\ricca\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\TrainingClientConsole.exe
+C:\Users\ricca\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\TrainingClientConsole.pdb
+C:\Users\ricca\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\Aiv.Research.Shared.dll
+C:\Users\ricca\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\encog-core-cs.dll
+C:\Users\ricca\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\Aiv.Research.Shared.pdb
+C:\Users\ricca\Source\Repos\Aiv.Research\TrainingClientConsole\obj\Debug\TrainingClientConsole.csprojResolveAssemblyReference.cache
+C:\Users\ricca\Source\Repos\Aiv.Research\TrainingClientConsole\obj\Debug\TrainingClientConsole.exe
+C:\Users\ricca\Source\Repos\Aiv.Research\TrainingClientConsole\obj\Debug\TrainingClientConsole.pdb
