@@ -37,6 +37,14 @@ namespace Aiv.Research.Visualizer2D
         public RectangleF Area { get; set; }
         public bool InUse { get; set; }
 
+        public Color Color
+        {
+            get
+            {
+                return Color.FromArgb(0, (int)(255 * Value), 0);
+            }
+        }
+
         public override string ToString()
         {
             return $"{Area} {Value} {InUse}";

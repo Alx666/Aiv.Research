@@ -72,6 +72,7 @@ namespace Aiv.Research.Visualizer2D
                             else
                                 m_hInputData[i, k] = new InputInformation(vRect, false);
 
+                            iCounter--;
                         }
                     }
 
@@ -195,7 +196,9 @@ namespace Aiv.Research.Visualizer2D
                         if(hInfo.Value != 0)
                             hBmp.SetPixel(k, i, cColor);
 
-                        //hSamples[i * m_hInputData.GetLength(1) + k] = m_hInputData[i, k].Value;
+                        //Quando viene chiamato Clear bisogna mettere tutti i dati della matrice dentro un array 1d
+                        //ordinati per riga.. l'array deve essere preallocato x essere sicuri che non sfori il size dell'input
+                        hSamples[i * m_hInputData.GetLength(1) + k] = m_hInputData[i, k].Value;
                     }
                     else
                     {
@@ -215,6 +218,7 @@ namespace Aiv.Research.Visualizer2D
 
         public void OnSampleSelected(Sample hSelected)
         {
+            //è Stato caricato un sample, devi riempire inputdata con i values corretti (colorali opportunamente)
             for (int i = 0; i < m_hInputData.GetLength(0); i++)
             {
                 for (int k = 0; k < m_hInputData.GetLength(1); k++)
