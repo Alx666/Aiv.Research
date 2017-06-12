@@ -50,7 +50,7 @@ namespace Aiv.Research.Shared
             set
             {
                 m_vActivationTypeGuid   = value;
-                Activation              = Activator.CreateInstance((from t in Assembly.Load("encog-core-cs").GetTypes() where t.GUID == m_vActivationTypeGuid select t).FirstOrDefault()) as IActivationFunction;
+                Activation          = null; //Activator.CreateInstance((from t in Assembly.Load("encog-core-cs").GetTypes() where t.GUID == m_vActivationTypeGuid select t).FirstOrDefault()) as IActivationFunction;
             }
         }
 
@@ -69,7 +69,10 @@ namespace Aiv.Research.Shared
             set
             {
                 m_hActivationFunc       = value;
-                m_vActivationTypeGuid   = value.GetType().GUID;
+                if (Activation == null)
+                    m_vActivationTypeGuid = new Guid();
+                else
+                    m_vActivationTypeGuid = value.GetType().GUID;
             }
         }
 
