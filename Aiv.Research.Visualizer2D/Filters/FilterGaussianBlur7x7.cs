@@ -8,7 +8,7 @@ namespace Aiv.Research.Visualizer2D.Filters
 {
     class FilterGaussianBlur7x7 : Filter
     {
-        FilterGaussianBlur7x7()
+        public FilterGaussianBlur7x7()
         {
             Matrix = new double[7, 7] 
             {

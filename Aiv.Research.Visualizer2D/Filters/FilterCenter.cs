@@ -8,7 +8,7 @@ namespace Aiv.Research.Visualizer2D.Filters
 {
     class FilterCenter : Filter
     {
-        FilterCenter()
+        public FilterCenter()
         {
 
         }

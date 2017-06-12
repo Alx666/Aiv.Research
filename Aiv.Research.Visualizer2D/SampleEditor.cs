@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Encog.Neural.Networks;
 using Aiv.Research.Shared;
+using Aiv.Research.Visualizer2D.Filters;
 
 namespace Aiv.Research.Visualizer2D
 {
@@ -174,18 +175,27 @@ namespace Aiv.Research.Visualizer2D
             Bitmap hBmp = new Bitmap(m_hInputData.GetLength(0), m_hInputData.GetLength(1));
             hSamples    = new double[m_hNetwork.InputSize];
 
+            FilterCenter hCentering = new FilterCenter();
+            FilterGaussianBlur7x7 hFilter = new FilterGaussianBlur7x7();
+
+            hCentering.Apply(m_hInputData, 0);
+            hFilter.Apply(m_hInputData, 1);
+
             for (int i = 0; i < m_hInputData.GetLength(0); i++)
             {
                 for (int k = 0; k < m_hInputData.GetLength(1); k++)
                 {                    
                     InputInformation hInfo = m_hInputData[i, k];
 
+                    Color cColor = Color.FromArgb(0, (int)(255 * hInfo.Value), 0);
+
+
                     if (hInfo.InUse)
                     {
                         if(hInfo.Value != 0)
-                            hBmp.SetPixel(i, k, Color.Green);
+                            hBmp.SetPixel(i, k, cColor);
 
-                        hSamples[i * m_hInputData.GetLength(1) + k] = m_hInputData[i, k].Value;
+                        //hSamples[i * m_hInputData.GetLength(1) + k] = m_hInputData[i, k].Value;
                     }
                     else
                     {
