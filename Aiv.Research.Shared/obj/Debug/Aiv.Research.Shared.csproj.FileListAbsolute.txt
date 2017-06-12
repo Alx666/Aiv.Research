@@ -1,0 +1,12 @@
+F:\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.csprojResolveAssemblyReference.cache
+F:\Aiv.Research\Aiv.Research.Shared\bin\Debug\Aiv.Research.Shared.dll
+F:\Aiv.Research\Aiv.Research.Shared\bin\Debug\Aiv.Research.Shared.pdb
+F:\Aiv.Research\Aiv.Research.Shared\bin\Debug\encog-core-cs.dll
+F:\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.dll
+F:\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.pdb
+E:\Aiv.Research\Aiv.Research.Shared\bin\Debug\Aiv.Research.Shared.dll
+E:\Aiv.Research\Aiv.Research.Shared\bin\Debug\Aiv.Research.Shared.pdb
+E:\Aiv.Research\Aiv.Research.Shared\bin\Debug\encog-core-cs.dll
+E:\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.csprojResolveAssemblyReference.cache
+E:\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.dll
+E:\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.pdb

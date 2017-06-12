@@ -1,0 +1,2 @@
+E:\Aiv.Research\Aiv.Research.TrainingClient\bin\Debug\Aiv.Research.TrainingClient.exe.config
+E:\Aiv.Research\Aiv.Research.TrainingClient\obj\Debug\Aiv.Research.TrainingClient.csprojResolveAssemblyReference.cache
