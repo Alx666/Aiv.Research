@@ -67,7 +67,6 @@
     <Compile Include="CreateNetwork.Designer.cs">
       <DependentUpon>CreateNetwork.cs</DependentUpon>
     </Compile>
-    <Compile Include="Filter.cs" />
     <Compile Include="FormNNDrawer.cs">
       <SubType>Form</SubType>
     </Compile>
