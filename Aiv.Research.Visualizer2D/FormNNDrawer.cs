@@ -195,7 +195,7 @@ namespace Aiv.Research.Visualizer2D
             m_hNetwork.Compute(hInput, hOutput);
             StringBuilder hSb = new StringBuilder();
 
-            hOutput.ToList().ForEach(x => hSb.Append(x + " "));
+            hOutput.ToList().ForEach(x => hSb.AppendLine(x.ToString()));
             MessageBox.Show(hSb.ToString());
         }
     }

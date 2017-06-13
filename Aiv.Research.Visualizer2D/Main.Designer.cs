@@ -39,15 +39,17 @@
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trainingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localBackPropagationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.remoteBackPropagationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_hContextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_hSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.m_hOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.m_hStatusBar = new System.Windows.Forms.StatusStrip();
             this.m_hProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.m_hWorker = new System.ComponentModel.BackgroundWorker();
-            this.remoteBackPropagationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_hMenuStrip.SuspendLayout();
             this.m_hStatusBar.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +81,8 @@
             this.m_hMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crateToolStripMenuItem,
             this.trainingToolStripMenuItem,
-            this.toolsToolStripMenuItem});
+            this.toolsToolStripMenuItem,
+            this.dataSetToolStripMenuItem});
             this.m_hMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.m_hMenuStrip.Name = "m_hMenuStrip";
             this.m_hMenuStrip.Size = new System.Drawing.Size(910, 24);
@@ -141,6 +144,27 @@
             this.localBackPropagationToolStripMenuItem.Text = "Local BackPropagation";
             this.localBackPropagationToolStripMenuItem.Click += new System.EventHandler(this.MenuItemBackpropagationTrain);
             // 
+            // remoteBackPropagationToolStripMenuItem
+            // 
+            this.remoteBackPropagationToolStripMenuItem.Name = "remoteBackPropagationToolStripMenuItem";
+            this.remoteBackPropagationToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.remoteBackPropagationToolStripMenuItem.Text = "Remote BackPropagation";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.optionsToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.optionsToolStripMenuItem.Text = "Options";
+            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.OnOptionsClick);
+            // 
             // m_hContextMenuStrip1
             // 
             this.m_hContextMenuStrip1.Name = "m_hContextMenuStrip1";
@@ -173,26 +197,20 @@
             this.m_hWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.OnProgressChanged);
             this.m_hWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.OnRunWorkerCompleted);
             // 
-            // remoteBackPropagationToolStripMenuItem
+            // dataSetToolStripMenuItem
             // 
-            this.remoteBackPropagationToolStripMenuItem.Name = "remoteBackPropagationToolStripMenuItem";
-            this.remoteBackPropagationToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.remoteBackPropagationToolStripMenuItem.Text = "Remote BackPropagation";
+            this.dataSetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem1});
+            this.dataSetToolStripMenuItem.Name = "dataSetToolStripMenuItem";
+            this.dataSetToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.dataSetToolStripMenuItem.Text = "Data Set";
             // 
-            // toolsToolStripMenuItem
+            // loadToolStripMenuItem1
             // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionsToolStripMenuItem});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.toolsToolStripMenuItem.Text = "Tools";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.optionsToolStripMenuItem.Text = "Options";
-            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.OnOptionsClick);
+            this.loadToolStripMenuItem1.Name = "loadToolStripMenuItem1";
+            this.loadToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem1.Text = "Load";
+            this.loadToolStripMenuItem1.Click += new System.EventHandler(this.OnDataLoad);
             // 
             // Main
             // 
@@ -240,6 +258,8 @@
         private System.Windows.Forms.ToolStripMenuItem remoteBackPropagationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataSetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem1;
     }
 }
 

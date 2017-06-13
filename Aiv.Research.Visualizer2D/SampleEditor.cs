@@ -179,7 +179,7 @@ namespace Aiv.Research.Visualizer2D
             FilterCenter hCentering = new FilterCenter();
             FilterGaussianBlur7x7 hFilter = new FilterGaussianBlur7x7();
 
-            hCentering.Apply(m_hInputData, 0);
+            //hCentering.Apply(m_hInputData, 0);
             //hFilter.Apply(m_hInputData, 1);
 
             for (int i = 0; i < m_hInputData.GetLength(0); i++)

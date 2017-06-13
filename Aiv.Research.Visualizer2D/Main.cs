@@ -13,6 +13,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Aiv.Research.Visualizer2D
 {
@@ -243,13 +244,14 @@ namespace Aiv.Research.Visualizer2D
             INeuralDataSet hTrainingSet = new BasicNeuralDataSet(hInput, hIdeal);
             ITrain hTraining = new ResilientPropagation(hNetwork, hTrainingSet);
 
+            int iIterations = 100;
 
-            for (int i = 0; i < 50000; i++)
+            for (int i = 0; i < iIterations; i++)
             {
                 hTraining.Iteration(1);
 
-                if (i % 500 == 0)
-                    m_hWorker.ReportProgress(i / 500);
+                if (i % (iIterations / 100) == 0)
+                    m_hWorker.ReportProgress(i / (iIterations / 100));
             }
 
             m_hNeuralDisplay = new FormNNDrawer(hNetwork, 20, 800, 600);            
@@ -272,5 +274,66 @@ namespace Aiv.Research.Visualizer2D
         }
 
         private void OnOptionsClick(object sender, EventArgs e) => new PropertyGridForm(m_hSettings).ShowDialog();
+
+        private void OnDataLoad(object sender, EventArgs e)
+        {
+            
+
+            using (OpenFileDialog hOpenFile = new OpenFileDialog())
+            {
+                UInt32 ReverseBytes(UInt32 value)
+                {
+                    return (value & 0x000000FFU) << 24 | (value & 0x0000FF00U) << 8 |
+                           (value & 0x00FF0000U) >> 8 | (value & 0xFF000000U) >> 24;
+                }
+
+                if (hOpenFile.ShowDialog() == DialogResult.OK)
+                {
+                    //Test Images
+                    byte[] hData = File.ReadAllBytes(hOpenFile.FileName);
+                    uint iMagicNumber     = ReverseBytes(BitConverter.ToUInt32(hData, 0x0));
+                    uint iNumberOfImages  = ReverseBytes(BitConverter.ToUInt32(hData, 0x4));
+                    uint iNumberOfRows    = ReverseBytes(BitConverter.ToUInt32(hData, 0x8));
+                    uint iNumberOfColumns = ReverseBytes(BitConverter.ToUInt32(hData, 0xC));
+                    uint iIndex = 0x10;
+
+                    //Image Labels
+                    FileInfo hFile = new FileInfo(hOpenFile.FileName);
+                    string sLabels = hFile.Directory + "\\train-labels.idx1-ubyte";
+                    byte[] hLabels = File.ReadAllBytes(sLabels);
+                    int iOffset    = 0x8;
+
+                    List<double> hValues    = new List<double>((int)(iNumberOfRows * iNumberOfColumns));
+
+                    for (int i = 0; i < iNumberOfImages; i++)
+                    {
+                        Sample hSample = new Sample();
+                        hValues.Clear();
+
+                        for (int x = 0; x < iNumberOfRows; x++)
+                        {
+                            for (int y = 0; y < iNumberOfColumns; y++)
+                            {
+                                hValues.Add(hData[iIndex]);
+                                iIndex++;
+                            }
+                        }
+
+                        byte bLabel             = hLabels[i + iOffset];
+                        hSample.Name            = $"{i} - {bLabel}";
+                        hSample.Ideal           = new double[10];
+                        hSample.Ideal[bLabel]   = 1.0;
+                        hSample.Values          = hValues.ToArray();
+
+
+                        m_hSamples.Items.Add(hSample);
+                        m_hPenDrawer.Network.Samples.Add(hSample);
+                    }
+                }
+            }
+            
+        }
+
+
     }
 }
