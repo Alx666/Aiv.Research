@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Linq;
 using System.Collections.Generic;
+using Aiv.Research.Visualizer2D.Filters;
 
 namespace Aiv.Research.Visualizer2D
 {
@@ -334,6 +335,9 @@ namespace Aiv.Research.Visualizer2D
             
         }
 
-
+        private void OnGaussianBlur7x7(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

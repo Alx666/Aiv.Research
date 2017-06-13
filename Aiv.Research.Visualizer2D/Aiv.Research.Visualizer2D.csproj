@@ -67,6 +67,7 @@
     <Compile Include="CreateNetwork.Designer.cs">
       <DependentUpon>CreateNetwork.cs</DependentUpon>
     </Compile>
+    <Compile Include="Filters.cs" />
     <Compile Include="Filters\Filter.cs" />
     <Compile Include="Filters\FilterCenter.cs" />
     <Compile Include="Filters\FilterGaussianBlur3x3.cs" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aiv.Research.Visualizer2D
 {
-    abstract class Filter
+    public abstract class Filter
     {
         public double[,] Matrix { get; protected set; }
         

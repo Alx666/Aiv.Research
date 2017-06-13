@@ -25,6 +25,9 @@ namespace Aiv.Research.Visualizer2D
         private float               m_fSizeY;
         private float               m_iColumns ;
         private float               m_iRows;
+
+        private Dictionary<byte, SolidBrush> m_hBrushes;
+
         public SampleEditor(Panel hPanel)
         {
             m_hGreenPen = new Pen(Color.Green,      1f);
@@ -32,6 +35,8 @@ namespace Aiv.Research.Visualizer2D
 
             m_hGfx      = hPanel.CreateGraphics();
             m_hPanel    = hPanel;
+
+            m_hBrushes = new Dictionary<byte, SolidBrush>();
         }
 
 
@@ -107,7 +112,13 @@ namespace Aiv.Research.Visualizer2D
                     if (hInfo.InUse)
                     {
                         if (hInfo.Value != 0.0)
-                            e.Graphics.FillRectangle(Brushes.Green, m_hInputData[i, k].Area);
+                        {
+                            byte bColor = (byte)(hInfo.Value * 255);
+                            if (!m_hBrushes.ContainsKey(bColor))
+                                m_hBrushes.Add(bColor, new SolidBrush(Color.FromArgb(0, bColor, 0)));
+
+                            e.Graphics.FillRectangle(m_hBrushes[bColor], m_hInputData[i, k].Area);
+                        }
                     }
                     else
                     {
@@ -179,8 +190,8 @@ namespace Aiv.Research.Visualizer2D
             FilterCenter hCentering = new FilterCenter();
             FilterGaussianBlur7x7 hFilter = new FilterGaussianBlur7x7();
 
-            //hCentering.Apply(m_hInputData, 0);
-            //hFilter.Apply(m_hInputData, 1);
+            hCentering.Apply(m_hInputData, 0);
+            hFilter.Apply(m_hInputData, 1);
 
             for (int i = 0; i < m_hInputData.GetLength(0); i++)
             {

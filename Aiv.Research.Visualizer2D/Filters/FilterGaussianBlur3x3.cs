@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Aiv.Research.Visualizer2D.Filters
 {
-    class FilterGaussianBlur3x3 : Filter
+    public class FilterGaussianBlur3x3 : Filter
     {
-        FilterGaussianBlur3x3()
+        public FilterGaussianBlur3x3()
         {
             Matrix = new double[3, 3] 
             {

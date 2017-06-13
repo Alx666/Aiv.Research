@@ -50,6 +50,11 @@
             this.m_hWorker = new System.ComponentModel.BackgroundWorker();
             this.dataSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.normalizeCenterOfMassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.normalizeValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gaussianBlur3x3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gaussianBlur5x5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gaussianBlur7x7ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_hMenuStrip.SuspendLayout();
             this.m_hStatusBar.SuspendLayout();
             this.SuspendLayout();
@@ -200,7 +205,12 @@
             // dataSetToolStripMenuItem
             // 
             this.dataSetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadToolStripMenuItem1});
+            this.loadToolStripMenuItem1,
+            this.normalizeCenterOfMassToolStripMenuItem,
+            this.normalizeValuesToolStripMenuItem,
+            this.gaussianBlur3x3ToolStripMenuItem,
+            this.gaussianBlur5x5ToolStripMenuItem,
+            this.gaussianBlur7x7ToolStripMenuItem});
             this.dataSetToolStripMenuItem.Name = "dataSetToolStripMenuItem";
             this.dataSetToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.dataSetToolStripMenuItem.Text = "Data Set";
@@ -208,9 +218,40 @@
             // loadToolStripMenuItem1
             // 
             this.loadToolStripMenuItem1.Name = "loadToolStripMenuItem1";
-            this.loadToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.loadToolStripMenuItem1.Text = "Load";
+            this.loadToolStripMenuItem1.Size = new System.Drawing.Size(223, 22);
+            this.loadToolStripMenuItem1.Text = "Load MNIST";
             this.loadToolStripMenuItem1.Click += new System.EventHandler(this.OnDataLoad);
+            // 
+            // normalizeCenterOfMassToolStripMenuItem
+            // 
+            this.normalizeCenterOfMassToolStripMenuItem.Name = "normalizeCenterOfMassToolStripMenuItem";
+            this.normalizeCenterOfMassToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.normalizeCenterOfMassToolStripMenuItem.Text = "Normalize ( Center Of Mass)";
+            // 
+            // normalizeValuesToolStripMenuItem
+            // 
+            this.normalizeValuesToolStripMenuItem.Name = "normalizeValuesToolStripMenuItem";
+            this.normalizeValuesToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.normalizeValuesToolStripMenuItem.Text = "Normalize Values";
+            // 
+            // gaussianBlur3x3ToolStripMenuItem
+            // 
+            this.gaussianBlur3x3ToolStripMenuItem.Name = "gaussianBlur3x3ToolStripMenuItem";
+            this.gaussianBlur3x3ToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.gaussianBlur3x3ToolStripMenuItem.Text = "Gaussian Blur 3x3";
+            // 
+            // gaussianBlur5x5ToolStripMenuItem
+            // 
+            this.gaussianBlur5x5ToolStripMenuItem.Name = "gaussianBlur5x5ToolStripMenuItem";
+            this.gaussianBlur5x5ToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.gaussianBlur5x5ToolStripMenuItem.Text = "Gaussian Blur 5x5";
+            // 
+            // gaussianBlur7x7ToolStripMenuItem
+            // 
+            this.gaussianBlur7x7ToolStripMenuItem.Name = "gaussianBlur7x7ToolStripMenuItem";
+            this.gaussianBlur7x7ToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.gaussianBlur7x7ToolStripMenuItem.Text = "Gaussian Blur 7x7";
+            this.gaussianBlur7x7ToolStripMenuItem.Click += new System.EventHandler(this.OnGaussianBlur7x7);
             // 
             // Main
             // 
@@ -260,6 +301,11 @@
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataSetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem normalizeCenterOfMassToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem normalizeValuesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gaussianBlur3x3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gaussianBlur5x5ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gaussianBlur7x7ToolStripMenuItem;
     }
 }
 
