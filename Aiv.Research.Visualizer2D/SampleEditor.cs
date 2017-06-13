@@ -198,7 +198,7 @@ namespace Aiv.Research.Visualizer2D
 
                         //Quando viene chiamato Clear bisogna mettere tutti i dati della matrice dentro un array 1d
                         //ordinati per riga.. l'array deve essere preallocato x essere sicuri che non sfori il size dell'input
-                        hSamples[i * m_hInputData.GetLength(1) + k] = m_hInputData[i, k].Value;
+                        hSamples[i * m_hInputData.GetLength(0) + k] = m_hInputData[i, k].Value;
                     }
                     else
                     {
