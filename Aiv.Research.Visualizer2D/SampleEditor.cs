@@ -23,8 +23,8 @@ namespace Aiv.Research.Visualizer2D
         private RectangleF[]        m_hRectangles;
         private float               m_fSizeX;
         private float               m_fSizeY;
-        private int                 m_iColumns ;
-        private int                 m_iRows;
+        private float               m_iColumns ;
+        private float               m_iRows;
         public SampleEditor(Panel hPanel)
         {
             m_hGreenPen = new Pen(Color.Green,      1f);
@@ -52,7 +52,7 @@ namespace Aiv.Research.Visualizer2D
                     m_iColumns = (int)Math.Ceiling(Math.Sqrt(m_hNetwork.InputSize));
                     m_iRows = (int)Math.Ceiling((double)m_hNetwork.InputSize / m_iColumns);
 
-                    m_hInputData = new InputInformation[m_iRows, m_iColumns];
+                    m_hInputData = new InputInformation[(int)m_iRows, (int)m_iColumns];
 
                     m_fSizeX = (float)m_hPanel.Width / m_iColumns;
                     m_fSizeY = (float)m_hPanel.Height / m_iRows;
@@ -180,7 +180,7 @@ namespace Aiv.Research.Visualizer2D
             FilterGaussianBlur7x7 hFilter = new FilterGaussianBlur7x7();
 
             hCentering.Apply(m_hInputData, 0);
-            hFilter.Apply(m_hInputData, 1);
+            //hFilter.Apply(m_hInputData, 1);
 
             for (int i = 0; i < m_hInputData.GetLength(0); i++)
             {
@@ -198,7 +198,9 @@ namespace Aiv.Research.Visualizer2D
 
                         //Quando viene chiamato Clear bisogna mettere tutti i dati della matrice dentro un array 1d
                         //ordinati per riga.. l'array deve essere preallocato x essere sicuri che non sfori il size dell'input
-                        hSamples[i * m_hInputData.GetLength(0) + k] = m_hInputData[i, k].Value;
+
+                        if (hSamples[i * m_hInputData.GetLength(0) + k] < hSamples.Length)
+                            hSamples[i * m_hInputData.GetLength(0) + k] = m_hInputData[i, k].Value;
                     }
                     else
                     {
@@ -223,7 +225,14 @@ namespace Aiv.Research.Visualizer2D
             {
                 for (int k = 0; k < m_hInputData.GetLength(1); k++)
                 {
-                    m_hInputData[i,k].Value = hSelected.Values[i * m_hInputData.GetLength(0) + k];
+                    try
+                    {
+                        m_hInputData[i, k].Value = hSelected.Values[i * m_hInputData.GetLength(0) + k];
+                    }
+                        catch
+                    {
+
+                    }
                 }
             }
 
