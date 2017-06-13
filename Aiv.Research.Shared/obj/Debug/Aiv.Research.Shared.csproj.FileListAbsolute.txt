@@ -10,9 +10,3 @@ E:\Aiv.Research\Aiv.Research.Shared\bin\Debug\encog-core-cs.dll
 E:\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.csprojResolveAssemblyReference.cache
 E:\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.dll
 E:\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.pdb
-C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.Shared\bin\Debug\Aiv.Research.Shared.dll
-C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.Shared\bin\Debug\Aiv.Research.Shared.pdb
-C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.Shared\bin\Debug\encog-core-cs.dll
-C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.csprojResolveAssemblyReference.cache
-C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.dll
-C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.pdb

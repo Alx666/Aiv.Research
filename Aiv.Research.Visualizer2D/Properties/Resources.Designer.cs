@@ -59,5 +59,25 @@ namespace Aiv.Research.Visualizer2D.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] train_images {
+            get {
+                object obj = ResourceManager.GetObject("train_images", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] train_labels {
+            get {
+                object obj = ResourceManager.GetObject("train_labels", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

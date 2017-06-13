@@ -130,6 +130,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Resources\train-images.idx3-ubyte" />
+    <EmbeddedResource Include="Resources\train-labels.idx1-ubyte" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

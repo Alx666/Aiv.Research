@@ -113,7 +113,7 @@ namespace Aiv.Research.Visualizer2D
                     {
                         if (hInfo.Value != 0.0)
                         {
-                            byte bColor = (byte)(hInfo.Value * 255);
+                            byte bColor = (byte)(-hInfo.Value * 255);
                             if (!m_hBrushes.ContainsKey(bColor))
                                 m_hBrushes.Add(bColor, new SolidBrush(Color.FromArgb(0, bColor, 0)));
 
