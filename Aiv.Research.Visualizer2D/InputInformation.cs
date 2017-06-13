@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Aiv.Research.Visualizer2D
 {
-    internal class InputInformation
+    public class InputInformation
     {
         public InputInformation()
         {

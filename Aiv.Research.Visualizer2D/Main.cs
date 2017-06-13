@@ -245,14 +245,20 @@ namespace Aiv.Research.Visualizer2D
             INeuralDataSet hTrainingSet = new BasicNeuralDataSet(hInput, hIdeal);
             ITrain hTraining = new ResilientPropagation(hNetwork, hTrainingSet);
 
-            int iIterations = 100;
+            int iIterations = 500;
 
             for (int i = 0; i < iIterations; i++)
             {
                 hTraining.Iteration(1);
 
-                if (i % (iIterations / 100) == 0)
-                    m_hWorker.ReportProgress(i / (iIterations / 100));
+                if (i % (iIterations / 500) == 0)
+                    m_hWorker.ReportProgress(i / (iIterations / 500));
+            }
+
+
+            using (Stream hFs = File.OpenWrite("Last.net"))
+            {
+                Encog.Persist.EncogDirectoryPersistence.SaveObject(hFs, hNetwork);
             }
 
             m_hNeuralDisplay = new FormNNDrawer(hNetwork, 20, 800, 600);            
