@@ -15,6 +15,7 @@ using System.Xml.Serialization;
 using System.Linq;
 using System.Collections.Generic;
 using Aiv.Research.Visualizer2D.Filters;
+using System.Reflection;
 
 namespace Aiv.Research.Visualizer2D
 {
@@ -284,66 +285,86 @@ namespace Aiv.Research.Visualizer2D
 
         private void OnDataLoad(object sender, EventArgs e)
         {
-            
+            string[] hFiles = Assembly.GetExecutingAssembly().GetManifestResourceNames().Where(x => x.Contains("ubyte")).ToArray();
 
-            using (OpenFileDialog hOpenFile = new OpenFileDialog())
+            //Get Embedded Resources Names
+            foreach (var item in hFiles)
             {
-                UInt32 ReverseBytes(UInt32 value)
+                if (!File.Exists(item))
                 {
-                    return (value & 0x000000FFU) << 24 | (value & 0x0000FF00U) << 8 |
-                           (value & 0x00FF0000U) >> 8 | (value & 0xFF000000U) >> 24;
-                }
-
-                if (hOpenFile.ShowDialog() == DialogResult.OK)
-                {
-                    //Test Images
-                    byte[] hData = File.ReadAllBytes(hOpenFile.FileName);
-                    uint iMagicNumber     = ReverseBytes(BitConverter.ToUInt32(hData, 0x0));
-                    uint iNumberOfImages  = ReverseBytes(BitConverter.ToUInt32(hData, 0x4));
-                    uint iNumberOfRows    = ReverseBytes(BitConverter.ToUInt32(hData, 0x8));
-                    uint iNumberOfColumns = ReverseBytes(BitConverter.ToUInt32(hData, 0xC));
-                    uint iIndex = 0x10;
-
-                    //Image Labels
-                    FileInfo hFile = new FileInfo(hOpenFile.FileName);
-                    string sLabels = hFile.Directory + "\\train-labels.idx1-ubyte";
-                    byte[] hLabels = File.ReadAllBytes(sLabels);
-                    int iOffset    = 0x8;
-
-                    List<double> hValues    = new List<double>((int)(iNumberOfRows * iNumberOfColumns));
-
-                    for (int i = 0; i < iNumberOfImages; i++)
-                    {
-                        Sample hSample = new Sample();
-                        hValues.Clear();
-
-                        for (int x = 0; x < iNumberOfRows; x++)
+                    using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream(item))
+                    {                        
+                        using (FileStream hFs = File.OpenWrite(item))
                         {
-                            for (int y = 0; y < iNumberOfColumns; y++)
-                            {
-                                hValues.Add(hData[iIndex]);
-                                iIndex++;
-                            }
+                            s.CopyTo(hFs);
                         }
-
-                        byte bLabel             = hLabels[i + iOffset];
-                        hSample.Name            = $"{i} - {bLabel}";
-                        hSample.Ideal           = new double[10];
-                        hSample.Ideal[bLabel]   = 1.0;
-                        hSample.Values          = hValues.ToArray();
-
-
-                        m_hSamples.Items.Add(hSample);
-                        m_hPenDrawer.Network.Samples.Add(hSample);
                     }
                 }
             }
-            
-        }
 
-        private void OnGaussianBlur7x7(object sender, EventArgs e)
-        {
-            
+            UInt32 ReverseBytes(UInt32 value)
+            {
+                return (value & 0x000000FFU) << 24 | (value & 0x0000FF00U) << 8 |
+                       (value & 0x00FF0000U) >> 8 | (value & 0xFF000000U) >> 24;
+            }
+
+
+
+            //Setup environment
+            CreateNetworkForm hCreateDialog = new CreateNetworkForm(784, 10);
+
+            m_hSamples.Items.Clear();
+
+            if (hCreateDialog.ShowDialog() == DialogResult.OK)
+            {
+                m_hPenDrawer.Network = hCreateDialog.Config;
+                m_hPanel.Visible = true;
+                m_hLastIdeal = new double[m_hPenDrawer.Network.OutputSize];
+            }
+
+
+            byte[] hData = File.ReadAllBytes(hFiles.Where(x => x.Contains("train-images")).First());
+            uint iMagicNumber = ReverseBytes(BitConverter.ToUInt32(hData, 0x0));
+            uint iNumberOfImages = ReverseBytes(BitConverter.ToUInt32(hData, 0x4));
+            uint iNumberOfRows = ReverseBytes(BitConverter.ToUInt32(hData, 0x8));
+            uint iNumberOfColumns = ReverseBytes(BitConverter.ToUInt32(hData, 0xC));
+            uint iIndex = 0x10;
+
+            //Image Labels
+            byte[] hLabels = File.ReadAllBytes(hFiles.Where(x => x.Contains("train-labels")).First());
+            int iOffset = 0x8;
+
+            List<double> hValues = new List<double>((int)(iNumberOfRows * iNumberOfColumns));
+
+            for (int i = 0; i < iNumberOfImages; i++)
+            {
+                Sample hSample = new Sample();
+                hValues.Clear();
+
+                for (int x = 0; x < iNumberOfRows; x++)
+                {
+                    for (int y = 0; y < iNumberOfColumns; y++)
+                    {
+                        hValues.Add(hData[iIndex]);
+                        iIndex++;
+                    }
+                }
+
+                byte bLabel = hLabels[i + iOffset];
+                hSample.Name = $"{i} - {bLabel}";
+                hSample.Ideal = new double[10];
+                hSample.Ideal[bLabel] = 1.0;
+                hSample.Values = hValues.ToArray();
+
+
+                m_hSamples.Items.Add(hSample);
+                m_hPenDrawer.Network.Samples.Add(hSample);
+
+
+
+
+            }
+
         }
     }
 }

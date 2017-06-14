@@ -12,6 +12,20 @@ namespace Aiv.Research.Visualizer2D
     {
         public NetworkCreationConfig Config { get; private set; }
 
+        private int m_iForcedInputNeurons;
+        private int m_iForcedOutputNeurons;
+
+
+        public CreateNetworkForm(int iInputSize, int iOutputSize) : this()
+        {
+            m_iForcedInputNeurons = iInputSize;
+            m_iForcedOutputNeurons = iOutputSize;
+
+            m_hTextInputSize.Enabled = false;
+            m_hTextInputSize.Text = "784";
+            m_hTextOutputSize.Text = "10";
+            m_hTextOutputSize.Enabled = false;
+        }
         public CreateNetworkForm()
         {
             InitializeComponent();
