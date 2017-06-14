@@ -87,6 +87,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="NetworkSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetworkSelector.Designer.cs">
+      <DependentUpon>NetworkSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="PropertyGridForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NetworkSelector.resx">
+      <DependentUpon>NetworkSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
