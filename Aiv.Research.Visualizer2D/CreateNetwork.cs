@@ -22,8 +22,8 @@ namespace Aiv.Research.Visualizer2D
             m_iForcedOutputNeurons = iOutputSize;
 
             m_hTextInputSize.Enabled = false;
-            m_hTextInputSize.Text = "784";
-            m_hTextOutputSize.Text = "10";
+            m_hTextInputSize.Text = iInputSize.ToString();
+            m_hTextOutputSize.Text = iOutputSize.ToString();
             m_hTextOutputSize.Enabled = false;
         }
         public CreateNetworkForm()
@@ -80,6 +80,7 @@ namespace Aiv.Research.Visualizer2D
 
                 Config.Activation   = ((ActivationFuncSelect)m_hComboActivation.SelectedItem).Func;
                 Config.Name         = m_hTextName.Text;
+                Config.Iterations   = int.Parse(m_hTextTraining.Text);
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

@@ -160,7 +160,7 @@ namespace Aiv.Research.Shared
         {
             Token = new CancellationToken();
             NetworkConfing = hConfig;
-            Iterations = hConfig.iIterations;
+            Iterations = hConfig.Iterations;
         }
         public void StartTraing()
         {

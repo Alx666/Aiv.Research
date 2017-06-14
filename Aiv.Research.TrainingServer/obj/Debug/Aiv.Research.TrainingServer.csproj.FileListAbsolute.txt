@@ -17,3 +17,12 @@ E:\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\Aiv.Research.Shared.dll
 E:\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\encog-core-cs.dll
 E:\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\Aiv.Research.Shared.pdb
 E:\Aiv.Research\Aiv.Research.TrainingServer\obj\Debug\Aiv.Research.TrainingServer.csprojResolveAssemblyReference.cache
+C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\Aiv.Research.TrainingServer.exe.config
+C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\Aiv.Research.TrainingServer.exe
+C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\Aiv.Research.TrainingServer.pdb
+C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\Aiv.Research.Shared.dll
+C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\encog-core-cs.dll
+C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\Aiv.Research.Shared.pdb
+C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\obj\Debug\Aiv.Research.TrainingServer.csprojResolveAssemblyReference.cache
+C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\obj\Debug\Aiv.Research.TrainingServer.exe
+C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\obj\Debug\Aiv.Research.TrainingServer.pdb

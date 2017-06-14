@@ -62,7 +62,7 @@ namespace Aiv.Research.Shared
         [DataMember]
         public int HL2Size      { get; set; }
         [DataMember]
-        public int iIterations { get; set; }
+        public int Iterations { get; set; }
 
         [DataMember]
         private Guid m_vActivationTypeGuid;

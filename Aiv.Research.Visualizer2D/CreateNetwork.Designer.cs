@@ -45,6 +45,8 @@
             this.m_hButtonCancel = new System.Windows.Forms.Button();
             this.m_hTextName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.m_hTextTraining = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // m_hTextInputSize
@@ -190,12 +192,32 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Name";
             // 
+            // m_hTextTraining
+            // 
+            this.m_hTextTraining.Location = new System.Drawing.Point(269, 63);
+            this.m_hTextTraining.Name = "m_hTextTraining";
+            this.m_hTextTraining.Size = new System.Drawing.Size(187, 20);
+            this.m_hTextTraining.TabIndex = 15;
+            this.m_hTextTraining.Text = "500";
+            this.m_hTextTraining.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(203, 66);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "T.Iterations";
+            // 
             // CreateNetworkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 189);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.m_hTextTraining);
             this.Controls.Add(this.m_hTextName);
             this.Controls.Add(this.m_hButtonCancel);
             this.Controls.Add(this.m_hButtonCreate);
@@ -237,5 +259,7 @@
         private System.Windows.Forms.Button m_hButtonCancel;
         private System.Windows.Forms.TextBox m_hTextName;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox m_hTextTraining;
+        private System.Windows.Forms.Label label8;
     }
 }

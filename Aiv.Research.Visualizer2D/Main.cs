@@ -202,13 +202,17 @@ namespace Aiv.Research.Visualizer2D
 
         private void MenuItemBackpropagationTrain(object sender, EventArgs e)
         {
-            if (m_hWorker.IsBusy)
+            if (!m_hWorker.IsBusy)
             {
-                MessageBox.Show("No", "Stocazzo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                m_hProgressBar.Minimum = 0;
+                m_hProgressBar.Maximum = m_hPenDrawer.Network.Iterations;
+                m_hProgressBar.Step    = 1;
+                m_hWorker.RunWorkerAsync();
             }
-
-            m_hWorker.RunWorkerAsync();
+            else
+            {
+                MessageBox.Show("Training Already In Progress", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }            
         }
 
         private void OnSamplesSelectedIndexChanged(object sender, EventArgs e)
@@ -246,20 +250,24 @@ namespace Aiv.Research.Visualizer2D
             INeuralDataSet hTrainingSet = new BasicNeuralDataSet(hInput, hIdeal);
             ITrain hTraining = new ResilientPropagation(hNetwork, hTrainingSet);
 
-            int iIterations = 500;
+            
 
-            for (int i = 0; i < iIterations; i++)
+            for (int i = 0; i < hConfig.Iterations; i++)
             {
                 hTraining.Iteration(1);
-
-                if (i % (iIterations / 500) == 0)
-                    m_hWorker.ReportProgress(i / (iIterations / 500));
+                m_hWorker.ReportProgress( (i / hConfig.Iterations) * 100 );
             }
 
 
-            using (Stream hFs = File.OpenWrite("Last.net"))
+            using (SaveFileDialog hDialog = new SaveFileDialog())
             {
-                Encog.Persist.EncogDirectoryPersistence.SaveObject(hFs, hNetwork);
+                if (hDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (Stream hFs = File.OpenWrite(hDialog.FileName))
+                    {
+                        Encog.Persist.EncogDirectoryPersistence.SaveObject(hFs, hNetwork);
+                    }
+                }
             }
 
             m_hNeuralDisplay = new FormNNDrawer(hNetwork, 20, 800, 600);            
@@ -267,7 +275,7 @@ namespace Aiv.Research.Visualizer2D
 
         private void OnProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
-            m_hProgressBar.Value = e.ProgressPercentage;
+            m_hProgressBar.Value += 1;
         }
 
         private void OnRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
@@ -359,12 +367,7 @@ namespace Aiv.Research.Visualizer2D
 
                 m_hSamples.Items.Add(hSample);
                 m_hPenDrawer.Network.Samples.Add(hSample);
-
-
-
-
             }
-
         }
     }
 }
