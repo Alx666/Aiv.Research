@@ -402,5 +402,12 @@ namespace Aiv.Research.Visualizer2D
         {
 
         }
+
+        private void OnRemoteBackPropagation(object sender, EventArgs e)
+        {
+            TrainingClient hClient = new TrainingClient();
+            hClient.Connect(m_hSettings.TrainingServiceAddress, m_hSettings.TrainingServicePort);
+            hClient.StartTrainingVerbose(m_hSaveFileDialog.FileName);
+        }
     }
 }
