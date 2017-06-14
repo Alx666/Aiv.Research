@@ -259,16 +259,7 @@ namespace Aiv.Research.Visualizer2D
             }
 
 
-            using (SaveFileDialog hDialog = new SaveFileDialog())
-            {
-                if (hDialog.ShowDialog() == DialogResult.OK)
-                {
-                    using (Stream hFs = File.OpenWrite(hDialog.FileName))
-                    {
-                        Encog.Persist.EncogDirectoryPersistence.SaveObject(hFs, hNetwork);
-                    }
-                }
-            }
+            e.Result = hNetwork;
 
             m_hNeuralDisplay = new FormNNDrawer(hNetwork, 20, 800, 600);            
         }
@@ -281,6 +272,20 @@ namespace Aiv.Research.Visualizer2D
         private void OnRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
             m_hProgressBar.Value = 0;
+
+            BasicNetwork hNetwork = e.Result as BasicNetwork;
+
+            using (SaveFileDialog hDialog = new SaveFileDialog())
+            {
+                if (hDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (Stream hFs = File.OpenWrite(hDialog.FileName))
+                    {
+                        Encog.Persist.EncogDirectoryPersistence.SaveObject(hFs, hNetwork);
+                    }
+                }
+            }
+
             m_hNeuralDisplay.Show();            
         }
 
