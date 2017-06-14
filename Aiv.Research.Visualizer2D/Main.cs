@@ -385,6 +385,7 @@ namespace Aiv.Research.Visualizer2D
 
         }
 
+
         private void OnGaussianBlur3x3(object sender, EventArgs e)
         {
             m_hSamples.Items.Clear();
