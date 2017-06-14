@@ -195,30 +195,35 @@
             this.normalizeCenterOfMassToolStripMenuItem.Name = "normalizeCenterOfMassToolStripMenuItem";
             this.normalizeCenterOfMassToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.normalizeCenterOfMassToolStripMenuItem.Text = "Normalize (Center Of Mass)";
+            this.normalizeCenterOfMassToolStripMenuItem.Click += new System.EventHandler(this.OnNormalizeCenterOfMass);
             // 
             // normalizeValuesToolStripMenuItem
             // 
             this.normalizeValuesToolStripMenuItem.Name = "normalizeValuesToolStripMenuItem";
             this.normalizeValuesToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.normalizeValuesToolStripMenuItem.Text = "Normalize Values";
+            this.normalizeValuesToolStripMenuItem.Click += new System.EventHandler(this.OnNormalizeValues);
             // 
             // gaussianBlur3x3ToolStripMenuItem
             // 
             this.gaussianBlur3x3ToolStripMenuItem.Name = "gaussianBlur3x3ToolStripMenuItem";
             this.gaussianBlur3x3ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.gaussianBlur3x3ToolStripMenuItem.Text = "Gaussian Blur 3x3";
+            this.gaussianBlur3x3ToolStripMenuItem.Click += new System.EventHandler(this.OnGaussianBlur);
             // 
             // gaussianBlur5x5ToolStripMenuItem
             // 
             this.gaussianBlur5x5ToolStripMenuItem.Name = "gaussianBlur5x5ToolStripMenuItem";
             this.gaussianBlur5x5ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.gaussianBlur5x5ToolStripMenuItem.Text = "Gaussian Blur 5x5";
+            this.gaussianBlur5x5ToolStripMenuItem.Click += new System.EventHandler(this.OnGaussianBlur5x5);
             // 
             // gaussianBlur7x7ToolStripMenuItem
             // 
             this.gaussianBlur7x7ToolStripMenuItem.Name = "gaussianBlur7x7ToolStripMenuItem";
             this.gaussianBlur7x7ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.gaussianBlur7x7ToolStripMenuItem.Text = "Gaussian Blur 7x7";
+            this.gaussianBlur7x7ToolStripMenuItem.Click += new System.EventHandler(this.OnGaussianBlur7x7);
             // 
             // m_hContextMenuStrip1
             // 

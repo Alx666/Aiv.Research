@@ -295,6 +295,11 @@ namespace Aiv.Research.Visualizer2D
         }
 
         private void OnOptionsClick(object sender, EventArgs e) => new PropertyGridForm(m_hSettings).ShowDialog();
+        private UInt32 ReverseBytes(UInt32 value)
+        {
+            return (value & 0x000000FFU) << 24 | (value & 0x0000FF00U) << 8 |
+                   (value & 0x00FF0000U) >> 8 | (value & 0xFF000000U) >> 24;
+        }
 
         private void OnDataLoad(object sender, EventArgs e)
         {
@@ -314,13 +319,6 @@ namespace Aiv.Research.Visualizer2D
                     }
                 }
             }
-
-            UInt32 ReverseBytes(UInt32 value)
-            {
-                return (value & 0x000000FFU) << 24 | (value & 0x0000FF00U) << 8 |
-                       (value & 0x00FF0000U) >> 8 | (value & 0xFF000000U) >> 24;
-            }
-
 
 
             //Setup environment
@@ -373,6 +371,36 @@ namespace Aiv.Research.Visualizer2D
                 m_hSamples.Items.Add(hSample);
                 m_hPenDrawer.Network.Samples.Add(hSample);
             }
+        }
+
+        private void OnGaussianBlur3x3()
+        {
+           
+        }
+
+        private void OnNormalizeCenterOfMass(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnNormalizeValues(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnGaussianBlur(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnGaussianBlur5x5(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnGaussianBlur7x7(object sender, EventArgs e)
+        {
+
         }
     }
 }

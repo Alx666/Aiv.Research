@@ -25,3 +25,12 @@ C:\Users\alxey\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\Aiv.Res
 C:\Users\alxey\Source\Repos\Aiv.Research\TrainingClientConsole\obj\Debug\TrainingClientConsole.csprojResolveAssemblyReference.cache
 C:\Users\alxey\Source\Repos\Aiv.Research\TrainingClientConsole\obj\Debug\TrainingClientConsole.exe
 C:\Users\alxey\Source\Repos\Aiv.Research\TrainingClientConsole\obj\Debug\TrainingClientConsole.pdb
+C:\Users\Alx666\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\TrainingClientConsole.exe.config
+C:\Users\Alx666\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\TrainingClientConsole.exe
+C:\Users\Alx666\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\TrainingClientConsole.pdb
+C:\Users\Alx666\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\Aiv.Research.Shared.dll
+C:\Users\Alx666\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\encog-core-cs.dll
+C:\Users\Alx666\Source\Repos\Aiv.Research\TrainingClientConsole\bin\Debug\Aiv.Research.Shared.pdb
+C:\Users\Alx666\Source\Repos\Aiv.Research\TrainingClientConsole\obj\Debug\TrainingClientConsole.csprojResolveAssemblyReference.cache
+C:\Users\Alx666\Source\Repos\Aiv.Research\TrainingClientConsole\obj\Debug\TrainingClientConsole.exe
+C:\Users\Alx666\Source\Repos\Aiv.Research\TrainingClientConsole\obj\Debug\TrainingClientConsole.pdb
