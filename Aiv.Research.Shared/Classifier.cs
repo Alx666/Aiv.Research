@@ -103,12 +103,6 @@ namespace Aiv.Research.Shared
         {
             lock (m_hSyncRoot)
             {
-                //Salvo il file xml
-                using (FileStream hFs = File.OpenWrite(m_hDataPath.FullName + $"/{hTrainedNetwork.Name}.xml"))
-                {
-                    XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
-                    hSerializer.Serialize(hFs, hTrainedNetwork);
-                }
 
                 // Zippo il file .dat
                 using (ZipArchive zip = ZipFile.Open(m_hDataPath.FullName + $"/{hTrainedNetwork.Name}.zip", ZipArchiveMode.Create))
@@ -120,6 +114,13 @@ namespace Aiv.Research.Shared
                     }
 
                     zip.CreateEntryFromFile(m_hDataPath.FullName + $"/{hTrainedNetwork.Name}.dat", $"{hTrainedNetwork.Name}.dat");
+                }
+
+                //Salvo il file xml
+                using (FileStream hFs = File.OpenWrite(m_hDataPath.FullName + $"/{hTrainedNetwork.Name}.xml"))
+                {
+                    XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
+                    hSerializer.Serialize(hFs, hTrainedNetwork);
                 }
 
                 m_hDataPath.GetFiles($"{hTrainedNetwork.Name}.dat").Select(x => x).First().Delete();

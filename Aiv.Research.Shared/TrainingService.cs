@@ -54,6 +54,12 @@ namespace Aiv.Research.Shared
             hBinding.SendTimeout = TimeSpan.MaxValue;
             m_hService.AddServiceEndpoint(typeof(ITrainingService), hBinding, string.Empty);
             m_hService.Open();
+            Classifier.SetDataPath(Environment.CurrentDirectory);
+            List<NetworkCreationConfig> hConfigs = Classifier.Enumerate().ToList();
+            for (int i = 0; i < hConfigs.Count; i++)
+            {
+                m_hCompletedTrainings.Add(new TrainingSet(hConfigs[i]));
+            }
             return "Service Started";
         }
 
@@ -69,6 +75,15 @@ namespace Aiv.Research.Shared
             TerminateTraining(iConfigId);
             int iRes;
             return m_hTrainingInProgress.TryRemove(m_hTrainingInProgress.Keys.FirstOrDefault(x => x.NetworkConfing.Id == iConfigId), out iRes);
+        }
+
+        public IEnumerable<TrainingSet> EnumerateTrainingsCompleted(string sExceptedConfigs)
+        {
+            sExceptedConfigs = sExceptedConfigs.ToLower();
+            IEnumerable<TrainingSet> hResult = new List<TrainingSet>();
+
+            
+            throw new NotImplementedException("YOU ARE NOT PREPARED");
         }
 
         [ConsoleUIMethod]
@@ -119,8 +134,8 @@ namespace Aiv.Research.Shared
 
         private void NetworkTrainingRoutine(object hParam)
         {
-            Console.WriteLine("New Training started");
             TrainingSet hWorkItem = hParam as TrainingSet;
+            Console.WriteLine("New Training Started with Name:" + hWorkItem.NetworkConfing.Name);
             if (hWorkItem == null)
                 return;
             m_hTrainingInProgress.TryAdd(hWorkItem, hWorkItem.NetworkConfing.Id);
@@ -133,6 +148,7 @@ namespace Aiv.Research.Shared
             m_hTrainingInProgress.TryRemove(hWorkItem, out iRes);
             m_hCompletedTrainings.Add(hWorkItem);
             Classifier.SetDataPath(Environment.CurrentDirectory);
+            hWorkItem.NetworkConfing.Name = Classifier.GetId().ToString() + "_" + hWorkItem.NetworkConfing.Name;
             Classifier.Store(hWorkItem.NetworkConfing, SerializeToStream(hWorkItem.NetworkConfing).ToArray());
             Console.WriteLine("Training Completed");
         }
@@ -150,6 +166,12 @@ namespace Aiv.Research.Shared
             IFormatter hFormatter = new BinaryFormatter();
             hStream.Seek(0, SeekOrigin.Begin);
             return hFormatter.Deserialize(hStream);
+        }
+
+        [ConsoleUIMethod]
+        public byte[] Download(int iConfigId)
+        {
+            return Classifier.Get(iConfigId);
         }
     }
 
@@ -187,6 +209,7 @@ namespace Aiv.Research.Shared
             IsTraining = false;
         }
 
+        [Obsolete]
         public double[] TestNetwork(double[] input)
         {
             double[] output = new double[NetworkConfing.OutputSize];
