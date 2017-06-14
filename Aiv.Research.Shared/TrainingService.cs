@@ -46,7 +46,7 @@ namespace Aiv.Research.Shared
         }
 
         [ConsoleUIMethod]
-        public void StartService(int iPort)
+        public string StartService(int iPort)
         {
             m_hService = new ServiceHost(this, new Uri($"net.tcp://localhost:{iPort}/{TRAINING_SERVICE_NAME}/"));
             NetTcpBinding hBinding = new NetTcpBinding(SecurityMode.None, true);
@@ -54,6 +54,7 @@ namespace Aiv.Research.Shared
             hBinding.SendTimeout = TimeSpan.MaxValue;
             m_hService.AddServiceEndpoint(typeof(ITrainingService), hBinding, string.Empty);
             m_hService.Open();
+            return "Service Started";
         }
 
         [ConsoleUIMethod]
@@ -107,6 +108,10 @@ namespace Aiv.Research.Shared
             while(true)
             {
                 TrainingSet hJob = m_hNetworksToTrain.Take(m_hDispatcherTakeToken.Token); //dispatcher thread wait here for a job to do
+                while (m_hTrainingInProgress.Count >= m_iMaxParallelTrainings)
+                {
+                    //Aspetto che finiscano i vari training
+                }
                 Task hTraining = Task.Factory.StartNew(NetworkTrainingRoutine, hJob, hJob.Token);
             }
         }
@@ -114,6 +119,7 @@ namespace Aiv.Research.Shared
 
         private void NetworkTrainingRoutine(object hParam)
         {
+            Console.WriteLine("New Training started");
             TrainingSet hWorkItem = hParam as TrainingSet;
             if (hWorkItem == null)
                 return;
@@ -126,10 +132,9 @@ namespace Aiv.Research.Shared
             int iRes;
             m_hTrainingInProgress.TryRemove(hWorkItem, out iRes);
             m_hCompletedTrainings.Add(hWorkItem);
-            //Classifier.SetDataPath(Environment.CurrentDirectory);
-            //Classifier.Store(hWorkItem.NetworkConfing, SerializeToStream(hWorkItem.NetworkConfing).ToArray());
-            //Classifier.Store();
-            //TODO Send to Classifier
+            Classifier.SetDataPath(Environment.CurrentDirectory);
+            Classifier.Store(hWorkItem.NetworkConfing, SerializeToStream(hWorkItem.NetworkConfing).ToArray());
+            Console.WriteLine("Training Completed");
         }
 
         private MemoryStream SerializeToStream(object hObj)
