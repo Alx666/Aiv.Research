@@ -27,8 +27,8 @@ namespace Aiv.Research.Shared
         [OperationContract]
         IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted();
 
-        [OperationContract]
-        IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted(string sExceptedConfigs);
+        //[OperationContract]
+       // IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted(string sExceptedConfigs);
 
         //Ritorna solamente i dati della rete richiesta
         [OperationContract]
