@@ -19,16 +19,20 @@ namespace Aiv.Research.Visualizer2D
             TrainingClient client = new TrainingClient();
             NetworkCreationConfig config = new NetworkCreationConfig();
 
+            // stabiliamo connessione + download dati Training + enumeriamo
             client.Connect(appsettings.TrainingServiceAddress, appsettings.TrainingServicePort);
-            var a = client.ServiceInstance.DownloadTrainingData(config.Id).ToString();
-            client.ServiceInstance.EnumerateTrainingsCompleted();
+            
+            IEnumerable<NetworkCreationConfig> hConfigs = client.ServiceInstance.EnumerateTrainingsCompleted();
+
+            
 
 
-            listView1.GridLines = true;
-            listView1.Sorting = SortOrder.Ascending;
-           // listView1.Items[0].SubItems.Add() 
-            ListViewItem item0 = new ListViewItem("qualcosa", 0);
-            item0.SubItems.Add("1");
+
+            //creiamo colonne e righe
+            
+
+
+           
 
             
 
