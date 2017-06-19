@@ -296,3 +296,6 @@ __pycache__/
 **/*.cache
 *.cache
 **/Debug/**.*
+*.suo
+.vs
+.vs/
