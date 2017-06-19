@@ -79,8 +79,9 @@ namespace Aiv.Research.Shared.Data
 
         public void Update()
         {
-            if(Started)
-                m_hValues.Add(new Sample("", m_hInputMembers.Select(x => x.GetValue()).ToArray(), m_hOutputMembers.Select(x => x.GetValue()).ToArray()));
+            
+            if (Started)
+                m_hValues.Add(new Sample("", Array.ConvertAll(m_hInputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x), Array.ConvertAll(m_hOutputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x)));
         }
 
 

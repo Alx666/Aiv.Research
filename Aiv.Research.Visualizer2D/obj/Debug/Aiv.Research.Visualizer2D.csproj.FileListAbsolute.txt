@@ -145,3 +145,4 @@ C:\Users\start\Source\Repos\Aiv.Research\Aiv.Research.Visualizer2D\obj\Debug\Aiv
 C:\Users\start\Source\Repos\Aiv.Research\Aiv.Research.Visualizer2D\obj\Debug\Aiv.Research.Visualizer2D.csproj.GenerateResource.Cache
 C:\Users\start\Source\Repos\Aiv.Research\Aiv.Research.Visualizer2D\obj\Debug\Aiv.Research.Visualizer2D.exe
 C:\Users\start\Source\Repos\Aiv.Research\Aiv.Research.Visualizer2D\obj\Debug\Aiv.Research.Visualizer2D.pdb
+C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.Visualizer2D\obj\Debug\Aiv.Research.Visualizer2D.NetworkSelector.resources

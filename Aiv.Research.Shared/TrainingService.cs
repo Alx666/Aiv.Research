@@ -77,12 +77,12 @@ namespace Aiv.Research.Shared
             return m_hTrainingInProgress.TryRemove(m_hTrainingInProgress.Keys.FirstOrDefault(x => x.NetworkConfing.Id == iConfigId), out iRes);
         }
 
-        public IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted(string sExceptedConfigs)
-        {
-            sExceptedConfigs = sExceptedConfigs.ToLower();
-            IEnumerable<TrainingSet> hResult = new List<TrainingSet>();
-            throw new NotImplementedException("YOU ARE NOT PREPARED");
-        }
+        //public IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted(string sExceptedConfigs)
+        //{
+        //    sExceptedConfigs = sExceptedConfigs.ToLower();
+        //    IEnumerable<TrainingSet> hResult = new List<TrainingSet>();
+        //    throw new NotImplementedException("YOU ARE NOT PREPARED");
+        //}
 
         [ConsoleUIMethod]
         public byte[] DownloadTrainingData(int iConfigId)
@@ -169,12 +169,6 @@ namespace Aiv.Research.Shared
             hStream.Seek(0, SeekOrigin.Begin);
             return hFormatter.Deserialize(hStream);
         }
-
-        [ConsoleUIMethod]
-        public byte[] Download(int iConfigId)
-        {
-            return Classifier.Get(iConfigId);
-        }
     }
 
     public class TrainingSet
@@ -200,10 +194,9 @@ namespace Aiv.Research.Shared
             double[][] ideal = new double[NetworkConfing.Samples.Count][];
             for (int i = 0; i < NetworkConfing.Samples.Count; i++)
             {
-                input[i] = NetworkConfing.Samples[i].Values;
-                ideal[i] = NetworkConfing.Samples[i].Ideal;
+                input[i] = Array.ConvertAll(NetworkConfing.Samples[i].Values, x => (double)x);
+                ideal[i] = Array.ConvertAll(NetworkConfing.Samples[i].Ideal, x => (double) x);
             }
-            
             INeuralDataSet hNeuralDataSet = new BasicNeuralDataSet(input, ideal);
             ITrain hTraining = new ResilientPropagation(m_hNetwork, hNeuralDataSet);
             hTraining.Iteration(Iterations);

@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Encog.Engine.Network.Activation;
 using System;
 using System.IO;
+using System.IO.Compression;
 using System.Reflection;
 using System.ServiceModel;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml;
 using System.Xml.Serialization;
 using Encog.Neural.Networks;
@@ -19,29 +21,6 @@ namespace Aiv.Research.Shared
     [DataContract]    
     public class NetworkCreationConfig
     {
-        public static void Serialize(NetworkCreationConfig hConfig, string sPath)
-        {
-            XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
-            using (StringWriter hWriter = new StringWriter())
-            {
-                using (XmlWriter writer = XmlWriter.Create(hWriter))
-                {
-                    hSerializer.Serialize(writer, hConfig);
-                    string sXmlString = hWriter.ToString();
-                    File.WriteAllText(sPath, sXmlString);
-                }
-            }
-        }
-
-        public static NetworkCreationConfig Deserialize(string sPath)
-        {
-            using (FileStream hStream = File.OpenRead(sPath))
-            {
-                XmlSerializer hSerializer = new XmlSerializer(typeof(NetworkCreationConfig));
-                return hSerializer.Deserialize(hStream) as NetworkCreationConfig;
-            }
-        }
-
         public NetworkCreationConfig()
         {
             Samples = new List<Sample>();
@@ -131,6 +110,43 @@ namespace Aiv.Research.Shared
             m_hNetwork.Reset();
 
             return m_hNetwork;
+        }
+
+        public static byte[] Compress(NetworkCreationConfig hConfig)
+        {
+            using (MemoryStream stream = new MemoryStream())
+            {
+                using (GZipStream gZipStream = new GZipStream(stream, CompressionMode.Compress))
+                {
+                    BinaryFormatter binaryFormatter = new BinaryFormatter();
+                    binaryFormatter.Serialize(gZipStream, hConfig);
+                    return stream.ToArray();
+                }
+            }
+        }
+
+        public static NetworkCreationConfig Decompress(byte[] compressedArray)
+        {
+            using (GZipStream hZipStream = new GZipStream(new MemoryStream(compressedArray), CompressionMode.Decompress))
+            {
+                const int iSize = 4096;
+                byte[] hBuffer = new byte[iSize];
+                using (MemoryStream hMemoryStream = new MemoryStream())
+                {
+                    int iCount = 0;
+                    while (iCount > 0)
+                    {
+                        iCount = hZipStream.Read(hBuffer, 0, iSize);
+                        if (iCount > 0)
+                        {
+                            hMemoryStream.Write(hBuffer, 0, iCount);
+                        }
+                    }
+                    IFormatter hFormatter = new BinaryFormatter();
+                    hZipStream.Seek(0, SeekOrigin.Begin);
+                    return hFormatter.Deserialize(hZipStream) as NetworkCreationConfig;
+                }
+            }
         }
 
         public override string ToString() => $"[{Id}] {Name}";

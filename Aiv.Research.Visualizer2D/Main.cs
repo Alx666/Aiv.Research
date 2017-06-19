@@ -122,7 +122,7 @@ namespace Aiv.Research.Visualizer2D
                     {
                         double[] hIdeal = m_hLastIdeal.Clone() as double[];
                         hBmp.Save(sFilename, ImageFormat.Bmp);
-                        Sample hSample = new Sample(sFilename, hSamples, hIdeal);
+                        Sample hSample = new Sample(sFilename, Array.ConvertAll(hSamples, x => (float)x), Array.ConvertAll(hIdeal, x => (float)x));
                         m_hPenDrawer.Network.Samples.Add(hSample);
                         m_hSamples.Items.Add(hSample);
                     }
@@ -179,6 +179,7 @@ namespace Aiv.Research.Visualizer2D
         }
 
         private void MenuItemCreate(object sender, EventArgs e)
+            //binary formatter gzipstream
         {
             CreateNetworkForm hCreateDialog = new CreateNetworkForm();
             m_hSamples.Items.Clear();
@@ -244,8 +245,8 @@ namespace Aiv.Research.Visualizer2D
             hNetwork.Structure.FinalizeStructure();
             hNetwork.Reset();
 
-            double[][] hInput = hConfig.Samples.Select(s => s.Values).ToArray();
-            double[][] hIdeal = hConfig.Samples.Select(s => s.Ideal).ToArray();
+            double[][] hInput = Utils.ConvertArray2D<float, double>(hConfig.Samples.Select(s => s.Values).ToArray(), x => (double)x);
+            double[][] hIdeal = Utils.ConvertArray2D<float, double>(hConfig.Samples.Select(s => s.Ideal).ToArray(), x => (double)x); ;
 
             INeuralDataSet hTrainingSet = new BasicNeuralDataSet(hInput, hIdeal);
             ITrain hTraining = new ResilientPropagation(hNetwork, hTrainingSet);
@@ -263,6 +264,8 @@ namespace Aiv.Research.Visualizer2D
 
             m_hNeuralDisplay = new FormNNDrawer(hNetwork, 20, 800, 600);            
         }
+
+
 
         private void OnProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
@@ -363,9 +366,9 @@ namespace Aiv.Research.Visualizer2D
 
                 byte bLabel = hLabels[i + iOffset];
                 hSample.Name = $"{i} - {bLabel}";
-                hSample.Ideal = new double[10];
-                hSample.Ideal[bLabel] = 1.0;
-                hSample.Values = hValues.ToArray();
+                hSample.Ideal = new float[10];
+                hSample.Ideal[bLabel] = 1.0f;
+                hSample.Values = Array.ConvertAll(hValues.ToArray(), x => (float)x);
 
 
                 m_hSamples.Items.Add(hSample);
@@ -428,5 +431,7 @@ namespace Aiv.Research.Visualizer2D
             download.ShowDialog();
 
         }
+
     }
+
 }

@@ -10,29 +10,15 @@ namespace Aiv.Research.TrainingServer
 {
     class Program
     {
-
-        static void Main(string[] args) => new ConsoleUI(new TrainingService(4), "Training Service").RunAndWait();
+        //static void Main(string[] args)
         //{
-        //    byte[] b = new byte[byte.MaxValue];
-        //    Shared.NetworkCreationConfig config = new Shared.NetworkCreationConfig();
+        //    NetworkCreationConfig hoConfig = new NetworkCreationConfig();
+        //    byte[] h = NetworkCreationConfig.Compress(hoConfig);
 
-        //    Random hRand = new Random();
-        //    for (int i = 0; i < 5; i++)
-        //    {
-        //        b = Enumerable.Range(0, 500).Select(x => (byte)hRand.Next()).ToArray();
-        //        config.Name = i.ToString();
-        //        Classifier.SetDataPath(".\\NeuralData\\Gianni"); 
-        //        //Classifier.Store(config, b);
-        //        //Classifier.Get(i);
-        //        //Classifier.Get(i);
-        //    }
-
-        //    //Classifier.Get("0_");
-
-        //    //TrainingService service = new TrainingService(4);
-        //    //ConsoleUI console = new ConsoleUI(service, "TrainingServer");
-        //    //console.RunAndWait();
+        //    NetworkCreationConfig hNewConfig = NetworkCreationConfig.Decompress(h);
+        //    Console.ReadLine();
         //}
+        static void Main(string[] args) => new ConsoleUI(new TrainingService(4), "Training Service").RunAndWait();
     }
         
 }
