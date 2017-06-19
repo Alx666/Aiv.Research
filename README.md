@@ -7,6 +7,21 @@
 Some useful commands for git noobs.
 Git experts, please stay away for your own safety.
 
+* Checking current branch status
+```
+git status
+```
+
+* Commit history
+```
+/* Basic version */
+git log
+
+/* Nose-bleeding sexy version */
+git log --graph --abbrev-commit --decorate
+```
+
+
 * Get last update version of the current branch
 
 ```
@@ -39,8 +54,20 @@ git rm -rf --cached .
 git reset --hard HEAD
 ```
 
-Available options
+** Available options
 ```
 -f		// forced
 -r		// recursively (for deleting all content in a folder)
+```
+
+* Commit changes (locally)
+
+```
+git commit -m "Your comment to this commit"
+```
+
+* Updating remote version with your changes
+
+```
+git push
 ```
