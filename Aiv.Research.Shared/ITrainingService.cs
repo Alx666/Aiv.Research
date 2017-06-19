@@ -21,14 +21,14 @@ namespace Aiv.Research.Shared
 
         //ritorna lo stato attuale della lista contenente i task in corso
         [OperationContract]
-        IEnumerable<TrainingSet> EnumerateTrainingsInProgress();
+        IEnumerable<NetworkCreationConfig> EnumerateTrainingsInProgress();
 
         //Chiede al claffier di fornire tutti i dati che ha scritto (li legge sempre da disco)
         [OperationContract]
-        IEnumerable<TrainingSet> EnumerateTrainingsCompleted();
+        IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted();
 
         [OperationContract]
-        IEnumerable<TrainingSet> EnumerateTrainingsCompleted(string sExceptedConfigs);
+        IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted(string sExceptedConfigs);
 
         //Ritorna solamente i dati della rete richiesta
         [OperationContract]
