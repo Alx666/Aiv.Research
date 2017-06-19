@@ -28,13 +28,33 @@ namespace Aiv.Research.Visualizer2D.Filters
 
             averageValue = averageValue / counter;
 
+            double[,] deviationArray = new double[m_hInputData.GetLength(0), m_hInputData.GetLength(1)];
             for (int x = 0; x < m_hInputData.GetLength(0); x++)
             {
                 for (int y = 0; y < m_hInputData.GetLength(1); y++)
                 {
                     double rawValue = m_hInputData[x, y].Value - averageValue;
-                    m_hInputData[x, y].Value = rawValue * rawValue;
+                    deviationArray[x, y] = rawValue * rawValue;
+                }
+            }
 
+            double variance = 0;
+            for (int x = 0; x < m_hInputData.GetLength(0); x++)
+            {
+                for (int y = 0; y < m_hInputData.GetLength(1); y++)
+                {
+                    variance = deviationArray[x, y];
+                }
+            }
+
+            variance = variance / counter;
+            double standardDeviation = Math.Sqrt(variance);
+
+            for (int x = 0; x < m_hInputData.GetLength(0); x++)
+            {
+                for (int y = 0; y < m_hInputData.GetLength(1); y++)
+                {
+                    m_hInputData[x, y].Value = (m_hInputData[x, y].Value - averageValue) / standardDeviation;
                 }
             }
 

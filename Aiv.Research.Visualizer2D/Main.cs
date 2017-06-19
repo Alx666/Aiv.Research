@@ -356,7 +356,7 @@ namespace Aiv.Research.Visualizer2D
                 {
                     for (int y = 0; y < iNumberOfColumns; y++)
                     {
-                        hValues.Add(hData[iIndex]);
+                        hValues.Add((double)hData[iIndex] / 255);
                         iIndex++;
                     }
                 }
