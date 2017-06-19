@@ -53,7 +53,7 @@ namespace Aiv.Research.Visualizer2D.Filters
                 {
                     for (int y = 0; y < Columns; y++)
                     {
-                        item.Values[x * hToEdit.GetLength(0) + y] = hToEdit[x, y].Value;
+                        item.Values[x * hToEdit.GetLength(0) + y] = (float)hToEdit[x, y].Value;
                     }
                 }
             }

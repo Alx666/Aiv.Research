@@ -10,15 +10,15 @@ namespace Aiv.Research.Shared
     public class Sample
     {
         public string Name { get; set; }
-        public double[] Values { get; set; }
-        public double[] Ideal { get; set; }
+        public float[] Values { get; set; }
+        public float[] Ideal { get; set; }
 
         public Sample()
         {
 
         }
 
-        public Sample(string sName, double[] hValues, double[] hIdeal)
+        public Sample(string sName, float[] hValues, float[] hIdeal)
         {
             Name   = sName;
             Ideal  = hIdeal;
@@ -27,8 +27,8 @@ namespace Aiv.Research.Shared
 
         public Sample(int iInputCount, int iIdealCount)
         {
-            Ideal  = new double[iInputCount];
-            Values = new double[iIdealCount];
+            Ideal  = new float[iInputCount];
+            Values = new float[iIdealCount];
         }
 
         public override string ToString() => Name;

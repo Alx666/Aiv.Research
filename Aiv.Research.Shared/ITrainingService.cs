@@ -28,7 +28,7 @@ namespace Aiv.Research.Shared
         IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted();
 
         //[OperationContract]
-       // IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted(string sExceptedConfigs);
+        //IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted(string sExceptedConfigs);
 
         //Ritorna solamente i dati della rete richiesta
         [OperationContract]
@@ -42,7 +42,5 @@ namespace Aiv.Research.Shared
         [OperationContract]
         bool DeleteTraining(int iConfigId);
 
-        [OperationContract]
-        byte[] Download(int iConfigId);
     }
 }
