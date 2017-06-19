@@ -23,32 +23,18 @@ namespace Aiv.Research.Visualizer2D
             client.Connect(appsettings.TrainingServiceAddress, appsettings.TrainingServicePort);
             
             IEnumerable<NetworkCreationConfig> hConfigs = client.ServiceInstance.EnumerateTrainingsCompleted();
-
-            
-
-
-
-            //creiamo colonne e righe
-            
-
-
            
 
-            
 
-
-        }
-        
-
-       
-        
+            foreach (var item in hConfigs)
+            {
+                ListViewItem lv1 = new ListViewItem(item.Name);
+                lv1.SubItems.Add(item.Id.ToString());
+                lv1.SubItems.Add(item.InputSize.ToString());
+                lv1.SubItems.Add(item.OutputSize.ToString());
+                lv1.SubItems.Add(item.Iterations.ToString());
+                lv1.SubItems.Add(item.ActivationTypeGuid.ToString());
+            }
+        }       
     }
-
-    class SomeClass
-    {
-        public int a { get; set; }
-        public int b { get; set; }
-        public int c { get; set; }
-    }
-
 }

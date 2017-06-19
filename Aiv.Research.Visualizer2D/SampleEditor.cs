@@ -268,5 +268,11 @@ namespace Aiv.Research.Visualizer2D
 
         #endregion
 
+        
+        public void NormalizeOnRange()
+        {
+
+        }
+
     }
 }
