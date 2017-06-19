@@ -19,11 +19,11 @@ namespace Aiv.Research.Visualizer2D
         public NetworkSelector(Settings appsettings)
         {
             InitializeComponent();
-            TrainingClient client = new TrainingClient();
-            client.Connect(appsettings.TrainingServiceAddress, appsettings.TrainingServicePort);
+            //TrainingClient client = new TrainingClient();
+            //client.Connect(appsettings.TrainingServiceAddress, appsettings.TrainingServicePort);
             
 
-            listView1.Items.Add(new ListViewItem())
+            //listView1.Items.Add(new ListViewItem())
 
         }
         

@@ -120,3 +120,4 @@ C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.Visualizer2D\bin\Debug\AFo
 C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.Visualizer2D\bin\Debug\AForge.Neuro.xml
 C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.Visualizer2D\obj\Debug\Aiv.Research.Visualizer2D.exe
 C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.Visualizer2D\obj\Debug\Aiv.Research.Visualizer2D.pdb
+C:\Users\alxey\Source\Repos\Aiv.Research\Aiv.Research.Visualizer2D\obj\Debug\Aiv.Research.Visualizer2D.NetworkSelector.resources
