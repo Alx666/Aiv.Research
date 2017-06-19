@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Reflection;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace Aiv.Research.Shared.Data
 {
@@ -14,8 +15,10 @@ namespace Aiv.Research.Shared.Data
         private List<Sample>            m_hValues;
         private List<IDataExtractor>    m_hInputMembers;
         private List<IDataExtractor>    m_hOutputMembers;
-        private object                  m_hTarget;       
-        private bool                    m_bStarted;
+        private object                  m_hTarget;
+        private string                  m_sТекущийфайл;
+
+        public bool Started { get; private set; }
 
         public Recorder(object hTarget)
         {
@@ -53,19 +56,31 @@ namespace Aiv.Research.Shared.Data
             m_hTarget = hTarget;
         }
 
-        public void Start(string sFilename)
+        public void Start(string файл)
         {
-            if (File.Exists(sFilename))
-                File.Delete(sFilename);
+            if (File.Exists(файл))
+                File.Delete(файл);
+
+            m_sТекущийфайл = файл;
+
+            Started = true;
         }
 
         public void Stop()
         {
+            Started = false;
+
+            using (Stream hFs = File.OpenWrite(m_sТекущийфайл))
+            {
+                XmlSerializer hSerializer = new XmlSerializer(typeof(List<Sample>));
+                hSerializer.Serialize(hFs, m_hValues);
+            }
         }
 
         public void Update()
         {
-            
+            if(Started)
+                m_hValues.Add(new Sample("", m_hInputMembers.Select(x => x.GetValue()).ToArray(), m_hOutputMembers.Select(x => x.GetValue()).ToArray()));
         }
 
 
