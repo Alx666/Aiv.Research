@@ -77,12 +77,10 @@ namespace Aiv.Research.Shared
             return m_hTrainingInProgress.TryRemove(m_hTrainingInProgress.Keys.FirstOrDefault(x => x.NetworkConfing.Id == iConfigId), out iRes);
         }
 
-        public IEnumerable<TrainingSet> EnumerateTrainingsCompleted(string sExceptedConfigs)
+        public IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted(string sExceptedConfigs)
         {
             sExceptedConfigs = sExceptedConfigs.ToLower();
             IEnumerable<TrainingSet> hResult = new List<TrainingSet>();
-
-            
             throw new NotImplementedException("YOU ARE NOT PREPARED");
         }
 
@@ -93,15 +91,19 @@ namespace Aiv.Research.Shared
         }
 
         [ConsoleUIMethod]
-        public IEnumerable<TrainingSet> EnumerateTrainingsCompleted()
+        public IEnumerable<NetworkCreationConfig> EnumerateTrainingsCompleted()
         {
-            return m_hCompletedTrainings;
+            List<NetworkCreationConfig> hNetworks = new List<NetworkCreationConfig>();
+            m_hCompletedTrainings.ToList().ForEach(x => hNetworks.Add(x.NetworkConfing));
+            return hNetworks;
         }
 
         [ConsoleUIMethod]
-        public IEnumerable<TrainingSet> EnumerateTrainingsInProgress()
+        public IEnumerable<NetworkCreationConfig> EnumerateTrainingsInProgress()
         {
-            return m_hTrainingInProgress.Keys;
+            List<NetworkCreationConfig> hNetworks = new List<NetworkCreationConfig>();
+            m_hTrainingInProgress.ToList().ForEach(x => hNetworks.Add(x.Key.NetworkConfing));
+            return hNetworks;
         }
         
         public void StartTraining(NetworkCreationConfig hNetwork)
