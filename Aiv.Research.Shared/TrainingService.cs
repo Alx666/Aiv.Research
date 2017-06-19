@@ -46,7 +46,7 @@ namespace Aiv.Research.Shared
         }
 
         [ConsoleUIMethod]
-        public void StartService(int iPort)
+        public string StartService(int iPort)
         {
             m_hService = new ServiceHost(this, new Uri($"net.tcp://localhost:{iPort}/{TRAINING_SERVICE_NAME}/"));
             NetTcpBinding hBinding = new NetTcpBinding(SecurityMode.None, true);
@@ -54,6 +54,13 @@ namespace Aiv.Research.Shared
             hBinding.SendTimeout = TimeSpan.MaxValue;
             m_hService.AddServiceEndpoint(typeof(ITrainingService), hBinding, string.Empty);
             m_hService.Open();
+            Classifier.SetDataPath(Environment.CurrentDirectory);
+            List<NetworkCreationConfig> hConfigs = Classifier.Enumerate().ToList();
+            for (int i = 0; i < hConfigs.Count; i++)
+            {
+                m_hCompletedTrainings.Add(new TrainingSet(hConfigs[i]));
+            }
+            return "Service Started";
         }
 
         [ConsoleUIMethod]
@@ -68,6 +75,15 @@ namespace Aiv.Research.Shared
             TerminateTraining(iConfigId);
             int iRes;
             return m_hTrainingInProgress.TryRemove(m_hTrainingInProgress.Keys.FirstOrDefault(x => x.NetworkConfing.Id == iConfigId), out iRes);
+        }
+
+        public IEnumerable<TrainingSet> EnumerateTrainingsCompleted(string sExceptedConfigs)
+        {
+            sExceptedConfigs = sExceptedConfigs.ToLower();
+            IEnumerable<TrainingSet> hResult = new List<TrainingSet>();
+
+            
+            throw new NotImplementedException("YOU ARE NOT PREPARED");
         }
 
         [ConsoleUIMethod]
@@ -107,6 +123,10 @@ namespace Aiv.Research.Shared
             while(true)
             {
                 TrainingSet hJob = m_hNetworksToTrain.Take(m_hDispatcherTakeToken.Token); //dispatcher thread wait here for a job to do
+                while (m_hTrainingInProgress.Count >= m_iMaxParallelTrainings)
+                {
+                    //Aspetto che finiscano i vari training
+                }
                 Task hTraining = Task.Factory.StartNew(NetworkTrainingRoutine, hJob, hJob.Token);
             }
         }
@@ -115,6 +135,7 @@ namespace Aiv.Research.Shared
         private void NetworkTrainingRoutine(object hParam)
         {
             TrainingSet hWorkItem = hParam as TrainingSet;
+            Console.WriteLine("New Training Started with Name:" + hWorkItem.NetworkConfing.Name);
             if (hWorkItem == null)
                 return;
             m_hTrainingInProgress.TryAdd(hWorkItem, hWorkItem.NetworkConfing.Id);
@@ -126,10 +147,10 @@ namespace Aiv.Research.Shared
             int iRes;
             m_hTrainingInProgress.TryRemove(hWorkItem, out iRes);
             m_hCompletedTrainings.Add(hWorkItem);
-            //Classifier.SetDataPath(Environment.CurrentDirectory);
-            //Classifier.Store(hWorkItem.NetworkConfing, SerializeToStream(hWorkItem.NetworkConfing).ToArray());
-            //Classifier.Store();
-            //TODO Send to Classifier
+            Classifier.SetDataPath(Environment.CurrentDirectory);
+            hWorkItem.NetworkConfing.Name = Classifier.GetId().ToString() + "_" + hWorkItem.NetworkConfing.Name;
+            Classifier.Store(hWorkItem.NetworkConfing, SerializeToStream(hWorkItem.NetworkConfing).ToArray());
+            Console.WriteLine("Training Completed");
         }
 
         private MemoryStream SerializeToStream(object hObj)
@@ -145,6 +166,12 @@ namespace Aiv.Research.Shared
             IFormatter hFormatter = new BinaryFormatter();
             hStream.Seek(0, SeekOrigin.Begin);
             return hFormatter.Deserialize(hStream);
+        }
+
+        [ConsoleUIMethod]
+        public byte[] Download(int iConfigId)
+        {
+            return Classifier.Get(iConfigId);
         }
     }
 
@@ -182,6 +209,7 @@ namespace Aiv.Research.Shared
             IsTraining = false;
         }
 
+        [Obsolete]
         public double[] TestNetwork(double[] input)
         {
             double[] output = new double[NetworkConfing.OutputSize];

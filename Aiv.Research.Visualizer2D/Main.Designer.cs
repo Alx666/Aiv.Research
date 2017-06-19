@@ -55,6 +55,7 @@
             this.m_hStatusBar = new System.Windows.Forms.StatusStrip();
             this.m_hProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.m_hWorker = new System.ComponentModel.BackgroundWorker();
+            this.downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_hMenuStrip.SuspendLayout();
             this.m_hStatusBar.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +101,8 @@
             this.feedForwardToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.loadToolStripMenuItem,
-            this.closeToolStripMenuItem});
+            this.closeToolStripMenuItem,
+            this.downloadToolStripMenuItem});
             this.crateToolStripMenuItem.Name = "crateToolStripMenuItem";
             this.crateToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.crateToolStripMenuItem.Text = "Network";
@@ -108,28 +110,28 @@
             // feedForwardToolStripMenuItem
             // 
             this.feedForwardToolStripMenuItem.Name = "feedForwardToolStripMenuItem";
-            this.feedForwardToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.feedForwardToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.feedForwardToolStripMenuItem.Text = "Create";
             this.feedForwardToolStripMenuItem.Click += new System.EventHandler(this.MenuItemCreate);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.MenuItemSave);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.MenuItemLoad);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.MenuItemClose);
             // 
@@ -257,6 +259,13 @@
             this.m_hWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.OnProgressChanged);
             this.m_hWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.OnRunWorkerCompleted);
             // 
+            // downloadToolStripMenuItem
+            // 
+            this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
+            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.downloadToolStripMenuItem.Text = "Download";
+            this.downloadToolStripMenuItem.Click += new System.EventHandler(this.OnNetworkDownload);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,6 +319,7 @@
         private System.Windows.Forms.ToolStripMenuItem gaussianBlur3x3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gaussianBlur5x5ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gaussianBlur7x7ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
     }
 }
 

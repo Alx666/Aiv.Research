@@ -415,5 +415,12 @@ namespace Aiv.Research.Visualizer2D
                 m_hSamples.Items.Add(item);
             }
         }
+
+        private void OnNetworkDownload(object sender, EventArgs e)
+        {
+            //NetworkSelector download = new NetworkSelector();
+            //download.ShowDialog();
+            
+        }
     }
 }

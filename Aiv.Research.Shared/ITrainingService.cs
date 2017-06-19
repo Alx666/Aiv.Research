@@ -27,6 +27,9 @@ namespace Aiv.Research.Shared
         [OperationContract]
         IEnumerable<TrainingSet> EnumerateTrainingsCompleted();
 
+        [OperationContract]
+        IEnumerable<TrainingSet> EnumerateTrainingsCompleted(string sExceptedConfigs);
+
         //Ritorna solamente i dati della rete richiesta
         [OperationContract]
         byte[] DownloadTrainingData(int iConfigId);
@@ -38,5 +41,8 @@ namespace Aiv.Research.Shared
         //Cancella da disco il train con id specificato
         [OperationContract]
         bool DeleteTraining(int iConfigId);
+
+        [OperationContract]
+        byte[] Download(int iConfigId);
     }
 }

@@ -18,7 +18,7 @@ namespace Aiv.Research.Shared
         public const string TRAINING_SERVICE_NAME = "Training";
         private ChannelFactory<ITrainingService> trainingServiceFactory;
         private NetTcpBinding tcpBinding;
-        private ITrainingService serviceInstance;
+        public ITrainingService ServiceInstance { get; private set; }
         public TrainingClient()
         {
             tcpBinding = new NetTcpBinding(SecurityMode.None, true);
@@ -28,7 +28,7 @@ namespace Aiv.Research.Shared
         [ConsoleUIMethod]
         public void Connect(string address, int port)
         {
-            serviceInstance = trainingServiceFactory.CreateChannel(new EndpointAddress($"net.tcp://{address}:{port}/{TRAINING_SERVICE_NAME}"));
+            ServiceInstance = trainingServiceFactory.CreateChannel(new EndpointAddress($"net.tcp://{address}:{port}/{TRAINING_SERVICE_NAME}"));
         }
 
         [ConsoleUIMethod]
@@ -59,7 +59,7 @@ namespace Aiv.Research.Shared
                 if (config == null)
                     throw new Exception($"The deserialization output is not a valid XML.");
 
-                serviceInstance.StartTraining(config);
+                ServiceInstance.StartTraining(config);
             }
         }
     }
