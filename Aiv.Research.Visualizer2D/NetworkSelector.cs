@@ -17,15 +17,11 @@ namespace Aiv.Research.Visualizer2D
         {
             InitializeComponent();
             TrainingClient client = new TrainingClient();
-            NetworkCreationConfig config = new NetworkCreationConfig();
-
-            // stabiliamo connessione + download dati Training + enumeriamo
+                   
             client.Connect(appsettings.TrainingServiceAddress, appsettings.TrainingServicePort);
             
             IEnumerable<NetworkCreationConfig> hConfigs = client.ServiceInstance.EnumerateTrainingsCompleted();
-           
-
-
+            
             foreach (var item in hConfigs)
             {
                 ListViewItem lv1 = new ListViewItem(item.Name);
@@ -34,6 +30,7 @@ namespace Aiv.Research.Visualizer2D
                 lv1.SubItems.Add(item.OutputSize.ToString());
                 lv1.SubItems.Add(item.Iterations.ToString());
                 lv1.SubItems.Add(item.ActivationTypeGuid.ToString());
+                listView1.Items.Add(lv1);
             }
         }       
     }
