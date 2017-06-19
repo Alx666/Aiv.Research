@@ -428,8 +428,7 @@ namespace Aiv.Research.Visualizer2D
 
         private void OnNetworkDownload(object sender, EventArgs e)
         {
-            Settings setting = new Settings();
-            NetworkSelector download = new NetworkSelector(setting);
+            NetworkSelector download = new NetworkSelector(m_hSettings);
             download.ShowDialog();
 
         }
