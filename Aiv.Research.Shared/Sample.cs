@@ -20,9 +20,15 @@ namespace Aiv.Research.Shared
 
         public Sample(string sName, double[] hValues, double[] hIdeal)
         {
-            Name = sName;
-            Ideal = hIdeal;
+            Name   = sName;
+            Ideal  = hIdeal;
             Values = hValues;
+        }
+
+        public Sample(int iInputCount, int iIdealCount)
+        {
+            Ideal  = new double[iInputCount];
+            Values = new double[iIdealCount];
         }
 
         public override string ToString() => Name;
