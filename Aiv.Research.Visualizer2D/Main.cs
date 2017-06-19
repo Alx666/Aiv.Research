@@ -373,10 +373,7 @@ namespace Aiv.Research.Visualizer2D
             }
         }
 
-        private void OnGaussianBlur3x3()
-        {
-           
-        }
+
 
         private void OnNormalizeCenterOfMass(object sender, EventArgs e)
         {
@@ -388,19 +385,35 @@ namespace Aiv.Research.Visualizer2D
 
         }
 
-        private void OnGaussianBlur(object sender, EventArgs e)
-        {
 
+        private void OnGaussianBlur3x3(object sender, EventArgs e)
+        {
+            m_hSamples.Items.Clear();
+            Filters.Filters.Apply(Filters.Filters.GaussianBlur3x3, m_hPenDrawer.Network.Samples, m_hPenDrawer.Rows, m_hPenDrawer.Columns);
+            foreach (Sample item in m_hPenDrawer.Network.Samples)
+            {
+                m_hSamples.Items.Add(item);
+            }
         }
 
         private void OnGaussianBlur5x5(object sender, EventArgs e)
         {
-
+            m_hSamples.Items.Clear();
+            Filters.Filters.Apply(Filters.Filters.GaussianBlur5x5, m_hPenDrawer.Network.Samples, m_hPenDrawer.Rows, m_hPenDrawer.Columns);
+            foreach (Sample item in m_hPenDrawer.Network.Samples)
+            {
+                m_hSamples.Items.Add(item);
+            }
         }
 
         private void OnGaussianBlur7x7(object sender, EventArgs e)
         {
-
+            m_hSamples.Items.Clear();
+            Filters.Filters.Apply(Filters.Filters.GaussianBlur7x7, m_hPenDrawer.Network.Samples, m_hPenDrawer.Rows, m_hPenDrawer.Columns);
+            foreach (Sample item in m_hPenDrawer.Network.Samples)
+            {
+                m_hSamples.Items.Add(item);
+            }
         }
 
         private void OnNetworkDownload(object sender, EventArgs e)

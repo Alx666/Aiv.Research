@@ -168,7 +168,7 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.OnOptionsClick);
             // 
@@ -211,7 +211,7 @@
             this.gaussianBlur3x3ToolStripMenuItem.Name = "gaussianBlur3x3ToolStripMenuItem";
             this.gaussianBlur3x3ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.gaussianBlur3x3ToolStripMenuItem.Text = "Gaussian Blur 3x3";
-            this.gaussianBlur3x3ToolStripMenuItem.Click += new System.EventHandler(this.OnGaussianBlur);
+            this.gaussianBlur3x3ToolStripMenuItem.Click += new System.EventHandler(this.OnGaussianBlur3x3);
             // 
             // gaussianBlur5x5ToolStripMenuItem
             // 

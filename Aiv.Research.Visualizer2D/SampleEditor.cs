@@ -23,8 +23,8 @@ namespace Aiv.Research.Visualizer2D
         private RectangleF[]        m_hRectangles;
         private float               m_fSizeX;
         private float               m_fSizeY;
-        private float               m_iColumns ;
-        private float               m_iRows;
+        public float                Columns { get; private set; }
+        public float                Rows { get; private set; }
 
         private Dictionary<byte, SolidBrush> m_hBrushes;
 
@@ -54,20 +54,20 @@ namespace Aiv.Research.Visualizer2D
 
                 if (m_hNetwork != null)
                 {
-                    m_iColumns = (int)Math.Ceiling(Math.Sqrt(m_hNetwork.InputSize));
-                    m_iRows = (int)Math.Ceiling((double)m_hNetwork.InputSize / m_iColumns);
+                    Columns = (int)Math.Ceiling(Math.Sqrt(m_hNetwork.InputSize));
+                    Rows = (int)Math.Ceiling((double)m_hNetwork.InputSize / Columns);
 
-                    m_hInputData = new InputInformation[(int)m_iRows, (int)m_iColumns];
+                    m_hInputData = new InputInformation[(int)Rows, (int)Columns];
 
-                    m_fSizeX = (float)m_hPanel.Width / m_iColumns;
-                    m_fSizeY = (float)m_hPanel.Height / m_iRows;
+                    m_fSizeX = (float)m_hPanel.Width / Columns;
+                    m_fSizeY = (float)m_hPanel.Height / Rows;
 
                     int iCounter = m_hNetwork.InputSize;
                     List<RectangleF> hTmp = new List<RectangleF>();
 
-                    for (int i = 0; i < m_iRows; i++)
+                    for (int i = 0; i < Rows; i++)
                     {
-                        for (int k = 0; k < m_iColumns; k++)
+                        for (int k = 0; k < Columns; k++)
                         {
                             RectangleF vRect = new RectangleF(k * m_fSizeX, i * m_fSizeY, m_fSizeX, m_fSizeY);
                             hTmp.Add(vRect);
@@ -86,8 +86,8 @@ namespace Aiv.Research.Visualizer2D
                 }
                 else
                 {
-                    m_iColumns = 0;
-                    m_iRows = 0;
+                    Columns = 0;
+                    Rows = 0;
                     m_hInputData = null;
                     m_fSizeX = 0f;
                     m_fSizeY = 0f;
@@ -113,7 +113,7 @@ namespace Aiv.Research.Visualizer2D
                     {
                         if (hInfo.Value != 0.0)
                         {
-                            byte bColor = (byte)(-hInfo.Value * 255);
+                            byte bColor = (byte)(hInfo.Value * 255);
                             if (!m_hBrushes.ContainsKey(bColor))
                                 m_hBrushes.Add(bColor, new SolidBrush(Color.FromArgb(0, bColor, 0)));
 
@@ -187,11 +187,11 @@ namespace Aiv.Research.Visualizer2D
             Bitmap hBmp = new Bitmap(m_hInputData.GetLength(0), m_hInputData.GetLength(1));
             hSamples    = new double[m_hNetwork.InputSize];
 
-            FilterCenter hCentering = new FilterCenter();
-            FilterGaussianBlur7x7 hFilter = new FilterGaussianBlur7x7();
-
-            hCentering.Apply(m_hInputData, 0);
-            hFilter.Apply(m_hInputData, 1);
+            //FilterCenter hCentering = new FilterCenter();
+            //FilterGaussianBlur7x7 hFilter = new FilterGaussianBlur7x7();
+            //
+            //hCentering.Apply(m_hInputData, 0);
+            //hFilter.Apply(m_hInputData, 1);
 
             for (int i = 0; i < m_hInputData.GetLength(0); i++)
             {
@@ -199,7 +199,7 @@ namespace Aiv.Research.Visualizer2D
                 {                    
                     InputInformation hInfo = m_hInputData[i, k];
 
-                    Color cColor = Color.FromArgb(0, (int)(255 * hInfo.Value), 0);
+                    Color cColor = Color.FromArgb((byte)(hInfo.Value * 255));
 
 
                     if (hInfo.InUse)
