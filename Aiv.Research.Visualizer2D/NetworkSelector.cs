@@ -23,7 +23,7 @@ namespace Aiv.Research.Visualizer2D
             client.Connect(appsettings.TrainingServiceAddress, appsettings.TrainingServicePort);
             
             IEnumerable<NetworkCreationConfig> hConfigs = client.ServiceInstance.EnumerateTrainingsCompleted();
-            
+           
 
 
             foreach (var item in hConfigs)
