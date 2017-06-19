@@ -356,7 +356,7 @@ namespace Aiv.Research.Visualizer2D
                 {
                     for (int y = 0; y < iNumberOfColumns; y++)
                     {
-                        hValues.Add(hData[iIndex]);
+                        hValues.Add((double)hData[iIndex] / 255);
                         iIndex++;
                     }
                 }
@@ -387,7 +387,12 @@ namespace Aiv.Research.Visualizer2D
 
         private void OnNormalizeValues(object sender, EventArgs e)
         {
-
+            m_hSamples.Items.Clear();
+            Filters.Filters.Apply(Filters.Filters.NumericIndipendentData, m_hPenDrawer.Network.Samples, m_hPenDrawer.Rows, m_hPenDrawer.Columns);
+            foreach (Sample item in m_hPenDrawer.Network.Samples)
+            {
+                m_hSamples.Items.Add(item);
+            }
         }
 
 
