@@ -44,3 +44,12 @@ C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\A
 C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\obj\Debug\Aiv.Research.TrainingServer.csprojResolveAssemblyReference.cache
 C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\obj\Debug\Aiv.Research.TrainingServer.exe
 C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.TrainingServer\obj\Debug\Aiv.Research.TrainingServer.pdb
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\Aiv.Research.TrainingServer.exe.config
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\Aiv.Research.TrainingServer.exe
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\Aiv.Research.TrainingServer.pdb
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\Aiv.Research.Shared.dll
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\encog-core-cs.dll
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.TrainingServer\bin\Debug\Aiv.Research.Shared.pdb
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.TrainingServer\obj\Debug\Aiv.Research.TrainingServer.csprojResolveAssemblyReference.cache
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.TrainingServer\obj\Debug\Aiv.Research.TrainingServer.exe
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.TrainingServer\obj\Debug\Aiv.Research.TrainingServer.pdb

@@ -27,3 +27,9 @@ C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.Shared\bin\Debug\encog-cor
 C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.csprojResolveAssemblyReference.cache
 C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.dll
 C:\Users\ricca\Source\Repos\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.pdb
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.Shared\bin\Debug\Aiv.Research.Shared.dll
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.Shared\bin\Debug\Aiv.Research.Shared.pdb
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.Shared\bin\Debug\encog-core-cs.dll
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.csprojResolveAssemblyReference.cache
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.dll
+C:\Users\marke\Desktop\Aiv.Research\Aiv.Research.Shared\obj\Debug\Aiv.Research.Shared.pdb

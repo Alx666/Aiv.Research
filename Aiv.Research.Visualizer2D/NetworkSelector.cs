@@ -13,17 +13,25 @@ namespace Aiv.Research.Visualizer2D
 {
     public partial class NetworkSelector : Form
     {
-        
-       
-        
         public NetworkSelector(Settings appsettings)
         {
             InitializeComponent();
             TrainingClient client = new TrainingClient();
+            NetworkCreationConfig config = new NetworkCreationConfig();
+
             client.Connect(appsettings.TrainingServiceAddress, appsettings.TrainingServicePort);
+            var a = client.ServiceInstance.DownloadTrainingData(config.Id).ToString();
+            client.ServiceInstance.EnumerateTrainingsCompleted();
+
+
+            listView1.GridLines = true;
+            listView1.Sorting = SortOrder.Ascending;
+           // listView1.Items[0].SubItems.Add() 
+            ListViewItem item0 = new ListViewItem("qualcosa", 0);
+            item0.SubItems.Add("1");
+
             
 
-            listView1.Items.Add(new ListViewItem())
 
         }
         
@@ -31,4 +39,12 @@ namespace Aiv.Research.Visualizer2D
        
         
     }
+
+    class SomeClass
+    {
+        public int a { get; set; }
+        public int b { get; set; }
+        public int c { get; set; }
+    }
+
 }

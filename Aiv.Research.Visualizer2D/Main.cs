@@ -405,9 +405,10 @@ namespace Aiv.Research.Visualizer2D
 
         private void OnNetworkDownload(object sender, EventArgs e)
         {
-            NetworkSelector download = new NetworkSelector();
+            Settings setting = new Settings();
+            NetworkSelector download = new NetworkSelector(setting);
             download.ShowDialog();
-            
+
         }
     }
 }
