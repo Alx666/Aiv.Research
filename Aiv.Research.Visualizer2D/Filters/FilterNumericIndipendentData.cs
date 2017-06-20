@@ -58,6 +58,46 @@ namespace Aiv.Research.Visualizer2D.Filters
                 }
             }
 
+
+            
+            // NORMALIZE ON RANGE 0 - 1
+            double minvalue = m_hInputData[0, 0].Value;
+            double maxvalue = m_hInputData[0, 0].Value;
+
+            for (int x = 0; x < m_hInputData.GetLength(0); x++)
+            {
+                for (int y = 0; y < m_hInputData.GetLength(1); y++)
+                {
+                    if (m_hInputData[x, y].Value < minvalue)
+                        minvalue = m_hInputData[x, y].Value;
+                }
+            }
+
+
+            for (int x = 0; x < m_hInputData.GetLength(0); x++)
+            {
+                for (int y = 0; y < m_hInputData.GetLength(1); y++)
+                {
+                    m_hInputData[x, y].Value = m_hInputData[x, y].Value - minvalue;
+                }
+            }
+            
+            for (int x = 0; x < m_hInputData.GetLength(0); x++)
+            {
+                for (int y = 0; y < m_hInputData.GetLength(1); y++)
+                {
+                    if (m_hInputData[x, y].Value > maxvalue)
+                        maxvalue = m_hInputData[x, y].Value;
+                }
+            }
+            for (int x = 0; x < m_hInputData.GetLength(0); x++)
+            {
+                for (int y = 0; y < m_hInputData.GetLength(1); y++)
+                {
+                    m_hInputData[x, y].Value = m_hInputData[x, y].Value / maxvalue;
+                }
+            }
+
         }
 
     }

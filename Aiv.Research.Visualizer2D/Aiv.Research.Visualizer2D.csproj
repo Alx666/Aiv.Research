@@ -73,7 +73,7 @@
     <Compile Include="Filters\FilterGaussianBlur3x3.cs" />
     <Compile Include="Filters\FilterGaussianBlur5x5.cs" />
     <Compile Include="Filters\FilterGaussianBlur7x7.cs" />
-    <Compile Include="Filters\FilterNumericIndipendentNumeric.cs" />
+    <Compile Include="Filters\FilterNumericIndipendentData.cs" />
     <Compile Include="FormNNDrawer.cs">
       <SubType>Form</SubType>
     </Compile>
