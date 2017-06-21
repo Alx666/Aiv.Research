@@ -205,7 +205,7 @@ namespace Aiv.Research.Visualizer2D
                     if (hInfo.InUse)
                     {
                         if(hInfo.Value != 0)
-                            hBmp.SetPixel(k, i, cColor);
+                            hBmp.SetPixel(i, k, cColor);
 
                         //Quando viene chiamato Clear bisogna mettere tutti i dati della matrice dentro un array 1d
                         //ordinati per riga.. l'array deve essere preallocato x essere sicuri che non sfori il size dell'input
