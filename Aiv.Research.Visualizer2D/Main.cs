@@ -31,12 +31,17 @@ namespace Aiv.Research.Visualizer2D
         private FormNNDrawer    m_hNeuralDisplay;
         private Settings        m_hSettings;
         private double[]        m_hLastIdeal;
-        private ChannelFactory<ITrainingService> m_hServiceFactory = new ChannelFactory<ITrainingService>();
+        private ChannelFactory<ITrainingService> m_hServiceFactory;
 
         public Main()
         {
             InitializeComponent();
-            m_hServiceFactory = new ChannelFactory<ITrainingService>();
+
+            BasicHttpBinding myBinding = new BasicHttpBinding();
+            EndpointAddress myEndpoint = new EndpointAddress($"http://{m_hSettings.TrainingServiceAddress}:{m_hSettings.TrainingServicePort}/{TRAINING_SERVICE_NAME}");
+            m_hServiceFactory = new ChannelFactory<ITrainingService>(myBinding, myEndpoint);
+
+
             m_hSettings = Settings.Load();
             m_hPanel.Visible = false;
             m_hPenDrawer    = new SampleEditor(m_hPanel);        
@@ -441,8 +446,7 @@ namespace Aiv.Research.Visualizer2D
 
         private void OnRemoteBackPropagation(object sender, EventArgs e)
         {
-            EndpointAddress hAddress = new EndpointAddress($"http://{m_hSettings.TrainingServiceAddress}:{m_hSettings.TrainingServicePort}/{TRAINING_SERVICE_NAME}");
-            ITrainingService hService = m_hServiceFactory.CreateChannel(hAddress);
+            ITrainingService hService = m_hServiceFactory.CreateChannel();
             hService.StartTraining(m_hPenDrawer.Network);
         }
     }
