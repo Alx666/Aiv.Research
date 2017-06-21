@@ -35,7 +35,7 @@ namespace Aiv.Research.Visualizer2D
         public Main()
         {
             InitializeComponent();
-
+            m_hServiceFactory = new ChannelFactory<TrainingService>();
             m_hSettings = Settings.Load();
             m_hPanel.Visible = false;
             m_hPenDrawer    = new SampleEditor(m_hPanel);        
