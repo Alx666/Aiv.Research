@@ -18,12 +18,14 @@ namespace Aiv.Research.Shared
         /// <returns></returns>
         public static TOutput[][] ConvertArray2D<TInput, TOutput>(TInput[][] array, Func<TInput, TOutput> converter)
         {
-            int length0 = array.GetLength(0);
-            int length1 = array.GetLength(1);
+            int length0 = array.Length;
 
             TOutput[][] result = new TOutput[length0][];
 
             for (int i = 0; i < length0; i++)
+            {
+                int length1 = array[i].Length;
+
                 for (int j = 0; j < length1; j++)
                 {
                     if (result[i] == null)
@@ -32,6 +34,8 @@ namespace Aiv.Research.Shared
                     }
                     result[i][j] = converter(array[i][j]);
                 }
+            }
+
             return result;
         }
     }
