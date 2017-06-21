@@ -38,8 +38,8 @@ namespace Aiv.Research.Visualizer2D
             InitializeComponent();
 
             BasicHttpBinding myBinding = new BasicHttpBinding();
-            EndpointAddress myEndpoint = new EndpointAddress($"http://{m_hSettings.TrainingServiceAddress}:{m_hSettings.TrainingServicePort}/{TRAINING_SERVICE_NAME}");
-            m_hServiceFactory = new ChannelFactory<ITrainingService>(myBinding, myEndpoint);
+
+            m_hServiceFactory = new ChannelFactory<ITrainingService>(myBinding, new EndpointAddress($"http://{m_hSettings.TrainingServiceAddress}:{m_hSettings.TrainingServicePort}/{TRAINING_SERVICE_NAME}"));
 
 
             m_hSettings = Settings.Load();
