@@ -25,7 +25,8 @@ namespace Aiv.Research.Visualizer2D
     //I have used a deep convolution neural network with two convolution-subsampling layers and an additional two hidden layer MLP.As this is a deep architecture, the more data you use for training, the better.
     //-The real challenge lies not in building the classifier, but preprocessing of data. You should make sure that the images you prepare for classification should be as close to that of MNIST, because MNIST the most cleanest dataset in terms of Image quality. You should crop your image well, add padding and remove noises, though CNN can deal with noise to some extent.
     public partial class Main : Form
-    {        
+    {
+        public const string TRAINING_SERVICE_NAME = "Training";
         private SampleEditor    m_hPenDrawer;   
         private FormNNDrawer    m_hNeuralDisplay;
         private Settings        m_hSettings;
@@ -440,7 +441,7 @@ namespace Aiv.Research.Visualizer2D
 
         private void OnRemoteBackPropagation(object sender, EventArgs e)
         {
-            EndpointAddress hAddress = new EndpointAddress(m_hSettings.TrainingServiceAddress + ":" + m_hSettings.TrainingServicePort);
+            EndpointAddress hAddress = new EndpointAddress($"http://{m_hSettings.TrainingServiceAddress}:{m_hSettings.TrainingServicePort}/{TRAINING_SERVICE_NAME}");
             ITrainingService hService = m_hServiceFactory.CreateChannel(hAddress);
             hService.StartTraining(m_hPenDrawer.Network);
         }
