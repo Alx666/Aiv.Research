@@ -107,16 +107,11 @@ namespace Aiv.Research.Shared
         }
 
         public static byte[] Compress(NetworkCreationConfig hConfig)
-
         {
-
-
             using (MemoryStream serializationOutPut = new MemoryStream())
             {
                 BinaryFormatter binaryFormatter = new BinaryFormatter();
                 binaryFormatter.Serialize(serializationOutPut, hConfig);
-                return serializationOutPut.GetBuffer();
-
                 using (MemoryStream compressedOutPut = new MemoryStream())
                 {
                     using (GZipStream gZipStream = new GZipStream(compressedOutPut, CompressionMode.Compress))
@@ -128,53 +123,26 @@ namespace Aiv.Research.Shared
                         return hRes;
                     }
                 }
-
             }
         }
 
         public static NetworkCreationConfig Decompress(byte[] compressedArray)
         {
-            using (MemoryStream hOutPutStream = new MemoryStream(compressedArray))
-            {
-                BinaryFormatter hFormatter = new BinaryFormatter();
-                return (NetworkCreationConfig)hFormatter.Deserialize(hOutPutStream);
-            }
             byte[] byteArray = new byte[4096];
-            using (MemoryStream hStream = new MemoryStream(compressedArray))
+            using (MemoryStream hStream = new MemoryStream(byteArray))
             {
                 using (GZipStream hGZipStream = new GZipStream(hStream, CompressionMode.Decompress))
                 {
+                    byteArray = new byte[byteArray.Length];
                     int rByte = hGZipStream.Read(byteArray, 0, byteArray.Length);
 
-                
-                }         
+                    using (MemoryStream hOutPutStream = new MemoryStream(byteArray))
+                    {
+                        BinaryFormatter hFormatter = new BinaryFormatter();
+                        return (NetworkCreationConfig) hFormatter.Deserialize(hOutPutStream);
+                    }
+                }
             }
-
-            //using (MemoryStream hDecompressStream = new MemoryStream(compressedArray))
-            //{
-            //    using (GZipStream hGZipStream = new GZipStream(hDecompressStream, CompressionMode.Decompress))
-            //    {
-            //        using (MemoryStream hOutPutStream = new MemoryStream())
-            //        {
-            //            hGZipStream.CopyTo(hOutPutStream);
-            //            BinaryFormatter bf = new BinaryFormatter();
-            //            return (NetworkCreationConfig)bf.Deserialize(hOutPutStream);
-
-            //        }
-            //    }
-            //}
-
-
-            //using (MemoryStream hMStream = new MemoryStream(compressedArray))
-            //{
-            //    using (GZipStream hZipStream = new GZipStream(hMStream, CompressionMode.Decompress))
-            //    {
-            //        // hZipStream.Seek(0, SeekOrigin.Begin);
-            //        BinaryFormatter hFromatter = new BinaryFormatter();
-            //        return hFromatter.Deserialize(hZipStream) as NetworkCreationConfig;
-
-            //    }
-            //}
         }
 
         public override string ToString() => $"[{Id}] {Name}";
