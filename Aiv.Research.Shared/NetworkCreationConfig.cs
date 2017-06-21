@@ -18,7 +18,7 @@ using Encog.Neural.Networks.Layers;
 namespace Aiv.Research.Shared
 {
     [Serializable]
-    [DataContract]    
+    [DataContract]
     public class NetworkCreationConfig
     {
         public NetworkCreationConfig()
@@ -27,19 +27,19 @@ namespace Aiv.Research.Shared
         }
 
         [DataMember]
-        public string Name      { get; set; }
+        public string Name { get; set; }
         [DataMember]
-        public int Id           { get; set; }
+        public int Id { get; set; }
         [DataMember]
-        public int InputSize    { get; set; }
+        public int InputSize { get; set; }
         [DataMember]
-        public int OutputSize   { get; set; }
+        public int OutputSize { get; set; }
         [DataMember]
-        public int HL0Size      { get; set; }
+        public int HL0Size { get; set; }
         [DataMember]
-        public int HL1Size      { get; set; }
+        public int HL1Size { get; set; }
         [DataMember]
-        public int HL2Size      { get; set; }
+        public int HL2Size { get; set; }
         [DataMember]
         public int Iterations { get; set; }
 
@@ -47,15 +47,12 @@ namespace Aiv.Research.Shared
         private Guid m_vActivationTypeGuid;
 
         [DataMember]
-        public Guid ActivationTypeGuid
-        {
-            get
-            {
+        public Guid ActivationTypeGuid {
+            get {
                 return m_vActivationTypeGuid;
             }
-            set
-            {
-                m_vActivationTypeGuid   = value;
+            set {
+                m_vActivationTypeGuid = value;
                 //TODO Fixare la generazione dell'Activator
                 //Activation              = Activator.CreateInstance((from t in Assembly.Load("encog-core-cs").GetTypes() where t.GUID == m_vActivationTypeGuid select t).FirstOrDefault()) as IActivationFunction;
                 Activation = new ActivationElliott();
@@ -67,16 +64,13 @@ namespace Aiv.Research.Shared
         private IActivationFunction m_hActivationFunc;
 
         [XmlIgnore]
-        public IActivationFunction Activation
-        {
-            get
-            {
+        public IActivationFunction Activation {
+            get {
                 return m_hActivationFunc;
             }
 
-            set
-            {
-                m_hActivationFunc       = value;
+            set {
+                m_hActivationFunc = value;
                 if (Activation == null)
                     m_vActivationTypeGuid = new Guid();
                 else
@@ -113,40 +107,74 @@ namespace Aiv.Research.Shared
         }
 
         public static byte[] Compress(NetworkCreationConfig hConfig)
+
         {
-            using (MemoryStream stream = new MemoryStream())
+
+
+            using (MemoryStream serializationOutPut = new MemoryStream())
             {
-                using (GZipStream gZipStream = new GZipStream(stream, CompressionMode.Compress))
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                binaryFormatter.Serialize(serializationOutPut, hConfig);
+                return serializationOutPut.GetBuffer();
+
+                using (MemoryStream compressedOutPut = new MemoryStream())
                 {
-                    BinaryFormatter binaryFormatter = new BinaryFormatter();
-                    binaryFormatter.Serialize(gZipStream, hConfig);
-                    return stream.ToArray();
+                    using (GZipStream gZipStream = new GZipStream(compressedOutPut, CompressionMode.Compress))
+                    {
+                        gZipStream.Write(serializationOutPut.GetBuffer(), 0, (int)serializationOutPut.Length);
+                        byte[] hFullRes = compressedOutPut.GetBuffer();
+                        byte[] hRes = new byte[compressedOutPut.Position];
+                        Buffer.BlockCopy(hFullRes, 0, hRes, 0, hRes.Length);
+                        return hRes;
+                    }
                 }
+
             }
         }
 
         public static NetworkCreationConfig Decompress(byte[] compressedArray)
         {
-            using (GZipStream hZipStream = new GZipStream(new MemoryStream(compressedArray), CompressionMode.Decompress))
+            using (MemoryStream hOutPutStream = new MemoryStream(compressedArray))
             {
-                const int iSize = 4096;
-                byte[] hBuffer = new byte[iSize];
-                using (MemoryStream hMemoryStream = new MemoryStream())
-                {
-                    int iCount = 0;
-                    while (iCount > 0)
-                    {
-                        iCount = hZipStream.Read(hBuffer, 0, iSize);
-                        if (iCount > 0)
-                        {
-                            hMemoryStream.Write(hBuffer, 0, iCount);
-                        }
-                    }
-                    IFormatter hFormatter = new BinaryFormatter();
-                    hZipStream.Seek(0, SeekOrigin.Begin);
-                    return hFormatter.Deserialize(hZipStream) as NetworkCreationConfig;
-                }
+                BinaryFormatter hFormatter = new BinaryFormatter();
+                return (NetworkCreationConfig)hFormatter.Deserialize(hOutPutStream);
             }
+            byte[] byteArray = new byte[4096];
+            using (MemoryStream hStream = new MemoryStream(compressedArray))
+            {
+                using (GZipStream hGZipStream = new GZipStream(hStream, CompressionMode.Decompress))
+                {
+                    int rByte = hGZipStream.Read(byteArray, 0, byteArray.Length);
+
+                
+                }         
+            }
+
+            //using (MemoryStream hDecompressStream = new MemoryStream(compressedArray))
+            //{
+            //    using (GZipStream hGZipStream = new GZipStream(hDecompressStream, CompressionMode.Decompress))
+            //    {
+            //        using (MemoryStream hOutPutStream = new MemoryStream())
+            //        {
+            //            hGZipStream.CopyTo(hOutPutStream);
+            //            BinaryFormatter bf = new BinaryFormatter();
+            //            return (NetworkCreationConfig)bf.Deserialize(hOutPutStream);
+
+            //        }
+            //    }
+            //}
+
+
+            //using (MemoryStream hMStream = new MemoryStream(compressedArray))
+            //{
+            //    using (GZipStream hZipStream = new GZipStream(hMStream, CompressionMode.Decompress))
+            //    {
+            //        // hZipStream.Seek(0, SeekOrigin.Begin);
+            //        BinaryFormatter hFromatter = new BinaryFormatter();
+            //        return hFromatter.Deserialize(hZipStream) as NetworkCreationConfig;
+
+            //    }
+            //}
         }
 
         public override string ToString() => $"[{Id}] {Name}";

@@ -10,15 +10,15 @@ namespace Aiv.Research.TrainingServer
 {
     class Program
     {
-        //static void Main(string[] args)
-        //{
-        //    NetworkCreationConfig hoConfig = new NetworkCreationConfig();
-        //    byte[] h = NetworkCreationConfig.Compress(hoConfig);
+        static void Main(string[] args)
+        {
+            NetworkCreationConfig hoConfig = new NetworkCreationConfig();
+            byte[] h = NetworkCreationConfig.Compress(hoConfig);
 
-        //    NetworkCreationConfig hNewConfig = NetworkCreationConfig.Decompress(h);
-        //    Console.ReadLine();
-        //}
-        static void Main(string[] args) => new ConsoleUI(new TrainingService(4), "Training Service").RunAndWait();
+            NetworkCreationConfig hNewConfig = NetworkCreationConfig.Decompress(h);
+            Console.ReadLine();
+        }
+        //static void Main(string[] args) => new ConsoleUI(new TrainingService(4), "Training Service").RunAndWait();
     }
         
 }

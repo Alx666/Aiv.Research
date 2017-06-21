@@ -16,6 +16,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Aiv.Research.Visualizer2D.Filters;
 using System.Reflection;
+using System.ServiceModel;
 
 namespace Aiv.Research.Visualizer2D
 {
@@ -29,6 +30,7 @@ namespace Aiv.Research.Visualizer2D
         private FormNNDrawer    m_hNeuralDisplay;
         private Settings        m_hSettings;
         private double[]        m_hLastIdeal;
+        private ChannelFactory<TrainingService> m_hServiceFactory = new ChannelFactory<TrainingService>();
 
         public Main()
         {
@@ -436,6 +438,12 @@ namespace Aiv.Research.Visualizer2D
 
         }
 
+        private void OnRemoteBackPropagation(object sender, EventArgs e)
+        {
+            EndpointAddress hAddress = new EndpointAddress(m_hSettings.TrainingServiceAddress + ":" + m_hSettings.TrainingServicePort);
+            TrainingService hService = m_hServiceFactory.CreateChannel(hAddress);
+            hService.StartTraining(m_hPenDrawer.Network);
+        }
     }
 
 }
