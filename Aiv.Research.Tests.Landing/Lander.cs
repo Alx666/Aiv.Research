@@ -13,14 +13,23 @@ namespace Aiv.Research.Tests.Landing
         private Segment[]       m_hSegments;
         private Box2            m_hBox;
         private Vector4         m_vColor;
+        private Vector4         m_vColorGood;
+        private Vector4         m_vColorBad;
         private Vector2         m_vVelocity;
-        
+        private float           m_fGroundLevel;
 
-        public Lander()
+        public  bool            IsGrounded { get; private set; }
+
+
+
+        public Lander(float fGroundLevel)
         {
             m_hBox          = new Box2(new Vector2(0, 0), new Vector2(50, 50));
             m_hSegments     = new Segment[4];
-            m_vColor        = new Vector4(1f, 0f, 0f, 0f);
+            m_vColor        = new Vector4(1f, 1f, 1f, 0f);
+            m_vColorGood    = new Vector4(0f, 1f, 0f, 0f);
+            m_vColorBad     = new Vector4(1f, 0f, 0f, 0f);
+            m_fGroundLevel  = fGroundLevel;
 
             m_hSegments[0]  = new Segment(0f, 0f, 0f, 0f, 2f);
             m_hSegments[1]  = new Segment(0f, 0f, 0f, 0f, 2f);
@@ -31,7 +40,10 @@ namespace Aiv.Research.Tests.Landing
         }
 
         public void Update()
-        {            
+        {
+            if (IsGrounded)
+                return;
+
             m_vVelocity.Y += 9.8f * Window.Current.deltaTime;
 
             if (Window.Current.GetKey(KeyCode.Space))
@@ -43,6 +55,13 @@ namespace Aiv.Research.Tests.Landing
             if (Window.Current.GetKey(KeyCode.Left))
                 m_vVelocity.X += -10 * Window.Current.deltaTime;
 
+
+            if (m_hBox.Bottom >= m_fGroundLevel)
+            {
+                m_vColor = m_vVelocity.Length < 2.0f ? m_vColorGood : m_vColorBad;
+                m_vVelocity = Vector2.Zero;
+                IsGrounded = true;
+            }
 
             m_hBox.Translate(m_vVelocity);
 

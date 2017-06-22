@@ -12,11 +12,14 @@ namespace Aiv.Research.Tests.Landing
     {
         private Segment m_hLine;
         private Vector4 m_vColor;
-                
+
+        public float GroundLevel { get; private set; }
+
         public Ground()
-        {            
-            m_hLine     = new Segment(0f, Window.Current.Height - Window.Current.Height / 8, Window.Current.Width, Window.Current.Height - Window.Current.Height / 8, 1f);
-            m_vColor    = new Vector4(1f, 1f, 1f, 0f);
+        {
+            GroundLevel = Window.Current.Height - Window.Current.Height / 8;
+            m_hLine     = new Segment(0f, GroundLevel, Window.Current.Width, GroundLevel, 1f);
+            m_vColor    = new Vector4(1f, 1f, 1f, 0f);            
         }
 
         public void Update()

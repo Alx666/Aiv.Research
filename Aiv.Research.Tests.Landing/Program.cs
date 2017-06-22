@@ -18,8 +18,8 @@ namespace Aiv.Research.Tests.Landing
         static void Main(string[] args)
         {
             m_hWnd      = new Window(800, 600, "Lander");            
-            m_hLander   = new Lander();
             m_hGround   = new Ground();
+            m_hLander   = new Lander(m_hGround.GroundLevel);
 
             while (m_hWnd.IsOpened)
             {
