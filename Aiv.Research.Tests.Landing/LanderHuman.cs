@@ -50,9 +50,6 @@ namespace Aiv.Research.Tests.Landing
 
             if (Window.Current.GetKey(KeyCode.R))
             {
-                m_hRecorder?.Stop();
-
-                m_hRecorder.Start("Lander" + iCounter + ".xml");
                 iCounter++;
             }
 

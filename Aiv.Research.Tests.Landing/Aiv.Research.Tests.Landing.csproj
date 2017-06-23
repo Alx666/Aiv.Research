@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Ground.cs" />
     <Compile Include="Lander.cs" />
+    <Compile Include="LanderAI.cs" />
     <Compile Include="LanderHuman.cs" />
     <Compile Include="LandingSite.cs" />
     <Compile Include="Program.cs" />
