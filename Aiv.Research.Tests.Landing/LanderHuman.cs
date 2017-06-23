@@ -22,13 +22,7 @@ namespace Aiv.Research.Tests.Landing
         }
         public override void Update()
         {
-            if (IsGrounded)
-                return;
-
-            Thrust = 0;
-            Adjustment = 0;
-
-            m_vVelocity.Y += 9.8f * Window.Current.deltaTime;
+            base.Update();
 
             if (Window.Current.GetKey(KeyCode.Space))
             {
@@ -48,7 +42,6 @@ namespace Aiv.Research.Tests.Landing
                 Adjustment = -1;
             }
             
-
             if (Window.Current.GetKey(KeyCode.R))
             {
                 m_hRecorder?.Stop();
@@ -57,12 +50,11 @@ namespace Aiv.Research.Tests.Landing
                 iCounter++;
             }
 
-
-            Height = this.Position.Y;
-            VelocityX = this.m_vVelocity.X;
-            VelocityY = this.m_vVelocity.Y;
-            VectorX = (m_hSite.Position - Position).X;
-            VectorY = (m_hSite.Position - Position).Y;
+            Height      = this.Position.Y;
+            VelocityX   = this.m_vVelocity.X;
+            VelocityY   = this.m_vVelocity.Y;
+            VectorX     = (m_hSite.Position - Position).X;
+            VectorY     = (m_hSite.Position - Position).Y;
         }
 
     }

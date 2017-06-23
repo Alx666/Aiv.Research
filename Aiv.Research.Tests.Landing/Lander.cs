@@ -58,10 +58,7 @@ namespace Aiv.Research.Tests.Landing
 
             m_hBox.Translate(new Vector2(100, 100));            
         }
-
-
-
-
+       
 
         virtual public void Update()
         {
