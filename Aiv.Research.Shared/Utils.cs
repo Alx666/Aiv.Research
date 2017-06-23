@@ -25,6 +25,8 @@ namespace Aiv.Research.Shared
             for (int i = 0; i < length0; i++)
             {
                 int length1 = array[i].Length;
+                result[i] = new TOutput[length1];
+
 
                 for (int j = 0; j < length1; j++)
                 {
