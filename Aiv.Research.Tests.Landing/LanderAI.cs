@@ -34,7 +34,7 @@ namespace Aiv.Research.Tests.Landing
             m_hNetwork.Compute(m_hInput, m_hOutput);
 
 
-            if(m_hOutput[1] > 0.98)
+            if(m_hOutput[1] > 0.5)
                 m_vVelocity.Y += -22f * Window.Current.deltaTime;
         }
     }
