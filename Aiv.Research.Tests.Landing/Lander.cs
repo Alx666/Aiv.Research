@@ -74,6 +74,14 @@ namespace Aiv.Research.Tests.Landing
             m_vVelocity.Y += 9.8f * Window.Current.deltaTime;
 
 
+            if(m_hBox.Bottom >= m_hSite.GroundLevel)
+            {
+                m_vColor = m_vVelocity.Length < 2.0f ? m_vColorGood : m_vColorBad;
+                m_vVelocity = Vector2.Zero;
+                IsGrounded = true;
+            }
+
+
             m_hBox.Translate(m_vVelocity);
             Position = new Vector2(m_hBox.Left + m_hBox.Width / 2, m_hBox.Top + m_hBox.Height / 2);
 

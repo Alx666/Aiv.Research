@@ -12,6 +12,8 @@ namespace Aiv.Research.Tests.Landing
 {
     class LanderHuman : Lander
     {
+
+
         private int iCounter;
         private Recorder m_hRecorder;
 
@@ -22,13 +24,10 @@ namespace Aiv.Research.Tests.Landing
         }
         public override void Update()
         {
+            base.Update();
+
             if (IsGrounded)
                 return;
-
-            Thrust = 0;
-            Adjustment = 0;
-
-            m_vVelocity.Y += 9.8f * Window.Current.deltaTime;
 
             if (Window.Current.GetKey(KeyCode.Space))
             {
