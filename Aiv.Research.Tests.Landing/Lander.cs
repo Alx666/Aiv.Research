@@ -12,24 +12,18 @@ namespace Aiv.Research.Tests.Landing
 {
     internal abstract class Lander
     {
+        public bool IsGrounded { get; private set; }
+        public Vector2 Position { get; private set; }
+
         private Segment[]       m_hStructure;
         private Segment         m_hLandingVector;
-
         private Box2            m_hBox;
         private Vector4         m_vColor;
         private Vector4         m_vColorGood;
         private Vector4         m_vColorBad;
-        protected Vector2         m_vVelocity;
 
-        private LandingSite     m_hSite;
-
-        public  bool            IsGrounded  { get; private set; }
-
-        public Vector2          Position    { get; private set; }
-
-
-
-        BasicNetwork m_hNetwork;
+        protected Vector2       m_vVelocity;
+        protected LandingSite   m_hSite;
 
         [NeuralInput(0)]
         protected double Height;
@@ -65,10 +59,6 @@ namespace Aiv.Research.Tests.Landing
             m_hBox.Translate(new Vector2(100, 100));            
         }
 
-        public Lander(string sNetwork, LandingSite hSite) : this(hSite)
-        {
-            m_hNetwork = Encog.Persist.EncogDirectoryPersistence.LoadObject(new System.IO.FileInfo(sNetwork)) as BasicNetwork;
-        }
 
 
 
@@ -83,31 +73,6 @@ namespace Aiv.Research.Tests.Landing
 
             m_vVelocity.Y += 9.8f * Window.Current.deltaTime;
 
-            //if (Window.Current.GetKey(KeyCode.Space))
-            //{
-            //    m_vVelocity.Y += -22f * Window.Current.deltaTime;
-            //    Thrust = 1;
-            //}
-            //
-            //if (Window.Current.GetKey(KeyCode.Right))
-            //{
-            //    m_vVelocity.X += 10f * Window.Current.deltaTime;
-            //    Adjustment = 1;
-            //}
-            //
-            //if (Window.Current.GetKey(KeyCode.Left))
-            //{
-            //    m_vVelocity.X += -10 * Window.Current.deltaTime;
-            //    Adjustment = -1;
-            //}
-            //
-            //
-            //if (m_hBox.Bottom >= m_hSite.GroundLevel)
-            //{
-            //    m_vColor = m_vVelocity.Length < 2.0f ? m_vColorGood : m_vColorBad;
-            //    m_vVelocity = Vector2.Zero;
-            //    IsGrounded = true;
-            //}
 
             m_hBox.Translate(m_vVelocity);
             Position = new Vector2(m_hBox.Left + m_hBox.Width / 2, m_hBox.Top + m_hBox.Height / 2);
@@ -126,7 +91,6 @@ namespace Aiv.Research.Tests.Landing
 
             m_hLandingVector.Point1 = Position;
             m_hLandingVector.Point2 = m_hSite.Position;
-
 
 
             Height      = this.Position.Y;

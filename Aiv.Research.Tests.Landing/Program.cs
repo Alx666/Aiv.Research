@@ -16,25 +16,17 @@ namespace Aiv.Research.Tests.Landing
         private static LandingSite  m_hSite;
         private static Ground       m_hGround;
         private static Lander       m_hLander;
-        private static Recorder     m_hRecorder;
+
 
         static void Main(string[] args)
         {
             m_hWnd      = new Window(800, 600, "Lander");            
             m_hGround   = new Ground();
             m_hSite     = new LandingSite(m_hGround.GroundLevel);
-            m_hLander   = new Lander(m_hSite);
-
-
+            m_hLander   = new LanderHuman(m_hSite);
             
-
             while (m_hWnd.IsOpened)
-            {
-
-
-
-                
-                m_hRecorder?.Update();
+            {                
                 m_hGround.Update();
                 m_hSite.Update();
                 m_hLander.Update();
