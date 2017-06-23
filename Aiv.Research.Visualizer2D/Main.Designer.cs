@@ -37,6 +37,7 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trainingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localBackPropagationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteBackPropagationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +56,7 @@
             this.m_hStatusBar = new System.Windows.Forms.StatusStrip();
             this.m_hProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.m_hWorker = new System.ComponentModel.BackgroundWorker();
-            this.downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadCustomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_hMenuStrip.SuspendLayout();
             this.m_hStatusBar.SuspendLayout();
             this.SuspendLayout();
@@ -135,6 +136,13 @@
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.MenuItemClose);
             // 
+            // downloadToolStripMenuItem
+            // 
+            this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
+            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.downloadToolStripMenuItem.Text = "Download";
+            this.downloadToolStripMenuItem.Click += new System.EventHandler(this.OnNetworkDownload);
+            // 
             // trainingToolStripMenuItem
             // 
             this.trainingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -168,7 +176,7 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.OnOptionsClick);
             // 
@@ -176,6 +184,7 @@
             // 
             this.dataSetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadToolStripMenuItem1,
+            this.loadCustomToolStripMenuItem,
             this.normalizeCenterOfMassToolStripMenuItem,
             this.normalizeValuesToolStripMenuItem,
             this.gaussianBlur3x3ToolStripMenuItem,
@@ -259,12 +268,12 @@
             this.m_hWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.OnProgressChanged);
             this.m_hWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.OnRunWorkerCompleted);
             // 
-            // downloadToolStripMenuItem
+            // loadCustomToolStripMenuItem
             // 
-            this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
-            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.downloadToolStripMenuItem.Text = "Download";
-            this.downloadToolStripMenuItem.Click += new System.EventHandler(this.OnNetworkDownload);
+            this.loadCustomToolStripMenuItem.Name = "loadCustomToolStripMenuItem";
+            this.loadCustomToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.loadCustomToolStripMenuItem.Text = "Load Custom";
+            this.loadCustomToolStripMenuItem.Click += new System.EventHandler(this.OnLoadCustomData);
             // 
             // Main
             // 
@@ -320,6 +329,7 @@
         private System.Windows.Forms.ToolStripMenuItem gaussianBlur5x5ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gaussianBlur7x7ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadCustomToolStripMenuItem;
     }
 }
 

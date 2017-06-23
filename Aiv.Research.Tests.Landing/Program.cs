@@ -1,4 +1,5 @@
 ﻿using Aiv.Fast2D;
+using Aiv.Research.Shared.Data;
 using OpenTK;
 using System;
 using System.Collections.Generic;
@@ -12,25 +13,49 @@ namespace Aiv.Research.Tests.Landing
     {
         private static  Window  m_hWnd;
 
-        private static  Ground  m_hGround;
-        private static  Lander  m_hLander;
+        private static LandingSite  m_hSite;
+        private static Ground       m_hGround;
+        private static Lander       m_hLander;
+        private static Recorder     m_hRecorder;
 
         static void Main(string[] args)
         {
             m_hWnd      = new Window(800, 600, "Lander");            
             m_hGround   = new Ground();
-            m_hLander   = new Lander(m_hGround.GroundLevel);
+            m_hSite     = new LandingSite(m_hGround.GroundLevel);
+            m_hLander   = new Lander(m_hSite);
+
+
+            int iCounter = 0;
 
             while (m_hWnd.IsOpened)
             {
+                if (m_hWnd.GetKey(KeyCode.R))
+                {
+                    m_hRecorder?.Stop();
+                    m_hGround = new Ground();
+                    m_hSite = new LandingSite(m_hGround.GroundLevel);
+                    m_hLander = new Lander(m_hSite);
+                    m_hRecorder = new Recorder(m_hLander);
+                    m_hRecorder.Start("Lander" +  iCounter + ".xml");
+                    iCounter++;
+                }
+
+
+                
+                m_hRecorder?.Update();
                 m_hGround.Update();
+                m_hSite.Update();
                 m_hLander.Update();
 
                 m_hGround.Draw();
+                m_hSite.Draw();
                 m_hLander.Draw();
 
                 m_hWnd.Update();
             }
+
+            
         }
     }
 }

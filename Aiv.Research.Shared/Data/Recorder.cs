@@ -24,22 +24,19 @@ namespace Aiv.Research.Shared.Data
         {
             m_hValues          = new List<Sample>();
 
-            var hInputMembers  = (from m in m_hValues.GetType().GetMembers()
-                                 where m.GetCustomAttribute<NeuralInputAttribute>() != null
-                                 select new { Member = m, Attribute = m.GetCustomAttribute<NeuralInputAttribute>() }).OrderBy(x => x.Attribute.Index);
+            var hInputMembers  = (from m in hTarget.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
+                                  where m.GetCustomAttribute<NeuralInputAttribute>() != null
+                                  select new { Member = m, Attribute = m.GetCustomAttribute<NeuralInputAttribute>() }).OrderBy(x => x.Attribute.Index);
 
-            var hOutputMembers = (from m in m_hValues.GetType().GetMembers()
-                                 where m.GetCustomAttribute<NeuralIdealAttribute>() != null
-                                 select new { Member = m, Attribute = m.GetCustomAttribute<NeuralIdealAttribute>() }).OrderBy(x => x.Attribute.Index);
+            var hOutputMembers = (from m in hTarget.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
+                                  where m.GetCustomAttribute<NeuralIdealAttribute>() != null
+                                  select new { Member = m, Attribute = m.GetCustomAttribute<NeuralIdealAttribute>() }).OrderBy(x => x.Attribute.Index);
 
             m_hInputMembers    = new List<IDataExtractor>();
 
             foreach (var item in hInputMembers)
             {
-                if (item.Member is PropertyInfo)
-                    m_hInputMembers.Add(new PropertyDataExtractor(hTarget, item.Member as PropertyInfo));
-                else
-                    m_hInputMembers.Add(new FieldDataExtractor(hTarget, item.Member as FieldInfo));
+                m_hInputMembers.Add(new FieldDataExtractor(hTarget, item.Member as FieldInfo));
             }
 
 
@@ -47,10 +44,7 @@ namespace Aiv.Research.Shared.Data
 
             foreach (var item in hOutputMembers)
             {
-                if (item.Member is PropertyInfo)
-                    m_hOutputMembers.Add(new PropertyDataExtractor(hTarget, item.Member as PropertyInfo));
-                else
-                    m_hOutputMembers.Add(new FieldDataExtractor(hTarget, item.Member as FieldInfo));
+                m_hOutputMembers.Add(new FieldDataExtractor(hTarget, item.Member as FieldInfo));
             }
 
             m_hTarget = hTarget;
@@ -79,9 +73,14 @@ namespace Aiv.Research.Shared.Data
 
         public void Update()
         {
-            
             if (Started)
-                m_hValues.Add(new Sample("", Array.ConvertAll(m_hInputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x), Array.ConvertAll(m_hOutputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x)));
+            {
+                float[] hВход  = Array.ConvertAll(m_hInputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x);
+                float[] hВыход = Array.ConvertAll(m_hOutputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x);
+
+                m_hValues.Add(new Sample("", hВход, hВыход));
+                Console.WriteLine("Sample Added");
+            }
         }
 
 

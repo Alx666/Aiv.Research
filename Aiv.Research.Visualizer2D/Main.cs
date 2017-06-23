@@ -153,6 +153,8 @@ namespace Aiv.Research.Visualizer2D
                 {
                     hSerializer.Serialize(hStream, m_hPenDrawer.Network);
                 }
+
+
             }
         }
 
@@ -436,6 +438,23 @@ namespace Aiv.Research.Visualizer2D
 
         }
 
+        private void OnLoadCustomData(object sender, EventArgs e)
+        {
+            if (m_hOpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (Stream hFs = File.OpenRead(m_hOpenFileDialog.FileName))
+                {
+                    XmlSerializer hSerializer = new XmlSerializer(typeof(List<Sample>));
+
+                    List<Sample> hSamples = hSerializer.Deserialize(hFs) as List<Sample>;
+
+                    m_hPenDrawer.Network.Samples = hSamples;
+                    m_hSamples.Items.Clear();
+
+                    hSamples.ForEach(s => m_hSamples.Items.Add(s));
+                }                                
+            }            
+        }
     }
 
 }
