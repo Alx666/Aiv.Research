@@ -10,7 +10,7 @@ using Encog.Neural.Networks;
 
 namespace Aiv.Research.Tests.Landing
 {
-    internal class Lander
+    internal abstract class Lander
     {
         private Segment[]       m_hStructure;
         private Segment         m_hLandingVector;
@@ -19,7 +19,7 @@ namespace Aiv.Research.Tests.Landing
         private Vector4         m_vColor;
         private Vector4         m_vColorGood;
         private Vector4         m_vColorBad;
-        private Vector2         m_vVelocity;
+        protected Vector2         m_vVelocity;
 
         private LandingSite     m_hSite;
 
@@ -32,20 +32,20 @@ namespace Aiv.Research.Tests.Landing
         BasicNetwork m_hNetwork;
 
         [NeuralInput(0)]
-        private double Height;
+        protected double Height;
         [NeuralInput(1)]
-        private double VelocityX;
+        protected double VelocityX;
         [NeuralInput(2)]
-        private double VelocityY;
+        protected double VelocityY;
         [NeuralInput(3)]
-        private double VectorX;
+        protected double VectorX;
         [NeuralInput(4)]
-        private double VectorY;
+        protected double VectorY;
 
         [NeuralIdeal(0)]
-        private double Adjustment;
+        protected double Adjustment;
         [NeuralIdeal(1)]
-        private double Thrust;
+        protected double Thrust;
 
         public Lander(LandingSite hSite)
         {
@@ -73,7 +73,7 @@ namespace Aiv.Research.Tests.Landing
 
 
 
-        public void Update()
+        virtual public void Update()
         {
             if (IsGrounded)
                 return;
@@ -83,31 +83,31 @@ namespace Aiv.Research.Tests.Landing
 
             m_vVelocity.Y += 9.8f * Window.Current.deltaTime;
 
-            if (Window.Current.GetKey(KeyCode.Space))
-            {
-                m_vVelocity.Y += -22f * Window.Current.deltaTime;
-                Thrust = 1;
-            }
-
-            if (Window.Current.GetKey(KeyCode.Right))
-            {
-                m_vVelocity.X += 10f * Window.Current.deltaTime;
-                Adjustment = 1;
-            }
-
-            if (Window.Current.GetKey(KeyCode.Left))
-            {
-                m_vVelocity.X += -10 * Window.Current.deltaTime;
-                Adjustment = -1;
-            }
-
-
-            if (m_hBox.Bottom >= m_hSite.GroundLevel)
-            {
-                m_vColor = m_vVelocity.Length < 2.0f ? m_vColorGood : m_vColorBad;
-                m_vVelocity = Vector2.Zero;
-                IsGrounded = true;
-            }
+            //if (Window.Current.GetKey(KeyCode.Space))
+            //{
+            //    m_vVelocity.Y += -22f * Window.Current.deltaTime;
+            //    Thrust = 1;
+            //}
+            //
+            //if (Window.Current.GetKey(KeyCode.Right))
+            //{
+            //    m_vVelocity.X += 10f * Window.Current.deltaTime;
+            //    Adjustment = 1;
+            //}
+            //
+            //if (Window.Current.GetKey(KeyCode.Left))
+            //{
+            //    m_vVelocity.X += -10 * Window.Current.deltaTime;
+            //    Adjustment = -1;
+            //}
+            //
+            //
+            //if (m_hBox.Bottom >= m_hSite.GroundLevel)
+            //{
+            //    m_vColor = m_vVelocity.Length < 2.0f ? m_vColorGood : m_vColorBad;
+            //    m_vVelocity = Vector2.Zero;
+            //    IsGrounded = true;
+            //}
 
             m_hBox.Translate(m_vVelocity);
             Position = new Vector2(m_hBox.Left + m_hBox.Width / 2, m_hBox.Top + m_hBox.Height / 2);
@@ -136,7 +136,7 @@ namespace Aiv.Research.Tests.Landing
             VectorY     = (m_hSite.Position - Position).Y;
         }
 
-        public void Draw()
+        virtual public void Draw()
         {
             for (int i = 0; i < m_hStructure.Length; i++)
             {

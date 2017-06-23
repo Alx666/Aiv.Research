@@ -26,20 +26,11 @@ namespace Aiv.Research.Tests.Landing
             m_hLander   = new Lander(m_hSite);
 
 
-            int iCounter = 0;
+            
 
             while (m_hWnd.IsOpened)
             {
-                if (m_hWnd.GetKey(KeyCode.R))
-                {
-                    m_hRecorder?.Stop();
-                    m_hGround = new Ground();
-                    m_hSite = new LandingSite(m_hGround.GroundLevel);
-                    m_hLander = new Lander(m_hSite);
-                    m_hRecorder = new Recorder(m_hLander);
-                    m_hRecorder.Start("Lander" +  iCounter + ".xml");
-                    iCounter++;
-                }
+
 
 
                 
