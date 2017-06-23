@@ -12,7 +12,8 @@ namespace Aiv.Research.Tests.Landing
 {
     class LanderHuman : Lander
     {
-
+        private bool start;
+        private bool getKeyDown;
 
         private int iCounter;
         private Recorder m_hRecorder;
@@ -21,6 +22,9 @@ namespace Aiv.Research.Tests.Landing
         {
             iCounter = 0;
             m_hRecorder = new Recorder(this);
+
+            start = true;
+            getKeyDown = false;
         }
         public override void Update()
         {
@@ -46,11 +50,25 @@ namespace Aiv.Research.Tests.Landing
                 m_vVelocity.X += -10 * Window.Current.deltaTime;
                 Adjustment = -1;
             }
-            
 
-            if (Window.Current.GetKey(KeyCode.R))
+            if (Window.Current.GetKey(KeyCode.R) && getKeyDown == false)
             {
+                if(start == true)
+                {
+                    m_hRecorder.Start("Lander" + iCounter + ".xml");
+                    start = false;
+                }
+                if (start == false)
+                {
+                    m_hRecorder?.Stop();
+                    start = true;
+                }
                 iCounter++;
+                getKeyDown = true;
+            }
+            else
+            {
+                getKeyDown = false;
             }
 
 
