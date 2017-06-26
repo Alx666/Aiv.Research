@@ -1,0 +1,8053 @@
+<?xml version="1.0"?>
+<ArrayOfSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Sample>
+    <Name>200,7009 6,362834 =&gt; 0</Name>
+    <Values>
+      <float>200.700928</float>
+      <float>6.36283445</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>207,0226 6,32164 =&gt; 0</Name>
+    <Values>
+      <float>207.022552</float>
+      <float>6.32163954</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>213,2189 6,196363 =&gt; 0</Name>
+    <Values>
+      <float>213.218933</float>
+      <float>6.196363</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>219,3164 6,097486 =&gt; 0</Name>
+    <Values>
+      <float>219.3164</float>
+      <float>6.0974865</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>225,2886 5,972208 =&gt; 0</Name>
+    <Values>
+      <float>225.288635</float>
+      <float>5.9722085</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>231,1408 5,852186 =&gt; 0</Name>
+    <Values>
+      <float>231.140808</float>
+      <float>5.85218573</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>236,8545 5,713707 =&gt; 0</Name>
+    <Values>
+      <float>236.854523</float>
+      <float>5.71370745</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>242,4305 5,575913 =&gt; 0</Name>
+    <Values>
+      <float>242.43045</float>
+      <float>5.57591343</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>247,8763 5,445795 =&gt; 0</Name>
+    <Values>
+      <float>247.876251</float>
+      <float>5.445795</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>253,1816 5,305336 =&gt; 0</Name>
+    <Values>
+      <float>253.18158</float>
+      <float>5.30533552</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>258,3512 5,169631 =&gt; 0</Name>
+    <Values>
+      <float>258.3512</float>
+      <float>5.169631</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>263,3846 5,033412 =&gt; 0</Name>
+    <Values>
+      <float>263.3846</float>
+      <float>5.033412</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>268,2811 4,896482 =&gt; 0</Name>
+    <Values>
+      <float>268.2811</float>
+      <float>4.89648247</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>273,041 4,759933 =&gt; 0</Name>
+    <Values>
+      <float>273.041016</float>
+      <float>4.759933</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>277,666 4,624918 =&gt; 0</Name>
+    <Values>
+      <float>277.665955</float>
+      <float>4.62491751</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>282,1532 4,48724 =&gt; 0</Name>
+    <Values>
+      <float>282.1532</float>
+      <float>4.48724</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>286,5087 4,355551 =&gt; 0</Name>
+    <Values>
+      <float>286.508728</float>
+      <float>4.35555124</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>290,7189 4,210113 =&gt; 0</Name>
+    <Values>
+      <float>290.718872</float>
+      <float>4.21011257</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>294,798 4,079192 =&gt; 0</Name>
+    <Values>
+      <float>294.798035</float>
+      <float>4.07919168</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>298,7394 3,941316 =&gt; 0</Name>
+    <Values>
+      <float>298.73938</float>
+      <float>3.94131613</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>302,5469 3,807552 =&gt; 0</Name>
+    <Values>
+      <float>302.546936</float>
+      <float>3.807552</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>306,2148 3,667939 =&gt; 0</Name>
+    <Values>
+      <float>306.214844</float>
+      <float>3.66793871</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>309,7453 3,530461 =&gt; 0</Name>
+    <Values>
+      <float>309.7453</float>
+      <float>3.5304606</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>313,1422 3,396877 =&gt; 0</Name>
+    <Values>
+      <float>313.1422</float>
+      <float>3.39687729</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>316,4026 3,260426 =&gt; 0</Name>
+    <Values>
+      <float>316.402649</float>
+      <float>3.26042628</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>319,5265 3,123885 =&gt; 0</Name>
+    <Values>
+      <float>319.5265</float>
+      <float>3.123885</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>322,5148 2,988261 =&gt; 0</Name>
+    <Values>
+      <float>322.514771</float>
+      <float>2.98826051</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>325,3646 2,849784 =&gt; 0</Name>
+    <Values>
+      <float>325.364563</float>
+      <float>2.84978414</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>328,0787 2,714097 =&gt; 0</Name>
+    <Values>
+      <float>328.078674</float>
+      <float>2.714097</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>330,6585 2,579829 =&gt; 0</Name>
+    <Values>
+      <float>330.6585</float>
+      <float>2.57982874</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>333,1061 2,447674 =&gt; 0</Name>
+    <Values>
+      <float>333.10614</float>
+      <float>2.44767427</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>335,3981 2,291888 =&gt; 0</Name>
+    <Values>
+      <float>335.398071</float>
+      <float>2.29188752</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>337,5685 2,170459 =&gt; 0</Name>
+    <Values>
+      <float>337.568542</float>
+      <float>2.17045856</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>339,6035 2,034907 =&gt; 0</Name>
+    <Values>
+      <float>339.603455</float>
+      <float>2.03490686</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>341,4991 1,895676 =&gt; 0</Name>
+    <Values>
+      <float>341.499084</float>
+      <float>1.89567554</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>343,251 1,751922 =&gt; 0</Name>
+    <Values>
+      <float>343.251038</float>
+      <float>1.75192237</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>344,871 1,619992 =&gt; 0</Name>
+    <Values>
+      <float>344.871033</float>
+      <float>1.61999249</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>346,3586 1,487584 =&gt; 0</Name>
+    <Values>
+      <float>346.358582</float>
+      <float>1.48758411</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>347,7096 1,351003 =&gt; 0</Name>
+    <Values>
+      <float>347.7096</float>
+      <float>1.35100341</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>348,9241 1,214462 =&gt; 0</Name>
+    <Values>
+      <float>348.924072</float>
+      <float>1.2144624</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>350,0008 1,07671 =&gt; 0</Name>
+    <Values>
+      <float>350.0008</float>
+      <float>1.07670951</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>350,9416 0,9407738 =&gt; 0</Name>
+    <Values>
+      <float>350.9416</float>
+      <float>0.940773845</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>351,7486 0,8070414 =&gt; 0</Name>
+    <Values>
+      <float>351.7486</float>
+      <float>0.8070414</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>352,4176 0,6689982 =&gt; 0</Name>
+    <Values>
+      <float>352.4176</float>
+      <float>0.668998241</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>352,9505 0,5328936 =&gt; 0</Name>
+    <Values>
+      <float>352.9505</float>
+      <float>0.5328936</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>353,35 0,399496 =&gt; 0</Name>
+    <Values>
+      <float>353.350037</float>
+      <float>0.399496049</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>353,6066 0,256547 =&gt; 0</Name>
+    <Values>
+      <float>353.606567</float>
+      <float>0.256547</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>353,7318 0,1251488 =&gt; 0</Name>
+    <Values>
+      <float>353.73175</float>
+      <float>0.125148758</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>353,7125 -0,01926663 =&gt; 0</Name>
+    <Values>
+      <float>353.712463</float>
+      <float>-0.0192666277</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>353,564 -0,1485038 =&gt; 0</Name>
+    <Values>
+      <float>353.563965</float>
+      <float>-0.14850384</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>353,2822 -0,2818325 =&gt; 0</Name>
+    <Values>
+      <float>353.282166</float>
+      <float>-0.281832457</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>352,8574 -0,4248092 =&gt; 0</Name>
+    <Values>
+      <float>352.857361</float>
+      <float>-0.424809247</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>352,2977 -0,5596696 =&gt; 0</Name>
+    <Values>
+      <float>352.297668</float>
+      <float>-0.559669554</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>351,603 -0,6947165 =&gt; 0</Name>
+    <Values>
+      <float>351.602966</float>
+      <float>-0.694716454</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>350,7708 -0,8322451 =&gt; 0</Name>
+    <Values>
+      <float>350.770752</float>
+      <float>-0.8322451</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>349,8024 -0,9682875 =&gt; 0</Name>
+    <Values>
+      <float>349.802429</float>
+      <float>-0.9682875</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>348,6982 -1,104267 =&gt; 0</Name>
+    <Values>
+      <float>348.698181</float>
+      <float>-1.10426736</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>347,4573 -1,240848 =&gt; 0</Name>
+    <Values>
+      <float>347.457336</float>
+      <float>-1.24084842</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>346,0811 -1,376253 =&gt; 0</Name>
+    <Values>
+      <float>346.081055</float>
+      <float>-1.37625265</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>344,5682 -1,51291 =&gt; 0</Name>
+    <Values>
+      <float>344.568176</float>
+      <float>-1.51291025</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>342,9161 -1,65203 =&gt; 0</Name>
+    <Values>
+      <float>342.916138</float>
+      <float>-1.65202987</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>341,1256 -1,790502 =&gt; 0</Name>
+    <Values>
+      <float>341.1256</float>
+      <float>-1.79050171</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>339,2029 -1,922752 =&gt; 0</Name>
+    <Values>
+      <float>339.202881</float>
+      <float>-1.92275178</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>337,1432 -2,059683 =&gt; 0</Name>
+    <Values>
+      <float>337.1432</float>
+      <float>-2.05968285</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>334,951 -2,192193 =&gt; 0</Name>
+    <Values>
+      <float>334.951</float>
+      <float>-2.19219327</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>332,6188 -2,33214 =&gt; 0</Name>
+    <Values>
+      <float>332.618835</float>
+      <float>-2.33214</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>330,1526 -2,466151 =&gt; 0</Name>
+    <Values>
+      <float>330.152649</float>
+      <float>-2.46615076</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>327,5473 -2,605369 =&gt; 0</Name>
+    <Values>
+      <float>327.5473</float>
+      <float>-2.60536933</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>324,8055 -2,741746 =&gt; 0</Name>
+    <Values>
+      <float>324.805542</float>
+      <float>-2.74174619</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>321,9285 -2,877049 =&gt; 0</Name>
+    <Values>
+      <float>321.928467</float>
+      <float>-2.87704921</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>318,9166 -3,011913 =&gt; 0</Name>
+    <Values>
+      <float>318.916565</float>
+      <float>-3.01191258</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>315,7645 -3,152092 =&gt; 0</Name>
+    <Values>
+      <float>315.764465</float>
+      <float>-3.15209246</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>312,4781 -3,286387 =&gt; 0</Name>
+    <Values>
+      <float>312.4781</float>
+      <float>-3.28638673</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>309,0523 -3,425768 =&gt; 0</Name>
+    <Values>
+      <float>309.0523</float>
+      <float>-3.42576838</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>305,5004 -3,551966 =&gt; 0</Name>
+    <Values>
+      <float>305.500366</float>
+      <float>-3.55196571</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>301,795 -3,705328 =&gt; 0</Name>
+    <Values>
+      <float>301.795044</float>
+      <float>-3.70532823</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>297,9604 -3,834639 =&gt; 0</Name>
+    <Values>
+      <float>297.9604</float>
+      <float>-3.834639</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>293,9917 -3,968689 =&gt; 0</Name>
+    <Values>
+      <float>293.9917</float>
+      <float>-3.96868873</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>289,8882 -4,103555 =&gt; 0</Name>
+    <Values>
+      <float>289.888184</float>
+      <float>-4.103555</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>285,649 -4,239194 =&gt; 0</Name>
+    <Values>
+      <float>285.649</float>
+      <float>-4.23919439</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>281,2668 -4,382197 =&gt; 0</Name>
+    <Values>
+      <float>281.266785</float>
+      <float>-4.38219738</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>276,752 -4,514728 =&gt; 0</Name>
+    <Values>
+      <float>276.752045</float>
+      <float>-4.51472759</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>272,1007 -4,651354 =&gt; 0</Name>
+    <Values>
+      <float>272.100677</float>
+      <float>-4.65135431</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>267,3164 -4,784274 =&gt; 0</Name>
+    <Values>
+      <float>267.3164</float>
+      <float>-4.784274</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>262,3929 -4,923496 =&gt; 0</Name>
+    <Values>
+      <float>262.3929</float>
+      <float>-4.92349625</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>257,3344 -5,058557 =&gt; 0</Name>
+    <Values>
+      <float>257.334351</float>
+      <float>-5.058557</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>252,1381 -5,196289 =&gt; 0</Name>
+    <Values>
+      <float>252.138062</float>
+      <float>-5.196289</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>246,8022 -5,335827 =&gt; 0</Name>
+    <Values>
+      <float>246.802246</float>
+      <float>-5.33582735</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>241,3516 -5,450687 =&gt; 0</Name>
+    <Values>
+      <float>241.351563</float>
+      <float>-5.450687</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>235,7832 -5,568333 =&gt; 0</Name>
+    <Values>
+      <float>235.783234</float>
+      <float>-5.568333</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>230,1029 -5,680277 =&gt; 0</Name>
+    <Values>
+      <float>230.102936</float>
+      <float>-5.68027735</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>224,2861 -5,816864 =&gt; 0</Name>
+    <Values>
+      <float>224.286072</float>
+      <float>-5.81686449</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>218,3404 -5,945693 =&gt; 0</Name>
+    <Values>
+      <float>218.3404</float>
+      <float>-5.94569349</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>212,2617 -6,07868 =&gt; 0</Name>
+    <Values>
+      <float>212.261719</float>
+      <float>-6.07867956</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>206,0464 -6,215293 =&gt; 0</Name>
+    <Values>
+      <float>206.046417</float>
+      <float>-6.215293</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>199,7144 -6,331992 =&gt; 0</Name>
+    <Values>
+      <float>199.714447</float>
+      <float>-6.33199167</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>193,2645 -6,449909 =&gt; 0</Name>
+    <Values>
+      <float>193.264526</float>
+      <float>-6.449909</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>186,6826 -6,581886 =&gt; 0</Name>
+    <Values>
+      <float>186.682648</float>
+      <float>-6.58188629</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>179,9697 -6,712913 =&gt; 0</Name>
+    <Values>
+      <float>179.969742</float>
+      <float>-6.71291256</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>173,4342 -6,535499 =&gt; 0</Name>
+    <Values>
+      <float>173.43425</float>
+      <float>-6.53549862</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>166,984 -6,450294 =&gt; 0</Name>
+    <Values>
+      <float>166.983963</float>
+      <float>-6.45029354</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>160,6214 -6,362612 =&gt; 0</Name>
+    <Values>
+      <float>160.621353</float>
+      <float>-6.362612</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>154,3748 -6,246535 =&gt; 0</Name>
+    <Values>
+      <float>154.374817</float>
+      <float>-6.246535</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>148,2844 -6,090398 =&gt; 0</Name>
+    <Values>
+      <float>148.284424</float>
+      <float>-6.090398</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>142,3541 -5,930306 =&gt; 0</Name>
+    <Values>
+      <float>142.354111</float>
+      <float>-5.930306</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>136,5515 -5,802615 =&gt; 0</Name>
+    <Values>
+      <float>136.5515</float>
+      <float>-5.802615</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>130,8718 -5,67965 =&gt; 0</Name>
+    <Values>
+      <float>130.871841</float>
+      <float>-5.67965</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>125,3312 -5,54069 =&gt; 0</Name>
+    <Values>
+      <float>125.331154</float>
+      <float>-5.54069042</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>119,9568 -5,374342 =&gt; 0</Name>
+    <Values>
+      <float>119.95681</float>
+      <float>-5.37434244</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>114,7494 -5,207376 =&gt; 0</Name>
+    <Values>
+      <float>114.749435</float>
+      <float>-5.20737648</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>109,7056 -5,043788 =&gt; 0</Name>
+    <Values>
+      <float>109.705643</float>
+      <float>-5.04378843</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>104,8233 -4,882359 =&gt; 0</Name>
+    <Values>
+      <float>104.823288</float>
+      <float>-4.882359</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>100,1031 -4,720202 =&gt; 0</Name>
+    <Values>
+      <float>100.103088</float>
+      <float>-4.72020245</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>95,54527 -4,557808 =&gt; 0</Name>
+    <Values>
+      <float>95.54527</float>
+      <float>-4.557808</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>91,15187 -4,393405 =&gt; 0</Name>
+    <Values>
+      <float>91.15187</float>
+      <float>-4.39340544</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>86,9209 -4,230981 =&gt; 0</Name>
+    <Values>
+      <float>86.9209</float>
+      <float>-4.23098135</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>82,85336 -4,067527 =&gt; 0</Name>
+    <Values>
+      <float>82.85336</float>
+      <float>-4.06752729</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>78,94815 -3,905215 =&gt; 0</Name>
+    <Values>
+      <float>78.94815</float>
+      <float>-3.90521526</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>75,20557 -3,742589 =&gt; 0</Name>
+    <Values>
+      <float>75.20557</float>
+      <float>-3.74258876</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>71,62616 -3,5794 =&gt; 0</Name>
+    <Values>
+      <float>71.62616</float>
+      <float>-3.5794003</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>68,21001 -3,416155 =&gt; 0</Name>
+    <Values>
+      <float>68.21001</float>
+      <float>-3.41615462</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>64,95871 -3,251295 =&gt; 0</Name>
+    <Values>
+      <float>64.95871</float>
+      <float>-3.251295</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>61,86878 -3,089932 =&gt; 0</Name>
+    <Values>
+      <float>61.868782</float>
+      <float>-3.08993244</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>58,94447 -2,924309 =&gt; 0</Name>
+    <Values>
+      <float>58.9444733</float>
+      <float>-2.92430854</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>56,18362 -2,760854 =&gt; 0</Name>
+    <Values>
+      <float>56.1836166</float>
+      <float>-2.76085353</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>53,58225 -2,601366 =&gt; 0</Name>
+    <Values>
+      <float>53.5822525</float>
+      <float>-2.6013658</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>51,14257 -2,43968 =&gt; 0</Name>
+    <Values>
+      <float>51.14257</float>
+      <float>-2.43967986</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>48,8671 -2,27547 =&gt; 0</Name>
+    <Values>
+      <float>48.8671036</float>
+      <float>-2.27547</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>46,75395 -2,113154 =&gt; 0</Name>
+    <Values>
+      <float>46.753952</float>
+      <float>-2.113154</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>44,80397 -1,949977 =&gt; 0</Name>
+    <Values>
+      <float>44.8039742</float>
+      <float>-1.94997668</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>43,01685 -1,787122 =&gt; 0</Name>
+    <Values>
+      <float>43.0168533</float>
+      <float>-1.787122</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>41,39258 -1,624272 =&gt; 0</Name>
+    <Values>
+      <float>41.39258</float>
+      <float>-1.62427235</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>39,93188 -1,460701 =&gt; 0</Name>
+    <Values>
+      <float>39.9318771</float>
+      <float>-1.46070147</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>38,63462 -1,29725 =&gt; 0</Name>
+    <Values>
+      <float>38.6346245</float>
+      <float>-1.29724991</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>37,50402 -1,130609 =&gt; 0</Name>
+    <Values>
+      <float>37.5040169</float>
+      <float>-1.13060915</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>36,53518 -0,9688382 =&gt; 0</Name>
+    <Values>
+      <float>36.53518</float>
+      <float>-0.9688382</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>35,72504 -0,8101411 =&gt; 0</Name>
+    <Values>
+      <float>35.7250366</float>
+      <float>-0.8101411</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>35,07869 -0,6463422 =&gt; 0</Name>
+    <Values>
+      <float>35.0786934</float>
+      <float>-0.6463422</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,59383 -0,4848611 =&gt; 0</Name>
+    <Values>
+      <float>34.5938339</float>
+      <float>-0.484861076</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,27258 -0,3212574 =&gt; 0</Name>
+    <Values>
+      <float>34.2725754</float>
+      <float>-0.321257353</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,11461 -0,1579617 =&gt; 0</Name>
+    <Values>
+      <float>34.1146126</float>
+      <float>-0.157961726</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,11911 0,004491849 =&gt; 0</Name>
+    <Values>
+      <float>34.1191063</float>
+      <float>0.004491849</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,28776 0,1686498 =&gt; 0</Name>
+    <Values>
+      <float>34.2877579</float>
+      <float>0.168649778</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,6184 0,3306445 =&gt; 0</Name>
+    <Values>
+      <float>34.6184</float>
+      <float>0.330644518</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>35,1124 0,494 =&gt; 0</Name>
+    <Values>
+      <float>35.1124039</float>
+      <float>0.494</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>35,76815 0,6557468 =&gt; 0</Name>
+    <Values>
+      <float>35.76815</float>
+      <float>0.6557468</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>36,58825 0,8201005 =&gt; 0</Name>
+    <Values>
+      <float>36.58825</float>
+      <float>0.820100546</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>37,57009 0,9818449 =&gt; 0</Name>
+    <Values>
+      <float>37.57009</float>
+      <float>0.9818449</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>38,71496 1,144868 =&gt; 0</Name>
+    <Values>
+      <float>38.71496</float>
+      <float>1.14486778</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>40,02538 1,31042 =&gt; 0</Name>
+    <Values>
+      <float>40.02538</float>
+      <float>1.3104198</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>41,4986 1,473213 =&gt; 0</Name>
+    <Values>
+      <float>41.4985962</float>
+      <float>1.47321272</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>43,13241 1,633818 =&gt; 0</Name>
+    <Values>
+      <float>43.132412</float>
+      <float>1.63381827</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>44,92976 1,797351 =&gt; 0</Name>
+    <Values>
+      <float>44.9297638</float>
+      <float>1.79735076</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>46,88947 1,959701 =&gt; 0</Name>
+    <Values>
+      <float>46.8894653</float>
+      <float>1.959701</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>49,01147 2,122004 =&gt; 0</Name>
+    <Values>
+      <float>49.011467</float>
+      <float>2.122004</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>51,29871 2,287243 =&gt; 0</Name>
+    <Values>
+      <float>51.29871</float>
+      <float>2.28724313</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>53,74676 2,448052 =&gt; 0</Name>
+    <Values>
+      <float>53.74676</float>
+      <float>2.44805217</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>56,3589 2,612141 =&gt; 0</Name>
+    <Values>
+      <float>56.358902</float>
+      <float>2.61214066</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>59,13403 2,775126 =&gt; 0</Name>
+    <Values>
+      <float>59.1340256</float>
+      <float>2.7751255</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>62,07387 2,939839 =&gt; 0</Name>
+    <Values>
+      <float>62.0738678</float>
+      <float>2.93983865</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>65,17343 3,099562 =&gt; 0</Name>
+    <Values>
+      <float>65.17343</float>
+      <float>3.09956241</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>68,44858 3,275146 =&gt; 0</Name>
+    <Values>
+      <float>68.44858</float>
+      <float>3.275146</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>71,87526 3,426683 =&gt; 0</Name>
+    <Values>
+      <float>71.87526</float>
+      <float>3.426683</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>75,46428 3,589019 =&gt; 0</Name>
+    <Values>
+      <float>75.46428</float>
+      <float>3.58901882</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>79,21688 3,752603 =&gt; 0</Name>
+    <Values>
+      <float>79.21688</float>
+      <float>3.75260282</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>83,13186 3,914979 =&gt; 0</Name>
+    <Values>
+      <float>83.13186</float>
+      <float>3.91497922</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>87,20941 4,077553 =&gt; 0</Name>
+    <Values>
+      <float>87.20941</float>
+      <float>4.077553</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>91,45023 4,240821 =&gt; 0</Name>
+    <Values>
+      <float>91.4502258</float>
+      <float>4.240821</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>95,85748 4,407259 =&gt; 0</Name>
+    <Values>
+      <float>95.85748</float>
+      <float>4.407259</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>100,4239 4,566381 =&gt; 0</Name>
+    <Values>
+      <float>100.423874</float>
+      <float>4.5663805</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>105,1537 4,729852 =&gt; 0</Name>
+    <Values>
+      <float>105.153725</float>
+      <float>4.729852</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>110,0469 4,89321 =&gt; 0</Name>
+    <Values>
+      <float>110.046936</float>
+      <float>4.89321</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>115,1007 5,053731 =&gt; 0</Name>
+    <Values>
+      <float>115.100662</float>
+      <float>5.05373144</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>120,3197 5,219025 =&gt; 0</Name>
+    <Values>
+      <float>120.319687</float>
+      <float>5.219025</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>125,7017 5,382007 =&gt; 0</Name>
+    <Values>
+      <float>125.701691</float>
+      <float>5.382007</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>131,2442 5,54254 =&gt; 0</Name>
+    <Values>
+      <float>131.244232</float>
+      <float>5.54254</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>136,9489 5,70463 =&gt; 0</Name>
+    <Values>
+      <float>136.948868</float>
+      <float>5.70463</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>142,7937 5,844831 =&gt; 0</Name>
+    <Values>
+      <float>142.7937</float>
+      <float>5.84483147</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>148,7937 6,000053 =&gt; 0</Name>
+    <Values>
+      <float>148.793747</float>
+      <float>6.00005341</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>154,9233 6,129583 =&gt; 0</Name>
+    <Values>
+      <float>154.923325</float>
+      <float>6.12958336</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>161,1366 6,213247 =&gt; 0</Name>
+    <Values>
+      <float>161.136566</float>
+      <float>6.2132473</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>167,451 6,314407 =&gt; 0</Name>
+    <Values>
+      <float>167.450974</float>
+      <float>6.31440735</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>173,8767 6,425717 =&gt; 0</Name>
+    <Values>
+      <float>173.8767</float>
+      <float>6.425717</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>180,3813 6,504629 =&gt; 0</Name>
+    <Values>
+      <float>180.381317</float>
+      <float>6.50462866</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>186,9152 6,533906 =&gt; 0</Name>
+    <Values>
+      <float>186.915222</float>
+      <float>6.53390646</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>193,4574 6,542141 =&gt; 0</Name>
+    <Values>
+      <float>193.457367</float>
+      <float>6.54214144</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>200,017 6,559604 =&gt; 0</Name>
+    <Values>
+      <float>200.016968</float>
+      <float>6.55960369</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>206,3981 6,381178 =&gt; 0</Name>
+    <Values>
+      <float>206.398148</float>
+      <float>6.381178</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>212,6793 6,28114 =&gt; 0</Name>
+    <Values>
+      <float>212.679291</float>
+      <float>6.28114033</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>218,8609 6,181581 =&gt; 0</Name>
+    <Values>
+      <float>218.86087</float>
+      <float>6.181581</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>224,918 6,057096 =&gt; 0</Name>
+    <Values>
+      <float>224.917969</float>
+      <float>6.05709553</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>230,8553 5,937377 =&gt; 0</Name>
+    <Values>
+      <float>230.855347</float>
+      <float>5.937377</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>236,6544 5,79905 =&gt; 0</Name>
+    <Values>
+      <float>236.6544</float>
+      <float>5.79905</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>242,3215 5,667082 =&gt; 0</Name>
+    <Values>
+      <float>242.321487</float>
+      <float>5.667082</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>247,8537 5,532166 =&gt; 0</Name>
+    <Values>
+      <float>247.853653</float>
+      <float>5.53216553</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>253,2445 5,390889 =&gt; 0</Name>
+    <Values>
+      <float>253.244537</float>
+      <float>5.390889</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>258,4977 5,253098 =&gt; 0</Name>
+    <Values>
+      <float>258.49765</float>
+      <float>5.253098</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>263,6175 5,119872 =&gt; 0</Name>
+    <Values>
+      <float>263.617523</float>
+      <float>5.11987162</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>268,5999 4,982419 =&gt; 0</Name>
+    <Values>
+      <float>268.599945</float>
+      <float>4.98241949</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>273,4451 4,845126 =&gt; 0</Name>
+    <Values>
+      <float>273.445068</float>
+      <float>4.84512568</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>278,1552 4,710081 =&gt; 0</Name>
+    <Values>
+      <float>278.155151</float>
+      <float>4.710081</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>282,7311 4,575999 =&gt; 0</Name>
+    <Values>
+      <float>282.73114</float>
+      <float>4.57599926</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>287,1681 4,436913 =&gt; 0</Name>
+    <Values>
+      <float>287.16806</float>
+      <float>4.436913</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>291,4705 4,30242 =&gt; 0</Name>
+    <Values>
+      <float>291.4705</float>
+      <float>4.30242</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>295,6381 4,167623 =&gt; 0</Name>
+    <Values>
+      <float>295.638123</float>
+      <float>4.16762257</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>299,6682 4,030062 =&gt; 0</Name>
+    <Values>
+      <float>299.668182</float>
+      <float>4.030062</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>303,5621 3,893902 =&gt; 0</Name>
+    <Values>
+      <float>303.562073</float>
+      <float>3.89390159</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>307,3151 3,753 =&gt; 0</Name>
+    <Values>
+      <float>307.315063</float>
+      <float>3.75300026</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>310,9359 3,620863 =&gt; 0</Name>
+    <Values>
+      <float>310.9359</float>
+      <float>3.62086272</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>314,4193 3,483386 =&gt; 0</Name>
+    <Values>
+      <float>314.4193</float>
+      <float>3.48338628</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>317,7686 3,349267 =&gt; 0</Name>
+    <Values>
+      <float>317.7686</float>
+      <float>3.34926724</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>320,9724 3,203753 =&gt; 0</Name>
+    <Values>
+      <float>320.972351</float>
+      <float>3.20375323</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>324,039 3,066652 =&gt; 0</Name>
+    <Values>
+      <float>324.039</float>
+      <float>3.066652</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>326,9763 2,937272 =&gt; 0</Name>
+    <Values>
+      <float>326.9763</float>
+      <float>2.937272</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>329,78 2,803741 =&gt; 0</Name>
+    <Values>
+      <float>329.780029</float>
+      <float>2.803741</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>332,4454 2,665343 =&gt; 0</Name>
+    <Values>
+      <float>332.445374</float>
+      <float>2.665343</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>334,9711 2,525683 =&gt; 0</Name>
+    <Values>
+      <float>334.971069</float>
+      <float>2.5256834</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>337,3676 2,396507 =&gt; 0</Name>
+    <Values>
+      <float>337.367584</float>
+      <float>2.39650726</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>339,6201 2,252486 =&gt; 0</Name>
+    <Values>
+      <float>339.620056</float>
+      <float>2.25248551</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>341,7396 2,119514 =&gt; 0</Name>
+    <Values>
+      <float>341.739563</float>
+      <float>2.11951423</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>343,7243 1,984731 =&gt; 0</Name>
+    <Values>
+      <float>343.7243</float>
+      <float>1.98473108</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>345,5701 1,845811 =&gt; 0</Name>
+    <Values>
+      <float>345.570129</float>
+      <float>1.84581125</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>347,2806 1,710457 =&gt; 0</Name>
+    <Values>
+      <float>347.280579</float>
+      <float>1.71045732</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>348,8539 1,573283 =&gt; 0</Name>
+    <Values>
+      <float>348.853851</float>
+      <float>1.57328284</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>350,2952 1,441387 =&gt; 0</Name>
+    <Values>
+      <float>350.295227</float>
+      <float>1.44138718</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>351,5862 1,29093 =&gt; 0</Name>
+    <Values>
+      <float>351.586151</float>
+      <float>1.29092979</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>352,7529 1,166733 =&gt; 0</Name>
+    <Values>
+      <float>352.7529</float>
+      <float>1.16673279</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>353,7763 1,023374 =&gt; 0</Name>
+    <Values>
+      <float>353.776276</float>
+      <float>1.02337432</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>354,6688 0,8925207 =&gt; 0</Name>
+    <Values>
+      <float>354.6688</float>
+      <float>0.892520666</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>355,422 0,7531904 =&gt; 0</Name>
+    <Values>
+      <float>355.422</float>
+      <float>0.7531904</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>356,0437 0,6216727 =&gt; 0</Name>
+    <Values>
+      <float>356.043671</float>
+      <float>0.62167275</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>356,526 0,4823601 =&gt; 0</Name>
+    <Values>
+      <float>356.526031</float>
+      <float>0.4823601</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>356,8705 0,3445097 =&gt; 0</Name>
+    <Values>
+      <float>356.870544</float>
+      <float>0.3445097</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>357,0801 0,2095981 =&gt; 0</Name>
+    <Values>
+      <float>357.080139</float>
+      <float>0.209598139</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>357,1542 0,07402319 =&gt; 0</Name>
+    <Values>
+      <float>357.154175</float>
+      <float>0.0740231946</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>357,0921 -0,06202893 =&gt; 0</Name>
+    <Values>
+      <float>357.092133</float>
+      <float>-0.06202893</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>356,8911 -0,2010775 =&gt; 0</Name>
+    <Values>
+      <float>356.891052</float>
+      <float>-0.201077461</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>356,5545 -0,3365812 =&gt; 0</Name>
+    <Values>
+      <float>356.554474</float>
+      <float>-0.336581171</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>356,0827 -0,4717781 =&gt; 0</Name>
+    <Values>
+      <float>356.0827</float>
+      <float>-0.471778125</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>355,4739 -0,6087505 =&gt; 0</Name>
+    <Values>
+      <float>355.473938</float>
+      <float>-0.6087505</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>354,7283 -0,745659 =&gt; 0</Name>
+    <Values>
+      <float>354.728271</float>
+      <float>-0.745659</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>353,8455 -0,8827732 =&gt; 0</Name>
+    <Values>
+      <float>353.8455</float>
+      <float>-0.8827732</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>352,8286 -1,016859 =&gt; 0</Name>
+    <Values>
+      <float>352.828644</float>
+      <float>-1.0168587</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>351,6748 -1,153825 =&gt; 0</Name>
+    <Values>
+      <float>351.6748</float>
+      <float>-1.15382516</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>350,3875 -1,287346 =&gt; 0</Name>
+    <Values>
+      <float>350.387451</float>
+      <float>-1.28734636</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>348,9525 -1,434995 =&gt; 0</Name>
+    <Values>
+      <float>348.952454</float>
+      <float>-1.43499541</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>347,3871 -1,565347 =&gt; 0</Name>
+    <Values>
+      <float>347.387115</float>
+      <float>-1.56534731</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>345,6874 -1,699675 =&gt; 0</Name>
+    <Values>
+      <float>345.687439</float>
+      <float>-1.69967544</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>343,8527 -1,83473 =&gt; 0</Name>
+    <Values>
+      <float>343.852722</float>
+      <float>-1.83473039</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>341,8792 -1,973467 =&gt; 0</Name>
+    <Values>
+      <float>341.879242</float>
+      <float>-1.97346652</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>339,7676 -2,111652 =&gt; 0</Name>
+    <Values>
+      <float>339.767578</float>
+      <float>-2.111652</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>337,524 -2,243528 =&gt; 0</Name>
+    <Values>
+      <float>337.524048</float>
+      <float>-2.24352765</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>335,141 -2,383035 =&gt; 0</Name>
+    <Values>
+      <float>335.141022</float>
+      <float>-2.38303518</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>332,6238 -2,517247 =&gt; 0</Name>
+    <Values>
+      <float>332.623779</float>
+      <float>-2.5172472</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>329,9681 -2,655684 =&gt; 0</Name>
+    <Values>
+      <float>329.9681</float>
+      <float>-2.65568447</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>327,1789 -2,789219 =&gt; 0</Name>
+    <Values>
+      <float>327.1789</float>
+      <float>-2.78921866</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>324,2466 -2,932291 =&gt; 0</Name>
+    <Values>
+      <float>324.2466</float>
+      <float>-2.93229055</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>321,1845 -3,062111 =&gt; 0</Name>
+    <Values>
+      <float>321.1845</float>
+      <float>-3.06211138</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>317,9827 -3,201812 =&gt; 0</Name>
+    <Values>
+      <float>317.9827</float>
+      <float>-3.20181227</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>314,6473 -3,335423 =&gt; 0</Name>
+    <Values>
+      <float>314.647278</float>
+      <float>-3.33542347</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>311,1735 -3,473789 =&gt; 0</Name>
+    <Values>
+      <float>311.1735</float>
+      <float>-3.47378874</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>307,5697 -3,603818 =&gt; 0</Name>
+    <Values>
+      <float>307.569672</float>
+      <float>-3.60381842</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>303,8162 -3,753505 =&gt; 0</Name>
+    <Values>
+      <float>303.816162</float>
+      <float>-3.753505</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>299,9348 -3,881308 =&gt; 0</Name>
+    <Values>
+      <float>299.934845</float>
+      <float>-3.881308</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>295,9163 -4,018567 =&gt; 0</Name>
+    <Values>
+      <float>295.9163</float>
+      <float>-4.01856661</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>291,7627 -4,153587 =&gt; 0</Name>
+    <Values>
+      <float>291.7627</float>
+      <float>-4.15358734</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>287,4708 -4,291861 =&gt; 0</Name>
+    <Values>
+      <float>287.470825</float>
+      <float>-4.291861</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>283,0434 -4,427446 =&gt; 0</Name>
+    <Values>
+      <float>283.043365</float>
+      <float>-4.427446</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>278,4779 -4,565484 =&gt; 0</Name>
+    <Values>
+      <float>278.477875</float>
+      <float>-4.565484</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>273,7822 -4,695652 =&gt; 0</Name>
+    <Values>
+      <float>273.782227</float>
+      <float>-4.69565153</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>268,9355 -4,846786 =&gt; 0</Name>
+    <Values>
+      <float>268.935455</float>
+      <float>-4.846786</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>263,9609 -4,974584 =&gt; 0</Name>
+    <Values>
+      <float>263.960876</float>
+      <float>-4.97458363</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>258,8569 -5,104015 =&gt; 0</Name>
+    <Values>
+      <float>258.856873</float>
+      <float>-5.10401535</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>253,6037 -5,253137 =&gt; 0</Name>
+    <Values>
+      <float>253.603714</float>
+      <float>-5.253137</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>248,2165 -5,387187 =&gt; 0</Name>
+    <Values>
+      <float>248.216522</float>
+      <float>-5.38718748</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>242,7163 -5,50019 =&gt; 0</Name>
+    <Values>
+      <float>242.716339</float>
+      <float>-5.50019026</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>237,0906 -5,625696 =&gt; 0</Name>
+    <Values>
+      <float>237.090637</float>
+      <float>-5.625696</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>231,3548 -5,735816 =&gt; 0</Name>
+    <Values>
+      <float>231.354828</float>
+      <float>-5.73581648</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>225,4978 -5,857043 =&gt; 0</Name>
+    <Values>
+      <float>225.4978</float>
+      <float>-5.85704327</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>219,5095 -5,988326 =&gt; 0</Name>
+    <Values>
+      <float>219.50946</float>
+      <float>-5.9883256</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>213,3896 -6,119873 =&gt; 0</Name>
+    <Values>
+      <float>213.389587</float>
+      <float>-6.119873</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>207,1357 -6,253958 =&gt; 0</Name>
+    <Values>
+      <float>207.135651</float>
+      <float>-6.25395775</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>200,7625 -6,373153 =&gt; 0</Name>
+    <Values>
+      <float>200.762482</float>
+      <float>-6.373153</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>194,2628 -6,499654 =&gt; 0</Name>
+    <Values>
+      <float>194.262848</float>
+      <float>-6.499654</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>187,6525 -6,610375 =&gt; 0</Name>
+    <Values>
+      <float>187.652466</float>
+      <float>-6.6103754</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>180,9182 -6,734285 =&gt; 0</Name>
+    <Values>
+      <float>180.918182</float>
+      <float>-6.73428535</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>174,3272 -6,590951 =&gt; 0</Name>
+    <Values>
+      <float>174.327209</float>
+      <float>-6.590951</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>167,8215 -6,505758 =&gt; 0</Name>
+    <Values>
+      <float>167.821472</float>
+      <float>-6.505758</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>161,3979 -6,423582 =&gt; 0</Name>
+    <Values>
+      <float>161.397888</float>
+      <float>-6.4235816</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>155,1616 -6,236252 =&gt; 0</Name>
+    <Values>
+      <float>155.161621</float>
+      <float>-6.236252</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>149,0923 -6,069352 =&gt; 0</Name>
+    <Values>
+      <float>149.092285</float>
+      <float>-6.069352</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>143,1614 -5,930848 =&gt; 0</Name>
+    <Values>
+      <float>143.161438</float>
+      <float>-5.93084764</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>137,3514 -5,810032 =&gt; 0</Name>
+    <Values>
+      <float>137.3514</float>
+      <float>-5.81003237</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>131,6696 -5,681743 =&gt; 0</Name>
+    <Values>
+      <float>131.669647</float>
+      <float>-5.68174267</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>126,1243 -5,545331 =&gt; 0</Name>
+    <Values>
+      <float>126.124321</float>
+      <float>-5.54533148</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>120,7455 -5,378834 =&gt; 0</Name>
+    <Values>
+      <float>120.745491</float>
+      <float>-5.378834</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>115,5346 -5,210843 =&gt; 0</Name>
+    <Values>
+      <float>115.534645</float>
+      <float>-5.210843</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>110,4863 -5,048358 =&gt; 0</Name>
+    <Values>
+      <float>110.48629</float>
+      <float>-5.04835844</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>105,6013 -4,884969 =&gt; 0</Name>
+    <Values>
+      <float>105.601318</float>
+      <float>-4.88496876</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>100,8808 -4,720536 =&gt; 0</Name>
+    <Values>
+      <float>100.880783</float>
+      <float>-4.72053576</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>96,32161 -4,559181 =&gt; 0</Name>
+    <Values>
+      <float>96.32161</float>
+      <float>-4.55918074</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>91,925 -4,396599 =&gt; 0</Name>
+    <Values>
+      <float>91.925</float>
+      <float>-4.396599</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>87,69041 -4,2346 =&gt; 0</Name>
+    <Values>
+      <float>87.69041</float>
+      <float>-4.2346</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>83,61961 -4,0708 =&gt; 0</Name>
+    <Values>
+      <float>83.619606</float>
+      <float>-4.0708003</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>79,7122 -3,907399 =&gt; 0</Name>
+    <Values>
+      <float>79.712204</float>
+      <float>-3.90739942</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>75,9673 -3,744902 =&gt; 0</Name>
+    <Values>
+      <float>75.9673</float>
+      <float>-3.744902</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>72,3854 -3,581902 =&gt; 0</Name>
+    <Values>
+      <float>72.3854</float>
+      <float>-3.58190155</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>68,96484 -3,420563 =&gt; 0</Name>
+    <Values>
+      <float>68.9648361</float>
+      <float>-3.42056346</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>65,70919 -3,255643 =&gt; 0</Name>
+    <Values>
+      <float>65.70919</float>
+      <float>-3.25564337</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>62,61594 -3,093256 =&gt; 0</Name>
+    <Values>
+      <float>62.6159363</float>
+      <float>-3.09325552</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>59,6848 -2,931135 =&gt; 0</Name>
+    <Values>
+      <float>59.684803</float>
+      <float>-2.931135</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>56,91991 -2,764895 =&gt; 0</Name>
+    <Values>
+      <float>56.9199066</float>
+      <float>-2.76489472</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>54,31694 -2,60297 =&gt; 0</Name>
+    <Values>
+      <float>54.31694</float>
+      <float>-2.60297</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>51,87407 -2,442869 =&gt; 0</Name>
+    <Values>
+      <float>51.87407</float>
+      <float>-2.442869</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>49,59929 -2,274777 =&gt; 0</Name>
+    <Values>
+      <float>49.5992928</float>
+      <float>-2.27477741</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>47,48831 -2,110981 =&gt; 0</Name>
+    <Values>
+      <float>47.48831</float>
+      <float>-2.11098146</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>45,53394 -1,954374 =&gt; 0</Name>
+    <Values>
+      <float>45.5339355</float>
+      <float>-1.954374</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>43,74337 -1,790564 =&gt; 0</Name>
+    <Values>
+      <float>43.74337</float>
+      <float>-1.790564</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>42,11651 -1,62686 =&gt; 0</Name>
+    <Values>
+      <float>42.11651</float>
+      <float>-1.62686014</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>40,65158 -1,464926 =&gt; 0</Name>
+    <Values>
+      <float>40.65158</float>
+      <float>-1.464926</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>39,34981 -1,301771 =&gt; 0</Name>
+    <Values>
+      <float>39.3498077</float>
+      <float>-1.30177128</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>38,21021 -1,139597 =&gt; 0</Name>
+    <Values>
+      <float>38.2102127</float>
+      <float>-1.13959658</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>37,23392 -0,9762945 =&gt; 0</Name>
+    <Values>
+      <float>37.23392</float>
+      <float>-0.976294458</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>36,42266 -0,8112556 =&gt; 0</Name>
+    <Values>
+      <float>36.42266</float>
+      <float>-0.811255634</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>35,77357 -0,6490945 =&gt; 0</Name>
+    <Values>
+      <float>35.77357</float>
+      <float>-0.6490945</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>35,28762 -0,4859463 =&gt; 0</Name>
+    <Values>
+      <float>35.2876244</float>
+      <float>-0.485946268</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,96401 -0,323607 =&gt; 0</Name>
+    <Values>
+      <float>34.9640121</float>
+      <float>-0.323606968</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,80393 -0,1600848 =&gt; 0</Name>
+    <Values>
+      <float>34.8039322</float>
+      <float>-0.160084784</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,80667 0,002742591 =&gt; 0</Name>
+    <Values>
+      <float>34.806675</float>
+      <float>0.00274259131</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,97141 0,1647348 =&gt; 0</Name>
+    <Values>
+      <float>34.971405</float>
+      <float>0.164734781</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>35,30318 0,3317761 =&gt; 0</Name>
+    <Values>
+      <float>35.3031845</float>
+      <float>0.331776053</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>35,79379 0,49061 =&gt; 0</Name>
+    <Values>
+      <float>35.7937927</float>
+      <float>0.490609974</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>36,44831 0,6545172 =&gt; 0</Name>
+    <Values>
+      <float>36.44831</float>
+      <float>0.654517233</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>37,26411 0,815806 =&gt; 0</Name>
+    <Values>
+      <float>37.2641144</float>
+      <float>0.815806031</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>38,24281 0,9786919 =&gt; 0</Name>
+    <Values>
+      <float>38.24281</float>
+      <float>0.9786919</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>39,38874 1,145929 =&gt; 0</Name>
+    <Values>
+      <float>39.3887367</float>
+      <float>1.14592886</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>40,69592 1,307183 =&gt; 0</Name>
+    <Values>
+      <float>40.69592</float>
+      <float>1.30718291</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>42,16439 1,468475 =&gt; 0</Name>
+    <Values>
+      <float>42.1643944</float>
+      <float>1.46847534</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>43,79592 1,631526 =&gt; 0</Name>
+    <Values>
+      <float>43.79592</float>
+      <float>1.63152587</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>45,59095 1,795032 =&gt; 0</Name>
+    <Values>
+      <float>45.59095</float>
+      <float>1.79503167</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>47,54839 1,957444 =&gt; 0</Name>
+    <Values>
+      <float>47.5483932</float>
+      <float>1.95744359</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>49,66901 2,120612 =&gt; 0</Name>
+    <Values>
+      <float>49.6690063</float>
+      <float>2.120612</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>51,95249 2,283487 =&gt; 0</Name>
+    <Values>
+      <float>51.95249</float>
+      <float>2.283487</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>54,399 2,446507 =&gt; 0</Name>
+    <Values>
+      <float>54.3990021</float>
+      <float>2.44650722</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>57,00874 2,609739 =&gt; 0</Name>
+    <Values>
+      <float>57.00874</float>
+      <float>2.60973883</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>59,78012 2,771377 =&gt; 0</Name>
+    <Values>
+      <float>59.780117</float>
+      <float>2.771377</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>62,71356 2,933441 =&gt; 0</Name>
+    <Values>
+      <float>62.71356</float>
+      <float>2.933441</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>65,8111 3,097541 =&gt; 0</Name>
+    <Values>
+      <float>65.8111</float>
+      <float>3.097541</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>69,07375 3,262654 =&gt; 0</Name>
+    <Values>
+      <float>69.07375</float>
+      <float>3.2626543</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>72,49847 3,424724 =&gt; 0</Name>
+    <Values>
+      <float>72.4984741</float>
+      <float>3.424724</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>76,08327 3,584799 =&gt; 0</Name>
+    <Values>
+      <float>76.0832748</float>
+      <float>3.58479857</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>79,83038 3,747104 =&gt; 0</Name>
+    <Values>
+      <float>79.83038</float>
+      <float>3.74710441</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>83,74071 3,910326 =&gt; 0</Name>
+    <Values>
+      <float>83.74071</float>
+      <float>3.91032577</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>87,81544 4,074738 =&gt; 0</Name>
+    <Values>
+      <float>87.8154449</float>
+      <float>4.07473755</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>92,05237 4,236933 =&gt; 0</Name>
+    <Values>
+      <float>92.05237</float>
+      <float>4.23693275</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>96,45346 4,401086 =&gt; 0</Name>
+    <Values>
+      <float>96.45346</float>
+      <float>4.401086</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>101,0177 4,564223 =&gt; 0</Name>
+    <Values>
+      <float>101.017685</float>
+      <float>4.56422329</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>105,7447 4,726981 =&gt; 0</Name>
+    <Values>
+      <float>105.744659</float>
+      <float>4.726981</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>110,6341 4,889407 =&gt; 0</Name>
+    <Values>
+      <float>110.634064</float>
+      <float>4.88940668</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>115,6866 5,052527 =&gt; 0</Name>
+    <Values>
+      <float>115.686592</float>
+      <float>5.052527</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>120,9065 5,219869 =&gt; 0</Name>
+    <Values>
+      <float>120.906464</float>
+      <float>5.21986866</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>126,2837 5,377282 =&gt; 0</Name>
+    <Values>
+      <float>126.283745</float>
+      <float>5.377282</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>131,8287 5,544986 =&gt; 0</Name>
+    <Values>
+      <float>131.828735</float>
+      <float>5.54498625</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>137,5328 5,704093 =&gt; 0</Name>
+    <Values>
+      <float>137.532822</float>
+      <float>5.704093</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>143,3697 5,836884 =&gt; 0</Name>
+    <Values>
+      <float>143.3697</float>
+      <float>5.836884</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>149,3636 5,993887 =&gt; 0</Name>
+    <Values>
+      <float>149.363586</float>
+      <float>5.993887</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>155,4777 6,114093 =&gt; 0</Name>
+    <Values>
+      <float>155.477676</float>
+      <float>6.114093</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>161,6785 6,200822 =&gt; 0</Name>
+    <Values>
+      <float>161.6785</float>
+      <float>6.20082235</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>167,987 6,308462 =&gt; 0</Name>
+    <Values>
+      <float>167.986954</float>
+      <float>6.30846167</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>174,404 6,417042 =&gt; 0</Name>
+    <Values>
+      <float>174.403992</float>
+      <float>6.417042</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>180,8921 6,488092 =&gt; 0</Name>
+    <Values>
+      <float>180.89209</float>
+      <float>6.488092</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>187,418 6,52586 =&gt; 0</Name>
+    <Values>
+      <float>187.417953</float>
+      <float>6.52586</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>193,9457 6,527785 =&gt; 0</Name>
+    <Values>
+      <float>193.94574</float>
+      <float>6.527785</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>200,48 6,534253 =&gt; 0</Name>
+    <Values>
+      <float>200.48</float>
+      <float>6.534253</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>206,8924 6,412441 =&gt; 0</Name>
+    <Values>
+      <float>206.892441</float>
+      <float>6.412441</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>213,1705 6,278063 =&gt; 0</Name>
+    <Values>
+      <float>213.1705</float>
+      <float>6.278063</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>219,3488 6,178247 =&gt; 0</Name>
+    <Values>
+      <float>219.348755</float>
+      <float>6.178247</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>225,4019 6,053143 =&gt; 0</Name>
+    <Values>
+      <float>225.4019</float>
+      <float>6.05314255</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>231,3358 5,933931 =&gt; 0</Name>
+    <Values>
+      <float>231.335846</float>
+      <float>5.93393135</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>237,138 5,802114 =&gt; 0</Name>
+    <Values>
+      <float>237.137955</float>
+      <float>5.802114</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>242,795 5,65704 =&gt; 0</Name>
+    <Values>
+      <float>242.795</float>
+      <float>5.65703964</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>248,3206 5,525655 =&gt; 0</Name>
+    <Values>
+      <float>248.320648</float>
+      <float>5.525655</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>253,7104 5,389706 =&gt; 0</Name>
+    <Values>
+      <float>253.710358</float>
+      <float>5.38970566</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>258,9619 5,251575 =&gt; 0</Name>
+    <Values>
+      <float>258.961945</float>
+      <float>5.25157547</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>264,0786 5,116698 =&gt; 0</Name>
+    <Values>
+      <float>264.078644</float>
+      <float>5.116698</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>269,0596 4,980951 =&gt; 0</Name>
+    <Values>
+      <float>269.0596</float>
+      <float>4.980951</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>273,9048 4,845224 =&gt; 0</Name>
+    <Values>
+      <float>273.904816</float>
+      <float>4.84522438</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>278,6099 4,70506 =&gt; 0</Name>
+    <Values>
+      <float>278.609863</float>
+      <float>4.70506</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>283,1815 4,571629 =&gt; 0</Name>
+    <Values>
+      <float>283.181519</float>
+      <float>4.571629</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>287,6241 4,442665 =&gt; 0</Name>
+    <Values>
+      <float>287.624146</float>
+      <float>4.442665</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>291,9047 4,280479 =&gt; 0</Name>
+    <Values>
+      <float>291.904663</float>
+      <float>4.280479</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>296,0652 4,160593 =&gt; 0</Name>
+    <Values>
+      <float>296.065247</float>
+      <float>4.160593</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>300,0914 4,026198 =&gt; 0</Name>
+    <Values>
+      <float>300.091431</float>
+      <float>4.02619839</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>303,9823 3,890875 =&gt; 0</Name>
+    <Values>
+      <float>303.9823</float>
+      <float>3.89087534</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>307,7321 3,749842 =&gt; 0</Name>
+    <Values>
+      <float>307.732117</float>
+      <float>3.74984217</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>311,3477 3,615586 =&gt; 0</Name>
+    <Values>
+      <float>311.347717</float>
+      <float>3.6155858</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>314,8264 3,478628 =&gt; 0</Name>
+    <Values>
+      <float>314.826355</float>
+      <float>3.4786284</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>318,1702 3,34381 =&gt; 0</Name>
+    <Values>
+      <float>318.170166</float>
+      <float>3.3438096</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>321,3777 3,207478 =&gt; 0</Name>
+    <Values>
+      <float>321.3777</float>
+      <float>3.207478</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>324,455 3,077268 =&gt; 0</Name>
+    <Values>
+      <float>324.454956</float>
+      <float>3.07726836</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>327,3795 2,924491 =&gt; 0</Name>
+    <Values>
+      <float>327.379456</float>
+      <float>2.92449117</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>330,1766 2,797139 =&gt; 0</Name>
+    <Values>
+      <float>330.176575</float>
+      <float>2.79713917</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>332,8376 2,660986 =&gt; 0</Name>
+    <Values>
+      <float>332.8376</float>
+      <float>2.660986</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>335,3627 2,525115 =&gt; 0</Name>
+    <Values>
+      <float>335.362671</float>
+      <float>2.52511549</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>337,7509 2,38818 =&gt; 0</Name>
+    <Values>
+      <float>337.750854</float>
+      <float>2.38817954</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>340,0029 2,252061 =&gt; 0</Name>
+    <Values>
+      <float>340.00293</float>
+      <float>2.25206065</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>342,1181 2,115158 =&gt; 0</Name>
+    <Values>
+      <float>342.1181</float>
+      <float>2.11515832</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>344,0983 1,980169 =&gt; 0</Name>
+    <Values>
+      <float>344.098267</float>
+      <float>1.98016918</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>345,9405 1,842207 =&gt; 0</Name>
+    <Values>
+      <float>345.9405</float>
+      <float>1.84220684</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>347,6467 1,706254 =&gt; 0</Name>
+    <Values>
+      <float>347.646729</float>
+      <float>1.70625412</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>349,2181 1,571342 =&gt; 0</Name>
+    <Values>
+      <float>349.218079</float>
+      <float>1.57134163</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>350,6521 1,434015 =&gt; 0</Name>
+    <Values>
+      <float>350.6521</float>
+      <float>1.434015</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>351,9514 1,299211 =&gt; 0</Name>
+    <Values>
+      <float>351.951355</float>
+      <float>1.29921091</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>353,113 1,16166 =&gt; 0</Name>
+    <Values>
+      <float>353.112976</float>
+      <float>1.16166043</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>354,1366 1,023599 =&gt; 0</Name>
+    <Values>
+      <float>354.1366</float>
+      <float>1.02359879</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>355,024 0,8874713 =&gt; 0</Name>
+    <Values>
+      <float>355.024048</float>
+      <float>0.8874713</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>355,7784 0,7543319 =&gt; 0</Name>
+    <Values>
+      <float>355.778381</float>
+      <float>0.754331946</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>356,3908 0,6124033 =&gt; 0</Name>
+    <Values>
+      <float>356.3908</float>
+      <float>0.6124033</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>358,9931 2,602333 =&gt; 0</Name>
+    <Values>
+      <float>358.9931</float>
+      <float>2.60233259</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>357,4058 -1,587383 =&gt; 0</Name>
+    <Values>
+      <float>357.405762</float>
+      <float>-1.58738267</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>355,8119 -1,593885 =&gt; 0</Name>
+    <Values>
+      <float>355.8119</float>
+      <float>-1.59388506</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>354,3483 -1,463521 =&gt; 0</Name>
+    <Values>
+      <float>354.348328</float>
+      <float>-1.46352088</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>352,7833 -1,56503 =&gt; 0</Name>
+    <Values>
+      <float>352.783325</float>
+      <float>-1.5650295</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>351,0772 -1,706094 =&gt; 0</Name>
+    <Values>
+      <float>351.0772</float>
+      <float>-1.70609355</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>349,2401 -1,837095 =&gt; 0</Name>
+    <Values>
+      <float>349.2401</float>
+      <float>-1.83709514</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>347,2636 -1,976531 =&gt; 0</Name>
+    <Values>
+      <float>347.2636</float>
+      <float>-1.97653115</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>345,1487 -2,114865 =&gt; 0</Name>
+    <Values>
+      <float>345.148743</float>
+      <float>-2.11486483</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>342,91 -2,238693 =&gt; 0</Name>
+    <Values>
+      <float>342.910034</float>
+      <float>-2.238693</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>340,5132 -2,396827 =&gt; 0</Name>
+    <Values>
+      <float>340.513245</float>
+      <float>-2.396827</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>337,988 -2,525198 =&gt; 0</Name>
+    <Values>
+      <float>337.988037</float>
+      <float>-2.525198</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>335,3284 -2,65959 =&gt; 0</Name>
+    <Values>
+      <float>335.32843</float>
+      <float>-2.65959024</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>332,5341 -2,794343 =&gt; 0</Name>
+    <Values>
+      <float>332.534119</float>
+      <float>-2.79434252</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>329,6034 -2,930707 =&gt; 0</Name>
+    <Values>
+      <float>329.6034</float>
+      <float>-2.93070674</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>326,5361 -3,067305 =&gt; 0</Name>
+    <Values>
+      <float>326.536133</float>
+      <float>-3.06730461</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>323,3318 -3,204353 =&gt; 0</Name>
+    <Values>
+      <float>323.3318</float>
+      <float>-3.20435262</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>319,9922 -3,33954 =&gt; 0</Name>
+    <Values>
+      <float>319.992249</float>
+      <float>-3.33953977</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>316,5153 -3,476929 =&gt; 0</Name>
+    <Values>
+      <float>316.51532</float>
+      <float>-3.47692943</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>312,9023 -3,612945 =&gt; 0</Name>
+    <Values>
+      <float>312.902344</float>
+      <float>-3.61294484</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>309,1554 -3,746963 =&gt; 0</Name>
+    <Values>
+      <float>309.1554</float>
+      <float>-3.74696326</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>305,2678 -3,887585 =&gt; 0</Name>
+    <Values>
+      <float>305.267822</float>
+      <float>-3.88758469</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>301,2394 -4,028373 =&gt; 0</Name>
+    <Values>
+      <float>301.239441</float>
+      <float>-4.02837324</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>297,0817 -4,157737 =&gt; 0</Name>
+    <Values>
+      <float>297.081726</float>
+      <float>-4.15773726</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>292,787 -4,29475 =&gt; 0</Name>
+    <Values>
+      <float>292.787</float>
+      <float>-4.29474974</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>288,354 -4,432945 =&gt; 0</Name>
+    <Values>
+      <float>288.354</float>
+      <float>-4.432945</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>283,7906 -4,563369 =&gt; 0</Name>
+    <Values>
+      <float>283.790649</float>
+      <float>-4.56336927</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>279,0794 -4,711286 =&gt; 0</Name>
+    <Values>
+      <float>279.079376</float>
+      <float>-4.711286</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>274,2429 -4,836506 =&gt; 0</Name>
+    <Values>
+      <float>274.242859</float>
+      <float>-4.83650637</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>269,2655 -4,977382 =&gt; 0</Name>
+    <Values>
+      <float>269.2655</float>
+      <float>-4.97738171</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>264,1516 -5,11392 =&gt; 0</Name>
+    <Values>
+      <float>264.15155</float>
+      <float>-5.11391973</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>258,9021 -5,24944 =&gt; 0</Name>
+    <Values>
+      <float>258.90213</float>
+      <float>-5.24943972</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>253,5166 -5,385528 =&gt; 0</Name>
+    <Values>
+      <float>253.5166</float>
+      <float>-5.385528</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>247,9905 -5,526111 =&gt; 0</Name>
+    <Values>
+      <float>247.990479</float>
+      <float>-5.526111</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>242,355 -5,635446 =&gt; 0</Name>
+    <Values>
+      <float>242.355042</float>
+      <float>-5.63544559</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>236,5949 -5,760145 =&gt; 0</Name>
+    <Values>
+      <float>236.5949</float>
+      <float>-5.760145</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>230,7264 -5,868536 =&gt; 0</Name>
+    <Values>
+      <float>230.726364</float>
+      <float>-5.86853552</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>224,7209 -6,00548 =&gt; 0</Name>
+    <Values>
+      <float>224.720886</float>
+      <float>-6.00548029</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>218,5851 -6,135775 =&gt; 0</Name>
+    <Values>
+      <float>218.585114</float>
+      <float>-6.135775</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>212,3176 -6,267536 =&gt; 0</Name>
+    <Values>
+      <float>212.317581</float>
+      <float>-6.26753569</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>205,9175 -6,400037 =&gt; 0</Name>
+    <Values>
+      <float>205.917542</float>
+      <float>-6.400037</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>199,3972 -6,52037 =&gt; 0</Name>
+    <Values>
+      <float>199.397171</float>
+      <float>-6.52037</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>192,7596 -6,637601 =&gt; 0</Name>
+    <Values>
+      <float>192.759567</float>
+      <float>-6.63760138</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>186,3093 -6,450299 =&gt; 0</Name>
+    <Values>
+      <float>186.309265</float>
+      <float>-6.450299</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>179,7332 -6,576037 =&gt; 0</Name>
+    <Values>
+      <float>179.733231</float>
+      <float>-6.57603741</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>173,1457 -6,58755 =&gt; 0</Name>
+    <Values>
+      <float>173.145676</float>
+      <float>-6.58755</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>166,6445 -6,501187 =&gt; 0</Name>
+    <Values>
+      <float>166.644485</float>
+      <float>-6.50118732</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>160,2305 -6,413997 =&gt; 0</Name>
+    <Values>
+      <float>160.230484</float>
+      <float>-6.4139967</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>153,9354 -6,295097 =&gt; 0</Name>
+    <Values>
+      <float>153.9354</float>
+      <float>-6.295097</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>147,7973 -6,138048 =&gt; 0</Name>
+    <Values>
+      <float>147.797348</float>
+      <float>-6.138048</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>141,8204 -5,976988 =&gt; 0</Name>
+    <Values>
+      <float>141.820358</float>
+      <float>-5.976988</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>135,9674 -5,852945 =&gt; 0</Name>
+    <Values>
+      <float>135.9674</float>
+      <float>-5.852945</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>130,2427 -5,72469 =&gt; 0</Name>
+    <Values>
+      <float>130.242722</float>
+      <float>-5.72469044</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>124,6565 -5,586211 =&gt; 0</Name>
+    <Values>
+      <float>124.656509</float>
+      <float>-5.586211</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>119,2354 -5,42107 =&gt; 0</Name>
+    <Values>
+      <float>119.235443</float>
+      <float>-5.42106962</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>113,9823 -5,25313 =&gt; 0</Name>
+    <Values>
+      <float>113.982315</float>
+      <float>-5.25313044</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>108,8917 -5,090652 =&gt; 0</Name>
+    <Values>
+      <float>108.891663</float>
+      <float>-5.09065247</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>103,9635 -4,928194 =&gt; 0</Name>
+    <Values>
+      <float>103.96347</float>
+      <float>-4.928194</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>99,19724 -4,766226 =&gt; 0</Name>
+    <Values>
+      <float>99.19724</float>
+      <float>-4.766226</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>94,59474 -4,602503 =&gt; 0</Name>
+    <Values>
+      <float>94.59474</float>
+      <float>-4.602503</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>90,15607 -4,438666 =&gt; 0</Name>
+    <Values>
+      <float>90.1560745</float>
+      <float>-4.43866634</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>85,87954 -4,276535 =&gt; 0</Name>
+    <Values>
+      <float>85.87954</float>
+      <float>-4.27653456</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>81,76691 -4,112636 =&gt; 0</Name>
+    <Values>
+      <float>81.76691</float>
+      <float>-4.11263561</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>77,81638 -3,95053 =&gt; 0</Name>
+    <Values>
+      <float>77.8163757</float>
+      <float>-3.95053029</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>74,02794 -3,788435 =&gt; 0</Name>
+    <Values>
+      <float>74.02794</float>
+      <float>-3.78843546</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>70,4042 -3,623741 =&gt; 0</Name>
+    <Values>
+      <float>70.4042</float>
+      <float>-3.62374067</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>66,94284 -3,461355 =&gt; 0</Name>
+    <Values>
+      <float>66.94284</float>
+      <float>-3.46135521</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>63,644 -3,298835 =&gt; 0</Name>
+    <Values>
+      <float>63.6440048</float>
+      <float>-3.2988348</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>60,5086 -3,135404 =&gt; 0</Name>
+    <Values>
+      <float>60.5086</float>
+      <float>-3.135404</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>57,53532 -2,97328 =&gt; 0</Name>
+    <Values>
+      <float>57.5353165</float>
+      <float>-2.97328019</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>54,72518 -2,810135 =&gt; 0</Name>
+    <Values>
+      <float>54.72518</float>
+      <float>-2.81013465</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>52,08118 -2,644009 =&gt; 0</Name>
+    <Values>
+      <float>52.0811768</float>
+      <float>-2.64400864</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>49,59675 -2,484427 =&gt; 0</Name>
+    <Values>
+      <float>49.59675</float>
+      <float>-2.48442674</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>47,27468 -2,322067 =&gt; 0</Name>
+    <Values>
+      <float>47.27468</float>
+      <float>-2.32206678</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>45,11551 -2,159172 =&gt; 0</Name>
+    <Values>
+      <float>45.11551</float>
+      <float>-2.15917182</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>43,11885 -1,996655 =&gt; 0</Name>
+    <Values>
+      <float>43.11885</float>
+      <float>-1.99665546</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>41,28495 -1,833899 =&gt; 0</Name>
+    <Values>
+      <float>41.28495</float>
+      <float>-1.833899</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>39,6139 -1,671049 =&gt; 0</Name>
+    <Values>
+      <float>39.613903</float>
+      <float>-1.67104912</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>38,10528 -1,508624 =&gt; 0</Name>
+    <Values>
+      <float>38.105278</float>
+      <float>-1.50862384</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>36,75964 -1,345644 =&gt; 0</Name>
+    <Values>
+      <float>36.7596359</float>
+      <float>-1.34564376</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>35,57695 -1,182683 =&gt; 0</Name>
+    <Values>
+      <float>35.57695</float>
+      <float>-1.18268275</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,5583 -1,018647 =&gt; 0</Name>
+    <Values>
+      <float>34.5583038</float>
+      <float>-1.0186466</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>33,70735 -0,8509587 =&gt; 0</Name>
+    <Values>
+      <float>33.7073479</float>
+      <float>-0.8509587</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>33,01965 -0,6876919 =&gt; 0</Name>
+    <Values>
+      <float>33.0196533</float>
+      <float>-0.6876919</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>32,48874 -0,5309213 =&gt; 0</Name>
+    <Values>
+      <float>32.4887352</float>
+      <float>-0.53092134</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>32,12202 -0,366711 =&gt; 0</Name>
+    <Values>
+      <float>32.1220245</float>
+      <float>-0.36671102</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>31,91889 -0,2031376 =&gt; 0</Name>
+    <Values>
+      <float>31.9188881</float>
+      <float>-0.203137577</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>31,87901 -0,03987227 =&gt; 0</Name>
+    <Values>
+      <float>31.879015</float>
+      <float>-0.0398722738</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>32,00139 0,1223785 =&gt; 0</Name>
+    <Values>
+      <float>32.0013924</float>
+      <float>0.122378521</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>32,28564 0,2842457 =&gt; 0</Name>
+    <Values>
+      <float>32.2856369</float>
+      <float>0.284245729</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>32,73332 0,447678 =&gt; 0</Name>
+    <Values>
+      <float>32.73332</float>
+      <float>0.447678</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>33,34367 0,6103586 =&gt; 0</Name>
+    <Values>
+      <float>33.3436737</float>
+      <float>0.6103586</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,11683 0,7731557 =&gt; 0</Name>
+    <Values>
+      <float>34.1168327</float>
+      <float>0.773155749</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>35,05316 0,9363319 =&gt; 0</Name>
+    <Values>
+      <float>35.05316</float>
+      <float>0.936331868</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>36,15405 1,100883 =&gt; 0</Name>
+    <Values>
+      <float>36.1540451</float>
+      <float>1.10088289</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>37,41987 1,265824 =&gt; 0</Name>
+    <Values>
+      <float>37.41987</float>
+      <float>1.26582444</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>38,84769 1,427826 =&gt; 0</Name>
+    <Values>
+      <float>38.8476944</float>
+      <float>1.427826</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>40,43557 1,587874 =&gt; 0</Name>
+    <Values>
+      <float>40.43557</float>
+      <float>1.587874</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>42,18633 1,750763 =&gt; 0</Name>
+    <Values>
+      <float>42.1863327</float>
+      <float>1.750763</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>44,10106 1,914726 =&gt; 0</Name>
+    <Values>
+      <float>44.10106</float>
+      <float>1.9147259</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>46,17868 2,077623 =&gt; 0</Name>
+    <Values>
+      <float>46.17868</float>
+      <float>2.077623</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>48,41776 2,239074 =&gt; 0</Name>
+    <Values>
+      <float>48.4177551</float>
+      <float>2.239074</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>50,82037 2,402616 =&gt; 0</Name>
+    <Values>
+      <float>50.8203735</float>
+      <float>2.402616</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>53,38616 2,56579 =&gt; 0</Name>
+    <Values>
+      <float>53.38616</float>
+      <float>2.56579018</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>56,11568 2,729513 =&gt; 0</Name>
+    <Values>
+      <float>56.1156769</float>
+      <float>2.72951317</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>59,00789 2,892214 =&gt; 0</Name>
+    <Values>
+      <float>59.00789</float>
+      <float>2.89221358</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>62,0625 3,054613 =&gt; 0</Name>
+    <Values>
+      <float>62.0625</float>
+      <float>3.05461287</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>65,28111 3,218612 =&gt; 0</Name>
+    <Values>
+      <float>65.28111</float>
+      <float>3.21861219</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>68,66075 3,379633 =&gt; 0</Name>
+    <Values>
+      <float>68.66075</float>
+      <float>3.37963319</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>72,20558 3,544829 =&gt; 0</Name>
+    <Values>
+      <float>72.20558</float>
+      <float>3.54482865</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>75,91278 3,707201 =&gt; 0</Name>
+    <Values>
+      <float>75.91278</float>
+      <float>3.707201</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>79,78221 3,869433 =&gt; 0</Name>
+    <Values>
+      <float>79.78221</float>
+      <float>3.8694334</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>83,814 4,031784 =&gt; 0</Name>
+    <Values>
+      <float>83.8139954</float>
+      <float>4.031784</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>88,00916 4,195159 =&gt; 0</Name>
+    <Values>
+      <float>88.0091553</float>
+      <float>4.19515944</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>92,36625 4,357097 =&gt; 0</Name>
+    <Values>
+      <float>92.36625</float>
+      <float>4.357097</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>96,88796 4,521716 =&gt; 0</Name>
+    <Values>
+      <float>96.88796</float>
+      <float>4.521716</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>101,5714 4,683395 =&gt; 0</Name>
+    <Values>
+      <float>101.571358</float>
+      <float>4.68339539</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>106,4189 4,847493 =&gt; 0</Name>
+    <Values>
+      <float>106.418854</float>
+      <float>4.847493</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>111,4283 5,009459 =&gt; 0</Name>
+    <Values>
+      <float>111.428314</float>
+      <float>5.00945854</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>116,602 5,173696 =&gt; 0</Name>
+    <Values>
+      <float>116.602005</float>
+      <float>5.173696</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>121,9375 5,335486 =&gt; 0</Name>
+    <Values>
+      <float>121.937485</float>
+      <float>5.335486</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>127,4363 5,498839 =&gt; 0</Name>
+    <Values>
+      <float>127.436325</float>
+      <float>5.49883938</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>133,0969 5,660593 =&gt; 0</Name>
+    <Values>
+      <float>133.096924</float>
+      <float>5.66059256</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>138,9149 5,817986 =&gt; 0</Name>
+    <Values>
+      <float>138.914917</float>
+      <float>5.817986</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>144,8458 5,930872 =&gt; 0</Name>
+    <Values>
+      <float>144.8458</float>
+      <float>5.93087244</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>150,8115 5,965672 =&gt; 0</Name>
+    <Values>
+      <float>150.811462</float>
+      <float>5.96567154</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>156,8703 6,05881 =&gt; 0</Name>
+    <Values>
+      <float>156.87027</float>
+      <float>6.05881</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>163,0186 6,148365 =&gt; 0</Name>
+    <Values>
+      <float>163.018616</float>
+      <float>6.14836454</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>169,2786 6,259929 =&gt; 0</Name>
+    <Values>
+      <float>169.278564</float>
+      <float>6.259929</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>175,6433 6,364786 =&gt; 0</Name>
+    <Values>
+      <float>175.643341</float>
+      <float>6.36478567</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>182,0761 6,432782 =&gt; 0</Name>
+    <Values>
+      <float>182.076141</float>
+      <float>6.432782</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>188,5596 6,48349 =&gt; 0</Name>
+    <Values>
+      <float>188.559631</float>
+      <float>6.48348951</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>195,0403 6,480674 =&gt; 0</Name>
+    <Values>
+      <float>195.040283</float>
+      <float>6.480674</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>201,5304 6,490129 =&gt; 0</Name>
+    <Values>
+      <float>201.530426</float>
+      <float>6.490129</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>207,9806 6,450135 =&gt; 0</Name>
+    <Values>
+      <float>207.98056</float>
+      <float>6.450135</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>214,303 6,322468 =&gt; 0</Name>
+    <Values>
+      <float>214.303009</float>
+      <float>6.322468</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>220,5213 6,218307 =&gt; 0</Name>
+    <Values>
+      <float>220.521332</float>
+      <float>6.2183075</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>226,6171 6,095778 =&gt; 0</Name>
+    <Values>
+      <float>226.6171</float>
+      <float>6.095778</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>232,5901 5,97303 =&gt; 0</Name>
+    <Values>
+      <float>232.590134</float>
+      <float>5.97303</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>238,4261 5,835978 =&gt; 0</Name>
+    <Values>
+      <float>238.426117</float>
+      <float>5.83597755</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>244,1287 5,702605 =&gt; 0</Name>
+    <Values>
+      <float>244.128723</float>
+      <float>5.702605</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>249,6935 5,564793 =&gt; 0</Name>
+    <Values>
+      <float>249.693512</float>
+      <float>5.564793</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>255,1213 5,427803 =&gt; 0</Name>
+    <Values>
+      <float>255.1213</float>
+      <float>5.42780256</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>260,4143 5,292998 =&gt; 0</Name>
+    <Values>
+      <float>260.4143</float>
+      <float>5.292998</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>265,5693 5,155023 =&gt; 0</Name>
+    <Values>
+      <float>265.569336</float>
+      <float>5.155023</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>270,5888 5,019472 =&gt; 0</Name>
+    <Values>
+      <float>270.5888</float>
+      <float>5.019472</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>275,4731 4,884252 =&gt; 0</Name>
+    <Values>
+      <float>275.473053</float>
+      <float>4.884252</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>280,2196 4,74652 =&gt; 0</Name>
+    <Values>
+      <float>280.219574</float>
+      <float>4.74651957</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>284,83 4,610466 =&gt; 0</Name>
+    <Values>
+      <float>284.830017</float>
+      <float>4.61046553</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>289,3027 4,472618 =&gt; 0</Name>
+    <Values>
+      <float>289.302673</float>
+      <float>4.472618</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>293,6394 4,336754 =&gt; 0</Name>
+    <Values>
+      <float>293.6394</float>
+      <float>4.33675432</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>297,8411 4,201675 =&gt; 0</Name>
+    <Values>
+      <float>297.8411</float>
+      <float>4.20167542</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>301,907 4,065854 =&gt; 0</Name>
+    <Values>
+      <float>301.906952</float>
+      <float>4.065854</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>305,8343 3,927352 =&gt; 0</Name>
+    <Values>
+      <float>305.8343</float>
+      <float>3.92735219</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>309,6247 3,790402 =&gt; 0</Name>
+    <Values>
+      <float>309.6247</float>
+      <float>3.790402</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>313,2803 3,655603 =&gt; 0</Name>
+    <Values>
+      <float>313.2803</float>
+      <float>3.655603</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>316,7985 3,518146 =&gt; 0</Name>
+    <Values>
+      <float>316.798462</float>
+      <float>3.518146</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>320,1831 3,38464 =&gt; 0</Name>
+    <Values>
+      <float>320.1831</float>
+      <float>3.38464046</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>323,4314 3,248286 =&gt; 0</Name>
+    <Values>
+      <float>323.4314</float>
+      <float>3.24828577</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>326,5324 3,101048 =&gt; 0</Name>
+    <Values>
+      <float>326.53244</float>
+      <float>3.10104847</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>329,5076 2,975115 =&gt; 0</Name>
+    <Values>
+      <float>329.507568</float>
+      <float>2.97511482</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>332,3455 2,83791 =&gt; 0</Name>
+    <Values>
+      <float>332.3455</float>
+      <float>2.83791</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>335,0457 2,700185 =&gt; 0</Name>
+    <Values>
+      <float>335.0457</float>
+      <float>2.700185</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>337,6104 2,564721 =&gt; 0</Name>
+    <Values>
+      <float>337.6104</float>
+      <float>2.56472135</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>340,0363 2,425901 =&gt; 0</Name>
+    <Values>
+      <float>340.036316</float>
+      <float>2.4259007</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>342,3305 2,294199 =&gt; 0</Name>
+    <Values>
+      <float>342.3305</float>
+      <float>2.29419875</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>344,4849 2,154419 =&gt; 0</Name>
+    <Values>
+      <float>344.484924</float>
+      <float>2.15441871</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>346,5037 2,018811 =&gt; 0</Name>
+    <Values>
+      <float>346.503723</float>
+      <float>2.01881075</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>348,3869 1,883138 =&gt; 0</Name>
+    <Values>
+      <float>348.386871</float>
+      <float>1.883138</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>350,1326 1,745695 =&gt; 0</Name>
+    <Values>
+      <float>350.132568</float>
+      <float>1.74569511</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>351,7404 1,607865 =&gt; 0</Name>
+    <Values>
+      <float>351.740448</float>
+      <float>1.60786474</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>353,2133 1,472836 =&gt; 0</Name>
+    <Values>
+      <float>353.2133</float>
+      <float>1.47283614</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>354,5509 1,337636 =&gt; 0</Name>
+    <Values>
+      <float>354.550934</float>
+      <float>1.337636</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>355,7504 1,199464 =&gt; 0</Name>
+    <Values>
+      <float>355.7504</float>
+      <float>1.19946384</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>356,8132 1,06283 =&gt; 0</Name>
+    <Values>
+      <float>356.813232</float>
+      <float>1.06283009</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>357,7422 0,9289721 =&gt; 0</Name>
+    <Values>
+      <float>357.742218</float>
+      <float>0.928972065</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>358,5323 0,7901353 =&gt; 0</Name>
+    <Values>
+      <float>358.532349</float>
+      <float>0.790135264</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>359,1881 0,655735 =&gt; 0</Name>
+    <Values>
+      <float>359.18808</float>
+      <float>0.655735</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>359,7057 0,5175842 =&gt; 0</Name>
+    <Values>
+      <float>359.705658</float>
+      <float>0.5175842</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>360,088 0,3823938 =&gt; 0</Name>
+    <Values>
+      <float>360.088043</float>
+      <float>0.382393777</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>360,3332 0,2451059 =&gt; 0</Name>
+    <Values>
+      <float>360.33316</float>
+      <float>0.2451059</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>360,4429 0,1097771 =&gt; 0</Name>
+    <Values>
+      <float>360.442932</float>
+      <float>0.109777108</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>360,4165 -0,02643529 =&gt; 0</Name>
+    <Values>
+      <float>360.4165</float>
+      <float>-0.02643529</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>360,252 -0,1645412 =&gt; 0</Name>
+    <Values>
+      <float>360.251953</float>
+      <float>-0.16454117</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>359,9508 -0,3011226 =&gt; 0</Name>
+    <Values>
+      <float>359.950836</float>
+      <float>-0.301122636</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>359,5146 -0,436178 =&gt; 0</Name>
+    <Values>
+      <float>359.514648</float>
+      <float>-0.436177969</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>358,9419 -0,5727461 =&gt; 0</Name>
+    <Values>
+      <float>358.9419</float>
+      <float>-0.5727461</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>358,234 -0,7078679 =&gt; 0</Name>
+    <Values>
+      <float>358.234039</float>
+      <float>-0.7078679</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>357,3878 -0,846177 =&gt; 0</Name>
+    <Values>
+      <float>357.387848</float>
+      <float>-0.846177</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>356,4052 -0,9826072 =&gt; 0</Name>
+    <Values>
+      <float>356.405243</float>
+      <float>-0.9826072</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>355,3071 -1,09819 =&gt; 0</Name>
+    <Values>
+      <float>355.307068</float>
+      <float>-1.09818959</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>354,0159 -1,291123 =&gt; 0</Name>
+    <Values>
+      <float>354.01593</float>
+      <float>-1.29112267</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>352,6236 -1,392293 =&gt; 0</Name>
+    <Values>
+      <float>352.623627</float>
+      <float>-1.39229321</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>351,0973 -1,526365 =&gt; 0</Name>
+    <Values>
+      <float>351.09726</float>
+      <float>-1.52636528</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>349,4272 -1,670057 =&gt; 0</Name>
+    <Values>
+      <float>349.427216</float>
+      <float>-1.67005742</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>347,6261 -1,80113 =&gt; 0</Name>
+    <Values>
+      <float>347.6261</float>
+      <float>-1.80112994</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>345,6884 -1,937721 =&gt; 0</Name>
+    <Values>
+      <float>345.6884</float>
+      <float>-1.93772066</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>343,6171 -2,07129 =&gt; 0</Name>
+    <Values>
+      <float>343.6171</float>
+      <float>-2.07129</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>341,4062 -2,210903 =&gt; 0</Name>
+    <Values>
+      <float>341.4062</float>
+      <float>-2.21090341</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>339,0599 -2,346249 =&gt; 0</Name>
+    <Values>
+      <float>339.059937</float>
+      <float>-2.34624863</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>336,5802 -2,479724 =&gt; 0</Name>
+    <Values>
+      <float>336.5802</float>
+      <float>-2.47972369</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>333,96 -2,620227 =&gt; 0</Name>
+    <Values>
+      <float>333.959961</float>
+      <float>-2.620227</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>331,2054 -2,75455 =&gt; 0</Name>
+    <Values>
+      <float>331.2054</float>
+      <float>-2.75455</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>328,3107 -2,894756 =&gt; 0</Name>
+    <Values>
+      <float>328.310669</float>
+      <float>-2.8947556</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>325,2821 -3,028522 =&gt; 0</Name>
+    <Values>
+      <float>325.282135</float>
+      <float>-3.02852249</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>322,1196 -3,162582 =&gt; 0</Name>
+    <Values>
+      <float>322.119568</float>
+      <float>-3.162582</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>318,8185 -3,301106 =&gt; 0</Name>
+    <Values>
+      <float>318.818451</float>
+      <float>-3.301106</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>315,3781 -3,440333 =&gt; 0</Name>
+    <Values>
+      <float>315.3781</float>
+      <float>-3.440333</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>311,8048 -3,573298 =&gt; 0</Name>
+    <Values>
+      <float>311.8048</float>
+      <float>-3.573298</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>308,0954 -3,709417 =&gt; 0</Name>
+    <Values>
+      <float>308.0954</float>
+      <float>-3.70941734</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>304,2515 -3,843925 =&gt; 0</Name>
+    <Values>
+      <float>304.251465</float>
+      <float>-3.84392452</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>300,2656 -3,985913 =&gt; 0</Name>
+    <Values>
+      <float>300.265564</float>
+      <float>-3.9859128</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>296,1472 -4,118388 =&gt; 0</Name>
+    <Values>
+      <float>296.1472</float>
+      <float>-4.118388</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>291,8917 -4,255487 =&gt; 0</Name>
+    <Values>
+      <float>291.8917</float>
+      <float>-4.25548744</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>287,4989 -4,39279 =&gt; 0</Name>
+    <Values>
+      <float>287.4989</float>
+      <float>-4.39279032</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>282,9716 -4,527354 =&gt; 0</Name>
+    <Values>
+      <float>282.971558</float>
+      <float>-4.527354</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>278,3048 -4,666794 =&gt; 0</Name>
+    <Values>
+      <float>278.304779</float>
+      <float>-4.666794</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>273,5073 -4,797472 =&gt; 0</Name>
+    <Values>
+      <float>273.5073</float>
+      <float>-4.79747248</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>268,5664 -4,940856 =&gt; 0</Name>
+    <Values>
+      <float>268.566437</float>
+      <float>-4.940856</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>263,4915 -5,074912 =&gt; 0</Name>
+    <Values>
+      <float>263.491516</float>
+      <float>-5.07491159</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>258,281 -5,210541 =&gt; 0</Name>
+    <Values>
+      <float>258.280975</float>
+      <float>-5.21054125</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>252,9445 -5,336468 =&gt; 0</Name>
+    <Values>
+      <float>252.944519</float>
+      <float>-5.336468</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>247,446 -5,498548 =&gt; 0</Name>
+    <Values>
+      <float>247.445984</float>
+      <float>-5.49854755</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>241,8454 -5,60063 =&gt; 0</Name>
+    <Values>
+      <float>241.845352</float>
+      <float>-5.60063</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>236,1261 -5,719203 =&gt; 0</Name>
+    <Values>
+      <float>236.126144</float>
+      <float>-5.71920252</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>230,2941 -5,83204 =&gt; 0</Name>
+    <Values>
+      <float>230.2941</float>
+      <float>-5.83204031</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>224,3323 -5,961771 =&gt; 0</Name>
+    <Values>
+      <float>224.332321</float>
+      <float>-5.961771</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>218,2405 -6,091801 =&gt; 0</Name>
+    <Values>
+      <float>218.240524</float>
+      <float>-6.091801</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>212,0171 -6,22346 =&gt; 0</Name>
+    <Values>
+      <float>212.017059</float>
+      <float>-6.22346</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>205,6544 -6,362635 =&gt; 0</Name>
+    <Values>
+      <float>205.654419</float>
+      <float>-6.362635</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>199,1731 -6,481337 =&gt; 0</Name>
+    <Values>
+      <float>199.17308</float>
+      <float>-6.48133659</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>192,5755 -6,597582 =&gt; 0</Name>
+    <Values>
+      <float>192.5755</float>
+      <float>-6.59758234</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>186,1781 -6,397453 =&gt; 0</Name>
+    <Values>
+      <float>186.178055</float>
+      <float>-6.397453</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>179,6451 -6,532962 =&gt; 0</Name>
+    <Values>
+      <float>179.6451</float>
+      <float>-6.53296232</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>173,0499 -6,59521 =&gt; 0</Name>
+    <Values>
+      <float>173.049881</float>
+      <float>-6.5952096</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>166,5636 -6,486299 =&gt; 0</Name>
+    <Values>
+      <float>166.563583</float>
+      <float>-6.486299</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>160,1343 -6,429261 =&gt; 0</Name>
+    <Values>
+      <float>160.134323</float>
+      <float>-6.42926073</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>153,8323 -6,302054 =&gt; 0</Name>
+    <Values>
+      <float>153.832275</float>
+      <float>-6.30205441</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>147,684 -6,148293 =&gt; 0</Name>
+    <Values>
+      <float>147.683975</float>
+      <float>-6.14829254</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>141,6981 -5,985901 =&gt; 0</Name>
+    <Values>
+      <float>141.698074</float>
+      <float>-5.985901</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>135,8339 -5,864196 =&gt; 0</Name>
+    <Values>
+      <float>135.833878</float>
+      <float>-5.8641963</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>130,1013 -5,732602 =&gt; 0</Name>
+    <Values>
+      <float>130.101273</float>
+      <float>-5.73260164</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>124,5083 -5,592964 =&gt; 0</Name>
+    <Values>
+      <float>124.508316</float>
+      <float>-5.592964</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>119,0796 -5,428747 =&gt; 0</Name>
+    <Values>
+      <float>119.079575</float>
+      <float>-5.428747</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>113,8167 -5,262858 =&gt; 0</Name>
+    <Values>
+      <float>113.816711</float>
+      <float>-5.26285839</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>108,7173 -5,099422 =&gt; 0</Name>
+    <Values>
+      <float>108.717285</float>
+      <float>-5.09942245</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>103,7806 -4,936727 =&gt; 0</Name>
+    <Values>
+      <float>103.780563</float>
+      <float>-4.936727</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>99,00516 -4,775398 =&gt; 0</Name>
+    <Values>
+      <float>99.00516</float>
+      <float>-4.77539825</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>94,39906 -4,606097 =&gt; 0</Name>
+    <Values>
+      <float>94.39906</float>
+      <float>-4.60609674</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>89,95534 -4,443726 =&gt; 0</Name>
+    <Values>
+      <float>89.95534</float>
+      <float>-4.443726</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>85,67093 -4,284412 =&gt; 0</Name>
+    <Values>
+      <float>85.67093</float>
+      <float>-4.284412</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>81,54897 -4,121957 =&gt; 0</Name>
+    <Values>
+      <float>81.54897</float>
+      <float>-4.1219573</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>77,59003 -3,958945 =&gt; 0</Name>
+    <Values>
+      <float>77.59003</float>
+      <float>-3.958945</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>73,79264 -3,797388 =&gt; 0</Name>
+    <Values>
+      <float>73.79264</float>
+      <float>-3.79738832</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>70,15952 -3,633125 =&gt; 0</Name>
+    <Values>
+      <float>70.1595154</float>
+      <float>-3.63312531</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>66,68907 -3,470447 =&gt; 0</Name>
+    <Values>
+      <float>66.68907</float>
+      <float>-3.47044659</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>63,38099 -3,308086 =&gt; 0</Name>
+    <Values>
+      <float>63.3809853</float>
+      <float>-3.30808568</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>60,23652 -3,144464 =&gt; 0</Name>
+    <Values>
+      <float>60.2365227</float>
+      <float>-3.14446354</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>57,25375 -2,982776 =&gt; 0</Name>
+    <Values>
+      <float>57.253746</float>
+      <float>-2.98277617</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>54,43483 -2,818917 =&gt; 0</Name>
+    <Values>
+      <float>54.43483</float>
+      <float>-2.818917</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>51,77828 -2,656547 =&gt; 0</Name>
+    <Values>
+      <float>51.7782822</float>
+      <float>-2.656547</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>49,28753 -2,490752 =&gt; 0</Name>
+    <Values>
+      <float>49.28753</float>
+      <float>-2.49075246</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>46,96023 -2,327301 =&gt; 0</Name>
+    <Values>
+      <float>46.960228</float>
+      <float>-2.32730055</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>44,7924 -2,167834 =&gt; 0</Name>
+    <Values>
+      <float>44.7923965</float>
+      <float>-2.16783357</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>42,78737 -2,005025 =&gt; 0</Name>
+    <Values>
+      <float>42.78737</float>
+      <float>-2.00502539</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>40,94658 -1,840792 =&gt; 0</Name>
+    <Values>
+      <float>40.94658</float>
+      <float>-1.84079182</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>39,2678 -1,67878 =&gt; 0</Name>
+    <Values>
+      <float>39.2678</float>
+      <float>-1.6787796</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>37,75147 -1,516332 =&gt; 0</Name>
+    <Values>
+      <float>37.75147</float>
+      <float>-1.51633167</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>36,39867 -1,352795 =&gt; 0</Name>
+    <Values>
+      <float>36.398674</float>
+      <float>-1.35279512</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>35,2084 -1,190274 =&gt; 0</Name>
+    <Values>
+      <float>35.2084</float>
+      <float>-1.19027448</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,18137 -1,027036 =&gt; 0</Name>
+    <Values>
+      <float>34.181366</float>
+      <float>-1.027036</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>33,31699 -0,8643764 =&gt; 0</Name>
+    <Values>
+      <float>33.3169861</float>
+      <float>-0.8643764</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>32,61727 -0,6997212 =&gt; 0</Name>
+    <Values>
+      <float>32.6172676</float>
+      <float>-0.699721158</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>32,07981 -0,5374621 =&gt; 0</Name>
+    <Values>
+      <float>32.0798073</float>
+      <float>-0.537462056</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>31,70632 -0,373483 =&gt; 0</Name>
+    <Values>
+      <float>31.7063236</float>
+      <float>-0.373483</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>31,49853 -0,2077893 =&gt; 0</Name>
+    <Values>
+      <float>31.4985332</float>
+      <float>-0.207789287</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>31,45001 -0,04852181 =&gt; 0</Name>
+    <Values>
+      <float>31.4500122</float>
+      <float>-0.04852181</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>31,56404 0,1140241 =&gt; 0</Name>
+    <Values>
+      <float>31.5640354</float>
+      <float>0.114024132</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>31,83946 0,2754251 =&gt; 0</Name>
+    <Values>
+      <float>31.83946</float>
+      <float>0.275425136</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>32,27926 0,4397974 =&gt; 0</Name>
+    <Values>
+      <float>32.27926</float>
+      <float>0.4397974</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>32,88419 0,6049306 =&gt; 0</Name>
+    <Values>
+      <float>32.88419</float>
+      <float>0.6049306</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>33,64937 0,7651805 =&gt; 0</Name>
+    <Values>
+      <float>33.64937</float>
+      <float>0.765180469</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>34,57683 0,9274623 =&gt; 0</Name>
+    <Values>
+      <float>34.576828</float>
+      <float>0.9274623</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>35,66698 1,090146 =&gt; 0</Name>
+    <Values>
+      <float>35.6669769</float>
+      <float>1.09014583</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>36,92084 1,253864 =&gt; 0</Name>
+    <Values>
+      <float>36.92084</float>
+      <float>1.25386417</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>38,33622 1,415375 =&gt; 0</Name>
+    <Values>
+      <float>38.336216</float>
+      <float>1.415375</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>39,91685 1,58064 =&gt; 0</Name>
+    <Values>
+      <float>39.9168549</float>
+      <float>1.58063972</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>41,66001 1,743159 =&gt; 0</Name>
+    <Values>
+      <float>41.66001</float>
+      <float>1.74315894</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>43,56612 1,906115 =&gt; 0</Name>
+    <Values>
+      <float>43.566124</float>
+      <float>1.90611529</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>45,63457 2,068452 =&gt; 0</Name>
+    <Values>
+      <float>45.6345749</float>
+      <float>2.06845212</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>47,86668 2,232101 =&gt; 0</Name>
+    <Values>
+      <float>47.8666763</float>
+      <float>2.23210073</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>50,26109 2,394409 =&gt; 0</Name>
+    <Values>
+      <float>50.2610855</float>
+      <float>2.39440942</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>52,81836 2,557272 =&gt; 0</Name>
+    <Values>
+      <float>52.81836</float>
+      <float>2.5572722</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>55,53832 2,71996 =&gt; 0</Name>
+    <Values>
+      <float>55.5383224</float>
+      <float>2.71996</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>58,42184 2,883519 =&gt; 0</Name>
+    <Values>
+      <float>58.4218445</float>
+      <float>2.88351941</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>61,46677 3,044928 =&gt; 0</Name>
+    <Values>
+      <float>61.46677</float>
+      <float>3.0449276</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>64,67793 3,211158 =&gt; 0</Name>
+    <Values>
+      <float>64.67793</float>
+      <float>3.211158</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>68,04997 3,372047 =&gt; 0</Name>
+    <Values>
+      <float>68.04997</float>
+      <float>3.372047</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>71,58364 3,533665 =&gt; 0</Name>
+    <Values>
+      <float>71.58364</float>
+      <float>3.5336647</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>75,28157 3,697927 =&gt; 0</Name>
+    <Values>
+      <float>75.28157</float>
+      <float>3.69792747</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>79,14086 3,859295 =&gt; 0</Name>
+    <Values>
+      <float>79.14086</float>
+      <float>3.859295</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>83,16463 4,023773 =&gt; 0</Name>
+    <Values>
+      <float>83.1646347</float>
+      <float>4.023773</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>87,35154 4,186904 =&gt; 0</Name>
+    <Values>
+      <float>87.35154</float>
+      <float>4.186904</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>91,69991 4,348369 =&gt; 0</Name>
+    <Values>
+      <float>91.6999054</float>
+      <float>4.348369</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>96,21228 4,512376 =&gt; 0</Name>
+    <Values>
+      <float>96.21228</float>
+      <float>4.51237631</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>100,8876 4,675329 =&gt; 0</Name>
+    <Values>
+      <float>100.887619</float>
+      <float>4.67532873</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>105,7276 4,839983 =&gt; 0</Name>
+    <Values>
+      <float>105.7276</float>
+      <float>4.83998346</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>110,7289 5,001267 =&gt; 0</Name>
+    <Values>
+      <float>110.728867</float>
+      <float>5.00126743</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>115,8927 5,163857 =&gt; 0</Name>
+    <Values>
+      <float>115.892723</float>
+      <float>5.16385746</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>121,2188 5,326092 =&gt; 0</Name>
+    <Values>
+      <float>121.218819</float>
+      <float>5.32609224</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>126,7115 5,492685 =&gt; 0</Name>
+    <Values>
+      <float>126.7115</float>
+      <float>5.492685</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>132,3685 5,657014 =&gt; 0</Name>
+    <Values>
+      <float>132.368515</float>
+      <float>5.657014</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>138,1801 5,811541 =&gt; 0</Name>
+    <Values>
+      <float>138.180054</float>
+      <float>5.811541</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>144,1128 5,932777 =&gt; 0</Name>
+    <Values>
+      <float>144.112839</float>
+      <float>5.9327774</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>150,1242 6,011387 =&gt; 0</Name>
+    <Values>
+      <float>150.124222</float>
+      <float>6.011387</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>156,2407 6,11649 =&gt; 0</Name>
+    <Values>
+      <float>156.2407</float>
+      <float>6.11649036</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>162,4478 6,207043 =&gt; 0</Name>
+    <Values>
+      <float>162.447754</float>
+      <float>6.207043</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>168,7627 6,314912 =&gt; 0</Name>
+    <Values>
+      <float>168.762665</float>
+      <float>6.31491232</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>175,1849 6,422207 =&gt; 0</Name>
+    <Values>
+      <float>175.184875</float>
+      <float>6.42220736</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>181,6724 6,487531 =&gt; 0</Name>
+    <Values>
+      <float>181.672409</float>
+      <float>6.48753071</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>188,2061 6,53366 =&gt; 0</Name>
+    <Values>
+      <float>188.20607</float>
+      <float>6.53366041</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>194,7415 6,535397 =&gt; 0</Name>
+    <Values>
+      <float>194.74147</float>
+      <float>6.535397</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>201,2854 6,543934 =&gt; 0</Name>
+    <Values>
+      <float>201.2854</float>
+      <float>6.54393435</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>207,8686 6,583231 =&gt; 0</Name>
+    <Values>
+      <float>207.868637</float>
+      <float>6.583231</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>214,3322 6,46351 =&gt; 0</Name>
+    <Values>
+      <float>214.332153</float>
+      <float>6.46350956</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>220,681 6,348796 =&gt; 0</Name>
+    <Values>
+      <float>220.680954</float>
+      <float>6.34879637</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>226,9158 6,23486 =&gt; 0</Name>
+    <Values>
+      <float>226.915817</float>
+      <float>6.23486</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>233,0315 6,115656 =&gt; 0</Name>
+    <Values>
+      <float>233.031479</float>
+      <float>6.115656</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>239,0021 5,970576 =&gt; 0</Name>
+    <Values>
+      <float>239.00206</float>
+      <float>5.970576</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>244,8456 5,843573 =&gt; 0</Name>
+    <Values>
+      <float>244.845627</float>
+      <float>5.843573</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>250,5491 5,703486 =&gt; 0</Name>
+    <Values>
+      <float>250.549118</float>
+      <float>5.703486</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>256,1172 5,568099 =&gt; 0</Name>
+    <Values>
+      <float>256.117218</float>
+      <float>5.56809855</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>261,5495 5,432268 =&gt; 0</Name>
+    <Values>
+      <float>261.5495</float>
+      <float>5.43226767</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>266,8441 5,294602 =&gt; 0</Name>
+    <Values>
+      <float>266.8441</float>
+      <float>5.29460239</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>272,0006 5,156524 =&gt; 0</Name>
+    <Values>
+      <float>272.0006</float>
+      <float>5.156524</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>277,0265 5,025862 =&gt; 0</Name>
+    <Values>
+      <float>277.0265</float>
+      <float>5.025862</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>281,9103 4,883782 =&gt; 0</Name>
+    <Values>
+      <float>281.910278</float>
+      <float>4.88378239</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>286,6492 4,738968 =&gt; 0</Name>
+    <Values>
+      <float>286.649231</float>
+      <float>4.738968</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>291,2625 4,613264 =&gt; 0</Name>
+    <Values>
+      <float>291.262482</float>
+      <float>4.61326361</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>295,7389 4,476388 =&gt; 0</Name>
+    <Values>
+      <float>295.738861</float>
+      <float>4.476388</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>300,0794 4,340551 =&gt; 0</Name>
+    <Values>
+      <float>300.0794</float>
+      <float>4.340551</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>304,2816 4,202218 =&gt; 0</Name>
+    <Values>
+      <float>304.281616</float>
+      <float>4.202218</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>308,35 4,068418 =&gt; 0</Name>
+    <Values>
+      <float>308.350037</float>
+      <float>4.068418</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>312,2818 3,931737 =&gt; 0</Name>
+    <Values>
+      <float>312.281769</float>
+      <float>3.93173718</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>316,0776 3,795835 =&gt; 0</Name>
+    <Values>
+      <float>316.0776</float>
+      <float>3.79583454</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>319,7345 3,656846 =&gt; 0</Name>
+    <Values>
+      <float>319.734467</float>
+      <float>3.65684628</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>323,2564 3,521898 =&gt; 0</Name>
+    <Values>
+      <float>323.256378</float>
+      <float>3.52189779</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>326,6416 3,385265 =&gt; 0</Name>
+    <Values>
+      <float>326.641632</float>
+      <float>3.385265</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>329,8906 3,248951 =&gt; 0</Name>
+    <Values>
+      <float>329.8906</float>
+      <float>3.2489512</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>333,0025 3,111936 =&gt; 0</Name>
+    <Values>
+      <float>333.002533</float>
+      <float>3.11193585</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>335,9825 2,980017 =&gt; 0</Name>
+    <Values>
+      <float>335.982544</float>
+      <float>2.98001671</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>338,813 2,830505 =&gt; 0</Name>
+    <Values>
+      <float>338.813049</float>
+      <float>2.83050513</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>341,5142 2,701185 =&gt; 0</Name>
+    <Values>
+      <float>341.514221</float>
+      <float>2.70118546</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>344,0819 2,56765 =&gt; 0</Name>
+    <Values>
+      <float>344.081879</float>
+      <float>2.5676496</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>346,5116 2,429745 =&gt; 0</Name>
+    <Values>
+      <float>346.511627</float>
+      <float>2.4297452</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>348,8202 2,308556 =&gt; 0</Name>
+    <Values>
+      <float>348.8202</float>
+      <float>2.308556</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>350,9533 2,133113 =&gt; 0</Name>
+    <Values>
+      <float>350.9533</float>
+      <float>2.133113</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>352,976 2,022736 =&gt; 0</Name>
+    <Values>
+      <float>352.976044</float>
+      <float>2.022736</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>354,8611 1,885098 =&gt; 0</Name>
+    <Values>
+      <float>354.861145</float>
+      <float>1.88509846</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>356,6086 1,74744 =&gt; 0</Name>
+    <Values>
+      <float>356.608582</float>
+      <float>1.7474401</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>358,2225 1,613959 =&gt; 0</Name>
+    <Values>
+      <float>358.222534</float>
+      <float>1.613959</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>359,6939 1,471375 =&gt; 0</Name>
+    <Values>
+      <float>359.6939</float>
+      <float>1.47137511</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>361,0349 1,341004 =&gt; 0</Name>
+    <Values>
+      <float>361.0349</float>
+      <float>1.34100413</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>362,2404 1,205462 =&gt; 0</Name>
+    <Values>
+      <float>362.2404</float>
+      <float>1.205462</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>363,3056 1,06523 =&gt; 0</Name>
+    <Values>
+      <float>363.3056</float>
+      <float>1.06522965</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>364,2357 0,9300541 =&gt; 0</Name>
+    <Values>
+      <float>364.235657</float>
+      <float>0.9300541</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>365,0294 0,7937295 =&gt; 0</Name>
+    <Values>
+      <float>365.0294</float>
+      <float>0.793729544</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>365,6865 0,6570902 =&gt; 0</Name>
+    <Values>
+      <float>365.6865</float>
+      <float>0.6570902</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>366,2071 0,5205844 =&gt; 0</Name>
+    <Values>
+      <float>366.2071</float>
+      <float>0.5205844</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>366,5917 0,3846218 =&gt; 0</Name>
+    <Values>
+      <float>366.5917</float>
+      <float>0.3846218</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>366,8397 0,2479781 =&gt; 0</Name>
+    <Values>
+      <float>366.8397</float>
+      <float>0.2479781</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>366,9518 0,1121261 =&gt; 0</Name>
+    <Values>
+      <float>366.9518</float>
+      <float>0.1121261</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>366,9249 -0,02687484 =&gt; 0</Name>
+    <Values>
+      <float>366.924927</float>
+      <float>-0.02687484</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>366,7672 -0,1576742 =&gt; 0</Name>
+    <Values>
+      <float>366.767242</float>
+      <float>-0.157674208</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>366,4738 -0,2934226 =&gt; 0</Name>
+    <Values>
+      <float>366.473816</float>
+      <float>-0.293422639</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>366,0327 -0,4411413 =&gt; 0</Name>
+    <Values>
+      <float>366.032684</float>
+      <float>-0.441141337</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>365,4586 -0,5740237 =&gt; 0</Name>
+    <Values>
+      <float>365.458649</float>
+      <float>-0.5740237</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>364,7531 -0,7055005 =&gt; 0</Name>
+    <Values>
+      <float>364.753143</float>
+      <float>-0.705500543</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>363,9095 -0,8437004 =&gt; 0</Name>
+    <Values>
+      <float>363.909454</float>
+      <float>-0.8437004</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>362,9322 -0,9772708 =&gt; 0</Name>
+    <Values>
+      <float>362.9322</float>
+      <float>-0.9772708</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>361,8161 -1,116062 =&gt; 0</Name>
+    <Values>
+      <float>361.816132</float>
+      <float>-1.11606228</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>360,5646 -1,251533 =&gt; 0</Name>
+    <Values>
+      <float>360.5646</float>
+      <float>-1.25153339</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>359,1821 -1,382542 =&gt; 0</Name>
+    <Values>
+      <float>359.182068</float>
+      <float>-1.38254166</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>357,6475 -1,534613 =&gt; 0</Name>
+    <Values>
+      <float>357.647461</float>
+      <float>-1.53461266</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>355,9879 -1,659582 =&gt; 0</Name>
+    <Values>
+      <float>355.987885</float>
+      <float>-1.659582</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>354,1922 -1,795718 =&gt; 0</Name>
+    <Values>
+      <float>354.192169</float>
+      <float>-1.79571843</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+  <Sample>
+    <Name>352,2641 -1,928068 =&gt; 0</Name>
+    <Values>
+      <float>352.2641</float>
+      <float>-1.928068</float>
+    </Values>
+    <Ideal>
+      <float>0</float>
+    </Ideal>
+  </Sample>
+</ArrayOfSample>
