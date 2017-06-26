@@ -26,7 +26,7 @@ namespace Aiv.Research.Tests.Landing
             m_hWnd      = new Window(800, 600, "Lander");            
             m_hGround   = new Ground();
             m_hSite     = new LandingSite(m_hGround.GroundLevel);
-            m_hLander   = new LanderHuman(m_hSite);
+            m_hLander   = new LanderAI("Experimental0.net", m_hSite);
             m_hRecorder = new Recorder(m_hLander);
 
 

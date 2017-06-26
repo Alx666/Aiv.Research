@@ -11,6 +11,7 @@ namespace Aiv.Research.Tests.Landing
     {
         public LanderSTM(LandingSite hSite) : base(hSite)
         {
+           
         }
 
         public override void Update()
@@ -20,12 +21,12 @@ namespace Aiv.Research.Tests.Landing
             if (IsGrounded)
                 return;
 
-            if (this.Position.Y > 220)
+            if (this.Position.Y > 200)
             {
                 Thrust = 1;
                 m_vVelocity.Y += -22f * Window.Current.deltaTime;
             }
-            else if (this.Position.Y < 220 && this.Position.Y > 125)
+            else if (this.Position.Y < 200 && this.Position.Y > 125)
             {
                 Thrust = 0;
             }
@@ -36,10 +37,10 @@ namespace Aiv.Research.Tests.Landing
 
 
             Height = this.Position.Y;
-            VelocityX = this.m_vVelocity.X;
+            //VelocityX = this.m_vVelocity.X;
             VelocityY = this.m_vVelocity.Y;
-            VectorX = (m_hSite.Position - Position).X;
-            VectorY = (m_hSite.Position - Position).Y;
+            //VectorX = (m_hSite.Position - Position).X;
+            //VectorY = (m_hSite.Position - Position).Y;
         }
     }
 }

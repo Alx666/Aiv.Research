@@ -26,16 +26,17 @@ namespace Aiv.Research.Tests.Landing
         {
             base.Update();
             m_hInput[0] = Height;
-            m_hInput[1] = VelocityX;
-            m_hInput[2] = VelocityY;
-            m_hInput[3] = VectorX;
-            m_hInput[4] = VectorY;
+            m_hInput[1] = VelocityY;
+            //m_hInput[2] = VelocityY;
+            //m_hInput[3] = VectorX;
+            //m_hInput[4] = VectorY;
 
             m_hNetwork.Compute(m_hInput, m_hOutput);
+            float sSpeed = (float) (-22f*m_hOutput[0]*Window.Current.deltaTime);
+            string sRes = $"{m_hOutput[0]}";
 
-
-            if(m_hOutput[1] > 0.98)
-                m_vVelocity.Y += -22f * Window.Current.deltaTime;
+            Console.WriteLine(sRes);
+            m_vVelocity.Y += sSpeed;
         }
     }
 }
