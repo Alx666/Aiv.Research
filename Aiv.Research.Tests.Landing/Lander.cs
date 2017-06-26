@@ -33,6 +33,8 @@ namespace Aiv.Research.Tests.Landing
 
         //[NeuralInput(1)]
         //protected double VelocityX;
+        [NeuralInput(1)]
+        protected double VelocityY;
         //[NeuralInput(3)]
         //protected double VectorX;
         //[NeuralInput(4)]
@@ -40,7 +42,9 @@ namespace Aiv.Research.Tests.Landing
         //[NeuralIdeal(0)]
         //protected double Adjustment;
 
-        [NeuralIdeal(1)]
+        //[NeuralIdeal(0)]
+        //protected double Adjustment;
+        [NeuralIdeal(0)]
         protected double Thrust;
 
         public Lander(LandingSite hSite)

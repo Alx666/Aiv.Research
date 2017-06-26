@@ -299,8 +299,10 @@ __pycache__/
 **/*.cache
 /**/*.cache
 *.cache
-**/obj/Debug/**.*
-/**/obj/Debug/**.*
+**/Debug
+**/Debug/
+/**/Debug
+/**/Debug/
 *.suo
 **/*.suo
 /**/*.suo

@@ -32,6 +32,10 @@ namespace Aiv.Research.Shared
             Values = new float[iIdealCount];
         }
 
-        public override string ToString() => Name;
+        public override string ToString()
+        {
+            string sRes = Values.Aggregate(string.Empty, (current, t) => current + $", {t}");
+            return Ideal.Aggregate(sRes, (current, t) => current + $", {t}");
+        }
     }
 }

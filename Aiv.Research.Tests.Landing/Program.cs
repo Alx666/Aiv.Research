@@ -21,14 +21,19 @@ namespace Aiv.Research.Tests.Landing
         private static Recorder     m_hRecorder;
         private static int          m_iCounter;
 
+        static void InitLander()
+        {
+            m_hLander = new LanderAI("Experimental0.net", m_hSite);
+            m_hRecorder = new Recorder(m_hLander);
+        }
+
 
         static void Main(string[] args)
         {
             m_hWnd      = new Window(800, 600, "Lander");            
             m_hGround   = new Ground();
             m_hSite     = new LandingSite(m_hGround.GroundLevel);
-            m_hLander   = new LanderAI("Experiment4.net", m_hSite);
-            m_hRecorder = new Recorder(m_hLander);
+            InitLander();
 
 
             while (m_hWnd.IsOpened)
@@ -47,6 +52,11 @@ namespace Aiv.Research.Tests.Landing
                         m_hRecorder.Stop();
                         Console.WriteLine("Recorder Stopped");
                     }
+                }
+
+                if (Input.IsKeyDown(KeyCode.Q))
+                {
+                    InitLander();
                 }
 
                 m_hGround.Update();
