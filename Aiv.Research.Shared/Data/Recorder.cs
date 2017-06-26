@@ -12,27 +12,27 @@ namespace Aiv.Research.Shared.Data
 {
     public class Recorder
     {
-        private List<Sample>            m_hValues;
-        private List<IDataExtractor>    m_hInputMembers;
-        private List<IDataExtractor>    m_hOutputMembers;
-        private object                  m_hTarget;
-        private string                  m_sТекущийфайл;
+        private List<Sample> m_hValues;
+        private List<IDataExtractor> m_hInputMembers;
+        private List<IDataExtractor> m_hOutputMembers;
+        private object m_hTarget;
+        private string m_sТекущийфайл;
 
         public bool Started { get; private set; }
 
         public Recorder(object hTarget)
         {
-            m_hValues          = new List<Sample>();
+            m_hValues = new List<Sample>();
 
-            var hInputMembers  = (from m in hTarget.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
-                                  where m.GetCustomAttribute<NeuralInputAttribute>() != null
-                                  select new { Member = m, Attribute = m.GetCustomAttribute<NeuralInputAttribute>() }).OrderBy(x => x.Attribute.Index);
+            var hInputMembers = (from m in hTarget.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
+                                 where m.GetCustomAttribute<NeuralInputAttribute>() != null
+                                 select new { Member = m, Attribute = m.GetCustomAttribute<NeuralInputAttribute>() }).OrderBy(x => x.Attribute.Index);
 
             var hOutputMembers = (from m in hTarget.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
                                   where m.GetCustomAttribute<NeuralIdealAttribute>() != null
                                   select new { Member = m, Attribute = m.GetCustomAttribute<NeuralIdealAttribute>() }).OrderBy(x => x.Attribute.Index);
 
-            m_hInputMembers    = new List<IDataExtractor>();
+            m_hInputMembers = new List<IDataExtractor>();
 
             foreach (var item in hInputMembers)
             {
@@ -62,7 +62,7 @@ namespace Aiv.Research.Shared.Data
 
         public void Stop()
         {
-             Started = false;
+            Started = false;
 
             using (Stream hFs = File.OpenWrite(m_sТекущийфайл))
             {
@@ -125,5 +125,5 @@ namespace Aiv.Research.Shared.Data
     }
 
 
-    
+
 }

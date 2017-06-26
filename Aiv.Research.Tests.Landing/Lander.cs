@@ -26,6 +26,9 @@ namespace Aiv.Research.Tests.Landing
         protected Vector2       m_vVelocity;
         protected LandingSite   m_hSite;
 
+        protected const float   TARGET_ALTITUDE = 200f;
+        protected const float   REACTOR_POWER   = 25f;
+
         [NeuralInput(0)]
         protected double Height;
         [NeuralInput(1)]
@@ -33,8 +36,8 @@ namespace Aiv.Research.Tests.Landing
 
         //[NeuralInput(1)]
         //protected double VelocityX;
-        [NeuralInput(1)]
-        protected double VelocityY;
+        //[NeuralInput(1)]
+        //protected double VelocityY;
         //[NeuralInput(3)]
         //protected double VectorX;
         //[NeuralInput(4)]

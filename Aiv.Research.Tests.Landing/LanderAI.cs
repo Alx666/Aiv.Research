@@ -1,4 +1,4 @@
-﻿using Aiv.Fast2D;
+using Aiv.Fast2D;
 using Encog.Neural.Networks;
 using System;
 using System.Collections.Generic;
@@ -27,14 +27,14 @@ namespace Aiv.Research.Tests.Landing
         {
             
             base.Update();
-            m_hInput[0] = 200 - Height;
+            m_hInput[0] = TARGET_ALTITUDE - Height;
             m_hInput[1] = VelocityY;
             //m_hInput[1] = VelocityX;
             //m_hInput[3] = VectorX;
             //m_hInput[4] = VectorY;
 
             m_hNetwork.Compute(m_hInput, m_hOutput);     
-            float fIncrement = (float)(-255f * m_hOutput[0] * Window.Current.deltaTime);
+            float fIncrement = (float)(-REACTOR_POWER * m_hOutput[0] * Window.Current.deltaTime);
             m_vVelocity.Y += fIncrement;
 
             string sLine = $"{m_hOutput[0]}";
