@@ -22,7 +22,7 @@ namespace Aiv.Research.Tests.Landing
 
         static void InitLander()
         {
-            m_hLander = new LanderHuman(m_hSite);
+            m_hLander = new LanderAI("Experimental0.net", m_hSite);
             m_hRecorder = new Recorder(m_hLander);
         }
 

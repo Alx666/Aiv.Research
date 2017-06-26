@@ -32,20 +32,20 @@ namespace Aiv.Research.Tests.Landing
             if (Window.Current.GetKey(KeyCode.Right))
             {
                 m_vVelocity.X += 10f * Window.Current.deltaTime;
-                Adjustment = 1;
+              //77  Adjustment = 1;
             }
             
             if (Window.Current.GetKey(KeyCode.Left))
             {
                 m_vVelocity.X += -10 * Window.Current.deltaTime;
-                Adjustment = -1;
+               // Adjustment = -1;
             }
 
             Height      = this.Position.Y;
-            VelocityX   = this.m_vVelocity.X;
+            //pVelocityX   = this.m_vVelocity.X;
             VelocityY   = this.m_vVelocity.Y;
-            VectorX     = (m_hSite.Position - Position).X;
-            VectorY     = (m_hSite.Position - Position).Y;
+           //VectorX     = (m_hSite.Position - Position).X;
+         //   VectorY     = (m_hSite.Position - Position).Y;
         }
 
     }
