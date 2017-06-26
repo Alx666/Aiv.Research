@@ -62,7 +62,7 @@ namespace Aiv.Research.Shared.Data
 
         public void Stop()
         {
-            Started = false;
+             Started = false;
 
             using (Stream hFs = File.OpenWrite(m_sТекущийфайл))
             {
@@ -71,16 +71,19 @@ namespace Aiv.Research.Shared.Data
             }
         }
 
-        public void Update()
+        public bool Update()
         {
             if (Started)
             {
-                float[] hВход  = Array.ConvertAll(m_hInputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x);
+                float[] hВход = Array.ConvertAll(m_hInputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x);
                 float[] hВыход = Array.ConvertAll(m_hOutputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x);
 
                 m_hValues.Add(new Sample("", hВход, hВыход));
-                Console.WriteLine("Sample Added");
+                return true;
             }
+            else
+                return false;
+
         }
 
 

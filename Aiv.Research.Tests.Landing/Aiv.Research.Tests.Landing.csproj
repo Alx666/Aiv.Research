@@ -52,11 +52,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonState.cs" />
     <Compile Include="Ground.cs" />
+    <Compile Include="Input.cs" />
+    <Compile Include="JoystickButton.cs" />
+    <Compile Include="JoystickIndex.cs" />
     <Compile Include="Lander.cs" />
     <Compile Include="LanderAI.cs" />
     <Compile Include="LanderHuman.cs" />
     <Compile Include="LandingSite.cs" />
+    <Compile Include="MouseButton.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Segment.cs" />

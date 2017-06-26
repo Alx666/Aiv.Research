@@ -27,14 +27,14 @@ namespace Aiv.Research.Tests.Landing
 
         [NeuralInput(0)]
         protected double Height;
-        [NeuralInput(1)]
-        protected double VelocityX;
-        [NeuralInput(2)]
-        protected double VelocityY;
-        [NeuralInput(3)]
-        protected double VectorX;
-        [NeuralInput(4)]
-        protected double VectorY;
+        //[NeuralInput(1)]
+        //protected double VelocityX;
+        //[NeuralInput(2)]
+        //protected double VelocityY;
+        //[NeuralInput(3)]
+        //protected double VectorX;
+        //[NeuralInput(4)]
+        //protected double VectorY;
 
         [NeuralIdeal(0)]
         protected double Adjustment;
@@ -99,10 +99,10 @@ namespace Aiv.Research.Tests.Landing
 
 
             Height      = this.Position.Y;
-            VelocityX   = this.m_vVelocity.X;
-            VelocityY   = this.m_vVelocity.Y;
-            VectorX     = (m_hSite.Position - Position).X;
-            VectorY     = (m_hSite.Position - Position).Y;
+            //VelocityX   = this.m_vVelocity.X;
+            //VelocityY   = this.m_vVelocity.Y;
+            //VectorX     = (m_hSite.Position - Position).X;
+            //VectorY     = (m_hSite.Position - Position).Y;
         }
 
         virtual public void Draw()
