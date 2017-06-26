@@ -60,6 +60,7 @@
     <Compile Include="Lander.cs" />
     <Compile Include="LanderAI.cs" />
     <Compile Include="LanderHuman.cs" />
+    <Compile Include="LanderSTM.cs" />
     <Compile Include="LandingSite.cs" />
     <Compile Include="MouseButton.cs" />
     <Compile Include="Program.cs" />

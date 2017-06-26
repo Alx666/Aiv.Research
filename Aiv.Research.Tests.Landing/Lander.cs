@@ -27,14 +27,14 @@ namespace Aiv.Research.Tests.Landing
 
         [NeuralInput(0)]
         protected double Height;
-        //[NeuralInput(1)]
-        //protected double VelocityX;
-        //[NeuralInput(2)]
-        //protected double VelocityY;
-        //[NeuralInput(3)]
-        //protected double VectorX;
-        //[NeuralInput(4)]
-        //protected double VectorY;
+        [NeuralInput(1)]
+        protected double VelocityX;
+        [NeuralInput(2)]
+        protected double VelocityY;
+        [NeuralInput(3)]
+        protected double VectorX;
+        [NeuralInput(4)]
+        protected double VectorY;
 
         [NeuralIdeal(0)]
         protected double Adjustment;
