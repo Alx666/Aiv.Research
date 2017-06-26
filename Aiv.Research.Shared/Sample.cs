@@ -18,11 +18,12 @@ namespace Aiv.Research.Shared
 
         }
 
-        public Sample(string sName, float[] hValues, float[] hIdeal)
+        public Sample(float[] hValues, float[] hIdeal)
         {
-            Name   = sName;
             Ideal  = hIdeal;
             Values = hValues;
+            Name = Values.Select(x => x.ToString()).Aggregate((x, y) => x + " " + y);
+            Name += " => " + Ideal.Select(x => x.ToString()).Aggregate((x, y) => x + " " + y);
         }
 
         public Sample(int iInputCount, int iIdealCount)

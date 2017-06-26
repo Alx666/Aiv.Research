@@ -71,18 +71,18 @@ namespace Aiv.Research.Shared.Data
             }
         }
 
-        public bool Update()
+        public Sample Update()
         {
             if (Started)
             {
                 float[] hВход = Array.ConvertAll(m_hInputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x);
                 float[] hВыход = Array.ConvertAll(m_hOutputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x);
-
-                m_hValues.Add(new Sample("", hВход, hВыход));
-                return true;
+                Sample hSample = new Sample(hВход, hВыход);
+                m_hValues.Add(hSample);
+                return hSample;
             }
             else
-                return false;
+                return null;
 
         }
 

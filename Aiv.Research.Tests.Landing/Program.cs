@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Aiv.Fast2D.Utils.Input;
+using Aiv.Research.Shared;
 
 namespace Aiv.Research.Tests.Landing
 {
@@ -26,7 +27,7 @@ namespace Aiv.Research.Tests.Landing
             m_hWnd      = new Window(800, 600, "Lander");            
             m_hGround   = new Ground();
             m_hSite     = new LandingSite(m_hGround.GroundLevel);
-            m_hLander   = new LanderHuman(m_hSite);
+            m_hLander   = new LanderAI("Experiment4.net", m_hSite);
             m_hRecorder = new Recorder(m_hLander);
 
 
@@ -56,9 +57,11 @@ namespace Aiv.Research.Tests.Landing
                 m_hSite.Draw();
                 m_hLander.Draw();
 
-                if (m_hRecorder.Update())
+                Sample hLast = m_hRecorder.Update();
+               
+                if(hLast != null)
                 {
-                    Console.WriteLine("Sample Added");
+                    Console.WriteLine(hLast.ToString());
                 }
 
                 m_hWnd.Update();                

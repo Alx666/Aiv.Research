@@ -17,6 +17,7 @@ namespace Aiv.Research.Tests.Landing
 
         private Segment[]       m_hStructure;
         private Segment         m_hLandingVector;
+        private Segment         m_hTargetHeight;
         private Box2            m_hBox;
         private Vector4         m_vColor;
         private Vector4         m_vColorGood;
@@ -27,17 +28,18 @@ namespace Aiv.Research.Tests.Landing
 
         [NeuralInput(0)]
         protected double Height;
+        [NeuralInput(1)]
+        protected double VelocityY;
+
         //[NeuralInput(1)]
         //protected double VelocityX;
-        //[NeuralInput(2)]
-        //protected double VelocityY;
         //[NeuralInput(3)]
         //protected double VectorX;
         //[NeuralInput(4)]
         //protected double VectorY;
+        //[NeuralIdeal(0)]
+        //protected double Adjustment;
 
-        [NeuralIdeal(0)]
-        protected double Adjustment;
         [NeuralIdeal(1)]
         protected double Thrust;
 
@@ -55,6 +57,7 @@ namespace Aiv.Research.Tests.Landing
             m_hStructure[2]  = new Segment(0f, 0f, 0f, 0f, 2f);
             m_hStructure[3]  = new Segment(0f, 0f, 0f, 0f, 2f);
             m_hLandingVector = new Segment(0f, 0f, 0f, 0f, 2f);
+            m_hTargetHeight  = new Segment(0f, 200f, Window.Current.Width, 200f, 1f);
 
             m_hBox.Translate(new Vector2(100, 100));            
         }
@@ -66,7 +69,7 @@ namespace Aiv.Research.Tests.Landing
                 return;
 
             Thrust      = 0;
-            Adjustment  = 0;
+            //Adjustment  = 0;
 
             m_vVelocity.Y += 9.8f * Window.Current.deltaTime;
 
@@ -99,8 +102,8 @@ namespace Aiv.Research.Tests.Landing
 
 
             Height      = this.Position.Y;
+            VelocityY   = this.m_vVelocity.Y;
             //VelocityX   = this.m_vVelocity.X;
-            //VelocityY   = this.m_vVelocity.Y;
             //VectorX     = (m_hSite.Position - Position).X;
             //VectorY     = (m_hSite.Position - Position).Y;
         }
@@ -111,7 +114,7 @@ namespace Aiv.Research.Tests.Landing
             {
                 m_hStructure[i].DrawSolidColor(m_vColor);
             }
-
+            m_hTargetHeight.DrawSolidColor(new Vector4(0.2f, 0.2f, 0.2f, 0f));
             m_hLandingVector.DrawSolidColor(new Vector4(1f, 1f, 1f, 0f));
         }
     }

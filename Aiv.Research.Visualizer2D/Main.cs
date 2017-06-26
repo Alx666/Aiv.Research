@@ -122,7 +122,7 @@ namespace Aiv.Research.Visualizer2D
                     {
                         double[] hIdeal = m_hLastIdeal.Clone() as double[];
                         hBmp.Save(sFilename, ImageFormat.Bmp);
-                        Sample hSample = new Sample(sFilename, Array.ConvertAll(hSamples, x => (float)x), Array.ConvertAll(hIdeal, x => (float)x));
+                        Sample hSample = new Sample(Array.ConvertAll(hSamples, x => (float)x), Array.ConvertAll(hIdeal, x => (float)x));
                         m_hPenDrawer.Network.Samples.Add(hSample);
                         m_hSamples.Items.Add(hSample);
                     }
