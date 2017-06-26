@@ -1,4 +1,5 @@
 ﻿using Aiv.Fast2D;
+using Aiv.Fast2D.Utils.Input;
 using Aiv.Research.Shared.Data;
 using Encog.Neural.Networks;
 using OpenTK;
@@ -11,20 +12,9 @@ using System.Threading.Tasks;
 namespace Aiv.Research.Tests.Landing
 {
     class LanderHuman : Lander
-    {
-        private bool start;
-        private bool getKeyDown;
-
-        private int iCounter;
-        private Recorder m_hRecorder;
-
+    {        
         public LanderHuman(LandingSite hSite) : base(hSite)
         {
-            iCounter = 0;
-            m_hRecorder = new Recorder(this);
-
-            start = true;
-            getKeyDown = false;
         }
         public override void Update()
         {
@@ -51,32 +41,11 @@ namespace Aiv.Research.Tests.Landing
                 Adjustment = -1;
             }
 
-            if (Window.Current.GetKey(KeyCode.R) && getKeyDown == false)
-            {
-                if(start == true)
-                {
-                    m_hRecorder.Start("Lander" + iCounter + ".xml");
-                    start = false;
-                }
-                if (start == false)
-                {
-                    m_hRecorder?.Stop();
-                    start = true;
-                }
-                iCounter++;
-                getKeyDown = true;
-            }
-            else
-            {
-                getKeyDown = false;
-            }
-
-
-            Height = this.Position.Y;
-            VelocityX = this.m_vVelocity.X;
-            VelocityY = this.m_vVelocity.Y;
-            VectorX = (m_hSite.Position - Position).X;
-            VectorY = (m_hSite.Position - Position).Y;
+            Height      = this.Position.Y;
+            VelocityX   = this.m_vVelocity.X;
+            VelocityY   = this.m_vVelocity.Y;
+            VectorX     = (m_hSite.Position - Position).X;
+            VectorY     = (m_hSite.Position - Position).Y;
         }
 
     }
