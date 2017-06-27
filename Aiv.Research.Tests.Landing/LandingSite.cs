@@ -4,7 +4,7 @@ using System;
 
 namespace Aiv.Research.Tests.Landing
 {
-    public class LandingSite
+    public class LandingSite : IEntity
     {
         private Segment m_hLine;
         private Vector4 m_vColor;

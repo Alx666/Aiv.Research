@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Aiv.Research.Tests.Landing
 {
-    internal class Ground
+    internal class Ground : IEntity
     {
         private Segment m_hLine;
         private Vector4 m_vColor;

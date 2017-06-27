@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Aiv.Fast2D;
-using OpenTK;
+﻿using Aiv.Fast2D;
 using Aiv.Research.Shared.Data;
-using Encog.Neural.Networks;
+using OpenTK;
 
 namespace Aiv.Research.Tests.Landing
 {
-    internal abstract class Lander
+    internal abstract class Lander : IEntity
     {
         public bool IsGrounded { get; private set; }
         public Vector2 Position { get; private set; }
@@ -121,6 +115,7 @@ namespace Aiv.Research.Tests.Landing
             {
                 m_hStructure[i].DrawSolidColor(m_vColor);
             }
+
             m_hTargetHeight.DrawSolidColor(new Vector4(0.2f, 0.2f, 0.2f, 0f));
             m_hLandingVector.DrawSolidColor(new Vector4(1f, 1f, 1f, 0f));
         }

@@ -53,8 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ButtonState.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="Ground.cs" />
     <Compile Include="Input.cs" />
+    <Compile Include="IRenderable.cs" />
     <Compile Include="JoystickButton.cs" />
     <Compile Include="JoystickIndex.cs" />
     <Compile Include="Lander.cs" />

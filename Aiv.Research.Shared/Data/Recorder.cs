@@ -75,7 +75,7 @@ namespace Aiv.Research.Shared.Data
         {
             if (Started)
             {
-                float[] hВход = Array.ConvertAll(m_hInputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x);
+                float[] hВход  = Array.ConvertAll(m_hInputMembers.Select( x => x.GetValue()).ToArray(), x => (float)x);
                 float[] hВыход = Array.ConvertAll(m_hOutputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x);
                 Sample hSample = new Sample(hВход, hВыход);
                 m_hValues.Add(hSample);

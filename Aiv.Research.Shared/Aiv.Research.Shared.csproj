@@ -61,6 +61,7 @@
     <Compile Include="Sample.cs" />
     <Compile Include="TrainingClient.cs" />
     <Compile Include="TrainingService.cs" />
+    <Compile Include="UI\ConsoleUI.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
