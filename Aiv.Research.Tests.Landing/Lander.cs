@@ -27,8 +27,8 @@ namespace Aiv.Research.Tests.Landing
 
         [NeuralInput(0)]
         protected double Height;
-        //[NeuralInput(1)]
-        //protected double VelocityX;
+        [NeuralInput(2)]
+        protected double VelocityX;
         [NeuralInput(1)]
         protected double VelocityY;
         //[NeuralInput(3)]
@@ -36,8 +36,8 @@ namespace Aiv.Research.Tests.Landing
         //[NeuralInput(4)]
         //protected double VectorY;
 
-        //[NeuralIdeal(0)]
-        //protected double Adjustment;
+        [NeuralIdeal(1)]
+        protected double Adjustment;
         [NeuralIdeal(0)]
         protected double Thrust;
 
@@ -66,7 +66,7 @@ namespace Aiv.Research.Tests.Landing
                 return;
 
             Thrust      = 0;
-            //Adjustment  = 0;
+            Adjustment  = 0;
 
             m_vVelocity.Y += 9.8f * Window.Current.deltaTime;
 

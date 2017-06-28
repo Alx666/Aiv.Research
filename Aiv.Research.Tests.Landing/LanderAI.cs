@@ -27,16 +27,18 @@ namespace Aiv.Research.Tests.Landing
             base.Update();
             m_hInput[0] = Height;
             m_hInput[1] = VelocityY;
-            //m_hInput[2] = VelocityY;
+            m_hInput[2] = VelocityX;
             //m_hInput[3] = VectorX;
             //m_hInput[4] = VectorY;
 
             m_hNetwork.Compute(m_hInput, m_hOutput);
             float sSpeed = (float) (-22f*m_hOutput[0]*Window.Current.deltaTime);
-            string sRes = $"{m_hOutput[0]}";
+            float sXSpeed = (float)(50f * m_hOutput[1] * Window.Current.deltaTime);
+            string sRes = $"{m_hOutput[0]}  -  {m_hOutput[1]}";
 
             Console.WriteLine(sRes);
             m_vVelocity.Y += sSpeed;
+            m_vVelocity.X = sXSpeed;
         }
     }
 }
