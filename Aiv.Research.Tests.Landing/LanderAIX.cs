@@ -32,14 +32,17 @@ namespace Aiv.Research.Tests.Landing
             m_hInput[2] = InVelocityX;
             m_hInput[3] = InVelocityY;
             m_hInput[4] = InGravity;
+            m_hInput[5] = InTargetDistance;
 
             m_hNetwork.Compute(m_hInput, m_hOutput);
 
             float fIncrementY = (float)(-REACTOR_POWER * m_hOutput[0] * Window.Current.deltaTime);
-            float fIncrementX = (float)(-REACTOR_POWER * m_hOutput[1] * Window.Current.deltaTime);
+            float fIncrementX = (float)( REACTOR_POWER * m_hOutput[1] * Window.Current.deltaTime);
 
             m_vVelocity.Y += fIncrementY;
             m_vVelocity.X += fIncrementX;
+
+            //Console.WriteLine(InWidth + " " + fIncrementX);
         }
     }
 }

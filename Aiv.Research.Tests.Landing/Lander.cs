@@ -23,7 +23,7 @@ namespace Aiv.Research.Tests.Landing
         protected LandingSite   m_hSite;
 
         
-        protected const float   REACTOR_POWER   = 12;
+        protected const float   REACTOR_POWER   = 18;
 
         [NeuralInput(0)]
         protected double InHeight;
@@ -35,6 +35,8 @@ namespace Aiv.Research.Tests.Landing
         protected double InVelocityX;
         [NeuralInput(4)]
         protected double InGravity;
+        [NeuralInput(5)]
+        protected double InTargetDistance;
 
         [NeuralIdeal(0)]
         protected double VertThrust;
@@ -71,14 +73,12 @@ namespace Aiv.Research.Tests.Landing
 
             m_vVelocity.Y += Gravity * Window.Current.deltaTime;
 
-
             if(m_hBox.Bottom >= m_hSite.GroundLevel)
             {
                 m_vColor = m_vVelocity.Length < 2.0f ? m_vColorGood : m_vColorBad;
                 m_vVelocity = Vector2.Zero;
                 IsGrounded = true;
             }
-
 
             m_hBox.Translate(m_vVelocity);
             Position = new Vector2(m_hBox.Left + m_hBox.Width / 2, m_hBox.Top + m_hBox.Height / 2);
@@ -99,11 +99,12 @@ namespace Aiv.Research.Tests.Landing
             m_hLandingVector.Point2 = m_hSite.Position;
 
 
-            InHeight    = TargetAltitude        - this.Position.Y;
-            InWidth     = m_hSite.Position.X    - this.Position.X;
-            InVelocityX = m_vVelocity.X;
-            InVelocityY = m_vVelocity.Y;
-            InGravity   = Gravity;
+            InHeight            = TargetAltitude        - this.Position.Y;
+            InWidth             = m_hSite.Position.X    - this.Position.X;
+            InVelocityX         = m_vVelocity.X;
+            InVelocityY         = m_vVelocity.Y;
+            InGravity           = Gravity;
+            InTargetDistance    = (this.Position - new Vector2(m_hSite.Position.X, TargetAltitude)).Length;
         }
 
         virtual public void Draw()
