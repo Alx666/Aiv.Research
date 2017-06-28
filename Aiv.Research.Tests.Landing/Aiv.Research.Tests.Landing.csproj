@@ -60,7 +60,8 @@
     <Compile Include="JoystickButton.cs" />
     <Compile Include="JoystickIndex.cs" />
     <Compile Include="Lander.cs" />
-    <Compile Include="LanderAI.cs" />
+    <Compile Include="LanderAI4.cs" />
+    <Compile Include="LanderAIX.cs" />
     <Compile Include="LanderHuman.cs" />
     <Compile Include="LanderSTM.cs" />
     <Compile Include="LandingSite.cs" />

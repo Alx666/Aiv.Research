@@ -23,30 +23,13 @@ namespace Aiv.Research.Tests.Landing
             if (IsGrounded)
                 return;
 
-            if (Window.Current.GetKey(KeyCode.Space))
-            {
-                m_vVelocity.Y += -22f * Window.Current.deltaTime;
-                Thrust = 1;
-            }
-            
-            if (Window.Current.GetKey(KeyCode.Right))
-            {
-                m_vVelocity.X += 10f * Window.Current.deltaTime;
-                //Adjustment = 1;
-            }
-            
-            if (Window.Current.GetKey(KeyCode.Left))
-            {
-                m_vVelocity.X += -10 * Window.Current.deltaTime;
-                //Adjustment = -1;
-            }
+            Vector2 vAxis  = Input.JoystickAxisLeft(JoystickIndex.One);
 
-            Height      = 200 - this.Position.Y;
-            VelocityY   = this.m_vVelocity.Y;
+            m_vVelocity.Y += REACTOR_POWER * vAxis.Y * Window.Current.deltaTime;
+            m_vVelocity.X += REACTOR_POWER * vAxis.X * Window.Current.deltaTime;
 
-            //VelocityX   = this.m_vVelocity.X;
-            //VectorX     = (m_hSite.Position - Position).X;
-            //VectorY     = (m_hSite.Position - Position).Y;
+            VertThrust  = m_vVelocity.Y;
+            HorizThrust = m_vVelocity.X;
         }
 
     }

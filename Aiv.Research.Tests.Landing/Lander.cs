@@ -23,28 +23,23 @@ namespace Aiv.Research.Tests.Landing
         protected LandingSite   m_hSite;
 
         
-        protected const float   REACTOR_POWER   = 25f;
+        protected const float   REACTOR_POWER   = 12;
 
         [NeuralInput(0)]
-        protected double Height;
+        protected double InHeight;
         [NeuralInput(1)]
-        protected double VelocityY;
+        protected double InWidth;
+        [NeuralInput(2)]
+        protected double InVelocityY;
+        [NeuralInput(3)]
+        protected double InVelocityX;
+        [NeuralInput(4)]
+        protected double InGravity;
 
-        //[NeuralInput(1)]
-        //protected double VelocityX;
-        //[NeuralInput(1)]
-        //protected double VelocityY;
-        //[NeuralInput(3)]
-        //protected double VectorX;
-        //[NeuralInput(4)]
-        //protected double VectorY;
-        //[NeuralIdeal(0)]
-        //protected double Adjustment;
-
-        //[NeuralIdeal(0)]
-        //protected double Adjustment;
         [NeuralIdeal(0)]
-        protected double Thrust;
+        protected double VertThrust;
+        [NeuralIdeal(1)]
+        protected double HorizThrust;
 
         public Lander(LandingSite hSite)
         {
@@ -73,9 +68,6 @@ namespace Aiv.Research.Tests.Landing
         {
             if (IsGrounded)
                 return;
-
-            Thrust      = 0;
-            //Adjustment  = 0;
 
             m_vVelocity.Y += Gravity * Window.Current.deltaTime;
 
@@ -107,11 +99,11 @@ namespace Aiv.Research.Tests.Landing
             m_hLandingVector.Point2 = m_hSite.Position;
 
 
-            Height      = this.Position.Y;
-            VelocityY   = this.m_vVelocity.Y;
-            //VelocityX   = this.m_vVelocity.X;
-            //VectorX     = (m_hSite.Position - Position).X;
-            //VectorY     = (m_hSite.Position - Position).Y;
+            InHeight    = TargetAltitude        - this.Position.Y;
+            InWidth     = m_hSite.Position.X    - this.Position.X;
+            InVelocityX = m_vVelocity.X;
+            InVelocityY = m_vVelocity.Y;
+            InGravity   = Gravity;
         }
 
         virtual public void Draw()

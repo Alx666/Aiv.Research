@@ -27,18 +27,15 @@ namespace Aiv.Research.Tests.Landing
         {
             
             base.Update();
-            m_hInput[0] = TargetAltitude - Height;
-            m_hInput[1] = VelocityY;
-            //m_hInput[1] = VelocityX;
-            //m_hInput[3] = VectorX;
-            //m_hInput[4] = VectorY;
+            m_hInput[0] = TargetAltitude - InHeight;
+            m_hInput[1] = InVelocityY;
+
 
             m_hNetwork.Compute(m_hInput, m_hOutput);     
             float fIncrement = (float)(-REACTOR_POWER * m_hOutput[0] * Window.Current.deltaTime);
             m_vVelocity.Y += fIncrement;
 
             //string sLine = $"{m_hOutput[0]}";
-            //Thread.Sleep(500);
             //Console.WriteLine(sLine);
         }
     }
