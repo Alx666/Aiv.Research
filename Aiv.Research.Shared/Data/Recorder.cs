@@ -12,27 +12,27 @@ namespace Aiv.Research.Shared.Data
 {
     public class Recorder
     {
-        private List<Sample>            m_hValues;
-        private List<IDataExtractor>    m_hInputMembers;
-        private List<IDataExtractor>    m_hOutputMembers;
-        private object                  m_hTarget;
-        private string                  m_sТекущийфайл;
+        private List<Sample> m_hValues;
+        private List<IDataExtractor> m_hInputMembers;
+        private List<IDataExtractor> m_hOutputMembers;
+        private object m_hTarget;
+        private string m_sТекущийфайл;
 
         public bool Started { get; private set; }
 
         public Recorder(object hTarget)
         {
-            m_hValues          = new List<Sample>();
+            m_hValues = new List<Sample>();
 
-            var hInputMembers  = (from m in hTarget.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
-                                  where m.GetCustomAttribute<NeuralInputAttribute>() != null
-                                  select new { Member = m, Attribute = m.GetCustomAttribute<NeuralInputAttribute>() }).OrderBy(x => x.Attribute.Index);
+            var hInputMembers = (from m in hTarget.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
+                                 where m.GetCustomAttribute<NeuralInputAttribute>() != null
+                                 select new { Member = m, Attribute = m.GetCustomAttribute<NeuralInputAttribute>() }).OrderBy(x => x.Attribute.Index);
 
             var hOutputMembers = (from m in hTarget.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
                                   where m.GetCustomAttribute<NeuralIdealAttribute>() != null
                                   select new { Member = m, Attribute = m.GetCustomAttribute<NeuralIdealAttribute>() }).OrderBy(x => x.Attribute.Index);
 
-            m_hInputMembers    = new List<IDataExtractor>();
+            m_hInputMembers = new List<IDataExtractor>();
 
             foreach (var item in hInputMembers)
             {
@@ -62,7 +62,7 @@ namespace Aiv.Research.Shared.Data
 
         public void Stop()
         {
-             Started = false;
+            Started = false;
 
             using (Stream hFs = File.OpenWrite(m_sТекущийфайл))
             {
@@ -71,18 +71,18 @@ namespace Aiv.Research.Shared.Data
             }
         }
 
-        public bool Update()
+        public Sample Update()
         {
             if (Started)
             {
-                float[] hВход = Array.ConvertAll(m_hInputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x);
+                float[] hВход  = Array.ConvertAll(m_hInputMembers.Select( x => x.GetValue()).ToArray(), x => (float)x);
                 float[] hВыход = Array.ConvertAll(m_hOutputMembers.Select(x => x.GetValue()).ToArray(), x => (float)x);
-
-                m_hValues.Add(new Sample("", hВход, hВыход));
-                return true;
+                Sample hSample = new Sample(hВход, hВыход);
+                m_hValues.Add(hSample);
+                return hSample;
             }
             else
-                return false;
+                return null;
 
         }
 
@@ -125,5 +125,5 @@ namespace Aiv.Research.Shared.Data
     }
 
 
-    
+
 }

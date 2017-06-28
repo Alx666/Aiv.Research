@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Aiv.Fast2D;
-using OpenTK;
+﻿using Aiv.Fast2D;
 using Aiv.Research.Shared.Data;
-using Encog.Neural.Networks;
+using OpenTK;
 
 namespace Aiv.Research.Tests.Landing
 {
-    internal abstract class Lander
+    internal abstract class Lander : IEntity
     {
-        public bool IsGrounded { get; private set; }
-        public Vector2 Position { get; private set; }
+        public bool     IsGrounded      { get; private set; }
+        public Vector2  Position        { get; private set; }
+        public float    Gravity         { get; set; }
+        public float    TargetAltitude  { get; set; }
 
         private Segment[]       m_hStructure;
         private Segment         m_hLandingVector;
+        private Segment         m_hTargetHeight;
         private Box2            m_hBox;
         private Vector4         m_vColor;
         private Vector4         m_vColorGood;
@@ -25,38 +22,45 @@ namespace Aiv.Research.Tests.Landing
         protected Vector2       m_vVelocity;
         protected LandingSite   m_hSite;
 
-        [NeuralInput(0)]
-        protected double Height;
-        [NeuralInput(2)]
-        protected double VelocityX;
-        [NeuralInput(1)]
-        protected double VelocityY;
-        //[NeuralInput(3)]
-        //protected double VectorX;
-        //[NeuralInput(4)]
-        //protected double VectorY;
+        
+        protected const float   REACTOR_POWER   = 12;
 
-        [NeuralIdeal(1)]
-        protected double Adjustment;
+        [NeuralInput(0)]
+        protected double InHeight;
+        [NeuralInput(1)]
+        protected double InWidth;
+        [NeuralInput(2)]
+        protected double InVelocityY;
+        [NeuralInput(3)]
+        protected double InVelocityX;
+        [NeuralInput(4)]
+        protected double InGravity;
+
         [NeuralIdeal(0)]
-        protected double Thrust;
+        protected double VertThrust;
+        [NeuralIdeal(1)]
+        protected double HorizThrust;
 
         public Lander(LandingSite hSite)
         {
-            m_hBox          = new Box2(new Vector2(0, 0), new Vector2(50, 50));
-            m_hStructure    = new Segment[4];
-            m_vColor        = new Vector4(1f, 1f, 1f, 0f);
-            m_vColorGood    = new Vector4(0f, 1f, 0f, 0f);
-            m_vColorBad     = new Vector4(1f, 0f, 0f, 0f);
-            m_hSite         = hSite;
+            TargetAltitude      = 200f;
+            m_hBox              = new Box2(new Vector2(0, 0), new Vector2(50, 50));
+            m_hStructure        = new Segment[4];
+            m_vColor            = new Vector4(1f, 1f, 1f, 0f);
+            m_vColorGood        = new Vector4(0f, 1f, 0f, 0f);
+            m_vColorBad         = new Vector4(1f, 0f, 0f, 0f);
+            m_hSite             = hSite;
 
-            m_hStructure[0]  = new Segment(0f, 0f, 0f, 0f, 2f);
-            m_hStructure[1]  = new Segment(0f, 0f, 0f, 0f, 2f);
-            m_hStructure[2]  = new Segment(0f, 0f, 0f, 0f, 2f);
-            m_hStructure[3]  = new Segment(0f, 0f, 0f, 0f, 2f);
-            m_hLandingVector = new Segment(0f, 0f, 0f, 0f, 2f);
+            m_hStructure[0]     = new Segment(0f, 0f, 0f, 0f, 2f);
+            m_hStructure[1]     = new Segment(0f, 0f, 0f, 0f, 2f);
+            m_hStructure[2]     = new Segment(0f, 0f, 0f, 0f, 2f);
+            m_hStructure[3]     = new Segment(0f, 0f, 0f, 0f, 2f);
+            m_hLandingVector    = new Segment(0f, 0f, 0f, 0f, 2f);
+            m_hTargetHeight     = new Segment(0f, TargetAltitude, Window.Current.Width, TargetAltitude, 1f);
 
-            m_hBox.Translate(new Vector2(100, 100));            
+            m_hBox.Translate(new Vector2(100, 100));
+
+            Gravity = 9.8f;
         }
        
 
@@ -65,10 +69,7 @@ namespace Aiv.Research.Tests.Landing
             if (IsGrounded)
                 return;
 
-            Thrust      = 0;
-            Adjustment  = 0;
-
-            m_vVelocity.Y += 9.8f * Window.Current.deltaTime;
+            m_vVelocity.Y += Gravity * Window.Current.deltaTime;
 
 
             if(m_hBox.Bottom >= m_hSite.GroundLevel)
@@ -98,11 +99,11 @@ namespace Aiv.Research.Tests.Landing
             m_hLandingVector.Point2 = m_hSite.Position;
 
 
-            Height      = this.Position.Y;
-            //VelocityX   = this.m_vVelocity.X;
-            //VelocityY   = this.m_vVelocity.Y;
-            //VectorX     = (m_hSite.Position - Position).X;
-            //VectorY     = (m_hSite.Position - Position).Y;
+            InHeight    = TargetAltitude        - this.Position.Y;
+            InWidth     = m_hSite.Position.X    - this.Position.X;
+            InVelocityX = m_vVelocity.X;
+            InVelocityY = m_vVelocity.Y;
+            InGravity   = Gravity;
         }
 
         virtual public void Draw()
@@ -112,6 +113,10 @@ namespace Aiv.Research.Tests.Landing
                 m_hStructure[i].DrawSolidColor(m_vColor);
             }
 
+            m_hTargetHeight.Point1 = new Vector2(0, TargetAltitude);
+            m_hTargetHeight.Point2 = new Vector2(Window.Current.Width, TargetAltitude);
+
+            m_hTargetHeight.DrawSolidColor(new Vector4(0.2f, 0.2f, 0.2f, 0f));
             m_hLandingVector.DrawSolidColor(new Vector4(1f, 1f, 1f, 0f));
         }
     }
