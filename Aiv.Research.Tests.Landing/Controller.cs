@@ -31,7 +31,7 @@ namespace Aiv.Research.Tests.Landing
 
         private void MainLoop()
         {
-            m_hWnd        = new Window(800, 600, "Lander");
+            m_hWnd        = new Window(1200, 600, "Lander");
             m_hGround     = new Ground();
             m_hSite       = new LandingSite(m_hGround.GroundLevel);
             //m_hLander   = new LanderHuman(m_hSite);
