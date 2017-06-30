@@ -35,6 +35,10 @@ namespace Aiv.Research.Tests.Landing
         protected double InVelocityX;
         [NeuralInput(4)]
         protected double InGravity;
+        [NeuralInput(5)]
+        protected double TargetDestinationX;
+        [NeuralInput(6)]
+        protected double TargetDestinationY;
 
         [NeuralIdeal(0)]
         protected double VertThrust;
@@ -98,6 +102,9 @@ namespace Aiv.Research.Tests.Landing
             m_hLandingVector.Point1 = Position;
             m_hLandingVector.Point2 = m_hSite.Position;
 
+            
+            TargetDestinationX = this.Position.X - m_hSite.Position.X;
+            TargetDestinationY = this.Position.Y - TargetAltitude;
 
             InHeight    = TargetAltitude        - this.Position.Y;
             InWidth     = m_hSite.Position.X    - this.Position.X;

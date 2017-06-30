@@ -21,6 +21,7 @@ namespace Aiv.Research.Tests.Landing
         private LandingSite             m_hSite;
         private Lander                  m_hLander;
         private Recorder                m_hRecorder;
+        private ICommand hCmd;
 
         public Controller()
         {
@@ -34,7 +35,7 @@ namespace Aiv.Research.Tests.Landing
             m_hWnd        = new Window(800, 600, "Lander");
             m_hGround     = new Ground();
             m_hSite       = new LandingSite(m_hGround.GroundLevel);
-            m_hLander     = new LanderHuman(m_hSite);
+            m_hLander     = new LanderSTM(m_hSite);
             m_hRecorder   = new Recorder(m_hLander);
 
             //m_hLander     = new LanderAI4("../../../training_sets/Experiment4.net", m_hSite);
@@ -47,7 +48,7 @@ namespace Aiv.Research.Tests.Landing
                 
 
                 //Command Dispatching
-                while (m_hCommands.TryTake(out ICommand hCmd))
+                while (m_hCommands.TryTake(out hCmd))
                 {
                     hCmd.Execute();
                 }

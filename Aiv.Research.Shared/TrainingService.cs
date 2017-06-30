@@ -48,7 +48,7 @@ namespace Aiv.Research.Shared
         [ConsoleUIMethod]
         public string StartService(int iPort)
         {
-            m_hService = new ServiceHost(this, new Uri($"net.tcp://192.168.2.235:{iPort}/{TRAINING_SERVICE_NAME}/"));
+            m_hService = new ServiceHost(this, new Uri($"net.tcp://localhost:{iPort}/{TRAINING_SERVICE_NAME}/"));
             NetTcpBinding hBinding = new NetTcpBinding(SecurityMode.None, true);
             hBinding.ReceiveTimeout = TimeSpan.MaxValue;
             hBinding.SendTimeout = TimeSpan.MaxValue;

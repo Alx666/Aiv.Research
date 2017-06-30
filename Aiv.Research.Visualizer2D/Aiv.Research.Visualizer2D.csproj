@@ -83,6 +83,7 @@
     </Compile>
     <Compile Include="GraphicsExtensions.cs" />
     <Compile Include="InputInformation.cs" />
+    <Compile Include="ListViewExtender.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
