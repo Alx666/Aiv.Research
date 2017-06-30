@@ -21,7 +21,6 @@ namespace Aiv.Research.Tests.Landing
         private LandingSite             m_hSite;
         private Lander                  m_hLander;
         private Recorder                m_hRecorder;
-        private ICommand hCmd;
 
         public Controller()
         {
@@ -32,27 +31,27 @@ namespace Aiv.Research.Tests.Landing
 
         private void MainLoop()
         {
-            m_hWnd        = new Window(800, 600, "Lander");
+            m_hWnd        = new Window(1200, 600, "Lander");
             m_hGround     = new Ground();
             m_hSite       = new LandingSite(m_hGround.GroundLevel);
-            m_hLander     = new LanderSTM(m_hSite);
-            m_hRecorder   = new Recorder(m_hLander);
+            //m_hLander   = new LanderHuman(m_hSite);
+            //m_hRecorder = new Recorder(m_hLander);
+            m_hLander     = new LanderAIX("../../../training_sets/Experiment6.net", m_hSite);
 
             //m_hLander     = new LanderAI4("../../../training_sets/Experiment4.net", m_hSite);
             //m_hLander = new LanderAI4("../../../training_sets/Experiment4.net", m_hSite);
 
             while (m_hWnd.IsOpened)
             {
-
                 Input.Update(m_hWnd);
-                
 
                 //Command Dispatching
+                ICommand hCmd;
                 while (m_hCommands.TryTake(out hCmd))
                 {
                     hCmd.Execute();
                 }
-
+                
                 m_hGround.Update();
                 m_hSite.Update();
                 m_hLander.Update();
@@ -60,16 +59,25 @@ namespace Aiv.Research.Tests.Landing
                 m_hGround.Draw();
                 m_hSite.Draw();
                 m_hLander.Draw();
-                
+
+                //if (m_hRecorder.Started)
+                //    m_hRecorder.Update();
+
                 m_hWnd.Update();
             }
         }
 
         [ConsoleUIMethod]
-        public void Load(string sExperiment)
+        public void StartRecording()
         {
+            m_hCommands.Add(new CommandRecordStart(m_hRecorder));
         }
 
+        [ConsoleUIMethod]
+        public void StopRecording()
+        {
+            m_hCommands.Add(new CommandRecordStop(m_hRecorder));
+        }
 
         [ConsoleUIMethod]
         public void SetGravity(float fGrav)
@@ -117,6 +125,36 @@ namespace Aiv.Research.Tests.Landing
             public void Execute()
             {
                 m_hLander.TargetAltitude = m_fAltitude;
+            }
+        }
+
+        private class CommandRecordStart : ICommand
+        {
+            private Recorder m_hRecorder;
+
+            public CommandRecordStart(Recorder hRecorder)
+            {
+                m_hRecorder = hRecorder;
+            }
+
+            public void Execute()
+            {
+                m_hRecorder.Start("sample.xml");
+            }
+        }
+
+        private class CommandRecordStop : ICommand
+        {
+            private Recorder m_hRecorder;
+
+            public CommandRecordStop(Recorder hRecorder)
+            {
+                m_hRecorder = hRecorder;
+            }
+
+            public void Execute()
+            {
+                m_hRecorder.Stop();
             }
         }
 

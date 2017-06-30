@@ -23,10 +23,19 @@ namespace Aiv.Research.Tests.Landing
             if (IsGrounded)
                 return;
 
-            Vector2 vAxis  = Input.JoystickAxisLeft(JoystickIndex.One);
+            if(Input.IsJoystickButtonDown(JoystickButton.ShoulderLeft, JoystickIndex.One))
+            {
+                m_hSite.Randomize();
+            }
+
+
+            Vector2 vAxis;//  = Input.JoystickAxisLeft(JoystickIndex.One);
+            vAxis.Y = -Input.JoystickTriggerRight(JoystickIndex.One);
+            vAxis.X =  Input.JoystickAxisRight(JoystickIndex.One).X;
+
 
             m_vVelocity.Y += REACTOR_POWER * vAxis.Y * Window.Current.deltaTime;
-            m_vVelocity.X += REACTOR_POWER * vAxis.X * Window.Current.deltaTime;
+            m_vVelocity.X += REACTOR_POWER * 0.8f *  vAxis.X * Window.Current.deltaTime;
 
             VertThrust  = m_vVelocity.Y;
             HorizThrust = m_vVelocity.X;

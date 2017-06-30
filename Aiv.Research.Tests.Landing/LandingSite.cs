@@ -26,6 +26,17 @@ namespace Aiv.Research.Tests.Landing
             m_vColor    = new Vector4(0.2f, 1f, 0.2f, 0f);
         }
 
+        public void Randomize()
+        {
+            m_hRand = new Random();
+            int iPosition = m_hRand.Next(0, Window.Current.Width - Length);
+
+            Position = new Vector2(iPosition + Length / 2, GroundLevel);
+
+            m_hLine.Point1 = new Vector2(Position.X - Length / 2, GroundLevel);
+            m_hLine.Point2 = new Vector2(Position.X + Length / 2, GroundLevel);                
+        }
+
         public void Update()
         {
 
