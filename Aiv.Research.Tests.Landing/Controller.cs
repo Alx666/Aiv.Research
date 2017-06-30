@@ -34,9 +34,9 @@ namespace Aiv.Research.Tests.Landing
             m_hWnd        = new Window(800, 600, "Lander");
             m_hGround     = new Ground();
             m_hSite       = new LandingSite(m_hGround.GroundLevel);
-            m_hLander   = new LanderHuman(m_hSite);
-            m_hRecorder = new Recorder(m_hLander);
-            //m_hLander     = new LanderAIX("Experiment5_AlessandroX3.net", m_hSite);
+            //m_hLander   = new LanderHuman(m_hSite);
+            //m_hRecorder = new Recorder(m_hLander);
+            m_hLander     = new LanderAIX("../../../training_sets/Experiment6.net", m_hSite);
 
             //m_hLander     = new LanderAI4("../../../training_sets/Experiment4.net", m_hSite);
             //m_hLander = new LanderAI4("../../../training_sets/Experiment4.net", m_hSite);
@@ -60,8 +60,8 @@ namespace Aiv.Research.Tests.Landing
                 m_hSite.Draw();
                 m_hLander.Draw();
 
-                if (m_hRecorder.Started)
-                    m_hRecorder.Update();
+                //if (m_hRecorder.Started)
+                //    m_hRecorder.Update();
 
                 m_hWnd.Update();
             }
